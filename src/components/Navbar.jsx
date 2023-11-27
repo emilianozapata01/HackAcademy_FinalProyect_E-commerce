@@ -14,7 +14,7 @@ function NavBar({ setHovered }) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Juice Shop</Navbar.Brand>
+        <Navbar.Brand href="/">Juice Shop</Navbar.Brand>
         <Nav.Link>All products</Nav.Link>
         <div
           className={NavbarStyle.subnav}

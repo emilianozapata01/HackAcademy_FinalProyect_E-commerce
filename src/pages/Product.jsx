@@ -33,9 +33,9 @@ function Product() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="containe">
         <div className="row">
-          <div className="col-12 fw-bold ">
+          <div className="col-12 fw-bold ps-5">
             <Link className="text-decoration-none text-dark" to={"/"}>
               <span> Home </span>
             </Link>

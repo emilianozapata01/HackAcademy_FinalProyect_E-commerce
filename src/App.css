@@ -74,3 +74,15 @@
 .image-container:hover .hover-image {
   opacity: 1;
 }
+
+/* ACA COMIENZA ABOUT US */
+
+.image-size {
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+}
+
+.custom-shadow {
+  box-shadow: 15px 35px 40px rgba(0, 0, 0, 0.1);
+}
