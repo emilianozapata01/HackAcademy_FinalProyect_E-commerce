@@ -14,3 +14,7 @@
 .subnav:hover #home {
   background-color: yellowgreen;
 }
+
+.input-cart {
+  width: 3rem;
+}
