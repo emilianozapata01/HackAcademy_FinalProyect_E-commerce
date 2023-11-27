@@ -2,8 +2,9 @@
 // import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
+import Navbar from "../components/Navbar";
 
-import { Link } from "react-router-dom"; // Asegúrate de importar Link desde react-router-dom
+import { Link } from "react-router-dom";
 import "../App.css";
 import React, { useState } from "react";
 
@@ -22,6 +23,7 @@ function Product() {
 
   return (
     <>
+      <Navbar />
       <div className="container">
         <div className="row">
           <div className="col-12 fw-bold ">
