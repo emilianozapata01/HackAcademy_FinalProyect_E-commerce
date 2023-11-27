@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import Glide from "@glidejs/glide";
+// import Glide from "@glidejs/glide";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -16,7 +16,7 @@ function Home() {
 
   useEffect(() => {
     getProducts();
-    new Glide(".glide").mount();
+    // new Glide(".glide").mount();
   }, []);
   return (
     products && (

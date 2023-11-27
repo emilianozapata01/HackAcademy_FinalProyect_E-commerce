@@ -7,6 +7,7 @@
 
 .custom-btn-prime-product {
   width: 500px;
+  height: 40px;
 }
 .custom-btn-secondary-product {
   width: 250px;
@@ -20,13 +21,13 @@
 
 .input-size {
   width: 400px;
-  height: 50px;
+  height: 40px;
   border-color: #f0f0f0;
   outline: none;
 }
 .button-size {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border: none;
 }
 
@@ -36,4 +37,40 @@
 
 .input-cart {
   width: 3rem;
+}
+
+.font-product {
+  font-family: Livory;
+}
+
+.image-container {
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  left: 25%;
+}
+
+.original-image {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .original-image {
+  opacity: 0;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
 }
