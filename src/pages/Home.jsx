@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-// import Glide from "@glidejs/glide";
+import Footer from "../components/Footer";
+import Glide from "@glidejs/glide";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -16,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     getProducts();
-    // new Glide(".glide").mount();
+    /*  new Glide(".glide").mount(); */
   }, []);
   return (
     products && (
@@ -29,7 +30,7 @@ function Home() {
               <div key={product._id}>{product._id}</div>
             ))}
           </div>
-          <div className="glide">
+          {/* <div className="glide">
             <div className="glide__track" data-glide-el="track">
               <ul className="glide__slides">
                 <li className="glide__slide">0</li>
@@ -37,8 +38,9 @@ function Home() {
                 <li className="glide__slide">2</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
+        <Footer />
       </>
     )
   );
