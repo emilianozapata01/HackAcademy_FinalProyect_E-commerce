@@ -3,7 +3,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "../App.css";
 import React, { useState } from "react";
@@ -232,6 +232,7 @@ function Product() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
