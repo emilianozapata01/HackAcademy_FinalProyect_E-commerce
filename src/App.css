@@ -33,3 +33,7 @@
 .button-size:hover {
   background-color: darkgrey;
 }
+
+.input-cart {
+  width: 3rem;
+}

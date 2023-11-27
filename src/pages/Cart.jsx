@@ -1,10 +1,11 @@
 import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
 
 function Cart() {
   return (
     <div className="container">
       <h1 className="fw-bold">SHOPPING CART</h1>
-      <Table striped>
+      <Table >
         <thead>
           <tr>
             <th className="fw-bold" colSpan={2}>
@@ -13,24 +14,43 @@ function Cart() {
             <th className="fw-bold">PRICE</th>
             <th className="fw-bold">QUANTITY</th>
             <th className="fw-bold">TOTAL</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td colSpan={2}>
-              <div>
-                <img src="" alt="" />
-                <p>Fall Punch</p>
+              <div className="row">
+                <div className="col">
+                  <img src="" alt="" />
+                </div>
+                <div className="col">
+                  <p>Fall Punch</p>
+                </div>
               </div>
             </td>
             <td>13.00</td>
-            <td>1</td>
+            <td>
+              <div className="input-group ">
+                <button className="btn btn-success">-</button>
+                <input
+                  className="input-cart text-center"
+                  type="text"
+                  value={1}
+                />{" "}
+                <button className="btn btn-success">+</button>
+              </div>
+            </td>
             <td>13.00</td>
+            <td><Link className="text-decoration-none text-danger" to={""}><i className="bi bi-x-circle-fill"></i></Link></td>
+            
           </tr>
           <tr>
-            <td colSpan={2}></td>
+            <td colSpan={3}></td>
             <td>Subtotal</td>
             <td className="fw-bold">13.00</td>
+            <td></td>
+            
           </tr>
         </tbody>
       </Table>
