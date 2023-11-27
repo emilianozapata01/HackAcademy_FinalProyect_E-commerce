@@ -77,7 +77,7 @@ function Product() {
                 width="8"
                 height="8"
                 fill="currentColor"
-                class="bi bi-circle-fill"
+                className="bi bi-circle-fill"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -88,7 +88,7 @@ function Product() {
                 width="8"
                 height="8"
                 fill="currentColor"
-                class="bi bi-circle-fill"
+                className="bi bi-circle-fill"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -99,7 +99,7 @@ function Product() {
                 width="8"
                 height="8"
                 fill="currentColor"
-                class="bi bi-circle-fill"
+                className="bi bi-circle-fill"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
