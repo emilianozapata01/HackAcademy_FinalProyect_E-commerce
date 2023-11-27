@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
 import { useRef } from 'react';
+import Footer from "../components/Footer";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -47,7 +48,9 @@ function Home() {
                 </div>
               ))}
           </Glider>
+         
         </div>
+        <Footer />
       </>
     )
   );

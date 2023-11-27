@@ -5,59 +5,80 @@
   transition: all 0.3s ease;
 }
 
+.custom-btn-prime-product {
+  width: 500px;
+  height: 40px;
+}
+.custom-btn-secondary-product {
+  width: 250px;
+}
+
 .custom-btn:hover {
   color: white;
   background-color: green;
+  border: green;
+}
+
+.input-size {
+  width: 400px;
+  height: 40px;
+  border-color: #f0f0f0;
+  outline: none;
+}
+.button-size {
+  height: 40px;
+  width: 40px;
   border: none;
 }
 
-.subnav:hover #home {
-  background-color: yellowgreen;
+.button-size:hover {
+  background-color: darkgrey;
 }
 
 .input-cart {
   width: 3rem;
 }
 
-.glide {
-  display: flex;
-  align-items: center;
-}
-
-.glide__track {
-  flex: 1;
-}
-
-.glide__slide {
-  text-align: center;
-  height: 150px;
-  line-height: 150px;
-  color: #fff;
-  background: rgb(136, 133, 133);
-  font-size: 1em;
-  font-weight: 900;
-}
-
-.glide__slide[class*="active"] {
-  background: linear-gradient(-45deg, #ed145b, #7b31f4);
-}
-
-.glide__arrows {
-  padding: 5px;
-}
-
-.glide__arrow {
+.image-container {
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
   position: relative;
-  top: 0;
-  margin: 0;
-  transform: none;
-  left: 0;
-  right: 0;
-  padding: 5px;
-  background-color: #818999;
-  transition: all 0.2s ease-in-out;
+  left: 25%;
 }
 
-.glide__arrow:hover {
-  background-color: #ed145b;
+.original-image {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .original-image {
+  opacity: 0;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+/* ACA COMIENZA ABOUT US */
+
+.image-size {
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+}
+
+.custom-shadow {
+  box-shadow: 15px 35px 40px rgba(0, 0, 0, 0.1);
 }
