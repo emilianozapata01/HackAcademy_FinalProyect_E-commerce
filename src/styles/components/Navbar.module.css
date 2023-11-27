@@ -1,0 +1,51 @@
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.subnavContent {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: rgb(179, 179, 179);
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnavContent a {
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnavContent a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnavContent {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.subnav:hover #home {
+  background-color: yellowgreen;
+}
+.subnavContent:hover #home {
+  background-color: yellowgreen;
+}

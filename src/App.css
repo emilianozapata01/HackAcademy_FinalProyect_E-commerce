@@ -10,3 +10,7 @@
   background-color: green;
   border: none;
 }
+
+.subnav:hover #home {
+  background-color: yellowgreen;
+}
