@@ -1,11 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import Glide from "@glidejs/glide";
+import Glider from "react-glider";
+import "glider-js/glider.min.css";
+import { useRef } from 'react';
 
 function Home() {
   const [products, setProducts] = useState(null);
   const [hovered, setHovered] = useState(false);
+  const leftArrowRef = useRef(null); 
+  const rightArrowRef = useRef(null);
 
   const getProducts = async () => {
     axios({
@@ -16,7 +20,6 @@ function Home() {
 
   useEffect(() => {
     getProducts();
-    new Glide(".glide").mount();
   }, []);
   return (
     products && (
@@ -29,15 +32,21 @@ function Home() {
               <div key={product._id}>{product._id}</div>
             ))}
           </div>
-          <div className="glide">
-            <div className="glide__track" data-glide-el="track">
-              <ul className="glide__slides">
-                <li className="glide__slide">0</li>
-                <li className="glide__slide">1</li>
-                <li className="glide__slide">2</li>
-              </ul>
-            </div>
-          </div>
+          <Glider
+             className="glider-container"
+             slidesToShow={1}
+             iconLeft
+             iconRight
+             arrows
+          >
+            {products
+              .filter((product) => product.bestSeller === true)
+              .map((product) => ( 
+                <div key={product._id}> <span>
+                  <img className="w-25" src={product.image} alt="" /></span>
+                </div>
+              ))}
+          </Glider>
         </div>
       </>
     )
