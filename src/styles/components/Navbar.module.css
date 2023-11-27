@@ -18,7 +18,7 @@
   display: none;
   position: absolute;
   left: 0;
-  background-color: rgb(179, 179, 179);
+  background-color: rgb(238, 238, 238);
   width: 100%;
   z-index: 1;
 }
@@ -41,11 +41,4 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
-}
-
-.subnav:hover #home {
-  background-color: yellowgreen;
-}
-.subnavContent:hover #home {
-  background-color: yellowgreen;
 }

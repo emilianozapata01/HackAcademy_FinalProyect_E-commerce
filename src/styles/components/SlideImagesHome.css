@@ -1,0 +1,10 @@
+.original-image-slide {
+  height: 40rem;
+  object-fit: cover;
+  z-index: -1;
+}
+.image-gallery-image {
+  z-index: -1;
+  object-fit: cover !important;
+  height: 100% !important;
+}
