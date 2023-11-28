@@ -4,14 +4,12 @@ import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
-import { useRef } from "react";
 import Footer from "../components/Footer";
+import Glide from "../components/Glide";
 
 function Home() {
   const [products, setProducts] = useState(null);
   const [hovered, setHovered] = useState(false);
-  const leftArrowRef = useRef(null);
-  const rightArrowRef = useRef(null);
 
   const getProducts = async () => {
     axios({
@@ -46,7 +44,7 @@ function Home() {
               <div key={product._id}>{product._id}</div>
             ))}
           </div>
-          <div className="container">
+          {/* <div className="container">
             <Glider
               className="glider-perspective"
               hasArrows
@@ -65,7 +63,9 @@ function Home() {
                   </div>
                 ))}
             </Glider>
-          </div>
+          </div> */} 
+          <div className="container">
+          <Glide  products={products}/></div>
         </div>
         <Footer />
       </div>

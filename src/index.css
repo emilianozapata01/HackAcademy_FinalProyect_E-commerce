@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'woolwich-regular';
+    src: url('/fonts/woolwich-regular.otf') ; 
+  };
+  
+  body {
+    font-family: 'woolwich-regular';  
+  };
