@@ -26,28 +26,16 @@ function Home() {
   }, []);
   return (
     products && (
-      <div style={{ height: "100vh" }}>
+      <>
         <Navbar setHovered={setHovered} />
-
-        <div
-          style={
-            hovered
-              ? {
-                  background: "rgba(0,0,0,0.6)",
-                  opacity: "0.9",
-                  transition: "0.3s",
-                  height: "100%",
-                }
-              : {}
-          }
-        >
+        <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <SlideImagesHome hovered={hovered} />
           <div className="container">
             <div>
               <Glide products={products} />
             </div>
           </div>
-          <div className={` ${HomeStyle.containerSize}`}>
+          <div className={HomeStyle.containerSize}>
             <div className={`row ${HomeStyle.widthRow}`}>
               <h1
                 className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-5`}
@@ -55,10 +43,10 @@ function Home() {
                 OUR PRODUCTS
               </h1>
 
-              <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
+              <div className={`col-6 ${HomeStyle.categoryBoxSize}`}>
                 <Link to="/sparkling-juice">
                   <img
-                    className={`${HomeStyle.categoryBoxSizeCAN} `}
+                    className={HomeStyle.categoryBoxSizeCAN}
                     src="can.png"
                     alt="Sparkling Juice"
                   />
@@ -67,10 +55,10 @@ function Home() {
                   </button>
                 </Link>
               </div>
-              <div className={`col-6 ${HomeStyle.categoryBoxSize}   `}>
+              <div className={`col-6 ${HomeStyle.categoryBoxSize}`}>
                 <Link to="/juices">
                   <img
-                    className={`${HomeStyle.categoryBoxSizePROTEIN}   `}
+                    className={HomeStyle.categoryBoxSizePROTEIN}
                     src="proteina.PNG"
                     alt="NUT MILKS & SMOOTHIES"
                   />
@@ -79,10 +67,10 @@ function Home() {
                   </button>
                 </Link>
               </div>
-              <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
+              <div className={`col-6 ${HomeStyle.categoryBoxSize}`}>
                 <Link to="/nut-milks&smoothies">
                   <img
-                    className={`${HomeStyle.categoryBoxSizeJUICE}   `}
+                    className={HomeStyle.categoryBoxSizeJUICE}
                     src="juices.PNG"
                     alt="juices"
                   />
@@ -90,29 +78,26 @@ function Home() {
                 </Link>
               </div>
 
-              <div className={`col-6   ${HomeStyle.categoryBoxSize}   `}>
+              <div className={`col-6 ${HomeStyle.categoryBoxSize}`}>
                 <Link to="elixirs">
                   <img
-                    className={`${HomeStyle.categoryBoxSizeELIXIR}   `}
+                    className={`${HomeStyle.categoryBoxSizeELIXIR}`}
                     src="elixir0.png"
                     alt="Elixir"
                   />
                 </Link>
                 <button className={HomeStyle.buttonCategories}>ELIXIRS</button>
               </div>
-
               <div className="text-center mt-5">
                 <Link to="/all-products">
-                  {" "}
                   <button className={HomeStyle.shopAllButton}>SHOP ALL</button>
                 </Link>
               </div>
             </div>
           </div>
-
           <Footer />
         </div>
-      </div>
+      </>
     )
   );
 }

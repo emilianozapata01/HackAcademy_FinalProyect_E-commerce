@@ -75,3 +75,6 @@
 .btn-glide-color {
   background-color: rgb(58, 145, 63) !important;
 }
+.text-footer a {
+  color: black;
+}

@@ -12,16 +12,15 @@ function NavBar({ setHovered }) {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="/">Juice Shop</Navbar.Brand>
-        <Nav.Link>All products</Nav.Link>
+    <Navbar sticky="top" className={`p-0 ${NavbarStyle.bgNavbar}`}>
+      <Container fluid className="d-flex">
+        <Navbar.Brand href="#">Juice Shop</Navbar.Brand>
         <div
-          className={NavbarStyle.subnav}
+          className={`${NavbarStyle.subnav} ms-auto`}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <button className={NavbarStyle.subnavbtn}>Categories</button>
+          <Nav.Link className={NavbarStyle.subnavbtn}>Categories</Nav.Link>
           <div className={NavbarStyle.subnavContent}>
             <Nav.Link>Juices</Nav.Link>
             <Nav.Link>Elixirs</Nav.Link>
