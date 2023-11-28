@@ -39,38 +39,6 @@
   width: 3rem;
 }
 
-.image-container {
-  width: 200px;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-  left: 25%;
-}
-
-.original-image {
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.hover-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.image-container:hover .original-image {
-  opacity: 0;
-}
-
-.image-container:hover .hover-image {
-  opacity: 1;
-}
-
 /* ACA COMIENZA ABOUT US */
 
 .image-size {

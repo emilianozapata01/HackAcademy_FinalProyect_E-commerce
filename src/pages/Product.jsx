@@ -5,7 +5,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import "../App.css";
+import ProductStyle from "../styles/views/Product.module.css";
 import React, { useState } from "react";
 
 function Product() {
@@ -51,7 +51,18 @@ function Product() {
           </div>
 
           <div className="col-6">
-            <Carousel>
+            <Carousel
+              nextIcon={
+                <span className={ProductStyle.customCarouselIcon}>
+                  <i class="bi bi-caret-right"></i>
+                </span>
+              } // Símbolo para la flecha siguiente
+              prevIcon={
+                <span className={ProductStyle.customCarouselIcon}>
+                  <i class="bi bi-caret-left"></i>
+                </span>
+              } // Símbolo para la flecha anterior
+            >
               <Carousel.Item interval={20000}>
                 <img
                   className="img-fluid"
@@ -72,14 +83,14 @@ function Product() {
           </div>
           <div className="col-6 d-grid gap-1 ">
             <h4>TURMERIC GINGER TONIC</h4>
-            <span className="font-product">$3.50</span>
-            <p className="font-product">
+            <span className={ProductStyle.fontProduct}>$3.50</span>
+            <p className={ProductStyle.fontProduct}>
               Turmeric Ginger Tonic is made with pure mountain spring water,
               cold-pressed juice, and adaptogens, to reduce stress and
               inflammation.
             </p>
-            <span className="font-product">Size:12oZ</span>
-            <p className="font-product">
+            <span className={ProductStyle.fontProduct}>Size:12oZ</span>
+            <p className={ProductStyle.fontProduct}>
               Organic{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,58 +126,69 @@ function Product() {
               </svg>{" "}
               Vegan
             </p>
-            <p className="font-product">
+            <p className={ProductStyle.fontProduct}>
               *These statements have not been evaluated by the FDA. This product
               is not intended to diagnose, treat, cure, or prevent any disease.
             </p>
             <div>
               <button
-                className="button-size"
+                className={ProductStyle.buttonSize}
                 onClick={decreaseValue}
                 disabled={value === 1}
               >
                 -
               </button>
               <input
-                className="text-center input-size"
+                className={`text-center ${ProductStyle.inputSize}`}
                 type="number"
                 value={value}
                 readOnly
               />
-              <button className="button-size" onClick={increaseValue}>
+              <button
+                className={ProductStyle.buttonSize}
+                onClick={increaseValue}
+              >
                 +
               </button>
             </div>
-            <button className="custom-btn custom-btn-prime-product">
+            <button
+              className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
+            >
               ADD TO CART
             </button>
-            <p className="text-success font-product">
+            <p className={`text-success ${ProductStyle.fontProduct}`}>
               Local pick up and delivery only. Order by 11am and we will have
               your order delivered in your desired pickup or delivery window.
             </p>
-            <p className="font-product">
+            <p className={ProductStyle.fontProduct}>
               Sparkling Mountain Spring Water, Cold-Pressed Juice,* Cold-Pressed
               Ginger Juice,* Cold-Pressed Turmeric Juice,* Coconut Nectar,*
               Ashwagandha,* Cayenne Pepper,* Black Pepper*
             </p>
-            <p className="font-product">*Certified Organic Ingredients</p>
+            <p className={ProductStyle.fontProduct}>
+              *Certified Organic Ingredients
+            </p>
           </div>
           <div className="row">
             <h4 className="text-center">YOU MAY ALSO LIKE</h4>
 
             <div className="col-4 text-center gap-4 d-grid">
               <div
-                className="image-container "
+                className={ProductStyle.imageContainer}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <img
-                  className={`original-image ${isHovered ? "hidden" : ""}`}
+                  className={`${ProductStyle.originalImage} ${
+                    isHovered ? "hidden" : ""
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/detox-1_800x.jpg?v=1672529675"
                   alt="Original"
                 />
                 <img
-                  className={`hover-image ${isHovered ? "" : "hidden"}`}
+                  className={`${ProductStyle.hoverImage} ${
+                    isHovered ? "" : "hidden"
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/detox-2_800x.jpg?v=1672529726"
                   alt="Hover"
                 />
@@ -174,24 +196,30 @@ function Product() {
               <h5>DETOX TONIC</h5>
               <div>
                 <p>$3.50</p>
-                <button className="custom-btn custom-btn-secondary-product mx-auto fw-bold">
+                <button
+                  className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                >
                   ADD TO CART
                 </button>
               </div>
             </div>
             <div className="col-4 text-center gap-4 d-grid ">
               <div
-                className="image-container"
+                className={ProductStyle.imageContainer}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <img
-                  className={`original-image ${isHovered ? "hidden" : ""}`}
+                  className={`${ProductStyle.originalImage} ${
+                    isHovered ? "hidden" : ""
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/pineapple-1_800x.jpg?v=1672529953"
                   alt="Original"
                 />
                 <img
-                  className={`hover-image ${isHovered ? "" : "hidden"}`}
+                  className={`${ProductStyle.hoverImage} ${
+                    isHovered ? "" : "hidden"
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/pineapple-2_800x.jpg?v=1672529961"
                   alt="Hover"
                 />
@@ -199,24 +227,30 @@ function Product() {
               <h5>PINEAPPLE MINT TONIC</h5>
               <div>
                 <p>$3.50</p>
-                <button className="custom-btn custom-btn-secondary-product mx-auto fw-bold">
+                <button
+                  className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                >
                   ADD TO CART
                 </button>
               </div>
             </div>
             <div className="col-4 text-center gap-4 d-grid ">
               <div
-                className="image-container"
+                className={ProductStyle.imageContainer}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <img
-                  className={`original-image ${isHovered ? "hidden" : ""}`}
+                  className={`${ProductStyle.originalImage} ${
+                    isHovered ? "hidden" : ""
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/Elderberry-update-1_800x.jpg?v=1680660808"
                   alt="Original"
                 />
                 <img
-                  className={`hover-image ${isHovered ? "" : "hidden"}`}
+                  className={`${ProductStyle.hoverImage} ${
+                    isHovered ? "" : "hidden"
+                  }`}
                   src="https://juiceshop.com/cdn/shop/products/Elderberry-update-2_800x.jpg?v=1680660808"
                   alt="Hover"
                 />
@@ -224,7 +258,9 @@ function Product() {
               <h5>ELDERBERRY TONIC</h5>
               <div>
                 <p>$3.50</p>
-                <button className="custom-btn custom-btn-secondary-product mx-auto fw-bold ">
+                <button
+                  className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                >
                   ADD TO CART
                 </button>
               </div>
