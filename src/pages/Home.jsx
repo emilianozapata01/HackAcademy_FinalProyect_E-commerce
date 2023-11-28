@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
 import HomeStyle from "../styles/views/Home.module.css";
-import { useRef } from "react";
 import Footer from "../components/Footer";
-import React from "react";
 import { Link } from "react-router-dom";
 
 import Glide from "../components/Glide";

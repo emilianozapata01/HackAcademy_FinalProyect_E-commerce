@@ -12,9 +12,11 @@ function NavBar({ setHovered }) {
   };
 
   return (
-    <Navbar sticky="top" className={`p-0 ${NavbarStyle.bgNavbar}`}>
+    <Navbar sticky="top" className={`py-0 px-5 ${NavbarStyle.bgNavbar} top-0`}>
       <Container fluid className="d-flex">
-        <Navbar.Brand href="#">Juice Shop</Navbar.Brand>
+        <Navbar.Brand href="#" style={{ color: "white" }}>
+          <h1>Juice Shop</h1>
+        </Navbar.Brand>
         <div
           className={`${NavbarStyle.subnav} ms-auto`}
           onMouseEnter={onMouseEnter}
