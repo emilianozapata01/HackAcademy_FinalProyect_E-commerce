@@ -39,31 +39,33 @@ function Home() {
               : {}
           }
         >
-          <SlideImagesHome />
+          <SlideImagesHome hovered={hovered} />
           <div>Home</div>
           <div>
             {products.map((product) => (
               <div key={product._id}>{product._id}</div>
             ))}
           </div>
-          <Glider
-            className="glider-container"
-            slidesToShow={1}
-            iconLeft
-            iconRight
-            arrows
-          >
-            {products
-              .filter((product) => product.bestSeller === true)
-              .map((product) => (
-                <div key={product._id}>
-                  {" "}
-                  <span>
-                    <img className="w-25" src={product.image} alt="" />
-                  </span>
-                </div>
-              ))}
-          </Glider>
+          <div className="container">
+            <Glider
+              className="glider-perspective"
+              hasArrows
+              slidesToShow={3}
+              slidesToScroll={1}
+              iconLeft={<i className="bi bi-arrow-left-circle-fill"></i>}
+              iconRight={<i className="bi bi-arrow-right-circle-fill"></i>}
+            >
+              {products
+                .filter((product) => product.bestSeller === true)
+                .map((product) => (
+                  <div key={product._id} className="slide-outer">
+                    <span>
+                      <img className="mb-5" src={product.image} alt="" />
+                    </span>
+                  </div>
+                ))}
+            </Glider>
+          </div>
         </div>
         <Footer />
       </div>
