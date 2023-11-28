@@ -7,9 +7,7 @@ import { useRef } from "react";
 import Footer from "../components/Footer";
 import React from "react";
 import { Link } from "react-router-dom";
-import Glider from "react-glider";
-import "glider-js/glider.min.css";
-import Footer from "../components/Footer";
+
 import Glide from "../components/Glide";
 
 function Home() {
@@ -30,6 +28,7 @@ function Home() {
     products && (
       <div style={{ height: "100vh" }}>
         <Navbar setHovered={setHovered} />
+
         <div
           style={
             hovered
@@ -43,110 +42,76 @@ function Home() {
           }
         >
           <SlideImagesHome hovered={hovered} />
-          <div>Home</div>
-          <div>
-            {products.map((product) => (
-              <div key={product._id}>{product._id}</div>
-            ))}
-          </div>
-
-          {products
-            .filter((product) => product.bestSeller === true)
-            .map((product) => (
-              <div key={product._id}>
-                {" "}
-                <span>
-                  <img className="w-25" src={product.image} alt="" />
-                </span>
-              </div>
-            ))}
-          {/* <div className="container">
-            <Glider
-              className="glider-perspective"
-              hasArrows
-              slidesToShow={3}
-              slidesToScroll={1}
-              iconLeft={<i className="bi bi-arrow-left-circle-fill"></i>}
-              iconRight={<i className="bi bi-arrow-right-circle-fill"></i>}
-            >
-              {products
-                .filter((product) => product.bestSeller === true)
-                .map((product) => (
-                  <div key={product._id} className="slide-outer">
-                    <span>
-                      <img className="mb-5" src={product.image} alt="" />
-                    </span>
-                  </div>
-                ))}
-            </Glider>
-          </div> */}
           <div className="container">
-            <Glide products={products} />
-          </div>
-        </div>
-        <div className={`container ${HomeStyle.containerSize}`}>
-          <div className={`row ${HomeStyle.widthRow}`}>
-            <h1
-              className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-5`}
-            >
-              OUR PRODUCTS
-            </h1>
-            <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
-              <Link to="/sparkling-juice">
-                <img
-                  className={`${HomeStyle.categoryBoxSizeCAN} `}
-                  src="can.png"
-                  alt="Sparkling Juice"
-                />
-                <button className={HomeStyle.buttonCategoriesSparkling}>
-                  SPARKLING TONICS
-                </button>
-              </Link>
-            </div>
-            <div className={`col-6 ${HomeStyle.categoryBoxSize}   `}>
-              <Link to="/juices">
-                <img
-                  className={`${HomeStyle.categoryBoxSizePROTEIN}   `}
-                  src="proteina.PNG"
-                  alt="NUT MILKS & SMOOTHIES"
-                />
-                <button className={HomeStyle.buttonCategoriesNutMilks}>
-                  NUT MILKS & SMOOTHIES
-                </button>
-              </Link>
-            </div>
-            <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
-              <Link to="/nut-milks&smoothies">
-                <img
-                  className={`${HomeStyle.categoryBoxSizeJUICE}   `}
-                  src="juices.PNG"
-                  alt="juices"
-                />
-                <button className={HomeStyle.buttonCategories}>JUICES</button>
-              </Link>
-            </div>
-
-            <div className={`col-6   ${HomeStyle.categoryBoxSize}   `}>
-              <Link to="elixirs">
-                <img
-                  className={`${HomeStyle.categoryBoxSizeELIXIR}   `}
-                  src="elixir0.png"
-                  alt="Elixir"
-                />
-              </Link>
-              <button className={HomeStyle.buttonCategories}>ELIXIRS</button>
-            </div>
-
-            <div className="text-center mt-5">
-              <Link to="/all-products">
-                {" "}
-                <button className={HomeStyle.shopAllButton}>SHOP ALL</button>
-              </Link>
+            <div>
+              <Glide products={products} />
             </div>
           </div>
-        </div>
+          <div className={` ${HomeStyle.containerSize}`}>
+            <div className={`row ${HomeStyle.widthRow}`}>
+              <h1
+                className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-5`}
+              >
+                OUR PRODUCTS
+              </h1>
 
-        <Footer />
+              <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
+                <Link to="/sparkling-juice">
+                  <img
+                    className={`${HomeStyle.categoryBoxSizeCAN} `}
+                    src="can.png"
+                    alt="Sparkling Juice"
+                  />
+                  <button className={HomeStyle.buttonCategoriesSparkling}>
+                    SPARKLING TONICS
+                  </button>
+                </Link>
+              </div>
+              <div className={`col-6 ${HomeStyle.categoryBoxSize}   `}>
+                <Link to="/juices">
+                  <img
+                    className={`${HomeStyle.categoryBoxSizePROTEIN}   `}
+                    src="proteina.PNG"
+                    alt="NUT MILKS & SMOOTHIES"
+                  />
+                  <button className={HomeStyle.buttonCategoriesNutMilks}>
+                    NUT MILKS & SMOOTHIES
+                  </button>
+                </Link>
+              </div>
+              <div className={`col-6  ${HomeStyle.categoryBoxSize}   `}>
+                <Link to="/nut-milks&smoothies">
+                  <img
+                    className={`${HomeStyle.categoryBoxSizeJUICE}   `}
+                    src="juices.PNG"
+                    alt="juices"
+                  />
+                  <button className={HomeStyle.buttonCategories}>JUICES</button>
+                </Link>
+              </div>
+
+              <div className={`col-6   ${HomeStyle.categoryBoxSize}   `}>
+                <Link to="elixirs">
+                  <img
+                    className={`${HomeStyle.categoryBoxSizeELIXIR}   `}
+                    src="elixir0.png"
+                    alt="Elixir"
+                  />
+                </Link>
+                <button className={HomeStyle.buttonCategories}>ELIXIRS</button>
+              </div>
+
+              <div className="text-center mt-5">
+                <Link to="/all-products">
+                  {" "}
+                  <button className={HomeStyle.shopAllButton}>SHOP ALL</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <Footer />
+        </div>
       </div>
     )
   );
