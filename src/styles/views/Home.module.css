@@ -1,10 +1,12 @@
 .categoryBoxSize {
-  width: 300px;
-  height: 350px;
+  width: 18rem;
+  height: 18rem;
   overflow: hidden;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 10px 10px 10px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
 .categoryBoxSizeJUICE {
@@ -85,9 +87,8 @@
   width: 150px;
   transition: transform 0.3s;
   position: absolute;
-  left: 32%;
-  top: 80%;
   border: none;
+  margin-bottom: 0.5rem;
 }
 
 .buttonCategoriesSparkling {
@@ -100,8 +101,7 @@
   width: max-content;
   transition: transform 0.3s;
   position: absolute;
-  left: 27%;
-  top: 80%;
+  margin-bottom: 0.5rem;
   border: none;
 }
 
@@ -115,8 +115,7 @@
   width: max-content;
   transition: transform 0.3s;
   position: absolute;
-  left: 23%;
-  top: 80%;
+  margin-bottom: 0.5rem;
   border: none;
 }
 

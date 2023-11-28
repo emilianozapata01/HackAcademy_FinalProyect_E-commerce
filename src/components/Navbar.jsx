@@ -14,8 +14,16 @@ function NavBar({ setHovered }) {
   return (
     <Navbar sticky="top" className={`py-0 px-5 ${NavbarStyle.bgNavbar} top-0`}>
       <Container fluid className="d-flex">
-        <Navbar.Brand href="#" style={{ color: "white" }}>
-          <h1>Juice Shop</h1>
+        <Navbar.Brand href="#">
+          <h1
+            style={{
+              color: "#3a913f",
+              textShadow:
+                "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
+            }}
+          >
+            Juice Shop
+          </h1>
         </Navbar.Brand>
         <div
           className={`${NavbarStyle.subnav} ms-auto`}
