@@ -83,30 +83,30 @@
   box-shadow: 15px 35px 40px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .custom-image {
   width: 100%;
   height: auto;
   /* Otros estilos que quieras aplicar */
 }
 
-
-.h{
+.h {
   display: none;
 }
 
-.swiper-slide-active .h{
+.swiper-slide-active .h {
   display: flex;
   justify-content: center;
 }
- .swiper-button-next {
-  color: rgb(58, 145, 63)!important;
+.swiper-button-next {
+  color: rgb(58, 145, 63) !important;
 }
 .swiper-button-prev {
-  color: rgb(58, 145, 63)!important;
+  color: rgb(58, 145, 63) !important;
 }
 
-.btn-glide-color{
-  background-color: rgb(58, 145, 63)!important;
+.btn-glide-color {
+  background-color: rgb(58, 145, 63) !important;
+}
+.text-footer a {
+  color: black;
 }

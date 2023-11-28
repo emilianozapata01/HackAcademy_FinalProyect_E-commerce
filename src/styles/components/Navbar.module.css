@@ -25,7 +25,8 @@
   left: 0;
   visibility: hidden;
   position: absolute;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
   width: 100%;
   z-index: 1;
   height: 0;
@@ -53,4 +54,11 @@
   height: 4rem;
   visibility: visible;
   top: 100%;
+}
+
+.bg-navbar {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  z-index: 3;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }

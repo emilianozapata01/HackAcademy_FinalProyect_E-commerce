@@ -38,7 +38,6 @@ function SlideImagesHome({ hovered }) {
   return (
     <ImageGallery
       showBullets={true}
-      additionalClass={hovered && "image-gallery-14"}
       items={imgArr}
       infinite={true}
       showThumbnails={false}

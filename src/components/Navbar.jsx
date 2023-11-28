@@ -12,7 +12,7 @@ function NavBar({ setHovered }) {
   };
 
   return (
-    <Navbar sticky="top" className="p-0">
+    <Navbar sticky="top" className={`p-0 ${NavbarStyle.bgNavbar}`}>
       <Container fluid className="d-flex">
         <Navbar.Brand href="#">Juice Shop</Navbar.Brand>
         <div
