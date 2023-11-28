@@ -5,6 +5,7 @@ import SlideImagesHome from "../components/SlideImagesHome";
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
 import Footer from "../components/Footer";
+import Glide from "../components/Glide";
 
 function Home() {
   const [products, setProducts] = useState(null);

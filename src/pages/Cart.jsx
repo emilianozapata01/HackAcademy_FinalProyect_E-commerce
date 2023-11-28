@@ -1,7 +1,19 @@
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 function Cart() {
+  const [value, setValue] = useState(1);
+  const decreaseValue = () => {
+    if (value > 1) {
+      setValue(value - 1);
+    }
+  };
+
+  const increaseValue = () => {
+    setValue(value + 1);
+  };
+
   return (
     <div className="container">
       <h1 className="fw-bold">SHOPPING CART</h1>
@@ -31,15 +43,24 @@ function Cart() {
             </td>
             <td>13.00</td>
             <td>
-              <div className="input-group ">
-                <button className="btn btn-success">-</button>
-                <input
-                  className="input-cart text-center"
-                  type="text"
-                  value={1}
-                />{" "}
-                <button className="btn btn-success">+</button>
-              </div>
+            <div >
+              <button
+                className="button-size"
+                onClick={decreaseValue}
+                disabled={value === 1}
+              >
+                -
+              </button>
+              <input
+                className="text-center input-size "
+                type="number"
+                value={value}
+                readOnly
+              />
+              <button className="button-size" onClick={increaseValue}>
+                +
+              </button>
+            </div>
             </td>
             <td>13.00</td>
             <td><Link className="text-decoration-none text-danger" to={""}><i className="bi bi-x-circle-fill"></i></Link></td>
