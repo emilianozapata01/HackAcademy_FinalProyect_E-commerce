@@ -2,8 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
-import Glider from "react-glider";
-import "glider-js/glider.min.css";
 import Footer from "../components/Footer";
 import Glide from "../components/Glide";
 
@@ -44,26 +42,6 @@ function Home() {
               <div key={product._id}>{product._id}</div>
             ))}
           </div>
-          {/* <div className="container">
-            <Glider
-              className="glider-perspective"
-              hasArrows
-              slidesToShow={3}
-              slidesToScroll={1}
-              iconLeft={<i className="bi bi-arrow-left-circle-fill"></i>}
-              iconRight={<i className="bi bi-arrow-right-circle-fill"></i>}
-            >
-              {products
-                .filter((product) => product.bestSeller === true)
-                .map((product) => (
-                  <div key={product._id} className="slide-outer">
-                    <span>
-                      <img className="mb-5" src={product.image} alt="" />
-                    </span>
-                  </div>
-                ))}
-            </Glider>
-          </div> */} 
           <div className="container">
           <Glide  products={products}/></div>
         </div>

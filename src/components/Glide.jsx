@@ -14,7 +14,8 @@ function Glide({ products }) {
         grabCursor={true}
         navigation={true}
         centeredSlides={true}
-        slidesPerView={2.3}
+        loop={true}
+        slidesPerView={2.2}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -23,16 +24,19 @@ function Glide({ products }) {
           slideShadows: false,
         }}
         modules={[EffectCoverflow, Navigation]}
-        className="mySwiper"
+        className="mySwiper swip"
       >
         {products
           .filter((product) => product.bestSeller === true)
           .map((product) => (
-            <SwiperSlide>
-              <div key={product._id}>
+            <SwiperSlide key={product._id}>
+              <div >
                 <img className="custom-image" src={product.image} alt="" />
+                <p className="text-center h">{product.name}</p>
+                <p className="text-center h">${product.price}</p>
                 <div key={product._id} className="h">
-                <button className="custom-btn custom-btn-prime-product">
+                    
+                <button className="custom-btn-swiper custom-btn-swiper-product">
               ADD TO CART
             </button>
                 </div>

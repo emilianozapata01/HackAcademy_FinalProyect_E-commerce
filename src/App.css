@@ -1,19 +1,20 @@
-.custom-btn {
+.custom-btn-swiper {
   color: black;
   background-color: white;
   border: 1px solid black;
   transition: all 0.3s ease;
+
 }
 
-.custom-btn-prime-product {
-  width: 500px;
+.custom-btn-swiper-product {
+  width: 300px;
   height: 40px;
 }
 .custom-btn-secondary-product {
   width: 250px;
 }
 
-.custom-btn:hover {
+.custom-btn-swiper:hover {
   color: white;
   background-color: green;
   border: green;
@@ -95,10 +96,36 @@
 .h{
   display: none;
 }
-
+.swiper-slide{
+  filter: opacity(0.5);
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+.swiper-slide img{
+  transition: all 0.5s ease;
+}
 .swiper-slide-active .h{
   display: flex;
   justify-content: center;
+  
+}
+.swiper-slide-prev img{
+  transform: rotate(-10deg)!important;
+  visibility: visible;
+}
+.swiper-slide-next img{
+  transform: rotate(10deg)!important;
+  visibility: visible;
+}
+
+.swiper-slide-active {
+  filter: opacity(1)!important;
+  transition: all 0.5s ease;
+  visibility: visible;
+}
+.swiper-slide-active img {
+  transform: rotate(0deg);
+  transition: all 0.5s ease;
 }
  .swiper-button-next {
   color: rgb(58, 145, 63)!important;
@@ -109,4 +136,8 @@
 
 .btn-glide-color{
   background-color: rgb(58, 145, 63)!important;
+}
+
+.swip{
+  width: 70rem;
 }
