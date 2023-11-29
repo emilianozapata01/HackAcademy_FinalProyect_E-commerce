@@ -7,7 +7,7 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 function Glide({ products }) {
   return (
     <div className=" ">
-      <h1 className="text-center">Bestseller</h1>
+      <h1 className="text-center mt-5">Bestseller</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -33,7 +33,7 @@ function Glide({ products }) {
                 <img className="custom-image" src={product.image} alt="" />
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>
-                <div key={product._id} className="h">
+                <div key={product._id} className="h mb-5">
                   <button className="custom-btn-swiper custom-btn-swiper-product">
                     ADD TO CART
                   </button>
