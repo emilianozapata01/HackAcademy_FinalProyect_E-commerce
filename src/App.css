@@ -40,38 +40,6 @@
   width: 3rem;
 }
 
-.image-container {
-  width: 200px;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-  left: 25%;
-}
-
-.original-image {
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.hover-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.image-container:hover .original-image {
-  opacity: 0;
-}
-
-.image-container:hover .hover-image {
-  opacity: 1;
-}
-
 /* ACA COMIENZA ABOUT US */
 
 .image-size {
@@ -84,16 +52,13 @@
   box-shadow: 15px 35px 40px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .custom-image {
   width: 100%;
   height: auto;
   /* Otros estilos que quieras aplicar */
 }
 
-
-.h{
+.h {
   display: none;
 }
 .swiper-slide{
@@ -104,7 +69,8 @@
 .swiper-slide img{
   transition: all 0.5s ease;
 }
-.swiper-slide-active .h{
+
+.swiper-slide-active .h {
   display: flex;
   justify-content: center;
   
@@ -127,17 +93,16 @@
   transform: rotate(0deg);
   transition: all 0.5s ease;
 }
- .swiper-button-next {
-  color: rgb(58, 145, 63)!important;
+.swiper-button-next {
+  color: rgb(58, 145, 63) !important;
 }
 .swiper-button-prev {
-  color: rgb(58, 145, 63)!important;
+  color: rgb(58, 145, 63) !important;
 }
 
-.btn-glide-color{
-  background-color: rgb(58, 145, 63)!important;
+.btn-glide-color {
+  background-color: rgb(58, 145, 63) !important;
 }
-
-.swip{
-  width: 70rem;
+.text-footer a {
+  color: black;
 }

@@ -7,7 +7,10 @@
   height: 100% !important;
 }
 
-.image-gallery-14 {
+.bg-dark-hover-nav {
   filter: brightness(40%);
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
   transition: 0.3s;
 }

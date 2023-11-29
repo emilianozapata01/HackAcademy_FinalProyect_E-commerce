@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
 import Footer from "../components/Footer";
+
 import Glide from "../components/Glide";
+import CategorySectionHome from "../components/CategorySectionHome";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -21,32 +23,19 @@ function Home() {
   }, []);
   return (
     products && (
-      <div style={{ height: "100vh" }}>
+      <>
         <Navbar setHovered={setHovered} />
-        <div
-          style={
-            hovered
-              ? {
-                  background: "rgba(0,0,0,0.6)",
-                  opacity: "0.9",
-                  transition: "0.3s",
-                  height: "100%",
-                }
-              : {}
-          }
-        >
+        <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <SlideImagesHome hovered={hovered} />
-          <div>Home</div>
-          <div>
-            {products.map((product) => (
-              <div key={product._id}>{product._id}</div>
-            ))}
-          </div>
           <div className="container">
-          <Glide  products={products}/></div>
+            <div>
+              <Glide products={products} />
+            </div>
+            <CategorySectionHome />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </>
     )
   );
 }

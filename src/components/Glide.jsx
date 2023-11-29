@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -30,15 +29,14 @@ function Glide({ products }) {
           .filter((product) => product.bestSeller === true)
           .map((product) => (
             <SwiperSlide key={product._id}>
-              <div >
+              <div key={product._id}>
                 <img className="custom-image" src={product.image} alt="" />
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>
                 <div key={product._id} className="h">
-                    
-                <button className="custom-btn-swiper custom-btn-swiper-product">
-              ADD TO CART
-            </button>
+                  <button className="custom-btn-swiper custom-btn-swiper-product">
+                    ADD TO CART
+                  </button>
                 </div>
               </div>
             </SwiperSlide>
