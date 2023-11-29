@@ -14,7 +14,10 @@ function NavBar({ setHovered }) {
 
   return (
     <Navbar sticky="top" className={`py-0 px-5 ${NavbarStyle.bgNavbar} top-0`}>
-      <Container fluid className="d-flex justify-content-between align-items-center">
+      <Container
+        fluid
+        className="d-flex justify-content-between align-items-center"
+      >
         <Navbar.Brand href="/">
           <h1
             style={{
@@ -31,22 +34,24 @@ function NavBar({ setHovered }) {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <Nav.Link className={NavbarStyle.subnavbtn}>
+          <Nav.Item className={NavbarStyle.subnavbtn}>
             Categories
             <div className={NavbarStyle.subnavContent}>
               <Nav.Link href="/juices">Juices</Nav.Link>
               <Nav.Link href="/elixirs">Elixirs</Nav.Link>
-              <Nav.Link href="/nut-milks&smoothies">Nut milks &amp; smoothies</Nav.Link>
+              <Nav.Link href="/nut-milks&smoothies">
+                Nut milks &amp; smoothies
+              </Nav.Link>
               <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
             </div>
-          </Nav.Link>
+          </Nav.Item>
         </div>
-        <Nav.Link href="/cart" className = "text-white">CART</Nav.Link>
+        <Nav.Link href="/cart" className="text-white">
+          CART
+        </Nav.Link>
       </Container>
     </Navbar>
   );
 }
 
 export default NavBar;
-
-

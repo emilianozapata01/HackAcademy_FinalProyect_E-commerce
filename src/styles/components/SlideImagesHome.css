@@ -14,3 +14,7 @@
   opacity: 0.9;
   transition: 0.3s;
 }
+
+.image-gallery-icon:hover {
+  color: #3a913f;
+}
