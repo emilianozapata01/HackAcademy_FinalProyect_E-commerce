@@ -3,7 +3,11 @@ import { Image, Nav } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <Container fluid className="text-footer" id="Footer_text-footer__FtDZ2">
+    <Container
+      fluid
+      className="text-footer mt-5"
+      id="Footer_text-footer__FtDZ2"
+    >
       <Row className="text-bg-light p-3">
         <Col md={1} className="d-none d-md-block"></Col>
         <Col md={4}>
@@ -16,16 +20,16 @@ const Footer = () => {
 
         <Col md={2} className="pt-4 ">
           <Nav className="flex-column">
-            <Nav.Link href="/">
+            <Nav.Link href="/about-us">
               <i></i>OUR STORY
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/all-products">
               <i></i>OUR JUICE
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/visit"> 
               <i></i>VISIT
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/sustainability">
               <i></i>SUSTAINABILITY
             </Nav.Link>
           </Nav>
@@ -33,16 +37,16 @@ const Footer = () => {
 
         <Col md={2} className="pt-4">
           <Nav className="flex-column">
-            <Nav.Link href="/">
+            <Nav.Link href="/frequently-asked-questions">
               <i></i>FAQ
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/events-and-catering">
               <i></i>EVENTS & CATERING
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/wholesale">
               <i></i>WHOLESALE
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/careers">
               <i></i>CAREERS
             </Nav.Link>
           </Nav>
@@ -50,13 +54,13 @@ const Footer = () => {
 
         <Col md={2} className="pt-4">
           <Nav className="flex-column">
-            <Nav.Link href="/">
+            <Nav.Link href="https://www.facebook.com/juiceshopsf/">
               <i className="bi bi-facebook Footer_bi__i+YNT"></i>
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="https://www.instagram.com/juiceshopsf/">
               <i className="bi bi-instagram Footer_bi__i+YNT"></i>
             </Nav.Link>
-            <Nav.Link href="/">
+            <Nav.Link href="/contact-us">
               <i></i>CONTACT US
             </Nav.Link>
           </Nav>

@@ -3,8 +3,8 @@ import HomeStyle from "../styles/views/Home.module.css";
 
 function CategorySectionHome() {
   return (
-    <div className="d-flex flex-column">
-      <h1 className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-5`}>
+    <div className="d-flex flex-column mt-5">
+      <h1 className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-4`}>
         OUR PRODUCTS
       </h1>
       <div className="d-flex flex-column">
@@ -22,7 +22,7 @@ function CategorySectionHome() {
               SPARKLING TONICS
             </button>
           </Link>
-          <Link to="/juices" className={`${HomeStyle.categoryBoxSize}`}>
+          <Link to="/nut-milks&smoothies" className={`${HomeStyle.categoryBoxSize}`}>
             <img
               className={HomeStyle.categoryBoxSizePROTEIN}
               src="proteina.PNG"
@@ -35,7 +35,7 @@ function CategorySectionHome() {
         </div>
         <div className="m-auto d-flex flex-wrap justify-content-center">
           <Link
-            to="/nut-milks&smoothies"
+            to="/juices"
             className={` ${HomeStyle.categoryBoxSize}`}
           >
             <img
@@ -45,7 +45,7 @@ function CategorySectionHome() {
             />
             <button className={HomeStyle.buttonCategories}>JUICES</button>
           </Link>
-          <Link to="elixirs" className={`${HomeStyle.categoryBoxSize}`}>
+          <Link to="/elixirs" className={`${HomeStyle.categoryBoxSize}`}>
             <img
               className={`${HomeStyle.categoryBoxSizeELIXIR}`}
               src="elixir0.png"

@@ -7,14 +7,15 @@ function NavBar({ setHovered }) {
   const onMouseEnter = () => {
     setHovered(true);
   };
+
   const onMouseLeave = () => {
     setHovered(false);
   };
 
   return (
     <Navbar sticky="top" className={`py-0 px-5 ${NavbarStyle.bgNavbar} top-0`}>
-      <Container fluid className="d-flex">
-        <Navbar.Brand href="#">
+      <Container fluid className="d-flex justify-content-between align-items-center">
+        <Navbar.Brand href="/">
           <h1
             style={{
               color: "#3a913f",
@@ -26,21 +27,26 @@ function NavBar({ setHovered }) {
           </h1>
         </Navbar.Brand>
         <div
-          className={`${NavbarStyle.subnav} ms-auto`}
+          className={`${NavbarStyle.subnav} ms-auto d-flex align-items-center`}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <Nav.Link className={NavbarStyle.subnavbtn}>Categories</Nav.Link>
-          <div className={NavbarStyle.subnavContent}>
-            <Nav.Link>Juices</Nav.Link>
-            <Nav.Link>Elixirs</Nav.Link>
-            <Nav.Link>Nut milks &amp; smoothies</Nav.Link>
-            <Nav.Link>Sparkling tonics</Nav.Link>
-          </div>
+          <Nav.Link className={NavbarStyle.subnavbtn}>
+            Categories
+            <div className={NavbarStyle.subnavContent}>
+              <Nav.Link href="/juices">Juices</Nav.Link>
+              <Nav.Link href="/elixirs">Elixirs</Nav.Link>
+              <Nav.Link href="/nut-milks&smoothies">Nut milks &amp; smoothies</Nav.Link>
+              <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
+            </div>
+          </Nav.Link>
         </div>
+        <Nav.Link href="/cart" className = "text-white">CART</Nav.Link>
       </Container>
     </Navbar>
   );
 }
 
 export default NavBar;
+
+
