@@ -10,6 +10,7 @@ import React, { useState } from "react";
 
 function Product() {
   const [value, setValue] = useState(1);
+  const [hovered, setHovered] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {

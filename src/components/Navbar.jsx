@@ -41,7 +41,8 @@ function NavBar({ setHovered }) {
             </div>
           </Nav.Link>
         </div>
-        <Nav.Link href="/cart" className = "text-white">CART</Nav.Link>
+        <Nav.Link href="/cart" className = "text-white me-4">CART</Nav.Link>
+        <button type="button" class="btn btn-secondary">admin</button>
       </Container>
     </Navbar>
   );
