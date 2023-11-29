@@ -20,6 +20,7 @@ function Cart() {
   return (
     <>
       <Navbar setHovered={setHovered} />
+      <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
         <h1 className="fw-bold">SHOPPING CART</h1>
         <Table>
@@ -170,6 +171,7 @@ function Cart() {
         </div>
       </div>
       <Footer />
+      </div>
     </>
   );
 }

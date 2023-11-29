@@ -27,6 +27,24 @@ function Home() {
         <Navbar setHovered={setHovered} />
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <SlideImagesHome hovered={hovered} />
+          <div className="d-flex flex-nowrap justify-content-center mt-5">
+            <div className="ms-5 me-5">
+              <img className="imgBan" src="bottledInG_100x.png" alt="" />
+            </div>
+            <div className="ms-5 me-5">
+              <img className="imgBan" src="madeInSF_100x.png" alt="" />
+            </div>
+            <div className="ms-5 me-5">
+              <img
+              className="imgBan"
+                src="pressedFreshDaily_92ffb9fd-2eac-4ef5-a677-f1e231c06ac3_100x.png"
+                alt=""
+              />
+            </div>
+            <div className="ms-5 me-5">
+              <img className="imgBan" src="rawOrganic_100x.png" alt="" />
+            </div>
+          </div>
           <div className="container">
             <div>
               <Glide products={products} />
