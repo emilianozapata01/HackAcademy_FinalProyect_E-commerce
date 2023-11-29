@@ -33,24 +33,23 @@ function Product() {
   return (
     <>
       <Navbar />
-      <div className="containe">
-        <div className="row">
-          <div className="col-12 fw-bold ps-5">
-            <Link className="text-decoration-none text-dark" to={"/"}>
-              <span> Home </span>
-            </Link>
-            <span>
-              <i className="bi bi-arrow-right"></i>
-            </span>
-            <Link className="text-decoration-none text-dark" to={"/"}>
-              <span> All </span>
-            </Link>
-            <span>
-              <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
-            </span>
-          </div>
-
-          <div className="col-6">
+      <div>
+        <div className=" fw-bold ps-5 mt-3">
+          <Link className="text-decoration-none text-dark" to={"/"}>
+            <span> Home </span>
+          </Link>
+          <span>
+            <i className="bi bi-arrow-right"></i>
+          </span>
+          <Link className="text-decoration-none text-dark" to={"/"}>
+            <span> All </span>
+          </Link>
+          <span>
+            <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
+          </span>
+        </div>
+        <div className="d-flex flex-row justify-content-between">
+          <div>
             <Carousel
               nextIcon={
                 <span className={ProductStyle.customCarouselIcon}>
@@ -63,7 +62,7 @@ function Product() {
                 </span>
               } // Símbolo para la flecha anterior
             >
-              <Carousel.Item interval={20000}>
+              <Carousel.Item interval={50000}>
                 <img
                   className="img-fluid"
                   src="https://juiceshop.com/cdn/shop/products/tumeric-1_1200x.jpg?v=1672529908"
@@ -71,7 +70,7 @@ function Product() {
                 />
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
-              <Carousel.Item interval={500}>
+              <Carousel.Item interval={50000}>
                 <img
                   className="img-fluid"
                   src="https://juiceshop.com/cdn/shop/products/tumeric-2_1200x.jpg?v=1672529914"
@@ -81,8 +80,8 @@ function Product() {
               </Carousel.Item>
             </Carousel>
           </div>
-          <div className="col-6 d-grid gap-1 ">
-            <h4>TURMERIC GINGER TONIC</h4>
+          <div className=" d-grid gap-1 ">
+            <div className={ProductStyle.titleBig}>TURMERIC GINGER TONIC</div>
             <span className={ProductStyle.fontProduct}>$3.50</span>
             <p className={ProductStyle.fontProduct}>
               Turmeric Ginger Tonic is made with pure mountain spring water,
@@ -150,12 +149,14 @@ function Product() {
               >
                 +
               </button>
+
+              <button
+                className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct} ms-5`}
+              >
+                ADD TO CART
+              </button>
             </div>
-            <button
-              className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
-            >
-              ADD TO CART
-            </button>
+
             <p className={`text-success ${ProductStyle.fontProduct}`}>
               Local pick up and delivery only. Order by 11am and we will have
               your order delivered in your desired pickup or delivery window.
@@ -169,12 +170,16 @@ function Product() {
               *Certified Organic Ingredients
             </p>
           </div>
-          <div className="row">
-            <h4 className="text-center">YOU MAY ALSO LIKE</h4>
+        </div>
 
-            <div className="col-4 text-center gap-4 d-grid">
+        {/* //////////////////////////////////////////////////////////////////////////////////////// */}
+
+        <div className="d-flex  flex-column ">
+          <h1 className="text-center mb-5">YOU MAY ALSO LIKE</h1>
+          <div className="d-flex flex-row justify-content-center">
+            <div className=" text-center gap-4 d-grid d-flex flex-column  ">
               <div
-                className={ProductStyle.imageContainer}
+                className={`${ProductStyle.imageContainer} `}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -203,9 +208,12 @@ function Product() {
                 </button>
               </div>
             </div>
-            <div className="col-4 text-center gap-4 d-grid ">
+
+            {/* //////////////////////////////////////////////////////////////// */}
+
+            <div className="text-center gap-4 d-grid d-flex flex-column  ">
               <div
-                className={ProductStyle.imageContainer}
+                className={`${ProductStyle.imageContainer}  `}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -234,9 +242,12 @@ function Product() {
                 </button>
               </div>
             </div>
-            <div className="col-4 text-center gap-4 d-grid ">
+
+            {/* /////////////////////////////////////////////////////////////////////////////////// */}
+
+            <div className=" text-center gap-4 d-grid d-flex flex-column ">
               <div
-                className={ProductStyle.imageContainer}
+                className={`${ProductStyle.imageContainer} `}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
