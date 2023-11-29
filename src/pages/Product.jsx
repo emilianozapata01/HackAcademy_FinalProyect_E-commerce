@@ -10,6 +10,7 @@ import React, { useState } from "react";
 
 function Product() {
   const [value, setValue] = useState(1);
+  const [hovered, setHovered] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -32,7 +33,7 @@ function Product() {
 
   return (
     <>
-      <Navbar />
+      <Navbar setHovered={setHovered} />
       <div className="containe">
         <div className="row">
           <div className="col-12 fw-bold ps-5">
