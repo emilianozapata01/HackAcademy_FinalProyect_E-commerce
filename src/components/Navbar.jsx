@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavbarStyle from "../styles/components/NavBar.module.css";
+import ProfileIcon from "./icons/ProfileIcon";
+import CartIcon from "./icons/CartIcon";
 
 function NavBar({ setHovered }) {
   const onMouseEnter = () => {
@@ -13,48 +15,61 @@ function NavBar({ setHovered }) {
   };
 
   return (
-    <Navbar sticky="top" className={`py-0 px-5 ${NavbarStyle.bgNavbar} top-0`}>
-      <Container
-        fluid
-        className="d-flex justify-content-between align-items-center"
-      >
-        <Navbar.Brand href="/">
-          <h1
-            style={{
-              color: "#3a913f",
-              textShadow:
-                "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
-            }}
-          >
-            Juice Shop
-          </h1>
+    <Navbar
+      expand="lg"
+      data-bs-theme="dark"
+      sticky="top"
+      className={`p-0 ${NavbarStyle.bgNavbar}`}
+    >
+      <Container>
+        <Navbar.Brand href="#home">
+          <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1>
         </Navbar.Brand>
-        <div
-          className={`${NavbarStyle.subnav} ms-auto d-flex align-items-center`}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse
+          className={`${NavbarStyle.collapseNavbar} justify-content-lg-between`}
+          id="basic-navbar-nav"
         >
-          <Nav.Item className={NavbarStyle.subnavbtn}>
-            Categories
-            <div className={NavbarStyle.subnavContent}>
-              <Nav.Link href="/juices">Juices</Nav.Link>
-              <Nav.Link href="/elixirs">Elixirs</Nav.Link>
-              <Nav.Link href="/nut-milks&smoothies">
-                Nut milks &amp; smoothies
+          <Nav className={`${NavbarStyle.navInsideCollapse}`}>
+            <div className="d-flex flex-row fix-navbar">
+              <Nav.Link className="d-flex justify-content-center" href="#home">
+                <span className={NavbarStyle.correctColorNavbar}>
+                  All products
+                </span>
               </Nav.Link>
-              <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
+              <div
+                className={`${NavbarStyle.subnav} d-flex align-items-center justify-content-center`}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+              >
+                <Nav.Item className={NavbarStyle.subnavbtn}>
+                  <span>Categories</span>
+                  <div className={NavbarStyle.subnavContent}>
+                    <Nav.Link href="/juices">Juices</Nav.Link>
+                    <Nav.Link href="/elixirs">Elixirs</Nav.Link>
+                    <Nav.Link href="/nut-milks&smoothies">
+                      Nut milks &amp; smoothies
+                    </Nav.Link>
+                    <Nav.Link href="/sparkling-juice">
+                      Sparkling tonics
+                    </Nav.Link>
+                  </div>
+                </Nav.Item>
+              </div>
             </div>
-          </Nav.Item>
-        </div>
-        <Nav.Link href="/cart" className="text-white me-4">
-          CART
-        </Nav.Link>
-        <Nav.Link
-          href="http://localhost:4321/dashboard"
-          className="text-white me-4 "
-        >
-          admin
-        </Nav.Link>
+            <div className="d-flex justify-content-lg-end align-items-center fix-navbar">
+              <Nav.Link
+                className={NavbarStyle.correctColorNavbar}
+                href="/login"
+              >
+                <ProfileIcon />
+              </Nav.Link>
+              <Nav.Link className={NavbarStyle.correctColorNavbar} href="/cart">
+                <CartIcon />
+              </Nav.Link>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

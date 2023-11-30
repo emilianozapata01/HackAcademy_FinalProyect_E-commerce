@@ -3,7 +3,6 @@
   background-color: white;
   border: 1px solid black;
   transition: all 0.3s ease;
-
 }
 
 .custom-btn-swiper-product {
@@ -37,7 +36,7 @@
 }
 
 .input-cart {
-  width: 3rem;
+  width: 8rem;
 }
 
 /* ACA COMIENZA ABOUT US */
@@ -61,31 +60,30 @@
 .h {
   display: none;
 }
-.swiper-slide{
+.swiper-slide {
   filter: opacity(0.5);
   transition: all 0.5s ease;
   visibility: hidden;
 }
-.swiper-slide img{
+.swiper-slide img {
   transition: all 0.5s ease;
 }
 
 .swiper-slide-active .h {
   display: flex;
   justify-content: center;
-  
 }
-.swiper-slide-prev img{
-  transform: rotate(-10deg)!important;
+.swiper-slide-prev img {
+  transform: rotate(-10deg) !important;
   visibility: visible;
 }
-.swiper-slide-next img{
-  transform: rotate(10deg)!important;
+.swiper-slide-next img {
+  transform: rotate(10deg) !important;
   visibility: visible;
 }
 
 .swiper-slide-active {
-  filter: opacity(1)!important;
+  filter: opacity(1) !important;
   transition: all 0.5s ease;
   visibility: visible;
 }
@@ -107,10 +105,21 @@
   color: black;
 }
 
-.swip{
-  width: 65rem;
+.swip {
+  max-width: 65rem;
 }
 
-.imgBan{
+.imgBan {
   width: 10rem;
+}
+
+.fix-navbar {
+  width: fit-content !important;
+  gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .fix-nav {
+    width: 100% !important;
+  }
 }
