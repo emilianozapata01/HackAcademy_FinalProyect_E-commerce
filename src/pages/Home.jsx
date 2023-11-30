@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
 import Footer from "../components/Footer";
-
+import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
 import CategorySectionHome from "../components/CategorySectionHome";
 
@@ -25,6 +25,18 @@ function Home() {
     products && (
       <>
         <Navbar setHovered={setHovered} />
+
+        <button
+          className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
+        >
+          About this Project
+        </button>
+        <button
+          className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
+        >
+          <i class="bi bi-person-raised-hand"></i>
+        </button>
+
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <SlideImagesHome hovered={hovered} />
           <div className="d-flex flex-nowrap justify-content-center mt-5">
@@ -36,7 +48,7 @@ function Home() {
             </div>
             <div className="ms-5 me-5">
               <img
-              className="imgBan"
+                className="imgBan"
                 src="pressedFreshDaily_92ffb9fd-2eac-4ef5-a677-f1e231c06ac3_100x.png"
                 alt=""
               />
