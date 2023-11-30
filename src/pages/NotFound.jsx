@@ -1,8 +1,10 @@
 // import Footer from "../components/Footer";
 import NotFoundVideo from "/videos/NotFoundVideo.mp4";
 import NotFoundStyle from "../styles/views/NotFound.module.css";
+import { useNavigate } from "react-router";
 
 function NotFound() {
+  const navigate = useNavigate();
   return (
     <>
       <video autoPlay loop muted className={NotFoundStyle.notFoundVideo}>
@@ -21,7 +23,12 @@ function NotFound() {
           <span className={`${NotFoundStyle.titleText}`}>4</span>
         </div>
         <div className="d-flex justify-content-center align-items-center">
-          <button className={NotFoundStyle.backBtn}>
+          <button
+            className={NotFoundStyle.backBtn}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <span>Back to Home</span>
           </button>
         </div>
