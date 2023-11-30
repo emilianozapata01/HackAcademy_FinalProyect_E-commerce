@@ -4,8 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import NavbarStyle from "../styles/components/NavBar.module.css";
 import ProfileIcon from "./icons/ProfileIcon";
 import CartIcon from "./icons/CartIcon";
+import { useNavigate } from "react-router";
 
 function NavBar({ setHovered }) {
+  const navigate = useNavigate();
   const onMouseEnter = () => {
     setHovered(true);
   };
@@ -22,7 +24,7 @@ function NavBar({ setHovered }) {
       className={`p-0 ${NavbarStyle.bgNavbar}`}
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand onClick={() => navigate("/")}>
           <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -64,7 +66,10 @@ function NavBar({ setHovered }) {
               >
                 <ProfileIcon />
               </Nav.Link>
-              <Nav.Link className={NavbarStyle.correctColorNavbar} href="/cart">
+              <Nav.Link
+                className={NavbarStyle.correctColorNavbar}
+                onClick={() => navigate("/cart")}
+              >
                 <CartIcon />
               </Nav.Link>
             </div>

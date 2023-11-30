@@ -2,15 +2,13 @@
 // import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import ProductStyle from "../styles/views/Product.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
-function Product() {
+function Product({ hovered }) {
   const [value, setValue] = useState(1);
-  const [hovered, setHovered] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -33,7 +31,6 @@ function Product() {
 
   return (
     <>
-      <Navbar setHovered={setHovered} />
       <div className={hovered ? "bg-dark-hover-nav " : ""}>
         <div className="container">
           <div className="row">
@@ -56,12 +53,12 @@ function Product() {
               <Carousel
                 nextIcon={
                   <span className={ProductStyle.customCarouselIcon}>
-                    <i class="bi bi-caret-right"></i>
+                    <i className="bi bi-caret-right"></i>
                   </span>
                 } // Símbolo para la flecha siguiente
                 prevIcon={
                   <span className={ProductStyle.customCarouselIcon}>
-                    <i class="bi bi-caret-left"></i>
+                    <i className="bi bi-caret-left"></i>
                   </span>
                 } // Símbolo para la flecha anterior
               >
