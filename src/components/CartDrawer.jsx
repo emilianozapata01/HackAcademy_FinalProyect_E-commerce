@@ -33,10 +33,14 @@ function CartDrawer() {
       <div>
         <div className="p-4 d-flex">
           <h1 className="woolwich ">My basket</h1>
-
-          <IconButton onClick={toggleDrawer(anchor, false)} className="text-black ">
-            <CancelIcon sx={{ fontSize: 50 }} />
-          </IconButton>
+          <div className="closeBtn">
+            <IconButton
+              onClick={toggleDrawer(anchor, false)}
+              className="text-black "
+            >
+              <CancelIcon sx={{ fontSize: 50 }} />
+            </IconButton>
+          </div>
         </div>
         <List>
           <List>
@@ -72,11 +76,15 @@ function CartDrawer() {
             <p className="text-white">Subtotal</p>
             <p className="text-white">$12.00</p>
           </div>
-          <p className="text-white fs-6 ps-3 se-3">TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO APPLY ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.  </p>
+          <p className="text-white fs-6 ps-3 se-3">
+            TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO APPLY
+            ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
+          </p>
           <div className="divCheckout">
-          <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
-            checkout
-          </button></div>
+            <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+              checkout
+            </button>
+          </div>
         </div>
       </div>
     </Box>

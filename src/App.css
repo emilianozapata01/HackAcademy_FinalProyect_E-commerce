@@ -164,6 +164,12 @@
   align-items: end;
 }
 
+.closeBtn {
+  display: flex;
+  justify-content: end;
+  width: 53%;
+}
+
 .woolwich {
   font-family: "woolwich-regular" !important;
 }
