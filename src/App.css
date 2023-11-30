@@ -133,3 +133,37 @@
     display: none;
   }
 }
+.cartSub {
+  display: flex;
+  flex-direction: column;
+  background-color: #3a913f;
+  width: 26.25rem;
+  height: 16rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.subTotal {
+  display: flex;
+  flex-direction: row;
+  gap: 13rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.btnCheckout {
+  margin-top: 1.8rem;
+  margin-left: 1rem;
+  width: 10rem;
+}
+
+.divCheckout {
+  display: flex;
+  align-items: end;
+}
+
+.woolwich {
+  font-family: "woolwich-regular" !important;
+}

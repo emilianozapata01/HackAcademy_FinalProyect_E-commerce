@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavbarStyle from "../styles/components/NavBar.module.css";
 import ProfileIcon from "./icons/ProfileIcon";
 import CartIcon from "./icons/CartIcon";
+import CartDrawer from "./CartDrawer";
 
 function NavBar({ setHovered }) {
   const onMouseEnter = () => {
@@ -64,8 +65,8 @@ function NavBar({ setHovered }) {
               >
                 <ProfileIcon />
               </Nav.Link>
-              <Nav.Link className={NavbarStyle.correctColorNavbar} href="/cart">
-                <CartIcon />
+              <Nav.Link className={NavbarStyle.correctColorNavbar} href="">
+                <CartDrawer/>
               </Nav.Link>
             </div>
           </Nav>
