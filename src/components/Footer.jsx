@@ -67,7 +67,10 @@ const Footer = () => {
         </Col>
       </Row>
 
-      <Row className="text-center justify-content-center border-top pt-2 mt-2" style={{ fontSize: "1.2rem" }}> 
+      <Row
+        className="text-center justify-content-center border-top pt-2 mt-2"
+        style={{ fontSize: "1.2rem" }}
+      >
         <Col md={3}>
           <p> © 2023 JUICE SHOP | ALL RIGHTS RESERVED</p>
         </Col>

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
 import SlideImagesHomeResponsive from "../components/SlideImageHomeResponsive";
 import Footer from "../components/Footer";
@@ -9,9 +8,8 @@ import Glide from "../components/Glide";
 import CategorySectionHome from "../components/CategorySectionHome";
 
 import { Link } from "react-router-dom";
-function Home() {
+function Home({ hovered }) {
   const [products, setProducts] = useState(null);
-  const [hovered, setHovered] = useState(false);
 
   const getProducts = async () => {
     axios({
@@ -26,8 +24,6 @@ function Home() {
   return (
     products && (
       <>
-        <Navbar setHovered={setHovered} />
-
         <Link to="/about-us">
           <button
             className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
