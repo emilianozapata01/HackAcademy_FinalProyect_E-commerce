@@ -7,7 +7,7 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 function Glide({ products }) {
   return (
     <div className=" ">
-      <h1 className="text-center mt-5">Bestseller</h1>
+      <h1 className="text-center mt-5 woolwich">Bestseller</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
