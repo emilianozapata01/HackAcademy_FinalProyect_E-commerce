@@ -6,23 +6,30 @@ import Footer from "../components/Footer";
 import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
 import CategorySectionHome from "../components/CategorySectionHome";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
 function Home({ hovered }) {
-  const [products, setProducts] = useState(null);
-
-  const getProducts = async () => {
-    axios({
-      method: "get",
-      url: `${import.meta.env.VITE_URL_BASE_API}/products`,
-    }).then((r) => setProducts(r.data));
-  };
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.products);
 
   useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios({
+          method: "get",
+          url: `${import.meta.env.VITE_URL_BASE_API}/products`,
+        });
+        dispatch(setProducts(response.data));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
     getProducts();
   }, []);
+
   return (
-    products && (
+    product && (
       <>
         <Link to="/about-us">
           <button
@@ -64,7 +71,7 @@ function Home({ hovered }) {
           </div>
           <div className="container">
             <div>
-              <Glide products={products} />
+              <Glide products={product} />
             </div>
             <CategorySectionHome />
           </div>
