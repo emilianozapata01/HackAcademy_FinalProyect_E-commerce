@@ -122,3 +122,49 @@
 .ourProductTitle {
   font-family: fantasy;
 }
+
+.aboutProject {
+  background-color: rgb(8, 115, 8);
+  color: white;
+  -webkit-text-stroke: 1px rgb(90, 89, 89);
+  border-bottom-right-radius: 22px;
+  transition: transform 0.5s;
+  position: fixed;
+  border: none;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: "woolwich-regular";
+  letter-spacing: 1px;
+  z-index: 5;
+}
+
+.aboutProject:hover {
+  transform: scale(1.05);
+  background-color: rgb(4, 185, 7);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 991px) {
+  .aboutProjectBig {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .aboutProjectSmall {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .SlideImageHome {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .SlideImageHomeResponsive {
+    display: none;
+  }
+}

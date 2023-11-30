@@ -5,6 +5,7 @@ import NavbarStyle from "../styles/components/NavBar.module.css";
 import ProfileIcon from "./icons/ProfileIcon";
 import CartIcon from "./icons/CartIcon";
 import { useNavigate } from "react-router";
+import CartDrawer from "./CartDrawer";
 
 function NavBar({ setHovered }) {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ function NavBar({ setHovered }) {
                 className={NavbarStyle.correctColorNavbar}
                 onClick={() => navigate("/cart")}
               >
-                <CartIcon />
+                <CartDrawer />
               </Nav.Link>
             </div>
           </Nav>
