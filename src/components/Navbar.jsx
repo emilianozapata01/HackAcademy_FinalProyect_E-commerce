@@ -23,7 +23,7 @@ function NavBar({ setHovered }) {
       className={`p-0 ${NavbarStyle.bgNavbar}`}
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -66,7 +66,7 @@ function NavBar({ setHovered }) {
                 <ProfileIcon />
               </Nav.Link>
               <Nav.Link className={NavbarStyle.correctColorNavbar} href="">
-                <CartDrawer/>
+                <CartDrawer />
               </Nav.Link>
             </div>
           </Nav>

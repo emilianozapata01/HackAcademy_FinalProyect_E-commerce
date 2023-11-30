@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
 import CategorySectionHome from "../components/CategorySectionHome";
+
 import { Link } from "react-router-dom";
 function Home() {
   const [products, setProducts] = useState(null);
