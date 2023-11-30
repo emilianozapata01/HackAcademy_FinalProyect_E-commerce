@@ -5,7 +5,7 @@ import NotFoundStyle from "../styles/views/NotFound.module.css";
 function NotFound() {
   return (
     <>
-      <video autoPlay loop muted id="not-found-video">
+      <video autoPlay loop muted className={NotFoundStyle.notFoundVideo}>
         <source src={NotFoundVideo} type="video/mp4" />
       </video>
       <div className="d-flex flex-column justify-content-center mt-5">
