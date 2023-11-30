@@ -1,10 +1,8 @@
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AboutUsStyle from "../styles/views/AboutUs.module.css";
-function AboutUs() {
+function AboutUs({ hovered }) {
   return (
-    <>
-      <Navbar />
+    <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="d-flex  ">
         <div className=" mb-5 d-flex flex-column">
           <div>
@@ -92,7 +90,7 @@ function AboutUs() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,15 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import SlideImagesHome from "../components/SlideImagesHome";
+import SlideImagesHomeResponsive from "../components/SlideImageHomeResponsive";
 import Footer from "../components/Footer";
 import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
 import CategorySectionHome from "../components/CategorySectionHome";
-
-function Home() {
+import { Link } from "react-router-dom";
+function Home({ hovered }) {
   const [products, setProducts] = useState(null);
-  const [hovered, setHovered] = useState(false);
 
   const getProducts = async () => {
     axios({
@@ -24,21 +23,26 @@ function Home() {
   return (
     products && (
       <>
-        <Navbar setHovered={setHovered} />
-
-        <button
-          className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
-        >
-          About this Project
-        </button>
+        <Link to="/about-us">
+          <button
+            className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
+          >
+            About this Project
+          </button>
+        </Link>
         <button
           className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
         >
-          <i class="bi bi-person-raised-hand"></i>
+          <i className="bi bi-person-raised-hand"></i>
         </button>
 
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
-          <SlideImagesHome hovered={hovered} />
+          <div className={`${HomeStyle.SlideImageHome}`}>
+            <SlideImagesHome hovered={hovered} />
+          </div>
+          <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
+            <SlideImagesHomeResponsive hovered={hovered} />
+          </div>
           <div className="d-flex flex-nowrap justify-content-center mt-5">
             <div className="ms-5 me-5">
               <img className="imgBan" src="bottledInG_100x.png" alt="" />
