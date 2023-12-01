@@ -5,20 +5,21 @@
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
-
-.subnav {
-  float: left;
-  overflow: hidden;
-}
-
-/* Subnav button */
-.subnav .subnavbtn {
-  cursor: pointer;
+.correct-color-navbar {
   color: white;
 }
 
 .subnavContent {
   display: none;
+}
+/* Subnav button */
+.subnavbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  color: white;
 }
 
 /* Style the subnav links */
@@ -31,14 +32,9 @@
 
 .bg-navbar {
   background-color: rgba(0, 0, 0) !important;
-  z-index: 3;
+  z-index: 6;
   backdrop-filter: blur(10px) !important;
   height: 4rem;
-}
-
-.correct-color-navbar {
-  color: white !important;
-  padding: 5px;
 }
 
 .collapse-navbar {
@@ -47,13 +43,35 @@
 }
 
 .nav-inside-collapse {
+  height: 100%;
   display: flex;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
+.nav-item-hover:hover {
+  color: #04b907;
+}
+
+.nav-item-hover {
+  font-size: 30px;
+}
+
+.nav-icons {
+  color: white !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  padding: 2px !important;
+}
+
+.nav-icons:hover {
+  color: #04b907 !important;
+  background-color: white;
+  border-radius: 50%;
+}
 @media (min-width: 992px) {
   .collapse-navbar {
     max-width: 100%;
@@ -62,16 +80,6 @@
   .nav-inside-collapse {
     width: 100%;
     justify-content: space-between;
-  }
-  .subnav {
-    float: left;
-    overflow: hidden;
-  }
-
-  /* Subnav button */
-  .subnav .subnavbtn {
-    /* padding: 14px 16px; */
-    color: white;
   }
 
   .subnavContent {
@@ -107,7 +115,7 @@
   }
 
   /* When you move the mouse over the subnav container, open the subnav content */
-  .subnav:hover .subnavContent {
+  .subnavbtn:hover .subnavContent {
     opacity: 1;
     height: 4rem;
     visibility: visible;

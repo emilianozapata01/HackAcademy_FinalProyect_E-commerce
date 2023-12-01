@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -8,6 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
+import NavbarStyle from "../styles/components/NavBar.module.css";
 
 function CartDrawer() {
   const [state, setState] = React.useState({
@@ -36,7 +37,7 @@ function CartDrawer() {
           <div className="closeBtn">
             <IconButton
               onClick={toggleDrawer(anchor, false)}
-              className="text-black "
+              className="text-black"
             >
               <CancelIcon sx={{ fontSize: 50 }} />
             </IconButton>
@@ -97,7 +98,7 @@ function CartDrawer() {
           <React.Fragment key={anchor}>
             <Button onClick={toggleDrawer(anchor, true)}>
               {" "}
-              <ShoppingCartIcon className="text-white" />{" "}
+              <ShoppingCartIcon className={NavbarStyle.navIcons} />{" "}
             </Button>
             <Drawer
               anchor={anchor}
