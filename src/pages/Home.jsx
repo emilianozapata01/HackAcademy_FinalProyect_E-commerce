@@ -18,7 +18,7 @@ function Home({ hovered }) {
       try {
         const response = await axios({
           method: "get",
-          url: `${import.meta.env.VITE_URL_BASE_API}/products`,
+          url: `${import.meta.env.VITE_URL_BASE_API}/product`,
         });
         dispatch(setProducts(response.data));
       } catch (error) {

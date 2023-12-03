@@ -3,12 +3,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
+// import { Params } from "react-router-dom";
 function Category() {
   const [categories, setCategories] = useState(null);
   const getCategories = async () => {
     axios({
       method: "get",
-      url: `${import.meta.env.VITE_URL_BASE_API}/categories`,
+      url: `${import.meta.env.VITE_URL_BASE_API}/category`,
     }).then((r) => setCategories(r.data));
   };
 
