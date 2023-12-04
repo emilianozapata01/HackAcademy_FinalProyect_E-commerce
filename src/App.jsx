@@ -24,7 +24,7 @@ function App() {
           }
         />
         <Route
-          path="/product"
+          path="/product/:id"
           element={
             <Product
               setShowNavAndFooter={setShowNavAndFooter}
@@ -33,7 +33,7 @@ function App() {
           }
         />
         <Route
-          path="/category"
+          path="/category/:id"
           element={<Category setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route

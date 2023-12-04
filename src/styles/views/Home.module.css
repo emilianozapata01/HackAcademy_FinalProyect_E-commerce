@@ -175,3 +175,7 @@
     height: 30rem;
   }
 }
+
+.textUppercase {
+  text-transform: uppercase;
+}
