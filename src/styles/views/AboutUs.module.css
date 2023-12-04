@@ -1,9 +1,0 @@
-.customShadow {
-  box-shadow: 10px -5px 30px 25px rgba(0, 0, 0, 0.1);
-}
-
-.imageSize {
-  object-fit: cover;
-  max-height: 600px;
-  width: 100%;
-}

@@ -13,7 +13,6 @@ function Glide({ products }) {
         grabCursor={true}
         navigation={true}
         centeredSlides={true}
-        loop={true}
         slidesPerView={2.2}
         coverflowEffect={{
           rotate: 0,
