@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import ProductStyle from "../styles/views/Product.module.css";
 import { useState } from "react";
 
-function Product({ hovered }) {
+function Product({ hovered, setShowNavAndFooter }) {
+  setShowNavAndFooter(true);
   const [value, setValue] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 

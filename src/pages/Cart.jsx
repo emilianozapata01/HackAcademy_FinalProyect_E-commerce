@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Footer from "../components/Footer";
 
-function Cart({ hovered }) {
+function Cart({ hovered, setShowNavAndFooter }) {
+  setShowNavAndFooter(true);
   const [value, setValue] = useState(1);
   const decreaseValue = () => {
     if (value > 1) {

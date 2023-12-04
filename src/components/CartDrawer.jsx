@@ -59,7 +59,6 @@ function CartDrawer() {
                     <CancelIcon />
                   </IconButton>
                 </div>
-                ';'
               </ListItem>
               <ListItem>
                 <div className="fw-bold w-100 d-flex justify-content-center">

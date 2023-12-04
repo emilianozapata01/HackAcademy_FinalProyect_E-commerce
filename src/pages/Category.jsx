@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
 // import { Params } from "react-router-dom";
-function Category() {
+function Category({ setShowNavAndFooter }) {
+  setShowNavAndFooter(true);
   const [categories, setCategories] = useState(null);
   const getCategories = async () => {
     axios({

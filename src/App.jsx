@@ -8,7 +8,7 @@ import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import NavBar from "./components/Navbar";
-import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -17,19 +17,53 @@ function App() {
     <>
       {showNavAndFooter && <NavBar setHovered={setHovered} />}
       <Routes>
-        <Route path="/" element={<Home hovered={hovered} />} />
-        <Route path="/product" element={<Product hovered={hovered} />} />
-        <Route path="/category" element={<Category />} />
+        <Route
+          path="/"
+          element={
+            <Home setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <Product
+              setShowNavAndFooter={setShowNavAndFooter}
+              hovered={hovered}
+            />
+          }
+        />
+        <Route
+          path="/category"
+          element={<Category setShowNavAndFooter={setShowNavAndFooter} />}
+        />
         <Route
           path="/about-this-proyect"
-          element={<AboutThisProyect hovered={hovered} />}
+          element={
+            <AboutThisProyect
+              setShowNavAndFooter={setShowNavAndFooter}
+              hovered={hovered}
+            />
+          }
         />
-        <Route path="/cart" element={<Cart hovered={hovered} />} />
         <Route
-          path="/login"
-          element={<Login setShowNavAndFooter={setShowNavAndFooter} />}
+          path="/cart"
+          element={
+            <Cart setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
+          }
         />
-        <Route path="*" element={<NotFound hovered={hovered} />} />
+        <Route
+          path="/register"
+          element={<Register setShowNavAndFooter={setShowNavAndFooter} />}
+        />
+        <Route
+          path="*"
+          element={
+            <NotFound
+              setShowNavAndFooter={setShowNavAndFooter}
+              hovered={hovered}
+            />
+          }
+        />
       </Routes>
     </>
   );

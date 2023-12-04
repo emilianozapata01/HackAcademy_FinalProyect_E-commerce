@@ -4,7 +4,8 @@ import { LiaBootstrap } from "react-icons/lia";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiMongoose } from "react-icons/si";
 
-function AboutThisProyect({ hovered }) {
+function AboutThisProyect({ hovered, setShowNavAndFooter }) {
+  setShowNavAndFooter(true);
   return (
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
