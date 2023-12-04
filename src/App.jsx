@@ -16,8 +16,9 @@ function App() {
       <NavBar setHovered={setHovered} />
       <Routes>
         <Route path="/" element={<Home hovered={hovered} />} />
-        <Route path="/product" element={<Product hovered={hovered} />} />
-        <Route path="/category" element={<Category />} />
+        <Route path="/product/:_id" element={<Product hovered={hovered} />} />
+        {/* <Route path="/category" element={<Category />} /> */}
+        <Route path="/category/:_id" element={<Category />} />
         <Route
           path="/about-this-proyect"
           element={<AboutThisProyect hovered={hovered} />}

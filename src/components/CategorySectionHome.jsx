@@ -10,7 +10,7 @@ function CategorySectionHome() {
       <div className="d-flex flex-column">
         <div className="d-flex flex-wrap justify-content-center">
           <Link
-            to="/sparkling-juice"
+            to="category/656e0c9030de2b06626b9ac7"
             className={`${HomeStyle.categoryBoxSize}`}
           >
             <img
@@ -22,7 +22,10 @@ function CategorySectionHome() {
               SPARKLING TONICS
             </button>
           </Link>
-          <Link to="/nut-milks&smoothies" className={`${HomeStyle.categoryBoxSize}`}>
+          <Link
+            to="category/656e0c9030de2b06626b9ac6"
+            className={`${HomeStyle.categoryBoxSize}`}
+          >
             <img
               className={HomeStyle.categoryBoxSizePROTEIN}
               src="proteina.PNG"
@@ -35,7 +38,7 @@ function CategorySectionHome() {
         </div>
         <div className="m-auto d-flex flex-wrap justify-content-center">
           <Link
-            to="/juices"
+            to="category/656e0c9030de2b06626b9ac4"
             className={` ${HomeStyle.categoryBoxSize}`}
           >
             <img
@@ -45,7 +48,10 @@ function CategorySectionHome() {
             />
             <button className={HomeStyle.buttonCategories}>JUICES</button>
           </Link>
-          <Link to="/elixirs" className={`${HomeStyle.categoryBoxSize}`}>
+          <Link
+            to="category/656e0c9030de2b06626b9ac5"
+            className={`${HomeStyle.categoryBoxSize}`}
+          >
             <img
               className={`${HomeStyle.categoryBoxSizeELIXIR}`}
               src="elixir0.png"
