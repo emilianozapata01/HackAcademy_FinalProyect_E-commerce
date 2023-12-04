@@ -8,12 +8,14 @@ import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import NavBar from "./components/Navbar";
+import Login from "./pages/Login";
 
 function App() {
   const [hovered, setHovered] = useState(false);
+  const [showNavAndFooter, setShowNavAndFooter] = useState(true);
   return (
     <>
-      <NavBar setHovered={setHovered} />
+      {showNavAndFooter && <NavBar setHovered={setHovered} />}
       <Routes>
         <Route path="/" element={<Home hovered={hovered} />} />
         <Route path="/product" element={<Product hovered={hovered} />} />
@@ -23,6 +25,10 @@ function App() {
           element={<AboutThisProyect hovered={hovered} />}
         />
         <Route path="/cart" element={<Cart hovered={hovered} />} />
+        <Route
+          path="/login"
+          element={<Login setShowNavAndFooter={setShowNavAndFooter} />}
+        />
         <Route path="*" element={<NotFound hovered={hovered} />} />
       </Routes>
     </>

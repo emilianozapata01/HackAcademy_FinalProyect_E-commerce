@@ -3,10 +3,11 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import { EffectCoverflow, Navigation } from "swiper/modules";
+import AddToCart from "./AddToCart";
 
 function Glide({ products }) {
   return (
-    <div className=" ">
+    <>
       <h1 className="text-center mt-5 woolwich">Bestseller</h1>
       <Swiper
         effect={"coverflow"}
@@ -28,20 +29,18 @@ function Glide({ products }) {
           .filter((product) => product.bestSeller === true)
           .map((product) => (
             <SwiperSlide key={product._id}>
-              <div key={product._id}>
+              <div>
                 <img className="custom-image" src={product.image} alt="" />
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>
-                <div key={product._id} className="h mb-5">
-                  <button className="custom-btn-swiper custom-btn-swiper-product">
-                    ADD TO CART
-                  </button>
+                <div className="h mb-5">
+                  <AddToCart product={product} />
                 </div>
               </div>
             </SwiperSlide>
           ))}
       </Swiper>
-    </div>
+    </>
   );
 }
 
