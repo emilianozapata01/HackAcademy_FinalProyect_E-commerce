@@ -23,13 +23,13 @@ function CategorySectionHome() {
   return (
     <>
       {categories && (
-        <div className="d-flex flex-column mt-5">
+        <div className="d-flex flex-column mt-5 align-items-center">
           <h1
             className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-4`}
           >
             OUR PRODUCTS
           </h1>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column w-50 ">
             <div className="d-flex flex-wrap justify-content-center">
               {categories.map((category) => (
                 <Link

@@ -191,8 +191,8 @@ function Product({ hovered }) {
                   *Certified Organic Ingredients
                 </p>
               </div>
-              <div className="row">
-                <h4 className="text-center">YOU MAY ALSO LIKE</h4>
+              <div className="row mt-5">
+                <h2 className="text-center">YOU MAY ALSO LIKE</h2>
 
                 <div className="col-4 text-center gap-4 d-grid">
                   <div
@@ -215,7 +215,7 @@ function Product({ hovered }) {
                       alt="Hover"
                     />
                   </div>
-                  <h5>DETOX TONIC</h5>
+                  <h3>DETOX TONIC</h3>
                   <div>
                     <p>$3.50</p>
                     <button
@@ -246,7 +246,7 @@ function Product({ hovered }) {
                       alt="Hover"
                     />
                   </div>
-                  <h5>PINEAPPLE MINT TONIC</h5>
+                  <h3>PINEAPPLE MINT TONIC</h3>
                   <div>
                     <p>$3.50</p>
                     <button
@@ -277,7 +277,7 @@ function Product({ hovered }) {
                       alt="Hover"
                     />
                   </div>
-                  <h5>ELDERBERRY TONIC</h5>
+                  <h3>ELDERBERRY TONIC</h3>
                   <div>
                     <p>$3.50</p>
                     <button

@@ -51,7 +51,7 @@ function Category() {
                           />{" "}
                         </div>
                         <p className="d-flex justify-content-center">
-                          {product.name}
+                          <strong>{product.name}</strong>
                         </p>
                       </li>
                     </Link>
