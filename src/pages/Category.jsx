@@ -14,7 +14,7 @@ function Category({ setShowNavAndFooter }) {
         `${import.meta.env.VITE_URL_BASE_API}/category`
       );
       const filteredCategory = response.data.filter(
-        (category) => category._id === params._id
+        (category) => category._id === params.id
       );
 
       setCategories(filteredCategory);
