@@ -9,8 +9,10 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import NavbarStyle from "../styles/components/NavBar.module.css";
+import { useSelector } from "react-redux";
 
 function CartDrawer() {
+  const products = useSelector((state) => state.cart);
   const [state, setState] = React.useState({
     right: false,
   });
@@ -44,32 +46,33 @@ function CartDrawer() {
           </div>
         </div>
         <List>
-          <List>
-            <ListItem>
-              <div className="d-flex align-items-start ">
-                <img className="w-25" src="juices.PNG" alt="" />
-                <div className="d-flex flex-column ms-3">
-                  <p className="fw-bold m-0">Juice</p>
-                  <small className="fs-6">
-                    Lorem ipsum dolor, sit amet consectetur{" "}
-                  </small>
+          {products.map((product) => (
+            <List key={product._id}>
+              <ListItem>
+                <div className="d-flex align-items-start ">
+                  <img className="w-25" src={product.image} alt="" />
+                  <div className="d-flex flex-column ms-3">
+                    <p className="fw-bold m-0">{product.name}</p>
+                    <small className="fs-6"></small>
+                  </div>
+                  <IconButton className="text-danger">
+                    <CancelIcon />
+                  </IconButton>
                 </div>
-                <IconButton className="text-danger">
-                  <CancelIcon />
-                </IconButton>
-              </div>
-            </ListItem>
-            <ListItem>
-              <div className="fw-bold w-100 d-flex justify-content-center">
-                <p className="woolwich">$12.00</p>
-                <p className="ms-5">QTY:</p>
-                <input
-                  type="number"
-                  className=" form-control w-25 h-25"
-                ></input>
-              </div>
-            </ListItem>
-          </List>
+                ';'
+              </ListItem>
+              <ListItem>
+                <div className="fw-bold w-100 d-flex justify-content-center">
+                  <p className="woolwich">${product.price}</p>
+                  <p className="ms-5">QTY:</p>
+                  <input
+                    type="number"
+                    className=" form-control w-25 h-25"
+                  ></input>
+                </div>
+              </ListItem>
+            </List>
+          ))}
         </List>
         <Divider />
         <div className=" cartSub ">

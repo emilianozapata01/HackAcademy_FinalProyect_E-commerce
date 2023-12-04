@@ -9,7 +9,7 @@ function AboutThisProyect({ hovered }) {
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
         <div className="d-flex flex-column align-items-center">
-          <h1>About this proyect & the team behanid</h1>
+          <h1>About this project & the team behind</h1>
           <p>
             Durante nuestro Coding Bootcamp en Hack Academy entre septiembre y
             diciembre de 2023, creamos Juice Shop como proyecto final. En un
@@ -19,6 +19,8 @@ function AboutThisProyect({ hovered }) {
             como base de datos. Nos inspiramos en el sitio oficial de Juice Shop
             para dar forma a nuestra plataforma, aplicando nuestra creatividad y
             conocimientos para adaptarla a nuestras necesidades.
+            {/* 
+            During our Coding Bootcamp at Hack Academy between September and December 2023, we created Juice Shop as our final project. In a team of 4 members, we set out to develop an e-commerce platform in just 3 weeks. We utilized key technologies such as React.js for the Front-End, Node.js and Express.js for the Back-End, along with MongoDB as the database. Drawing inspiration from the official Juice Shop website, we shaped our platform, applying our creativity and knowledge to tailor it to our specific needs. */}
           </p>
         </div>
         <div className="d-flex justify-content-center ">

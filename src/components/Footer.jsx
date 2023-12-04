@@ -20,17 +20,14 @@ const Footer = () => {
 
         <Col md={2} className="pt-2">
           <Nav className="flex-column">
-            <Nav.Link href="/about-us">
-              <i></i>OUR STORY
-            </Nav.Link>
             <Nav.Link href="/all-products">
-              <i></i>OUR JUICE
-            </Nav.Link>
-            <Nav.Link href="/visit">
-              <i></i>VISIT
+              <i></i>STORE
             </Nav.Link>
             <Nav.Link href="/sustainability">
               <i></i>SUSTAINABILITY
+            </Nav.Link>
+            <Nav.Link href="/visit">
+              <i></i>VISIT
             </Nav.Link>
           </Nav>
         </Col>
@@ -42,12 +39,6 @@ const Footer = () => {
             </Nav.Link>
             <Nav.Link href="/events-and-catering">
               <i></i>EVENTS & CATERING
-            </Nav.Link>
-            <Nav.Link href="/wholesale">
-              <i></i>WHOLESALE
-            </Nav.Link>
-            <Nav.Link href="/careers">
-              <i></i>CAREERS
             </Nav.Link>
           </Nav>
         </Col>
@@ -74,17 +65,17 @@ const Footer = () => {
         <Col md={3}>
           <p> © 2023 JUICE SHOP | ALL RIGHTS RESERVED</p>
         </Col>
-        <Col md={1} className="">
+        <Col md={2} className="">
           <Nav.Link href="/">
             <i></i>TERMS OF USE
           </Nav.Link>
         </Col>
-        <Col md={1}>
+        <Col md={2}>
           <Nav.Link href="/">
             <i></i>PRIVACY POLICY
           </Nav.Link>
         </Col>
-        <Col md={1}>
+        <Col md={2}>
           <Nav.Link href="/">
             <i></i>RETURNS POLICY
           </Nav.Link>
