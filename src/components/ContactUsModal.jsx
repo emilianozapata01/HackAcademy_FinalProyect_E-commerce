@@ -2,6 +2,8 @@
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import ContactStyle from "../styles/views/Contact.module.css";
+
 
 
 const ContactUsModal = ({ showModal, handleClose}) => {
@@ -27,17 +29,16 @@ const ContactUsModal = ({ showModal, handleClose}) => {
     }
   }, [buyer]);
 
-
   return (
     <Modal show={showModal} onHide={handleClose} centered>
-      <Modal.Header closeButton>
-        <Modal.Title className="text-center mb-4">CONTACT US!</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+        
+        <div className={ContactStyle.bgc}>
+        <Modal.Title className={`mt-3 ${ContactStyle.title}`}>CONTACT US!</Modal.Title>
+      <Modal.Body className={ContactStyle.textBody}>
         <Form>
           <Form.Group controlId="formMessage" className="mb-4">
             <Form.Label className="h5">Message</Form.Label>
-            <Form.Control as="textarea" rows={6} placeholder="LEAVE YOUR MESSAGE HERE" required/>
+            <Form.Control as="textarea" rows={6} placeholder="Leave your message here" required/>
           </Form.Group>
 
           <Row className="mb-3">
@@ -93,13 +94,14 @@ const ContactUsModal = ({ showModal, handleClose}) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose} className={ContactStyle.btn}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleClose}>
+        <Button variant="primary" onClick={handleClose} className={ContactStyle.btn}> 
           Send
         </Button>
       </Modal.Footer>
+      </div>
     </Modal>
   );
 };
