@@ -40,11 +40,11 @@ function Category({ setShowNavAndFooter }) {
                 <ul className="d-flex flex-wrap justify-content-center">
                   {category.products.map((product) => (
                     <Link
-                      key={product._id}
                       className={CategoryStyle.customLink}
                       to={`/product/${product._id}`}
+                      key={product._id}
                     >
-                      <li key={product.id} className="d-flex flex-column">
+                      <li className="d-flex flex-column">
                         <div className={`${CategoryStyle.categoryBoxSize}`}>
                           <img
                             className={CategoryStyle.categoryBoxSizeCAN}

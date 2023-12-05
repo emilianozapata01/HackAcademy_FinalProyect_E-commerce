@@ -77,14 +77,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     <span className={ProductStyle.customCarouselIcon}>
                       <i className="bi bi-caret-right"></i>
                     </span>
-                  } // Símbolo para la flecha siguiente
+                  }
                   prevIcon={
                     <span className={ProductStyle.customCarouselIcon}>
                       <i className="bi bi-caret-left"></i>
                     </span>
-                  } // Símbolo para la flecha anterior
+                  }
                 >
-                  <Carousel.Item interval={20000}>
+                  <Carousel.Item interval={500}>
                     <img
                       className="img-fluid"
                       src={product.image}
