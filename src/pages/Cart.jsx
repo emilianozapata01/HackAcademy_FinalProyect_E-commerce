@@ -64,12 +64,12 @@ function Cart({ hovered, setShowNavAndFooter }) {
 
                 <td>
                   <div>
-                    <p classNameName="d-inline ">13.00</p>
+                    <p className="d-inline ">13.00</p>
                     <Link
-                      classNameName="text-decoration-none text-danger ms-5"
+                      className="text-decoration-none text-danger ms-5"
                       to={""}
                     >
-                      <i classNameName="bi bi-x-circle-fill"></i>
+                      <i className="bi bi-x-circle-fill"></i>
                     </Link>
                   </div>
                 </td>
