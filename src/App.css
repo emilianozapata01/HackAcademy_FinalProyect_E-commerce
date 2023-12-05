@@ -29,14 +29,13 @@
 .heightCart{
   height: 9.336rem;
 }
-.cartImg{
+.cartImg {
   width: 7rem;
 }
 
-.space{
+.space {
   margin-right: 14rem;
 }
-
 
 /* ACA COMIENZA ABOUT US */
 
@@ -109,7 +108,8 @@
 }
 
 .imgBan {
-  width: 10rem;
+  width: 8rem;
+  transition: all 0.3s ease;
 }
 
 .fix-navbar {
@@ -120,6 +120,9 @@
 @media (min-width: 992px) {
   .fix-nav {
     width: 100% !important;
+  }
+  .imgBan {
+    width: 10rem;
   }
 }
 
@@ -169,7 +172,7 @@
   width: 53%;
 }
 
-.listCart{
+.listCart {
   overflow: scroll;
   overflow-x: hidden;
   height: 60vh;
@@ -177,4 +180,12 @@
 
 .woolwich {
   font-family: "woolwich-regular" !important;
+}
+
+.buyerButton {
+  transition: transform 0.2s ease-out;
+}
+
+.buyerButton:active {
+  transform: scale(0.9);
 }

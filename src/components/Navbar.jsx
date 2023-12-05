@@ -68,7 +68,7 @@ function NavBar({ setHovered }) {
             <div className="d-flex flex-row fix-navbar h-100 align-items-center">
               <Nav.Link
                 className={`d-flex justify-content-center`}
-                href="#home"
+                href="/all-products"
               >
                 <span
                   className={`${NavbarStyle.correctColorNavbar} ${NavbarStyle.navItemHover}`}
