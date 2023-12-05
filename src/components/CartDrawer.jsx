@@ -14,7 +14,7 @@ import { removeOfCart } from "../redux/cartSlice";
 
 function CartDrawer() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
   const [subTotal, setSubTotal] = useState(0);
   const [state, setState] = React.useState({
     right: false,
@@ -50,8 +50,7 @@ function CartDrawer() {
         </div>
         <div className="listCart">
           <List >
-
-            {products.map((product) => (
+            {cart.items.map((product) => (
               <ListItem key={product.item._id}>
                 <div className="d-flex align-items-start ">
                   <img className="w-25" src={product.item.image} alt="" />
@@ -80,7 +79,7 @@ function CartDrawer() {
           <div className=" cartSub ">
             <div className="subTotal">
               <p className="text-white">Subtotal</p>
-              <p className="text-white">$12.00</p>
+              <p className="text-white">${cart.subtotal}</p>
             </div>
             <p className="text-white fs-6 ps-3 se-3">
               TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO APPLY
