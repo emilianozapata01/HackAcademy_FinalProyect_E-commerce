@@ -10,7 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
 
-function Home({ hovered }) {
+function Home({ hovered, setShowNavAndFooter }) {
+  setShowNavAndFooter(true);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
 

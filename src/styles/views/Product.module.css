@@ -3,6 +3,7 @@
   background-color: black;
   border: 1px solid white;
   transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
 .customBtnPrimeProduct {
@@ -31,6 +32,7 @@
   height: 61px;
   width: 60px;
   border: none;
+  margin-bottom: 20px;
 }
 
 .buttonSize:hover {

@@ -1,0 +1,76 @@
+.categoryBoxSize {
+  width: 25rem;
+  height: 25rem;
+  overflow: hidden;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.categoryBoxSizeJUICE {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.categoryBoxSizePROTEIN {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.categoryBoxSizeCAN {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.categoryBoxSizeELIXIR {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+
+  transition: transform 0.3s;
+}
+
+.containerSize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.widthRow {
+  width: 800px;
+}
+
+.categoryBoxSizeJUICE:hover {
+  transform: scale(1.1);
+}
+.categoryBoxSizeELIXIR:hover {
+  transform: scale(1.1);
+}
+.categoryBoxSizeCAN:hover {
+  transform: scale(1.1);
+}
+.categoryBoxSizePROTEIN:hover {
+  transform: scale(1.1);
+}
+
+.titleCategory {
+  font-size: 5rem;
+  text-align: center;
+  padding-bottom: 30px;
+  background-color: black;
+  color: azure;
+}
+
+.customLink {
+  text-decoration: none;
+  color: #333;
+}
