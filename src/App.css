@@ -4,6 +4,9 @@
   border: 1px solid black;
   transition: all 0.3s ease;
 }
+.textUppercase {
+  text-transform: uppercase;
+}
 
 .custom-btn-swiper-product {
   width: 300px;
