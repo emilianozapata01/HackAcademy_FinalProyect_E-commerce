@@ -53,22 +53,14 @@ function Home({ hovered, setShowNavAndFooter }) {
           <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
             <SlideImagesHomeResponsive hovered={hovered} />
           </div>
-          <div className="d-flex flex-nowrap justify-content-center mt-5">
-            <div className="ms-5 me-5">
-              <img className="imgBan" src="bottledInG_100x.png" alt="" />
+          <div className="d-flex flex-wrap justify-content-center mt-4 gap-5">
+            <div className="d-flex flex-nowrap gap-5">
+              <img className="imgBan" src="downBanner1.png" alt="" />
+              <img className="imgBan" src="downBanner2.png" alt="" />
             </div>
-            <div className="ms-5 me-5">
-              <img className="imgBan" src="madeInSF_100x.png" alt="" />
-            </div>
-            <div className="ms-5 me-5">
-              <img
-                className="imgBan"
-                src="pressedFreshDaily_92ffb9fd-2eac-4ef5-a677-f1e231c06ac3_100x.png"
-                alt=""
-              />
-            </div>
-            <div className="ms-5 me-5">
-              <img className="imgBan" src="rawOrganic_100x.png" alt="" />
+            <div className="d-flex flex-nowrap gap-5">
+              <img className="imgBan" src="downBanner4.avif" alt="" />
+              <img className="imgBan" src="downBanner3.png" alt="" />
             </div>
           </div>
           <div className="container">
