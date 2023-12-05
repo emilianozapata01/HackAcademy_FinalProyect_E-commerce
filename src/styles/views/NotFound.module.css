@@ -33,7 +33,7 @@
 }
 
 .bg-obale {
-  background-image: url("NotFoundImgObalShadow.png");
+  background-image: url("/NotFoundImgObalShadow.png");
   background-repeat: no-repeat;
   background-size: 22rem 20%;
   background-position: bottom;

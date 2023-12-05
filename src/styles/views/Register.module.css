@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: #3a913f; */
   background-image: linear-gradient(to bottom right, #3a913f, #fbaa03);
   padding: 2rem;
   border-radius: 1rem;
@@ -32,7 +31,6 @@
 }
 
 .register-btn:hover {
-  /* background-color: #fbaa03; */
   background-image: linear-gradient(#3a913f, #9b6700);
 }
 
@@ -45,6 +43,18 @@
   color: #3a913f;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.back-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 2rem;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.back-arrow:hover svg {
+  fill: #3a913f;
 }
 
 @media (max-width: 576px) {

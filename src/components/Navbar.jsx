@@ -5,6 +5,9 @@ import NavbarStyle from "../styles/components/NavBar.module.css";
 import ProfileIcon from "./icons/ProfileIcon";
 import { useNavigate } from "react-router";
 import CartDrawer from "./CartDrawer";
+import Dropdown from "react-bootstrap/Dropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/buyerSlice";
 
 import { useState } from "react";
 import { useEffect } from "react";
@@ -12,7 +15,15 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 function NavBar({ setHovered }) {
+  const buyer = useSelector((state) => state.buyer);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
+
   const onMouseEnter = () => {
     setHovered(true);
   };
@@ -93,12 +104,29 @@ function NavBar({ setHovered }) {
               </Nav.Item>
             </div>
             <div className="d-flex justify-content-lg-end align-items-center fix-navbar">
-              <Nav.Link
-                className={`${NavbarStyle.correctColorNavbar} d-flex justify-content-center align-items-center`}
-                onClick={() => navigate("/login")}
-              >
-                <ProfileIcon />
-              </Nav.Link>
+              <Dropdown>
+                <Dropdown.Toggle
+                  as={Nav.Link}
+                  className={`${NavbarStyle.correctColorNavbar} d-flex justify-content-center align-items-center`}
+                >
+                  <ProfileIcon />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {!buyer && (
+                    <Dropdown.Item onClick={() => navigate("/login")}>
+                      Login
+                    </Dropdown.Item>
+                  )}
+                  {!buyer && (
+                    <Dropdown.Item onClick={() => navigate("/register")}>
+                      Register
+                    </Dropdown.Item>
+                  )}
+                  {buyer && (
+                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>
               <Nav.Link
                 className={`${NavbarStyle.correctColorNavbar}`}
                 onClick={() => navigate("/cart")}

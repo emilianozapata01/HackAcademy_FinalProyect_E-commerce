@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import NavBar from "./components/Navbar";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -54,6 +55,10 @@ function App() {
         <Route
           path="/register"
           element={<Register setShowNavAndFooter={setShowNavAndFooter} />}
+        />
+        <Route
+          path="/login"
+          element={<Login setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="*"

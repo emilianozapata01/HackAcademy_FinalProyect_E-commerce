@@ -11,11 +11,11 @@ import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
 
 function Home({ hovered, setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     const getProducts = async () => {
       try {
         const response = await axios({

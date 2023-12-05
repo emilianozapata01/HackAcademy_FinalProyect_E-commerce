@@ -24,6 +24,7 @@ function Category({ setShowNavAndFooter }) {
   };
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     getCategory();
   }, [params.id]);
 

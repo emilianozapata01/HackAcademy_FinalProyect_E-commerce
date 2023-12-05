@@ -173,6 +173,12 @@
   width: 53%;
 }
 
+.listCart{
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 60vh;
+}
+
 .woolwich {
   font-family: "woolwich-regular" !important;
 }

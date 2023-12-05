@@ -26,6 +26,7 @@ function Product({ hovered, setShowNavAndFooter }) {
   };
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     getProduct();
   }, [params.id]);
 
@@ -90,7 +91,6 @@ function Product({ hovered, setShowNavAndFooter }) {
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
-                    <Carousel.Caption></Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item interval={500}>
                     <img
