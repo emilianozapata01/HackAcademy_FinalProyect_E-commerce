@@ -126,7 +126,10 @@ function Register({ setShowNavAndFooter }) {
               <span>Sign Up</span>
             </button>
             <small className="text-light">Alredy have an account?</small>
-            <button className={RegisterStyle.registerBtn}>
+            <button
+              onClick={() => navigate("/login")}
+              className={RegisterStyle.registerBtn}
+            >
               <span>Log in</span>
             </button>
           </form>
