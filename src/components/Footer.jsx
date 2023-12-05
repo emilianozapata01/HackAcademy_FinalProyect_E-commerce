@@ -1,7 +1,15 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { Image, Nav } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+import FooterStyle from "../styles/components/Footer.module.css";
+import ContactUsModal from "./ContactUsModal";
 
 const Footer = () => {
+  const [showModal, setShowModal] = React.useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <Container
       fluid
@@ -9,7 +17,6 @@ const Footer = () => {
       id="Footer_text-footer__FtDZ2"
     >
       <Row className="text-bg-light p-3">
-        <Col md={1} className="d-none d-md-block"></Col>
         <Col md={4}>
           <Image
             src="https://juiceshop.com/cdn/shop/files/FooterCartLogo3_600x_920720f9-3e86-4aa4-9469-6d5d4c3402db_400x.png?v=1674091452"
@@ -18,69 +25,44 @@ const Footer = () => {
           />
         </Col>
 
-        <Col md={2} className="pt-2">
+        <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="/all-products">
-              <i></i>STORE
+              <span className={`${FooterStyle.navItem}`}>ALL PRODUCTS</span>
             </Nav.Link>
             <Nav.Link href="/sustainability">
-              <i></i>SUSTAINABILITY
+              <span className={`${FooterStyle.navItem}`}>SUSTAINABILITY</span>
             </Nav.Link>
-            <Nav.Link href="/visit">
-              <i></i>VISIT
-            </Nav.Link>
-          </Nav>
-        </Col>
-
-        <Col md={2} className="pt-2">
-          <Nav className="flex-column">
             <Nav.Link href="/frequently-asked-questions">
-              <i></i>FAQ
-            </Nav.Link>
-            <Nav.Link href="/events-and-catering">
-              <i></i>EVENTS & CATERING
+              <span className={`${FooterStyle.navItem}`}>FAQ</span>
             </Nav.Link>
           </Nav>
         </Col>
 
-        <Col md={2} className="pt-2">
+        <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="https://www.facebook.com/juiceshopsf/">
-              <i className="bi bi-facebook Footer_bi__i+YNT"></i>
+              <span className={`bi bi-facebook ${FooterStyle.facebook}`}></span>
             </Nav.Link>
             <Nav.Link href="https://www.instagram.com/juiceshopsf/">
-              <i className="bi bi-instagram Footer_bi__i+YNT"></i>
+              <span
+                className={`bi bi-instagram ${FooterStyle.instagram}`}
+              ></span>
             </Nav.Link>
-            <Nav.Link href="/contact-us">
-              <i></i>CONTACT US
+            <Nav.Link href="#" onClick={handleShow}>
+              <span
+                className={`bi bi-envelope-at ${FooterStyle.message}`}
+              ></span>
             </Nav.Link>
           </Nav>
         </Col>
+        <Col md={2}>
+          <Image src="js.png" alt="logo-img" className="w-50 ms-2 mt-4" />
+          <p>© 2023 JUICE SHOP</p>
+        </Col>
       </Row>
 
-      <Row
-        className="text-center justify-content-center border-top pt-2 mt-2"
-        style={{ fontSize: "1.2rem" }}
-      >
-        <Col md={3}>
-          <p> © 2023 JUICE SHOP | ALL RIGHTS RESERVED</p>
-        </Col>
-        <Col md={2} className="">
-          <Nav.Link href="/">
-            <i></i>TERMS OF USE
-          </Nav.Link>
-        </Col>
-        <Col md={2}>
-          <Nav.Link href="/">
-            <i></i>PRIVACY POLICY
-          </Nav.Link>
-        </Col>
-        <Col md={2}>
-          <Nav.Link href="/">
-            <i></i>RETURNS POLICY
-          </Nav.Link>
-        </Col>
-      </Row>
+      <ContactUsModal showModal={showModal} handleClose={handleClose} />
     </Container>
   );
 };

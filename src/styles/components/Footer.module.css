@@ -1,0 +1,41 @@
+.navItem {
+  color: black;
+}
+
+.facebook {
+    color: black;
+}
+
+.facebook:hover {
+    color: #168ef4;
+}
+
+.navItem:hover {
+  color: #04b907;
+}
+
+.instagram {
+  color: black;
+}
+
+.instagram:hover {
+    background: radial-gradient(
+        circle at 30% 110%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        -webkit-background-clip: text;
+        background-clip: var();
+        color: transparent;
+}
+
+.message {
+    color: black;
+}
+
+.message:hover {
+    color: rgb(246, 71, 8);
+}
