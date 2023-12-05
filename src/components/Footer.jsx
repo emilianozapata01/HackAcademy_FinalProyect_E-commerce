@@ -1,7 +1,15 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { Image, Nav } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+import FooterStyle from "../styles/components/Footer.module.css";
+import ContactUsModal from "./ContactUsModal";
 
 const Footer = () => {
+  const [showModal, setShowModal] = React.useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <Container
       fluid
@@ -20,13 +28,13 @@ const Footer = () => {
         <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="/all-products">
-              <i></i>STORE
+              <span className={`${FooterStyle.navItem}`}>ALL PRODUCTS</span>
             </Nav.Link>
             <Nav.Link href="/sustainability">
-              <i></i>SUSTAINABILITY
+              <span className={`${FooterStyle.navItem}`}>SUSTAINABILITY</span>
             </Nav.Link>
             <Nav.Link href="/frequently-asked-questions">
-              <i></i>FAQ
+              <span className={`${FooterStyle.navItem}`}>FAQ</span>
             </Nav.Link>
           </Nav>
         </Col>
@@ -34,13 +42,17 @@ const Footer = () => {
         <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="https://www.facebook.com/juiceshopsf/">
-              <i className="bi bi-facebook Footer_bi__i+YNT"></i>
+              <span className={`bi bi-facebook ${FooterStyle.facebook}`}></span>
             </Nav.Link>
             <Nav.Link href="https://www.instagram.com/juiceshopsf/">
-              <i className="bi bi-instagram Footer_bi__i+YNT"></i>
+              <span
+                className={`bi bi-instagram ${FooterStyle.instagram}`}
+              ></span>
             </Nav.Link>
-            <Nav.Link href="/contact-us">
-              <i></i>CONTACT US
+            <Nav.Link href="#" onClick={handleShow}>
+              <span
+                className={`bi bi-envelope-at ${FooterStyle.message}`}
+              ></span>
             </Nav.Link>
           </Nav>
         </Col>
@@ -49,6 +61,8 @@ const Footer = () => {
           <p>© 2023 JUICE SHOP</p>
         </Col>
       </Row>
+
+      <ContactUsModal showModal={showModal} handleClose={handleClose} />
     </Container>
   );
 };
