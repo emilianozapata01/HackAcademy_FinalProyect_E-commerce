@@ -5,15 +5,12 @@ function AddToCart({ product, qty, classBtn }) {
   const dispatch = useDispatch();
 
   const handleCart = () => {
-    dispatch(addToCart({item: product, qty: qty}));
+    dispatch(addToCart({ item: product, qty: qty }));
   };
 
   return (
     <>
-      <button
-        onClick={handleCart}
-        className={classBtn}
-      >
+      <button onClick={handleCart} className={`${classBtn} buyerButton`}>
         ADD TO CART
       </button>
     </>
