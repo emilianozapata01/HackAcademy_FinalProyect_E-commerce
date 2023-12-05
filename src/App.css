@@ -4,6 +4,9 @@
   border: 1px solid black;
   transition: all 0.3s ease;
 }
+.textUppercase {
+  text-transform: uppercase;
+}
 
 .custom-btn-swiper-product {
   width: 300px;
@@ -19,25 +22,21 @@
   border: green;
 }
 
-.input-size {
+.inputCart {
   width: 3rem;
-  height: 40px;
-  border-color: #f0f0f0;
-  outline: none;
-}
-.button-size {
-  height: 40px;
-  width: 40px;
-  border: none;
 }
 
-.button-size:hover {
-  background-color: darkgrey;
+.w{
+  
+}
+.cartImg{
+  width: 7rem;
 }
 
-.input-cart {
-  width: 8rem;
+.space{
+  margin-right: 14rem;
 }
+
 
 /* ACA COMIENZA ABOUT US */
 

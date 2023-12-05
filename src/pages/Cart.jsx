@@ -21,89 +21,70 @@ function Cart({ hovered, setShowNavAndFooter }) {
   return (
     <>
       <div className={hovered ? "bg-dark-hover-nav " : ""}>
-        <div className="container">
-          <h1 className="fw-bold">SHOPPING CART</h1>
+        <div className="container ">
+          <h1 className="woolwich text-center mt-5 mb-5">My basket</h1>
+
           <Table>
             <thead>
               <tr>
-                <th className="fw-bold" colSpan={2}>
-                  PRODUCTS
-                </th>
-                <th className="fw-bold">PRICE</th>
-                <th className="fw-bold">QUANTITY</th>
-                <th className="fw-bold">TOTAL</th>
-                <th></th>
+                <th className="fw-bold">Products</th>
+                <th className="fw-bold">Price</th>
+                <th className="fw-bold">Quantity</th>
+                <th className="fw-bold">Total</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td colSpan={2}>
-                  <div className="row">
-                    <div className="col">
-                      <img src="" alt="" />
-                    </div>
-                    <div className="col">
-                      <p>Fall Punch</p>
-                    </div>
+                <td>
+                  <div className="d-flex gap-5  align-items-center">
+                    <img className="cartImg" src="juices.PNG" alt="" />
+                    <p>Fall Punch</p>
                   </div>
                 </td>
-                <td>13.00</td>
                 <td>
-                  <div>
-                    <button
-                      className="button-size"
-                      onClick={decreaseValue}
-                      disabled={value === 1}
-                    >
-                      -
+                  <div className="d-flex align-items-center w">
+                    <p>13.00</p>
+                  </div>
+                </td>
+                <td>
+                  <div className="input-group">
+                    <button className="btn btn-success" onClick={decreaseValue}>
+                      <i className="bi bi-dash text-white"></i>
                     </button>
                     <input
-                      className="text-center input-size "
-                      type="number"
+                      className="text-center inputCart "
+                      type="text"
                       value={value}
-                      readOnly
                     />
-                    <button className="button-size" onClick={increaseValue}>
-                      +
+                    <button className="btn btn-success" onClick={increaseValue}>
+                      <i className="bi bi-plus-lg text-white"></i>
                     </button>
                   </div>
                 </td>
-                <td>13.00</td>
+
                 <td>
                   <div>
-                    <button
-                      className="button-size"
-                      onClick={decreaseValue}
-                      disabled={value === 1}
+                    <p className="d-inline ">13.00</p>
+                    <Link
+                      className="text-decoration-none text-danger ms-5"
+                      to={""}
                     >
-                      -
-                    </button>
-                    <input
-                      className="text-center input-size "
-                      type="number"
-                      value={value}
-                      readOnly
-                    />
-                    <button className="button-size" onClick={increaseValue}>
-                      +
-                    </button>
+                      <i className="bi bi-x-circle-fill"></i>
+                    </Link>
                   </div>
                 </td>
-                <td>13.00</td>
-                <td>
-                  <Link className="text-decoration-none text-danger" to={""}>
-                    <i className="bi bi-x-circle-fill"></i>
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={3}></td>
-                <td>Subtotal</td>
-                <td className="fw-bold">13.00</td>
-                <td></td>
               </tr>
             </tbody>
           </Table>
+          <div className="d-flex flex-row justify-content-end space">
+            <p className="fw-bold me-5">Subtotal</p>
+            <p className="fw-bold">13.00</p>
+          </div>
+          <div className="divCheckout d-flex justify-content-end space">
+            <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+              checkout
+            </button>
+          </div>
         </div>
         <Footer />
       </div>
