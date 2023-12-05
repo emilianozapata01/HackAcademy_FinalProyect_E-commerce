@@ -9,7 +9,6 @@ const Footer = () => {
       id="Footer_text-footer__FtDZ2"
     >
       <Row className="text-bg-light p-3">
-        <Col md={1} className="d-none d-md-block"></Col>
         <Col md={4}>
           <Image
             src="https://juiceshop.com/cdn/shop/files/FooterCartLogo3_600x_920720f9-3e86-4aa4-9469-6d5d4c3402db_400x.png?v=1674091452"
@@ -18,7 +17,7 @@ const Footer = () => {
           />
         </Col>
 
-        <Col md={2} className="pt-2">
+        <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="/all-products">
               <i></i>STORE
@@ -26,24 +25,13 @@ const Footer = () => {
             <Nav.Link href="/sustainability">
               <i></i>SUSTAINABILITY
             </Nav.Link>
-            <Nav.Link href="/visit">
-              <i></i>VISIT
-            </Nav.Link>
-          </Nav>
-        </Col>
-
-        <Col md={2} className="pt-2">
-          <Nav className="flex-column">
             <Nav.Link href="/frequently-asked-questions">
               <i></i>FAQ
             </Nav.Link>
-            <Nav.Link href="/events-and-catering">
-              <i></i>EVENTS & CATERING
-            </Nav.Link>
           </Nav>
         </Col>
 
-        <Col md={2} className="pt-2">
+        <Col md={3} className="pt-4">
           <Nav className="flex-column">
             <Nav.Link href="https://www.facebook.com/juiceshopsf/">
               <i className="bi bi-facebook Footer_bi__i+YNT"></i>
@@ -56,29 +44,9 @@ const Footer = () => {
             </Nav.Link>
           </Nav>
         </Col>
-      </Row>
-
-      <Row
-        className="text-center justify-content-center border-top pt-2 mt-2"
-        style={{ fontSize: "1.2rem" }}
-      >
-        <Col md={3}>
-          <p> © 2023 JUICE SHOP | ALL RIGHTS RESERVED</p>
-        </Col>
-        <Col md={2} className="">
-          <Nav.Link href="/">
-            <i></i>TERMS OF USE
-          </Nav.Link>
-        </Col>
         <Col md={2}>
-          <Nav.Link href="/">
-            <i></i>PRIVACY POLICY
-          </Nav.Link>
-        </Col>
-        <Col md={2}>
-          <Nav.Link href="/">
-            <i></i>RETURNS POLICY
-          </Nav.Link>
+          <Image src="js.png" alt="logo-img" className="w-50 ms-2 mt-4" />
+          <p>© 2023 JUICE SHOP</p>
         </Col>
       </Row>
     </Container>
