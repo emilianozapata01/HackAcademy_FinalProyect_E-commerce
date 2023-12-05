@@ -26,17 +26,15 @@
   width: 3rem;
 }
 
-.w{
-  
+.w {
 }
-.cartImg{
+.cartImg {
   width: 7rem;
 }
 
-.space{
+.space {
   margin-right: 14rem;
 }
-
 
 /* ACA COMIENZA ABOUT US */
 
@@ -169,7 +167,7 @@
   width: 53%;
 }
 
-.listCart{
+.listCart {
   overflow: scroll;
   overflow-x: hidden;
   height: 60vh;
@@ -177,4 +175,12 @@
 
 .woolwich {
   font-family: "woolwich-regular" !important;
+}
+
+.buyerButton {
+  transition: transform 0.2s ease-out;
+}
+
+.buyerButton:active {
+  transform: scale(0.9);
 }
