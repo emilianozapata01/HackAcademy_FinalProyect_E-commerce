@@ -15,8 +15,8 @@ const ContactUsModal = ({ showModal, handleClose}) => {
   useEffect(() => {
     
     if (buyer) {
-      setFirstName(buyer.firstName || "");
-      setLastName(buyer.lastName || "");
+      setFirstName(buyer.firstname || "");
+      setLastName(buyer.lastname || "");
       setPhone(buyer.phone || "");
       setEmail(buyer.email || "");
     } else {
@@ -37,7 +37,7 @@ const ContactUsModal = ({ showModal, handleClose}) => {
         <Form>
           <Form.Group controlId="formMessage" className="mb-4">
             <Form.Label className="h5">Message</Form.Label>
-            <Form.Control as="textarea" rows={6} placeholder="LEAVE YOUR MESSAGE HERE" />
+            <Form.Control as="textarea" rows={6} placeholder="LEAVE YOUR MESSAGE HERE" required/>
           </Form.Group>
 
           <Row className="mb-3">
@@ -49,6 +49,7 @@ const ContactUsModal = ({ showModal, handleClose}) => {
                   placeholder="Enter your first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  required
                 />
               </Form.Group>
             </Col>
@@ -102,6 +103,8 @@ const ContactUsModal = ({ showModal, handleClose}) => {
     </Modal>
   );
 };
+
+
 
 export default ContactUsModal;
 
