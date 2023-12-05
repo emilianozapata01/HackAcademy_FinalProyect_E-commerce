@@ -3,8 +3,13 @@
   src: url("/fonts/woolwich-regular.otf");
 }
 
+@font-face {
+  font-family: "SoleSans-RegularExtraCondensed";
+  src: url("/fonts/SoleSans-RegularExtraCondensed.ttf");
+}
+
 body {
   font-size: 24px;
-  font-family: "Open Sans";
+  font-family: "SoleSans-RegularExtraCondensed";
   height: 100%;
 }

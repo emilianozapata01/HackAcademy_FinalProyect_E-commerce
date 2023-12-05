@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SlideImagesHome from "../components/SlideImagesHome";
 import SlideImagesHomeResponsive from "../components/SlideImageHomeResponsive";
 import Footer from "../components/Footer";
@@ -9,16 +9,18 @@ import CategorySectionHome from "../components/CategorySectionHome";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
-function Home({ hovered }) {
+
+function Home({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     const getProducts = async () => {
       try {
         const response = await axios({
           method: "get",
-          url: `${import.meta.env.VITE_URL_BASE_API}/products`,
+          url: `${import.meta.env.VITE_URL_BASE_API}/product`,
         });
         dispatch(setProducts(response.data));
       } catch (error) {
@@ -31,7 +33,7 @@ function Home({ hovered }) {
   return (
     product && (
       <>
-        <Link to="/about-us">
+        <Link to="/about-this-proyect">
           <button
             className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
           >

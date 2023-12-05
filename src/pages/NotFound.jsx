@@ -2,18 +2,24 @@
 import NotFoundVideo from "/videos/NotFoundVideo.mp4";
 import NotFoundStyle from "../styles/views/NotFound.module.css";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
-function NotFound() {
+function NotFound({ setShowNavAndFooter }) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setShowNavAndFooter(true);
+  }, []);
+
   return (
     <>
       <video autoPlay loop muted className={NotFoundStyle.notFoundVideo}>
         <source src={NotFoundVideo} type="video/mp4" />
       </video>
-      <div className="d-flex flex-column justify-content-center mt-5">
+      <div className="d-flex flex-column justify-content-center vh-100">
         <div className="d-flex justify-content-center align-items-center gap-2 rrrttt">
           <span className={NotFoundStyle.ooops}>Ooops!</span>
-          <span className={NotFoundStyle.messageNotFound}>Page Not Found</span>
+          <span className={NotFoundStyle.messageNotFound}>Juice Not Found</span>
         </div>
         <div
           className={`${NotFoundStyle.bgObale} d-flex justify-content-center align-items-center mb-5`}
@@ -33,7 +39,6 @@ function NotFound() {
           </button>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }
