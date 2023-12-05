@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 
-function AddToCart({ product, qty }) {
+function AddToCart({ product, qty, classBtn }) {
   const dispatch = useDispatch();
 
   const handleCart = () => {
@@ -12,7 +12,7 @@ function AddToCart({ product, qty }) {
     <>
       <button
         onClick={handleCart}
-        className="custom-btn-swiper custom-btn-swiper-product"
+        className={classBtn}
       >
         ADD TO CART
       </button>
