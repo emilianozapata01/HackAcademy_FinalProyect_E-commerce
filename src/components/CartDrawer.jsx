@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -15,6 +15,7 @@ import { removeOfCart } from "../redux/cartSlice";
 function CartDrawer() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart);
+  const [subTotal, setSubTotal] = useState(0);
   const [state, setState] = React.useState({
     right: false,
   });
