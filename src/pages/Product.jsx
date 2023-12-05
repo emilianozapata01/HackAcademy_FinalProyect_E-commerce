@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 function Product({ hovered, setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
+  // setShowNavAndFooter(true);
   const params = useParams();
   const [product, setProduct] = useState(null);
 

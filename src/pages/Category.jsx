@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Category({ setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
+  // setShowNavAndFooter(true);
   const params = useParams();
   const [categories, setCategories] = useState(null);
   const getCategory = async () => {
@@ -25,7 +25,7 @@ function Category({ setShowNavAndFooter }) {
 
   useEffect(() => {
     getCategory();
-  }, [params._id]);
+  }, [params.id]);
 
   return (
     <>

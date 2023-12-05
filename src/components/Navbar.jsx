@@ -6,6 +6,11 @@ import ProfileIcon from "./icons/ProfileIcon";
 import { useNavigate } from "react-router";
 import CartDrawer from "./CartDrawer";
 
+import { useState } from "react";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
+
 function NavBar({ setHovered }) {
   const navigate = useNavigate();
   const onMouseEnter = () => {
@@ -15,6 +20,22 @@ function NavBar({ setHovered }) {
   const onMouseLeave = () => {
     setHovered(false);
   };
+
+  const [categories, setCategories] = useState(null);
+  const getCategories = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_URL_BASE_API}/category`
+      );
+      setCategories(response.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <Navbar
@@ -53,12 +74,21 @@ function NavBar({ setHovered }) {
                   CATEGORIES
                 </span>
                 <div className={NavbarStyle.subnavContent}>
-                  <Nav.Link href="/juices">Juices</Nav.Link>
-                  <Nav.Link href="/elixirs">Elixirs</Nav.Link>
-                  <Nav.Link href="/nut-milks&smoothies">
-                    Nut milks &amp; smoothies
-                  </Nav.Link>
-                  <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
+                  {categories &&
+                    categories.map((category) => (
+                      <NavLink
+                        className="textUppercase"
+                        key={category._id}
+                        to={`category/${category._id}`}
+                      >
+                        {category.name}
+                      </NavLink>
+                      // <Nav.Link href="/elixirs">Elixirs</Nav.Link>
+                      // <Nav.Link href="/nut-milks&smoothies">
+                      //   Nut milks &amp; smoothies
+                      // </Nav.Link>
+                      // <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
+                    ))}
                 </div>
               </Nav.Item>
             </div>
