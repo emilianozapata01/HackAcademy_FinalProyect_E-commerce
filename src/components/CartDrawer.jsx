@@ -9,9 +9,11 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import NavbarStyle from "../styles/components/NavBar.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeOfCart } from "../redux/cartSlice";
 
 function CartDrawer() {
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.cart);
   const [state, setState] = React.useState({
     right: false,
@@ -45,53 +47,53 @@ function CartDrawer() {
             </IconButton>
           </div>
         </div>
-        <List>
-          {products.map((product) => (
-            <List key={product._id}>
-              <ListItem>
+        <div className="listCart">
+          <List >
+
+            {products.map((product) => (
+              <ListItem key={product.item._id}>
                 <div className="d-flex align-items-start ">
-                  <img className="w-25" src={product.image} alt="" />
+                  <img className="w-25" src={product.item.image} alt="" />
                   <div className="d-flex flex-column ms-3">
-                    <p className="fw-bold m-0">{product.name}</p>
-                    <small className="fs-6"></small>
+                    <p className="fw-bold m-0">{product.item.name}</p>
+                    <small className="fs-6">{product.item.category.name}</small>
+                    <div className="fw-bold w-100 d-flex ">
+                      <p className="woolwich">${product.item.price}</p>
+                      <p className="ms-5">QTY:</p>
+                      <input
+                        type="number"
+                        className=" form-control w-25 h-25"
+                        value={product.qty}
+                      ></input>
+                    </div>
                   </div>
-                  <IconButton className="text-danger">
+                  <IconButton onClick={()=>dispatch(removeOfCart(product))} className="text-danger">
                     <CancelIcon />
                   </IconButton>
                 </div>
-                ';'
               </ListItem>
-              <ListItem>
-                <div className="fw-bold w-100 d-flex justify-content-center">
-                  <p className="woolwich">${product.price}</p>
-                  <p className="ms-5">QTY:</p>
-                  <input
-                    type="number"
-                    className=" form-control w-25 h-25"
-                  ></input>
-                </div>
-              </ListItem>
-            </List>
-          ))}
-        </List>
+            ))}
+          </List></div>
         <Divider />
-        <div className=" cartSub ">
-          <div className="subTotal">
-            <p className="text-white">Subtotal</p>
-            <p className="text-white">$12.00</p>
+        <List>
+          <div className=" cartSub ">
+            <div className="subTotal">
+              <p className="text-white">Subtotal</p>
+              <p className="text-white">$12.00</p>
+            </div>
+            <p className="text-white fs-6 ps-3 se-3">
+              TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO APPLY
+              ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
+            </p>
+            <div className="divCheckout">
+              <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+                checkout
+              </button>
+            </div>
           </div>
-          <p className="text-white fs-6 ps-3 se-3">
-            TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO APPLY
-            ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
-          </p>
-          <div className="divCheckout">
-            <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
-              checkout
-            </button>
-          </div>
-        </div>
+        </List>
       </div>
-    </Box>
+    </Box >
   );
 
   return (
