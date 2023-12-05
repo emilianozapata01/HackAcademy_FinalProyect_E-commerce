@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Category({ setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
   const params = useParams();
   const [categories, setCategories] = useState(null);
   const getCategory = async () => {
@@ -24,15 +23,16 @@ function Category({ setShowNavAndFooter }) {
   };
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     getCategory();
-  }, [params._id]);
+  }, [params.id]);
 
   return (
     <>
       <ul className="list-group">
         {categories &&
           categories.map((category) => (
-            <li key={category.id} className="list-group-item ">
+            <li key={category._id} className="list-group-item ">
               <p className={`${CategoryStyle.titleCategory} woolwich`}>
                 {category.name}
               </p>
@@ -40,11 +40,11 @@ function Category({ setShowNavAndFooter }) {
                 <ul className="d-flex flex-wrap justify-content-center">
                   {category.products.map((product) => (
                     <Link
-                      key={product._id}
                       className={CategoryStyle.customLink}
                       to={`/product/${product._id}`}
+                      key={product._id}
                     >
-                      <li key={product.id} className="d-flex flex-column">
+                      <li className="d-flex flex-column">
                         <div className={`${CategoryStyle.categoryBoxSize}`}>
                           <img
                             className={CategoryStyle.categoryBoxSizeCAN}

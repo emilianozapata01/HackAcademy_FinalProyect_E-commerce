@@ -5,7 +5,7 @@ function AddToCart({ product }) {
   const dispatch = useDispatch();
 
   const handleCart = () => {
-    dispatch(addToCart(product));
+    dispatch(addToCart({item: product, qty: 1}));
   };
 
   return (

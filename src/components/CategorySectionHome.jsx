@@ -29,7 +29,7 @@ function CategorySectionHome() {
           >
             OUR PRODUCTS
           </h1>
-          <div className="d-flex flex-column w-50 ">
+          <div className={`${HomeStyle.categoryImgSection} d-flex flex-column`}>
             <div className="d-flex flex-wrap justify-content-center">
               {categories.map((category) => (
                 <Link

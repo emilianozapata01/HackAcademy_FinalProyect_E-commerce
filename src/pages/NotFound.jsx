@@ -2,10 +2,15 @@
 import NotFoundVideo from "/videos/NotFoundVideo.mp4";
 import NotFoundStyle from "../styles/views/NotFound.module.css";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 function NotFound({ setShowNavAndFooter }) {
-  setShowNavAndFooter(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setShowNavAndFooter(true);
+  }, []);
+
   return (
     <>
       <video autoPlay loop muted className={NotFoundStyle.notFoundVideo}>
@@ -34,7 +39,6 @@ function NotFound({ setShowNavAndFooter }) {
           </button>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }

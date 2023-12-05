@@ -123,6 +123,10 @@
   font-family: fantasy;
 }
 
+.category-img-section {
+  width: 100%;
+}
+
 .aboutProject {
   background-color: rgb(8, 115, 8);
   color: white;
@@ -146,19 +150,10 @@
 }
 
 @media only screen and (max-width: 991px) {
-  .aboutProjectBig {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .aboutProjectSmall {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 991px) {
   .SlideImageHome {
+    display: none;
+  }
+  .aboutProjectBig {
     display: none;
   }
 }
@@ -166,6 +161,15 @@
 @media only screen and (min-width: 992px) {
   .SlideImageHomeResponsive {
     display: none;
+  }
+  .aboutProjectSmall {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .category-img-section {
+    width: 40rem;
   }
 }
 

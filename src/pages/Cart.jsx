@@ -1,10 +1,12 @@
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 
 function Cart({ hovered, setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
+  useEffect(() => {
+    setShowNavAndFooter(true);
+  }, []);
   const [value, setValue] = useState(1);
   const decreaseValue = () => {
     if (value > 1) {
