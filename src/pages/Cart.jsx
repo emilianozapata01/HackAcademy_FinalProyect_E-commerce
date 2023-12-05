@@ -1,9 +1,13 @@
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeOfCart, addToCart } from "../redux/cartSlice";
 import Footer from "../components/Footer";
 
 function Cart({ hovered, setShowNavAndFooter }) {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.cart);
   useEffect(() => {
     setShowNavAndFooter(true);
   }, []);
@@ -34,46 +38,54 @@ function Cart({ hovered, setShowNavAndFooter }) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div className="d-flex gap-5  align-items-center">
-                    <img className="cartImg" src="juices.PNG" alt="" />
-                    <p>Fall Punch</p>
-                  </div>
-                </td>
-                <td>
-                  <div className="d-flex align-items-center w">
-                    <p>13.00</p>
-                  </div>
-                </td>
-                <td>
-                  <div className="input-group">
-                    <button className="btn btn-success" onClick={decreaseValue}>
-                      <i className="bi bi-dash text-white"></i>
-                    </button>
-                    <input
-                      className="text-center inputCart "
-                      type="text"
-                      value={value}
-                    />
-                    <button className="btn btn-success" onClick={increaseValue}>
-                      <i className="bi bi-plus-lg text-white"></i>
-                    </button>
-                  </div>
-                </td>
+              {products.map((product) => (
+                <tr>
+                  <td>
+                    <div className="d-flex gap-5  align-items-center">
+                      <img className="cartImg" src={product.item.image} alt="" />
+                      <p>{product.item.name}</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="d-flex align-items-center ">
+                      <p>${product.item.price}</p>
+                    </div>
+                  </td>
+                  <td >
+                    <div className="input-group ">
+                      <button
+                        className="btn btn-success"
+                        onClick={decreaseValue}
+                      >
+                        <i className="bi bi-dash text-white"></i>
+                      </button>
+                      <input
+                        className="text-center inputCart "
+                        type="text"
+                        value={product.qty}
+                      />
+                      <button
+                        className="btn btn-success"
+                        onClick={increaseValue}
+                      >
+                        <i className="bi bi-plus-lg text-white"></i>
+                      </button>
+                    </div>
+                  </td>
 
-                <td>
-                  <div>
-                    <p className="d-inline ">13.00</p>
-                    <Link
-                      className="text-decoration-none text-danger ms-5"
-                      to={""}
-                    >
-                      <i className="bi bi-x-circle-fill"></i>
-                    </Link>
-                  </div>
-                </td>
-              </tr>
+                  <td>
+                    <div>
+                      <p className="d-inline ">{Number(product.qty) * Number( product.item.price)}</p>
+                      <Link
+                        className="text-decoration-none text-danger ms-5"
+                        to={""}
+                      >
+                        <i className="bi bi-x-circle-fill"></i>
+                      </Link>
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </Table>
           <div className="d-flex flex-row justify-content-end space">

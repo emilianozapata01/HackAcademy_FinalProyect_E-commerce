@@ -34,7 +34,7 @@ function Glide({ products }) {
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>
                 <div className="h mb-5">
-                  <AddToCart product={product} />
+                  <AddToCart product={product} qty={1} classBtn={"custom-btn-swiper custom-btn-swiper-product"} />
                 </div>
               </div>
             </SwiperSlide>
