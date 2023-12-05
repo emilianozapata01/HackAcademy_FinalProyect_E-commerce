@@ -9,14 +9,13 @@ import { useEffect } from "react";
 import axios from "axios";
 
 function Product({ hovered, setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
   const params = useParams();
   const [product, setProduct] = useState(null);
 
   const getProduct = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_BASE_API}/product/${params._id}`
+        `${import.meta.env.VITE_URL_BASE_API}/product/${params.id}`
       );
 
       setProduct(response.data);
@@ -26,8 +25,9 @@ function Product({ hovered, setShowNavAndFooter }) {
   };
 
   useEffect(() => {
+    setShowNavAndFooter(true);
     getProduct();
-  }, [params._id]);
+  }, [params.id]);
 
   const [value, setValue] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
@@ -90,7 +90,6 @@ function Product({ hovered, setShowNavAndFooter }) {
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
-                    <Carousel.Caption></Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item interval={500}>
                     <img

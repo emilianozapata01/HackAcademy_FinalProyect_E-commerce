@@ -3,9 +3,12 @@ import AboutThisProyectStyle from "../styles/views/AboutThisProyect.module.css";
 import { LiaBootstrap } from "react-icons/lia";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiMongoose } from "react-icons/si";
+import { useEffect } from "react";
 
 function AboutThisProyect({ hovered, setShowNavAndFooter }) {
-  setShowNavAndFooter(true);
+  useEffect(() => {
+    setShowNavAndFooter(true);
+  }, []);
   return (
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
