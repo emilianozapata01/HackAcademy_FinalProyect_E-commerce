@@ -10,6 +10,7 @@ import { useState } from "react";
 import NavBar from "./components/Navbar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -59,6 +60,10 @@ function App() {
         <Route
           path="/login"
           element={<Login setShowNavAndFooter={setShowNavAndFooter} />}
+        />
+        <Route
+          path="/all-products"
+          element={<AllProducts setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="*"

@@ -8,7 +8,11 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
+
 function Product({ hovered, setShowNavAndFooter }) {
+  // setShowNavAndFooter(true);
   const params = useParams();
   const [product, setProduct] = useState(null);
 
@@ -48,6 +52,12 @@ function Product({ hovered, setShowNavAndFooter }) {
 
   const increaseValue = () => {
     setValue(value + 1);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleCart = () => {
+    dispatch(addToCart({ item: product, qty: 1 }));
   };
 
   return (
@@ -172,11 +182,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     +
                   </button>
                 </div>
+
                 <button
+                  onClick={handleCart}
                   className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
                 >
                   ADD TO CART
                 </button>
+
                 <p className={`text-success ${ProductStyle.fontProduct}`}>
                   Local pick up and delivery only. Order by 11am and we will
                   have your order delivered in your desired pickup or delivery

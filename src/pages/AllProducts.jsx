@@ -1,32 +1,27 @@
+import React from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import CategoryStyle from "../styles/views/Category.module.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
 
-function Category({ setShowNavAndFooter }) {
-  // setShowNavAndFooter(true);
-  const params = useParams();
+function AllProducts() {
   const [categories, setCategories] = useState(null);
-  const getCategory = async () => {
+  const getCategories = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_URL_BASE_API}/category`
       );
-      const filteredCategory = response.data.filter(
-        (category) => category._id === params.id
-      );
-
-      setCategories(filteredCategory);
+      setCategories(response.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
   };
 
   useEffect(() => {
-    setShowNavAndFooter(true);
-    getCategory();
-  }, [params.id]);
+    getCategories();
+  }, []);
 
   return (
     <>
@@ -69,4 +64,4 @@ function Category({ setShowNavAndFooter }) {
   );
 }
 
-export default Category;
+export default AllProducts;
