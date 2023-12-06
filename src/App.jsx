@@ -11,6 +11,7 @@ import NavBar from "./components/Navbar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -51,6 +52,12 @@ function App() {
           path="/cart"
           element={
             <Cart setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout/>
           }
         />
         <Route

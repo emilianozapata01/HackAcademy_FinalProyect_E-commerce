@@ -83,7 +83,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
                         <div className="d-flex align-items-center heightCart  gap-5 ">
                           <div className="priceFix">
                             <p className="d-inline ">
-                              {Number(product.qty) * Number(product.item.price)}
+                              ${product.total}
                             </p>
                           </div>
                           <IconButton onClick={()=>dispatch(removeOfCart(product))} className="text-danger">
@@ -96,7 +96,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
                   <TableRow>
                     <TableCell rowSpan={3} />
                     <TableCell colSpan={2}>Subtotal</TableCell>
-                    <TableCell align="right">${cart.subtotal}</TableCell>
+                    <TableCell >${cart.subtotal}</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

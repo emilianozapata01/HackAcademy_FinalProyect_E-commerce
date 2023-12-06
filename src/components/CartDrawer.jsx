@@ -12,8 +12,10 @@ import NavbarStyle from "../styles/components/NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart } from "../redux/cartSlice";
 import AddToCart from "../components/AddToCart";
+import { useNavigate } from "react-router-dom";
 
 function CartDrawer() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const [subTotal, setSubTotal] = useState(0);
@@ -94,7 +96,7 @@ function CartDrawer() {
               ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
             </p>
             <div className="divCheckout">
-              <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+              <button onClick={() => navigate("/checkout")} className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
                 checkout
               </button>
             </div>
