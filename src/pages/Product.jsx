@@ -7,14 +7,68 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-
-import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+import AddToCart from "../components/AddToCart";
 
 function Product({ hovered, setShowNavAndFooter }) {
   // setShowNavAndFooter(true);
+
   const params = useParams();
   const [product, setProduct] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(true);
+
+    // Después de 1 segundo, vuelve a establecer isClicked en false
+    setTimeout(() => {
+      setIsClicked(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  };
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios({
+          method: "get",
+          url: `${import.meta.env.VITE_URL_BASE_API}/product`,
+        });
+        console.log("API Response:", response.data);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      console.log("Products totales:", products);
+      let updatedRandomProduct = [];
+
+      while (updatedRandomProduct.length < 3) {
+        const random = Math.floor(Math.random() * products.length);
+        const selectedProduct = products[random];
+
+        // Verifica si el producto no está ya en updatedRandomProduct
+        if (
+          !updatedRandomProduct.some(
+            (product) => product._id === selectedProduct._id
+          )
+        ) {
+          updatedRandomProduct.push(selectedProduct);
+          console.log("Producto aleatorio añadido:", selectedProduct);
+        }
+      }
+
+      setRandomProducts(updatedRandomProduct);
+    }
+  }, [products]);
 
   const getProduct = async () => {
     try {
@@ -27,7 +81,6 @@ function Product({ hovered, setShowNavAndFooter }) {
       console.error("Error fetching product:", error);
     }
   };
-
   useEffect(() => {
     setShowNavAndFooter(true);
     getProduct();
@@ -54,34 +107,31 @@ function Product({ hovered, setShowNavAndFooter }) {
     setValue(value + 1);
   };
 
-  const dispatch = useDispatch();
-
-  const handleCart = () => {
-    dispatch(addToCart({ item: product, qty: 1 }));
-  };
-
   return (
     <>
       {product && (
-        <div key={product._id} className={hovered ? "bg-dark-hover-nav " : ""}>
+        <div
+          key={product._id}
+          className={`promo ${hovered ? "bg-dark-hover-nav " : ""}`}
+        >
           <div className="container">
             <div className="row">
-              <div className="col-12 fw-bold ps-5">
-                <Link className="text-decoration-none text-dark" to={"/"}>
-                  <span> Home </span>
-                </Link>
-                <span>
-                  <i className="bi bi-arrow-right"></i>
-                </span>
-                <Link className="text-decoration-none text-dark" to={"/"}>
-                  <span> All </span>
-                </Link>
-                <span>
-                  <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
-                </span>
-              </div>
-
               <div className="col-6">
+                <div className="col-12 fw-bold ps-5 mt-5">
+                  <Link className="text-decoration-none text-dark" to={"/"}>
+                    <span> Home </span>
+                  </Link>
+                  <span>
+                    <i className="bi bi-arrow-right"></i>
+                  </span>
+                  <Link className="text-decoration-none text-dark" to={"/"}>
+                    <span> All </span>
+                  </Link>
+                  <span>
+                    <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
+                  </span>
+                </div>
+
                 <Carousel
                   nextIcon={
                     <span className={ProductStyle.customCarouselIcon}>
@@ -94,14 +144,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     </span>
                   }
                 >
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
                   </Carousel.Item>
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
@@ -111,64 +161,26 @@ function Product({ hovered, setShowNavAndFooter }) {
                   </Carousel.Item>
                 </Carousel>
               </div>
-              <div className="col-6 d-grid gap-1 ">
-                <h4>{product.name}</h4>
-                <span className={ProductStyle.fontProduct}>
+              <div className="col-6  mt-5">
+                <p className={`woolwich ${ProductStyle.fontTitleSize}`}>
+                  {product.name}
+                </p>
+                <p className={`woolwich ${ProductStyle.fontPriceSize} mb-5`}>
                   ${product.price}
-                </span>
-                <p className={ProductStyle.fontProduct}>
+                </p>
+                <p className={`mb-5 ${ProductStyle.fontProduct}`}>
                   {product.description}
                 </p>
 
-                <p className={ProductStyle.fontProduct}>
-                  Organic{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Non-GMO{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Gluten Free{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Vegan
-                </p>
-                <p className={ProductStyle.fontProduct}>
-                  *These statements have not been evaluated by the FDA. This
-                  product is not intended to diagnose, treat, cure, or prevent
-                  any disease.
-                </p>
                 <div>
                   <button
-                    className={ProductStyle.buttonSize}
+                    className={`mb-5 ${ProductStyle.buttonSize}`}
                     onClick={decreaseValue}
                     disabled={value === 1}
                   >
                     -
                   </button>
+
                   <input
                     className={`text-center ${ProductStyle.inputSize}`}
                     type="number"
@@ -182,121 +194,80 @@ function Product({ hovered, setShowNavAndFooter }) {
                     +
                   </button>
                 </div>
+                <AddToCart
+                  product={product}
+                  qty={value}
+                  classBtn={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
+                />
 
-                <button
-                  onClick={handleCart}
-                  className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
-                >
-                  ADD TO CART
-                </button>
-
-                <p className={`text-success ${ProductStyle.fontProduct}`}>
-                  Local pick up and delivery only. Order by 11am and we will
-                  have your order delivered in your desired pickup or delivery
-                  window.
-                </p>
                 <p className={ProductStyle.fontProduct}>
-                  {product.ingredients}
-                </p>
-                <p className={ProductStyle.fontProduct}>
-                  *Certified Organic Ingredients
+                  <strong>Ingredients: </strong> {product.ingredients}
                 </p>
               </div>
-              <div className="row mt-5">
-                <h2 className="text-center">YOU MAY ALSO LIKE</h2>
-
-                <div className="col-4 text-center gap-4 d-grid">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/detox-1_800x.jpg?v=1672529675"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/detox-2_800x.jpg?v=1672529726"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>DETOX TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
-                </div>
-                <div className="col-4 text-center gap-4 d-grid ">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/pineapple-1_800x.jpg?v=1672529953"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/pineapple-2_800x.jpg?v=1672529961"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>PINEAPPLE MINT TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
-                </div>
-                <div className="col-4 text-center gap-4 d-grid ">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/Elderberry-update-1_800x.jpg?v=1680660808"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/Elderberry-update-2_800x.jpg?v=1680660808"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>ELDERBERRY TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
+              <div className="d-flex flex-row  justify-content-around mt-5 mb-5">
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/organic.png"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/NON_GMO.png"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/glutenFree.jpg"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/friendly.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="row mt-5  d-flex ">
+                <h1 className="text-center woolwich">YOU MAY ALSO LIKE</h1>
+                <div className="d-flex flex-row   ">
+                  {randomProducts &&
+                    randomProducts.map((productRandom) => (
+                      <div
+                        key={productRandom._id}
+                        className="d-flex justify-content-center col-4 text-center d-grid"
+                      >
+                        <div className="align-self-baseline">
+                          <Link
+                            className={ProductStyle.a}
+                            to={`/product/${productRandom._id}`}
+                            key={productRandom._id}
+                          >
+                            <div
+                              className={ProductStyle.imageContainer}
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <img
+                                className={`${ProductStyle.originalImage} ${
+                                  isClicked ? ProductStyle.shrink : ""
+                                }`}
+                                src={productRandom.image}
+                                alt="Original"
+                                onClick={handleClick}
+                              />
+                            </div>
+                            <h3>{productRandom.name}</h3>
+                            <p>${productRandom.price}</p>
+                          </Link>
+                          <div>
+                            <button
+                              className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                            >
+                              ADD TO CART
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>

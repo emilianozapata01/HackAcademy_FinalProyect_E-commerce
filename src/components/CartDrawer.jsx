@@ -11,8 +11,11 @@ import Divider from "@mui/material/Divider";
 import NavbarStyle from "../styles/components/NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart } from "../redux/cartSlice";
+import AddToCart from "../components/AddToCart";
+import { useNavigate } from "react-router-dom";
 
 function CartDrawer() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const [subTotal, setSubTotal] = useState(0);
@@ -48,7 +51,7 @@ function CartDrawer() {
             </IconButton>
           </div>
         </div>
-        <div className="listCart">
+          {cart.items[0]?(<div className="listCart">
           <List >
             {cart.items.map((product) => (
               <ListItem key={product.item._id}>
@@ -58,13 +61,16 @@ function CartDrawer() {
                     <p className="fw-bold m-0">{product.item.name}</p>
                     <small className="fs-6">{product.item.category.name}</small>
                     <div className="fw-bold w-100 d-flex ">
-                      <p className="woolwich">${product.item.price}</p>
-                      <p className="ms-5">QTY:</p>
-                      <input
-                        type="number"
-                        className=" form-control w-25 h-25"
-                        value={product.qty}
-                      ></input>
+                      <p className="woolwich priceFix">${product.total}</p>
+                      <div className="heightDrawerInput">
+                      <AddToCart
+                            product={product.item}
+                            qty={product.qty}
+                            classBtn={
+                              "custom-btn-swiper custom-btn-swiper-product"
+                            }
+                            typeQty={true}
+                          /></div>
                     </div>
                   </div>
                   <IconButton onClick={()=>dispatch(removeOfCart(product))} className="text-danger">
@@ -73,7 +79,11 @@ function CartDrawer() {
                 </div>
               </ListItem>
             ))}
-          </List></div>
+          </List></div>):(
+          <div>
+            <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
+            </div>)}
+          
         <Divider />
         <List>
           <div className=" cartSub ">
@@ -86,7 +96,7 @@ function CartDrawer() {
               ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
             </p>
             <div className="divCheckout">
-              <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+              <button onClick={() => navigate("/checkout")} className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
                 checkout
               </button>
             </div>

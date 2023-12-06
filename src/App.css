@@ -189,3 +189,24 @@
 .buyerButton:active {
   transform: scale(0.9);
 }
+
+.imgATP {
+  width: 55rem;
+}
+
+.heightDrawerInput {
+  width: 12rem;
+  padding-left: 3rem;
+}
+
+.priceFix {
+  width: 2.5rem;
+}
+
+
+
+
+
+
+
+
