@@ -7,9 +7,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+import AddToCart from "../components/AddToCart";
 
 function Product({ hovered, setShowNavAndFooter }) {
   // setShowNavAndFooter(true);
@@ -107,12 +105,6 @@ function Product({ hovered, setShowNavAndFooter }) {
 
   const increaseValue = () => {
     setValue(value + 1);
-  };
-
-  const dispatch = useDispatch();
-
-  const handleCart = () => {
-    dispatch(addToCart({ item: product, qty: qty }));
   };
 
   return (
@@ -224,6 +216,7 @@ function Product({ hovered, setShowNavAndFooter }) {
                   >
                     -
                   </button>
+
                   <input
                     className={`text-center ${ProductStyle.inputSize}`}
                     type="number"
@@ -237,13 +230,11 @@ function Product({ hovered, setShowNavAndFooter }) {
                     +
                   </button>
                 </div>
-
-                <button
-                  onClick={handleCart}
-                  className={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
-                >
-                  ADD TO CART
-                </button>
+                <AddToCart
+                  product={product}
+                  qty={value}
+                  classBtn={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
+                />
 
                 <p className={`text-success ${ProductStyle.fontProduct}`}>
                   Local pick up and delivery only. Order by 11am and we will
