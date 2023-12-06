@@ -129,3 +129,8 @@ shrink {
 .fontPriceSize {
   font-size: 3rem;
 }
+
+.iconStyle {
+  width: 15rem;
+  height: 15rem;
+}

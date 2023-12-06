@@ -190,15 +190,15 @@
   transform: scale(0.9);
 }
 
-.imgATP{
+.imgATP {
   width: 55rem;
 }
 
-.heightDrawerInput{
-width: 12rem;
-padding-left: 3rem;
+.heightDrawerInput {
+  width: 12rem;
+  padding-left: 3rem;
 }
 
-.priceFix{
+.priceFix {
   width: 2.5rem;
 }
