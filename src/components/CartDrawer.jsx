@@ -11,6 +11,7 @@ import Divider from "@mui/material/Divider";
 import NavbarStyle from "../styles/components/NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart } from "../redux/cartSlice";
+import AddToCart from "../components/AddToCart";
 
 function CartDrawer() {
   const dispatch = useDispatch();
@@ -58,13 +59,16 @@ function CartDrawer() {
                     <p className="fw-bold m-0">{product.item.name}</p>
                     <small className="fs-6">{product.item.category.name}</small>
                     <div className="fw-bold w-100 d-flex ">
-                      <p className="woolwich">${product.item.price}</p>
-                      <p className="ms-5">QTY:</p>
-                      <input
-                        type="number"
-                        className=" form-control w-25 h-25"
-                        value={product.qty}
-                      ></input>
+                      <p className="woolwich priceFix">${product.total}</p>
+                      <div className="heightDrawerInput">
+                      <AddToCart
+                            product={product.item}
+                            qty={product.qty}
+                            classBtn={
+                              "custom-btn-swiper custom-btn-swiper-product"
+                            }
+                            typeQty={true}
+                          /></div>
                     </div>
                   </div>
                   <IconButton onClick={()=>dispatch(removeOfCart(product))} className="text-danger">

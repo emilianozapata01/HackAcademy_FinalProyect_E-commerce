@@ -32,8 +32,8 @@ function Glide({ products }) {
           .filter((product) => product.bestSeller === true)
           .map((product) => (
             <SwiperSlide key={product._id}>
-              <div onClick={() => navigate(`/product/${product._id}`)}>
-                <img className="custom-image" src={product.image} alt="" />
+              <div >
+                <img onClick={() => navigate(`/product/${product._id}`)} className="custom-image" src={product.image} alt="" />
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>
                 <div className="h mb-5">
