@@ -204,7 +204,7 @@ function Product({ hovered, setShowNavAndFooter }) {
                   <strong>Ingredients: </strong> {product.ingredients}
                 </p>
               </div>
-              <div className="d-flex flex-row  justify-content-between mt-5 mb-5">
+              <div className="d-flex flex-row  justify-content-around mt-5 mb-5">
                 <img
                   className={` ${ProductStyle.iconStyle}`}
                   src="/organic.png"
