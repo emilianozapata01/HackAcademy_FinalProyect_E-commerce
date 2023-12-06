@@ -2,9 +2,9 @@
     text-align: center;
     justify-content: center;
     font-family: "woolwich-regular";
+    color: #3a913f;
     cursor:context-menu;
     font-size: 3.5rem;
-    color: #3a913f;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
       -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   }
