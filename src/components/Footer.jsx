@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <Container
       fluid
-      className="text-footer mt-5"
+      className={`text-footer mt-5 ${FooterStyle.navItem}`}
       id="Footer_text-footer__FtDZ2"
     >
       <Row className="text-bg-light p-3">
