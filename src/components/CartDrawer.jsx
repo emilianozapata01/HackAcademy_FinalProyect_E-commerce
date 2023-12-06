@@ -48,7 +48,7 @@ function CartDrawer() {
             </IconButton>
           </div>
         </div>
-        <div className="listCart">
+          {cart.items[0]?(<div className="listCart">
           <List >
             {cart.items.map((product) => (
               <ListItem key={product.item._id}>
@@ -73,7 +73,11 @@ function CartDrawer() {
                 </div>
               </ListItem>
             ))}
-          </List></div>
+          </List></div>):(
+          <div>
+            <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
+            </div>)}
+          
         <Divider />
         <List>
           <div className=" cartSub ">

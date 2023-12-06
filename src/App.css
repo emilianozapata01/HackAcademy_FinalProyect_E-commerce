@@ -26,7 +26,7 @@
   width: 3rem;
 }
 
-.heightCart{
+.heightCart {
   height: 9.336rem;
 }
 .cartImg {
@@ -188,4 +188,8 @@
 
 .buyerButton:active {
   transform: scale(0.9);
+}
+
+.imgATP{
+  width: 55rem;
 }

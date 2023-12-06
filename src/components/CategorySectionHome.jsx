@@ -3,6 +3,7 @@ import HomeStyle from "../styles/views/Home.module.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+
 function CategorySectionHome() {
   const [categories, setCategories] = useState(null);
   const getCategories = async () => {
@@ -25,7 +26,7 @@ function CategorySectionHome() {
       {categories && (
         <div className="d-flex flex-column mt-5 align-items-center">
           <h1
-            className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-4`}
+            className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-4 woolwich`}
           >
             OUR PRODUCTS
           </h1>
@@ -43,7 +44,7 @@ function CategorySectionHome() {
                     alt={category.name}
                   />
                   <button
-                    className={`${HomeStyle.buttonCategoriesSparkling} ${HomeStyle.textUppercase}`}
+                    className={`${HomeStyle.buttonCategoriesSparkling} ${HomeStyle.textUppercase} woolwich`}
                   >
                     {category.name}
                   </button>
