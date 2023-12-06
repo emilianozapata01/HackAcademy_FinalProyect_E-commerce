@@ -8,13 +8,69 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 
 function Product({ hovered, setShowNavAndFooter }) {
   // setShowNavAndFooter(true);
+
   const params = useParams();
   const [product, setProduct] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(true);
+
+    // Después de 1 segundo, vuelve a establecer isClicked en false
+    setTimeout(() => {
+      setIsClicked(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  };
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios({
+          method: "get",
+          url: `${import.meta.env.VITE_URL_BASE_API}/product`,
+        });
+        console.log("API Response:", response.data);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      console.log("Products totales:", products);
+      let updatedRandomProduct = [];
+
+      while (updatedRandomProduct.length < 3) {
+        const random = Math.floor(Math.random() * products.length);
+        const selectedProduct = products[random];
+
+        // Verifica si el producto no está ya en updatedRandomProduct
+        if (
+          !updatedRandomProduct.some(
+            (product) => product._id === selectedProduct._id
+          )
+        ) {
+          updatedRandomProduct.push(selectedProduct);
+          console.log("Producto aleatorio añadido:", selectedProduct);
+        }
+      }
+
+      setRandomProducts(updatedRandomProduct);
+    }
+  }, [products]);
 
   const getProduct = async () => {
     try {
@@ -27,7 +83,6 @@ function Product({ hovered, setShowNavAndFooter }) {
       console.error("Error fetching product:", error);
     }
   };
-
   useEffect(() => {
     setShowNavAndFooter(true);
     getProduct();
@@ -57,7 +112,7 @@ function Product({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
 
   const handleCart = () => {
-    dispatch(addToCart({ item: product, qty: 1 }));
+    dispatch(addToCart({ item: product, qty: qty }));
   };
 
   return (
@@ -185,7 +240,7 @@ function Product({ hovered, setShowNavAndFooter }) {
 
                 <button
                   onClick={handleCart}
-                  className={`${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
+                  className={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
                 >
                   ADD TO CART
                 </button>
@@ -202,101 +257,49 @@ function Product({ hovered, setShowNavAndFooter }) {
                   *Certified Organic Ingredients
                 </p>
               </div>
-              <div className="row mt-5">
-                <h2 className="text-center">YOU MAY ALSO LIKE</h2>
 
-                <div className="col-4 text-center gap-4 d-grid">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/detox-1_800x.jpg?v=1672529675"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/detox-2_800x.jpg?v=1672529726"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>DETOX TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
-                </div>
-                <div className="col-4 text-center gap-4 d-grid ">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/pineapple-1_800x.jpg?v=1672529953"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/pineapple-2_800x.jpg?v=1672529961"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>PINEAPPLE MINT TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
-                </div>
-                <div className="col-4 text-center gap-4 d-grid ">
-                  <div
-                    className={ProductStyle.imageContainer}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <img
-                      className={`${ProductStyle.originalImage} ${
-                        isHovered ? "hidden" : ""
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/Elderberry-update-1_800x.jpg?v=1680660808"
-                      alt="Original"
-                    />
-                    <img
-                      className={`${ProductStyle.hoverImage} ${
-                        isHovered ? "" : "hidden"
-                      }`}
-                      src="https://juiceshop.com/cdn/shop/products/Elderberry-update-2_800x.jpg?v=1680660808"
-                      alt="Hover"
-                    />
-                  </div>
-                  <h3>ELDERBERRY TONIC</h3>
-                  <div>
-                    <p>$3.50</p>
-                    <button
-                      className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
+              <div className="row mt-5  d-flex ">
+                <h2 className="text-center ">YOU MAY ALSO LIKE</h2>
+                <div className="d-flex flex-row   ">
+                  {randomProducts &&
+                    randomProducts.map((productRandom) => (
+                      <div
+                        key={productRandom._id}
+                        className="d-flex justify-content-center col-4 text-center d-grid"
+                      >
+                        <div className="align-self-baseline">
+                          <Link
+                            className={ProductStyle.a}
+                            to={`/product/${productRandom._id}`}
+                            key={productRandom._id}
+                          >
+                            <div
+                              className={ProductStyle.imageContainer}
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <img
+                                className={`${ProductStyle.originalImage} ${
+                                  isClicked ? ProductStyle.shrink : ""
+                                }`}
+                                src={productRandom.image}
+                                alt="Original"
+                                onClick={handleClick}
+                              />
+                            </div>
+                            <h3>{productRandom.name}</h3>
+                            <p>${productRandom.price}</p>
+                          </Link>
+                          <div>
+                            <button
+                              className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                            >
+                              ADD TO CART
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
