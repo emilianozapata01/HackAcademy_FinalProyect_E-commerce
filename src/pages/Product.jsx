@@ -110,25 +110,28 @@ function Product({ hovered, setShowNavAndFooter }) {
   return (
     <>
       {product && (
-        <div key={product._id} className={hovered ? "bg-dark-hover-nav " : ""}>
+        <div
+          key={product._id}
+          className={`promo ${hovered ? "bg-dark-hover-nav " : ""}`}
+        >
           <div className="container">
             <div className="row">
-              <div className="col-12 fw-bold ps-5">
-                <Link className="text-decoration-none text-dark" to={"/"}>
-                  <span> Home </span>
-                </Link>
-                <span>
-                  <i className="bi bi-arrow-right"></i>
-                </span>
-                <Link className="text-decoration-none text-dark" to={"/"}>
-                  <span> All </span>
-                </Link>
-                <span>
-                  <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
-                </span>
-              </div>
-
               <div className="col-6">
+                <div className="col-12 fw-bold ps-5 mt-5">
+                  <Link className="text-decoration-none text-dark" to={"/"}>
+                    <span> Home </span>
+                  </Link>
+                  <span>
+                    <i className="bi bi-arrow-right"></i>
+                  </span>
+                  <Link className="text-decoration-none text-dark" to={"/"}>
+                    <span> All </span>
+                  </Link>
+                  <span>
+                    <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
+                  </span>
+                </div>
+
                 <Carousel
                   nextIcon={
                     <span className={ProductStyle.customCarouselIcon}>
@@ -141,14 +144,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     </span>
                   }
                 >
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
                   </Carousel.Item>
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
@@ -158,59 +161,20 @@ function Product({ hovered, setShowNavAndFooter }) {
                   </Carousel.Item>
                 </Carousel>
               </div>
-              <div className="col-6 d-grid gap-1 ">
-                <h4>{product.name}</h4>
-                <span className={ProductStyle.fontProduct}>
+              <div className="col-6  mt-5">
+                <p className={`woolwich ${ProductStyle.fontTitleSize}`}>
+                  {product.name}
+                </p>
+                <p className={`woolwich ${ProductStyle.fontPriceSize} mb-5`}>
                   ${product.price}
-                </span>
-                <p className={ProductStyle.fontProduct}>
+                </p>
+                <p className={`mb-5 ${ProductStyle.fontProduct}`}>
                   {product.description}
                 </p>
 
-                <p className={ProductStyle.fontProduct}>
-                  Organic{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Non-GMO{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Gluten Free{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    fill="currentColor"
-                    className="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <circle cx="8" cy="8" r="8" />
-                  </svg>{" "}
-                  Vegan
-                </p>
-                <p className={ProductStyle.fontProduct}>
-                  *These statements have not been evaluated by the FDA. This
-                  product is not intended to diagnose, treat, cure, or prevent
-                  any disease.
-                </p>
                 <div>
                   <button
-                    className={ProductStyle.buttonSize}
+                    className={`mb-5 ${ProductStyle.buttonSize}`}
                     onClick={decreaseValue}
                     disabled={value === 1}
                   >
@@ -236,21 +200,34 @@ function Product({ hovered, setShowNavAndFooter }) {
                   classBtn={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
                 />
 
-                <p className={`text-success ${ProductStyle.fontProduct}`}>
-                  Local pick up and delivery only. Order by 11am and we will
-                  have your order delivered in your desired pickup or delivery
-                  window.
-                </p>
                 <p className={ProductStyle.fontProduct}>
-                  {product.ingredients}
-                </p>
-                <p className={ProductStyle.fontProduct}>
-                  *Certified Organic Ingredients
+                  <strong>Ingredients: </strong> {product.ingredients}
                 </p>
               </div>
-
+              <div className="d-flex flex-row  justify-content-around mt-5 mb-5">
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/organic.png"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/NON_GMO.png"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/glutenFree.jpg"
+                  alt=""
+                />
+                <img
+                  className={` ${ProductStyle.iconStyle}`}
+                  src="/friendly.jpg"
+                  alt=""
+                />
+              </div>
               <div className="row mt-5  d-flex ">
-                <h2 className="text-center ">YOU MAY ALSO LIKE</h2>
+                <h1 className="text-center woolwich">YOU MAY ALSO LIKE</h1>
                 <div className="d-flex flex-row   ">
                   {randomProducts &&
                     randomProducts.map((productRandom) => (
