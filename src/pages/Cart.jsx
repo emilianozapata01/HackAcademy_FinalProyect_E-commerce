@@ -63,7 +63,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
                         </div>
                       </TableCell>
                       <TableCell >
-                        <div className="d-flex align-items-center heightCart">
+                        <div className="d-flex align-items-center heightCart priceFix">
                           <p>${product.item.price}</p>
                         </div>
                       </TableCell>
@@ -80,8 +80,8 @@ function Cart({ hovered, setShowNavAndFooter }) {
                         </div>
                       </TableCell>
                       <TableCell>
-                        <div className="d-flex align-items-center heightCart">
-                          <div className="w-25">
+                        <div className="d-flex align-items-center heightCart  gap-5 ">
+                          <div className="priceFix">
                             <p className="d-inline ">
                               {Number(product.qty) * Number(product.item.price)}
                             </p>
