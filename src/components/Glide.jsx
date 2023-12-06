@@ -5,8 +5,10 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
 import AddToCart from "./AddToCart";
+import { useNavigate } from "react-router-dom";
 
 function Glide({ products }) {
+  const navigate = useNavigate();
   return (
     <>
       <h1 className="text-center mt-5 woolwich">Bestseller</h1>
@@ -30,7 +32,7 @@ function Glide({ products }) {
           .filter((product) => product.bestSeller === true)
           .map((product) => (
             <SwiperSlide key={product._id}>
-              <div>
+              <div onClick={() => navigate(`/product/${product._id}`)}>
                 <img className="custom-image" src={product.image} alt="" />
                 <p className="text-center h">{product.name}</p>
                 <p className="text-center h">${product.price}</p>

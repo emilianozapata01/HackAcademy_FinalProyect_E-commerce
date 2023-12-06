@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart, addToCart } from "../redux/cartSlice";
@@ -15,6 +16,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 
 function Cart({ hovered, setShowNavAndFooter }) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   useEffect(() => {
@@ -103,7 +105,9 @@ function Cart({ hovered, setShowNavAndFooter }) {
             <div>
             <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
             <div className="d-flex justify-content-center w-100">
-            <button className="woolwich btn btn-dark fs-3 btnCheckout m-0 w-25 mt-5">
+            <button className="woolwich btn btn-dark fs-3 btnCheckout m-0 w-25 mt-5"
+            onClick={() => navigate("/")}
+            >
               continue shopping
             </button>
             </div>
