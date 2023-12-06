@@ -121,3 +121,11 @@ originalImage {
 shrink {
   transform: scale(0.9);
 }
+
+.fontTitleSize {
+  font-size: 4rem;
+}
+
+.fontPriceSize {
+  font-size: 3rem;
+}

@@ -113,7 +113,7 @@ function Product({ hovered, setShowNavAndFooter }) {
         <div key={product._id} className={hovered ? "bg-dark-hover-nav " : ""}>
           <div className="container">
             <div className="row">
-              <div className="col-12 fw-bold ps-5">
+              <div className="col-12 fw-bold ps-5 mt-3">
                 <Link className="text-decoration-none text-dark" to={"/"}>
                   <span> Home </span>
                 </Link>
@@ -141,14 +141,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     </span>
                   }
                 >
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
                   </Carousel.Item>
-                  <Carousel.Item interval={500}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="img-fluid"
                       src={product.image}
@@ -159,8 +159,10 @@ function Product({ hovered, setShowNavAndFooter }) {
                 </Carousel>
               </div>
               <div className="col-6 d-grid gap-1 ">
-                <h4>{product.name}</h4>
-                <span className={ProductStyle.fontProduct}>
+                <p className={`woolwich ${ProductStyle.fontTitleSize}`}>
+                  {product.name}
+                </p>
+                <span className={`woolwich ${ProductStyle.fontPriceSize}`}>
                   ${product.price}
                 </span>
                 <p className={ProductStyle.fontProduct}>
@@ -242,15 +244,17 @@ function Product({ hovered, setShowNavAndFooter }) {
                   window.
                 </p>
                 <p className={ProductStyle.fontProduct}>
-                  {product.ingredients}
+                  <strong>Ingredients: </strong> {product.ingredients}
                 </p>
-                <p className={ProductStyle.fontProduct}>
-                  *Certified Organic Ingredients
-                </p>
+
+                <img
+                  src="https://www.greenerchoices.org/wp-content/uploads/2021/04/certified-organic.jpg"
+                  alt=""
+                />
               </div>
 
               <div className="row mt-5  d-flex ">
-                <h2 className="text-center ">YOU MAY ALSO LIKE</h2>
+                <h2 className="text-center woolwich">YOU MAY ALSO LIKE</h2>
                 <div className="d-flex flex-row   ">
                   {randomProducts &&
                     randomProducts.map((productRandom) => (
