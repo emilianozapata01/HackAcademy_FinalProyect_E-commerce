@@ -94,11 +94,6 @@ function NavBar({ setHovered }) {
                       >
                         {category.name}
                       </NavLink>
-                      // <Nav.Link href="/elixirs">Elixirs</Nav.Link>
-                      // <Nav.Link href="/nut-milks&smoothies">
-                      //   Nut milks &amp; smoothies
-                      // </Nav.Link>
-                      // <Nav.Link href="/sparkling-juice">Sparkling tonics</Nav.Link>
                     ))}
                 </div>
               </Nav.Item>

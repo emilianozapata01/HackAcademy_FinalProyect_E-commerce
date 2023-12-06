@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { useState } from "react";
 
-function AddToCart({ product, qty, classBtn }) {
+function AddToCart({ product, qty, classBtn, typeQty }) {
   const dispatch = useDispatch();
   const [value, setValue] = useState(qty);
 
@@ -16,7 +16,7 @@ function AddToCart({ product, qty, classBtn }) {
     if (value > 1) {
       setValue(value - 1);
     }
-    if (value -1 !== 0) {
+    if (value - 1 !== 0) {
       dispatch(
         addToCart({
           item: product,

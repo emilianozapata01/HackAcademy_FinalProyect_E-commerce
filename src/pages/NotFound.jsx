@@ -17,7 +17,7 @@ function NotFound({ setShowNavAndFooter }) {
         <source src={NotFoundVideo} type="video/mp4" />
       </video>
       <div className="d-flex flex-column justify-content-center vh-100">
-        <div className="d-flex justify-content-center align-items-center gap-2 rrrttt">
+        <div className="d-flex justify-content-center align-items-center gap-2">
           <span className={NotFoundStyle.ooops}>Ooops!</span>
           <span className={NotFoundStyle.messageNotFound}>Juice Not Found</span>
         </div>
