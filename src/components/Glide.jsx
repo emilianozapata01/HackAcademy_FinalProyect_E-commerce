@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import { EffectCoverflow, Navigation } from "swiper/modules";
+
 import AddToCart from "./AddToCart";
 
 function Glide({ products }) {

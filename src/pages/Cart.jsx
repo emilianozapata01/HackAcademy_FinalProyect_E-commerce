@@ -1,13 +1,22 @@
-import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart, addToCart } from "../redux/cartSlice";
 import Footer from "../components/Footer";
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import AddToCart from "../components/AddToCart";
+import CancelIcon from "@mui/icons-material/Cancel";
+import IconButton from "@mui/material/IconButton";
 
 function Cart({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
   useEffect(() => {
     setShowNavAndFooter(true);
   }, []);
@@ -27,76 +36,79 @@ function Cart({ hovered, setShowNavAndFooter }) {
       <div className={hovered ? "bg-dark-hover-nav " : ""}>
         <div className="container ">
           <h1 className="woolwich text-center mt-5 mb-5">My basket</h1>
-
-          <Table>
-            <thead>
-              <tr>
-                <th className="fw-bold">Products</th>
-                <th className="fw-bold">Price</th>
-                <th className="fw-bold">Quantity</th>
-                <th className="fw-bold">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr>
-                  <td>
-                    <div className="d-flex gap-5  align-items-center">
-                      <img className="cartImg" src={product.item.image} alt="" />
-                      <p>{product.item.name}</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="d-flex align-items-center ">
-                      <p>${product.item.price}</p>
-                    </div>
-                  </td>
-                  <td >
-                    <div className="input-group ">
-                      <button
-                        className="btn btn-success"
-                        onClick={decreaseValue}
-                      >
-                        <i className="bi bi-dash text-white"></i>
-                      </button>
-                      <input
-                        className="text-center inputCart "
-                        type="text"
-                        value={product.qty}
-                      />
-                      <button
-                        className="btn btn-success"
-                        onClick={increaseValue}
-                      >
-                        <i className="bi bi-plus-lg text-white"></i>
-                      </button>
-                    </div>
-                  </td>
-
-                  <td>
-                    <div>
-                      <p className="d-inline ">{Number(product.qty) * Number( product.item.price)}</p>
-                      <Link
-                        className="text-decoration-none text-danger ms-5"
-                        to={""}
-                      >
-                        <i className="bi bi-x-circle-fill"></i>
-                      </Link>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-          <div className="d-flex flex-row justify-content-end space">
-            <p className="fw-bold me-5">Subtotal</p>
-            <p className="fw-bold">13.00</p>
-          </div>
-          <div className="divCheckout d-flex justify-content-end space">
-            <button className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
-              checkout
+          {cart.items[0] ? (
+            <TableContainer >
+              <Table sx={{ minWidth: 700 }} aria-label="spanning table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Products</TableCell>
+                    <TableCell>Price</TableCell>
+                    <TableCell>Quantity</TableCell>
+                    <TableCell>Total</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {cart.items.map((product) => (
+                    <TableRow key={product.item._id}>
+                      <TableCell >
+                        <div className="d-flex gap-5 align-items-center">
+                          <img
+                            className="cartImg"
+                            src={product.item.image}
+                            alt=""
+                          />
+                          <p>{product.item.name}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell >
+                        <div className="d-flex align-items-center heightCart">
+                          <p>${product.item.price}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell >
+                        <div className="d-flex align-items-center heightCart">
+                          <AddToCart
+                            product={product.item}
+                            qty={product.qty}
+                            classBtn={
+                              "custom-btn-swiper custom-btn-swiper-product"
+                            }
+                            typeQty={true}
+                          />
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="d-flex align-items-center heightCart">
+                          <div className="w-25">
+                            <p className="d-inline ">
+                              {Number(product.qty) * Number(product.item.price)}
+                            </p>
+                          </div>
+                          <IconButton onClick={()=>dispatch(removeOfCart(product))} className="text-danger">
+                    <CancelIcon />
+                  </IconButton>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                  <TableRow>
+                    <TableCell rowSpan={3} />
+                    <TableCell colSpan={2}>Subtotal</TableCell>
+                    <TableCell align="right">${cart.subtotal}</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          ) : (
+            <div>
+            <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
+            <div className="d-flex justify-content-center w-100">
+            <button className="woolwich btn btn-dark fs-3 btnCheckout m-0 w-25 mt-5">
+              continue shopping
             </button>
-          </div>
+            </div>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
