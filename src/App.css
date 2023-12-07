@@ -203,9 +203,14 @@
   width: 2.5rem;
 }
 
+.imgBtnLogo{
+  width: 5rem;
 
+}
 
-
+.botonColor{
+  background-color: rgb(242, 186, 54) !important;
+}
 
 
 

@@ -4,15 +4,17 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import AddToCart from "../components/AddToCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
-function Checkout() {
+function Checkout({setShowNavAndFooter}) {
   const cart = useSelector((state) => state.cart);
+  React.useEffect(() => {
+    setShowNavAndFooter(false);
+  }, []);
   return (
     <>
       <div className="container">
@@ -22,7 +24,9 @@ function Checkout() {
             <span>Express checkout</span>
             <div className="d-flex gap-3">
               <button className="btn btn-primary">shopPay</button>
-              <button className="btn btn-danger">PayPal</button>
+
+              <button className="btn botonColor"> <img className="imgBtnLogo" src="580b57fcd9996e24bc43c530.png" alt="" />
+          </button>
               <button className="btn btn-success">GPay</button>
             </div>
             <div className="d-flex gap-3">
@@ -40,21 +44,95 @@ function Checkout() {
               <form action="#">
                 <div>
                   <p>Contact</p>
-                  <TextField id="outlined-basic" label="Email" variant="outlined" />
+                  <TextField
+                    className="w-100"
+                    id="email"
+                    label="Email"
+                    variant="outlined"
+                  />
+                </div>
+                <div>
+                  <p>Delivery</p>
+                  <div className="d-flex flex-column gap-3">
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="country"
+                        label="Country/Region"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div className="d-flex gap-3">
+                      <TextField
+                        className="w-50"
+                        id="firstname"
+                        label="First name"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-50"
+                        id="lastname"
+                        label="Last name"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="address"
+                        label="Address"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="apartment"
+                        label="Apartment, suite, etc. (optional)
+                        "
+                        variant="outlined"
+                      />
+                    </div>
+                    <div className="d-flex gap-3">
+                      <TextField
+                        className="w-100"
+                        id="postalcode"
+                        label="Postal code"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-100"
+                        id="city"
+                        label="City"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-100"
+                        id="region"
+                        label="Region"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="phone"
+                        label="Phone"
+                        variant="outlined"
+                      />
+                    </div>
+                  </div>
                 </div>
               </form>
               <h4 className="mb-3">Payment</h4>
 
-              <div className="row gy-3">
-                <div className="col-md-6">
-                  <label htmlFor="cc-name" className="form-label">
-                    Name on card
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
+              <div className="d-flex flex-column gap-3">
+                <div>
+                  <TextField
+                    className="w-100"
                     id="cc-name"
-                    placeholder=""
+                    label="Name on card"
+                    variant="outlined"
                     required
                   />
                   <small className="text-body-secondary">
@@ -64,54 +142,47 @@ function Checkout() {
                     Name on card is required
                   </div>
                 </div>
-
-                <div className="col-md-6">
-                  <label htmlFor="cc-number" className="form-label">
-                    Credit card number
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
+                <div>
+                  <TextField
+                    className="w-100"
                     id="cc-number"
-                    placeholder=""
+                    label="Number card"
+                    variant="outlined"
                     required
                   />
                   <div className="invalid-feedback">
                     Credit card number is required
                   </div>
                 </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-expiration" className="form-label">
-                    Expiration
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-expiration"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Expiration date required
+                <div className="d-flex  gap-3">
+                  <div className="w-100">
+                    <TextField
+                      className="w-100"
+                      id="cc-expiration"
+                      label="Expiration"
+                      variant="outlined"
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Expiration date required
+                    </div>
                   </div>
-                </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-cvv" className="form-label">
-                    CVV
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-cvv"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">Security code required</div>
+                  <div className="w-100">
+                    <TextField
+                      className="w-100"
+                      id="cc-cvv"
+                      label="CVV"
+                      variant="outlined"
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Security code required
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <button className="btn btn-danger my-4">Pay now</button>
           </div>
           <div>
             <TableContainer>
