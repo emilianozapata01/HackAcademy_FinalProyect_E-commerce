@@ -4,15 +4,17 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import AddToCart from "../components/AddToCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 
-function Checkout() {
+function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
+  React.useEffect(() => {
+    setShowNavAndFooter(false);
+  }, []);
   return (
     <>
       <div className="container">
@@ -22,7 +24,15 @@ function Checkout() {
             <span>Express checkout</span>
             <div className="d-flex gap-3">
               <button className="btn btn-primary">shopPay</button>
-              <button className="btn btn-danger">PayPal</button>
+
+              <button className="btn botonColor">
+                {" "}
+                <img
+                  className="imgBtnLogo"
+                  src="580b57fcd9996e24bc43c530.png"
+                  alt=""
+                />
+              </button>
               <button className="btn btn-success">GPay</button>
             </div>
             <div className="d-flex gap-3">
@@ -91,19 +101,19 @@ function Checkout() {
                     </div>
                     <div className="d-flex gap-3">
                       <TextField
-                        className="w-25"
+                        className="w-100"
                         id="postalcode"
                         label="Postal code"
                         variant="outlined"
                       />
                       <TextField
-                        className="w-25"
+                        className="w-100"
                         id="city"
                         label="City"
                         variant="outlined"
                       />
                       <TextField
-                        className="w-25"
+                        className="w-100"
                         id="region"
                         label="Region"
                         variant="outlined"
@@ -122,7 +132,7 @@ function Checkout() {
               </form>
               <h4 className="mb-3">Payment</h4>
 
-              <div className="row gy-3">
+              <div className="d-flex flex-column gap-3">
                 <div>
                   <TextField
                     className="w-100"
@@ -150,8 +160,8 @@ function Checkout() {
                     Credit card number is required
                   </div>
                 </div>
-                <div className="d-flex gap-3">
-                  <div>
+                <div className="d-flex  gap-3">
+                  <div className="w-100">
                     <TextField
                       className="w-100"
                       id="cc-expiration"
@@ -163,7 +173,7 @@ function Checkout() {
                       Expiration date required
                     </div>
                   </div>
-                  <div>
+                  <div className="w-100">
                     <TextField
                       className="w-100"
                       id="cc-cvv"
@@ -178,6 +188,7 @@ function Checkout() {
                 </div>
               </div>
             </div>
+            <button className="btn btn-danger my-4">Pay now</button>
           </div>
           <div className="contenedor-externo">
             <div className="contenedor-interno">

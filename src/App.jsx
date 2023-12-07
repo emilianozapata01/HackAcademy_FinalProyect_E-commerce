@@ -57,7 +57,7 @@ function App() {
         <Route
           path="/checkout"
           element={
-            <Checkout/>
+            <Checkout setShowNavAndFooter={setShowNavAndFooter}/>
           }
         />
         <Route

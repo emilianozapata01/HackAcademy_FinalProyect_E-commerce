@@ -228,6 +228,13 @@
   scrollbar-width: thin;
   scrollbar-color: transparent;
 }
+.imgBtnLogo {
+  width: 5rem;
+}
+
+.botonColor {
+  background-color: rgb(242, 186, 54) !important;
+}
 
 /* Estilos generales para la barra de desplazamiento (también para IE/Edge) */
 .contenedor-interno {
@@ -246,7 +253,7 @@
 
 .hearthIcon {
   position: absolute;
-  left: 21.4%;
+  left: 22%;
   top: 5%;
   color: #04b907;
   font-size: 1.6rem;
