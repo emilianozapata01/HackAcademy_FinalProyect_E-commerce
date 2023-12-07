@@ -9,7 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import AddToCart from "../components/AddToCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
@@ -40,21 +40,95 @@ function Checkout() {
               <form action="#">
                 <div>
                   <p>Contact</p>
-                  <TextField id="outlined-basic" label="Email" variant="outlined" />
+                  <TextField
+                    className="w-100"
+                    id="email"
+                    label="Email"
+                    variant="outlined"
+                  />
+                </div>
+                <div>
+                  <p>Delivery</p>
+                  <div className="d-flex flex-column gap-3">
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="country"
+                        label="Country/Region"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div className="d-flex gap-3">
+                      <TextField
+                        className="w-50"
+                        id="firstname"
+                        label="First name"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-50"
+                        id="lastname"
+                        label="Last name"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="address"
+                        label="Address"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="apartment"
+                        label="Apartment, suite, etc. (optional)
+                        "
+                        variant="outlined"
+                      />
+                    </div>
+                    <div className="d-flex gap-3">
+                      <TextField
+                        className="w-25"
+                        id="postalcode"
+                        label="Postal code"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-25"
+                        id="city"
+                        label="City"
+                        variant="outlined"
+                      />
+                      <TextField
+                        className="w-25"
+                        id="region"
+                        label="Region"
+                        variant="outlined"
+                      />
+                    </div>
+                    <div>
+                      <TextField
+                        className="w-100"
+                        id="phone"
+                        label="Phone"
+                        variant="outlined"
+                      />
+                    </div>
+                  </div>
                 </div>
               </form>
               <h4 className="mb-3">Payment</h4>
 
               <div className="row gy-3">
-                <div className="col-md-6">
-                  <label htmlFor="cc-name" className="form-label">
-                    Name on card
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
+                <div>
+                  <TextField
+                    className="w-100"
                     id="cc-name"
-                    placeholder=""
+                    label="Name on card"
+                    variant="outlined"
                     required
                   />
                   <small className="text-body-secondary">
@@ -64,113 +138,92 @@ function Checkout() {
                     Name on card is required
                   </div>
                 </div>
-
-                <div className="col-md-6">
-                  <label htmlFor="cc-number" className="form-label">
-                    Credit card number
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
+                <div>
+                  <TextField
+                    className="w-100"
                     id="cc-number"
-                    placeholder=""
+                    label="Number card"
+                    variant="outlined"
                     required
                   />
                   <div className="invalid-feedback">
                     Credit card number is required
                   </div>
                 </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-expiration" className="form-label">
-                    Expiration
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-expiration"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Expiration date required
+                <div className="d-flex gap-3">
+                  <div>
+                    <TextField
+                      className="w-100"
+                      id="cc-expiration"
+                      label="Expiration"
+                      variant="outlined"
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Expiration date required
+                    </div>
                   </div>
-                </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-cvv" className="form-label">
-                    CVV
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-cvv"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">Security code required</div>
+                  <div>
+                    <TextField
+                      className="w-100"
+                      id="cc-cvv"
+                      label="CVV"
+                      variant="outlined"
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Security code required
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div>
-            <TableContainer>
-              <Table sx={{ minWidth: 700 }} aria-label="spanning table">
-                <TableBody>
-                  {cart.items.map((product) => (
-                    <TableRow key={product.item._id}>
-                      <TableCell>
-                        <div className="d-flex gap-5 align-items-center">
-                          <img
-                            className="cartImg"
-                            src={product.item.image}
-                            alt=""
-                          />
-                          <p>{product.item.name}</p>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="d-flex align-items-center heightCart priceFix">
-                          <p>${product.item.price}</p>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="d-flex align-items-center heightCart">
-                          <AddToCart
-                            product={product.item}
-                            qty={product.qty}
-                            classBtn={
-                              "custom-btn-swiper custom-btn-swiper-product"
-                            }
-                            typeQty={true}
-                          />
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="d-flex align-items-center heightCart  gap-5 ">
-                          <div className="priceFix">
+          <div className="contenedor-externo">
+            <div className="contenedor-interno">
+              <TableContainer>
+                <Table sx={{ minWidth: 700 }} arial-label="spanning table">
+                  <TableBody>
+                    {cart.items.map((product) => (
+                      <TableRow key={product.item._id}>
+                        <TableCell>
+                          <div className="d-flex gap-5 align-items-center position-relative">
+                            <img
+                              className="cartImg"
+                              src={product.item.image}
+                              alt={product.item.name}
+                            />
+                            <i className="bi bi-heart-fill hearthIcon"></i>
+                            <p className="hearthText">{Number(product.qty)}</p>
+                            <p>{product.item.name}</p>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="d-flex flex-column align-items-center  priceFix">
+                            <p>Price</p>
+                            <p>${product.item.price}</p>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="d-flex flex-column align-items-center  priceFix">
+                            <p>Total</p>
                             <p className="d-inline ">
+                              $
                               {Number(product.qty) * Number(product.item.price)}
                             </p>
                           </div>
-                          <IconButton
-                            onClick={() => dispatch(removeOfCart(product))}
-                            className="text-danger"
-                          >
-                            <CancelIcon />
-                          </IconButton>
-                        </div>
-                      </TableCell>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                    <TableRow>
+                      <TableCell rowSpan={3} />
+                      <TableCell colSpan={1}>Subtotal</TableCell>
+                      <TableCell align="right">${cart.subtotal}</TableCell>
                     </TableRow>
-                  ))}
-                  <TableRow>
-                    <TableCell rowSpan={3} />
-                    <TableCell colSpan={2}>Subtotal</TableCell>
-                    <TableCell align="right">${cart.subtotal}</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
           </div>
         </div>
       </div>

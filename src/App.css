@@ -203,10 +203,59 @@
   width: 2.5rem;
 }
 
+.contenedor-externo {
+  width: 1389px;
+  height: 720px;
+  top: 120px;
+  position: sticky;
+}
+.contenedor-interno {
+  overflow: auto;
+  height: 720px;
+}
 
+/* Estilos para la barra de desplazamiento en navegadores WebKit (Chrome, Safari) */
+.contenedor-interno::-webkit-scrollbar {
+  width: 3px; /* Ancho de la barra de desplazamiento */
+}
 
+.contenedor-interno::-webkit-scrollbar-thumb {
+  background-color: #157347; /* Color del pulgar de la barra de desplazamiento */
+}
 
+/* Estilos para la barra de desplazamiento en Firefox */
+.contenedor-interno {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
 
+/* Estilos generales para la barra de desplazamiento (también para IE/Edge) */
+.contenedor-interno {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
 
+.contenedor-interno::-webkit-scrollbar-track {
+  background-color: transparent; /* Color del riel de la barra de desplazamiento */
+}
 
+/* Estilos para el riel de la barra de desplazamiento en Firefox */
+.contenedor-interno::-moz-scrollbar-track {
+  background-color: transparent;
+}
 
+.hearthIcon {
+  position: absolute;
+  left: 21.4%;
+  top: 5%;
+  color: #04b907;
+  font-size: 1.6rem;
+}
+
+.hearthText {
+  position: absolute;
+  left: 23.5%;
+  top: 9%;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
