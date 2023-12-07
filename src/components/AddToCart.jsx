@@ -17,12 +17,12 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
       setValue(value - 1);
     }
     if (value - 1 !== 0) {
+      const quanty1 = value - qty - 1;
       dispatch(
         addToCart({
           item: product,
-          qty: value - qty - 1,
+          qty: quanty1,
           total: value * product.price,
-          oneQty: false,
         })
       );
     }
@@ -30,12 +30,12 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
 
   const increaseValue = () => {
     setValue(value + 1);
+    const quanty = value - qty + 1;
     dispatch(
       addToCart({
         item: product,
-        qty: value - qty + 1,
+        qty: quanty,
         total: value * product.price,
-        oneQty: false,
       })
     );
   };
@@ -47,7 +47,7 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
           <button className="btn btn-success" onClick={decreaseValue}>
             <i className="bi bi-dash text-white"></i>
           </button>
-          <input className="text-center inputCart " type="text" value={value} />
+          <input className="text-center inputCart " type="text" value={value} readOnly/>
           <button className="btn btn-success" onClick={increaseValue}>
             <i className="bi bi-plus-lg text-white"></i>
           </button>

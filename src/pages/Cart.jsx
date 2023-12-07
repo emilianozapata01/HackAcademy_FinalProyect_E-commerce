@@ -22,16 +22,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
   useEffect(() => {
     setShowNavAndFooter(true);
   }, []);
-  const [value, setValue] = useState(1);
-  const decreaseValue = () => {
-    if (value > 1) {
-      setValue(value - 1);
-    }
-  };
 
-  const increaseValue = () => {
-    setValue(value + 1);
-  };
 
   return (
     <>

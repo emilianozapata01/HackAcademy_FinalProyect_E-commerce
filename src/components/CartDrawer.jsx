@@ -34,6 +34,12 @@ function CartDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
+  const handleCheckout = ()=>{
+    navigate("/checkout");
+  };
+
+
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 420 }}
@@ -96,7 +102,7 @@ function CartDrawer() {
               ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
             </p>
             <div className="divCheckout">
-              <button onClick={() => navigate("/checkout")} className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
+              <button onClick={handleCheckout} className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout">
                 checkout
               </button>
             </div>
@@ -105,6 +111,8 @@ function CartDrawer() {
       </div>
     </Box >
   );
+
+ 
 
   return (
     <>

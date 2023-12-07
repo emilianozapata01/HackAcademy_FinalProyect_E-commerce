@@ -134,7 +134,6 @@ function NavBar({ setHovered }) {
                 </Dropdown>
                 <Nav.Link
                   className={`${NavbarStyle.correctColorNavbar}`}
-                  onClick={() => navigate("/cart")}
                 >
                   <CartDrawer />
                 </Nav.Link>
