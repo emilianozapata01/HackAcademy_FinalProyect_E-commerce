@@ -69,16 +69,13 @@ function NavBar({ setHovered }) {
           >
             <Nav className={`${NavbarStyle.navInsideCollapse}`}>
               <div className="d-flex flex-row fix-navbar h-100 align-items-center">
-                <Nav.Link
-                  className={`d-flex justify-content-center`}
-                  href="/all-products"
+                <span
+                  className={`${NavbarStyle.correctColorNavbar} ${NavbarStyle.subnavbtn} ${NavbarStyle.navItemHover}`}
+                  onClick={() => navigate("/all-products")}
                 >
-                  <span
-                    className={`${NavbarStyle.correctColorNavbar} ${NavbarStyle.navItemHover}`}
-                  >
-                    ALL PRODUCTS
-                  </span>
-                </Nav.Link>
+                  ALL PRODUCTS
+                </span>
+
                 <Nav.Item
                   className={`${NavbarStyle.subnavbtn}`}
                   onMouseEnter={onMouseEnter}
@@ -125,6 +122,11 @@ function NavBar({ setHovered }) {
                         Register
                       </Dropdown.Item>
                     )}
+                    {!buyer && (
+                      <Dropdown.Item onClick={() => navigate("/cart")}>
+                        Cart
+                      </Dropdown.Item>
+                    )}
                     {buyer && (
                       <Dropdown.Item onClick={handleLogout}>
                         Logout
@@ -132,9 +134,7 @@ function NavBar({ setHovered }) {
                     )}
                   </Dropdown.Menu>
                 </Dropdown>
-                <Nav.Link
-                  className={`${NavbarStyle.correctColorNavbar}`}
-                >
+                <Nav.Link className={`${NavbarStyle.correctColorNavbar}`}>
                   <CartDrawer />
                 </Nav.Link>
               </div>
