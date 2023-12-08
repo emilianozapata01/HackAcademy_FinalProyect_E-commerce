@@ -51,60 +51,93 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         </div>
         <p className="text-center fw-bold mt-5">Tecnologías</p>
         <div className="d-flex flex-wrap justify-content-center">
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#7533fa" }}
+          >
             <LiaBootstrap className={AboutThisProyectStyle.icons} />
             <span>Bootstrap</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "rgb(8 126 164)" }}
+          >
             <FaReact size={"36px"} />
             <span>React</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#487651" }}
+          >
             <FaNodeJs />
             <span>Node.js</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#00685b" }}
+          >
             <SiMongodb />
             <span>MongoDB</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#353535" }}
+          >
             <SiExpress />
             <span>Expressjs</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#764abc" }}
+          >
             <SiRedux />
             <span>Redux</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: "#010409" }}
+          >
             <FaGithub />
             <span>GitHub</span>
           </div>
-          <div className={AboutThisProyectStyle.techUsed}>
+          <div
+            className={AboutThisProyectStyle.techUsed}
+            style={{ color: " #800" }}
+          >
             <SiMongoose />
             <span>Mongoose</span>
           </div>
         </div>
-        <div className="d-flex mt-5"> 
+        <div className="d-flex mt-5">
           <div className="d-flex flex-column mt-4 gap-3">
             <div>
               <p className="fw-bold ">MER</p>
               <span className="text-secondary">
                 {" "}
-                En la primera etapa del proyecto realizamos un diagrama MER para definir las entidades que consideramos necesarias y establecer sus respectivas relaciones.
+                En la primera etapa del proyecto realizamos un diagrama MER para
+                definir las entidades que consideramos necesarias y establecer
+                sus respectivas relaciones.
               </span>
             </div>
             <div>
               <p className="fw-bold">Entidades</p>
               <span className="text-secondary">
                 {" "}
-                Las entidades definidas fueron Product, Category, Order, Buyer y Admin. Debido al alcanze del proyecto y para reducir complejidad, decidimos que Buyer y Admin fueran entidades independientes.
+                Las entidades definidas fueron Product, Category, Order, Buyer y
+                Admin. Debido al alcanze del proyecto y para reducir
+                complejidad, decidimos que Buyer y Admin fueran entidades
+                independientes.
               </span>
             </div>
             <div>
               <p className="fw-bold">Relaciones</p>
               <span className="text-secondary">
                 {" "}
-                Un producto puede estar en muchas órdenes y cada una de éstas pueden tener muchos productos. Una categoría puede tener muchos productos, pero un producto solo podrá estar en una categoría. El cliente podrá tener muchas órdenes pero cada orden pertenecerá a un solo cliente.
+                Un producto puede estar en muchas órdenes y cada una de éstas
+                pueden tener muchos productos. Una categoría puede tener muchos
+                productos, pero un producto solo podrá estar en una categoría.
+                El cliente podrá tener muchas órdenes pero cada orden
+                pertenecerá a un solo cliente.
               </span>
             </div>
           </div>
@@ -112,33 +145,38 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
             <img className="imgATP" src="image.png" alt="" />
           </div>
         </div>
-        <div className="d-flex mt-5 "> 
-          
-            <img className="imgATP" src="image2.png" alt="" />
+        <div className="d-flex mt-5 ">
+          <img className="imgATP" src="image2.png" alt="" />
           <div>
-          <div className="d-flex flex-column mt-4 gap-3">
-            <div>
-              <p className="fw-bold ">Front-End</p>
-              <span className="text-secondary">
-                {" "}
-                Creimos conveniente crear dos proyectos de Front independientes. Uno para el e-commerce y otro para la Administración. Las principales tecnologías utilizadas fueron React.js, Redux y React-Router.
-              </span>
+            <div className="d-flex flex-column mt-4 gap-3">
+              <div>
+                <p className="fw-bold ">Front-End</p>
+                <span className="text-secondary">
+                  {" "}
+                  Creimos conveniente crear dos proyectos de Front
+                  independientes. Uno para el e-commerce y otro para la
+                  Administración. Las principales tecnologías utilizadas fueron
+                  React.js, Redux y React-Router.
+                </span>
+              </div>
+              <div>
+                <p className="fw-bold">Back-End</p>
+                <span className="text-secondary">
+                  {" "}
+                  Nos basamos en un entorno de Node.js con Express.js. A través
+                  de JWT generamos dos tokens distintos para diferenciar el
+                  acceso de un cliente al de un administrador.
+                </span>
+              </div>
+              <div>
+                <p className="fw-bold">Base de Datos</p>
+                <span className="text-secondary">
+                  {" "}
+                  Optamos por usar mongoDB para nuestra Base de Datos, ya que
+                  tenemos más afinidad con el desarrollo en mongoose.
+                </span>
+              </div>
             </div>
-            <div>
-              <p className="fw-bold">Back-End</p>
-              <span className="text-secondary">
-                {" "}
-                Nos basamos en un entorno de Node.js con Express.js. A través de JWT generamos dos tokens distintos para diferenciar el acceso de un cliente al de un administrador.
-              </span>
-            </div>
-            <div>
-              <p className="fw-bold">Base de Datos</p>
-              <span className="text-secondary">
-                {" "}
-                Optamos por usar mongoDB para nuestra Base de Datos, ya que tenemos más afinidad con el desarrollo en mongoose.
-              </span>
-            </div>
-          </div>
           </div>
         </div>
         <div className="text-center">
