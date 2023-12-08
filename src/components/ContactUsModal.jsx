@@ -1,13 +1,10 @@
-
-import { Modal, Button, Form, Row, Col } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import ContactStyle from "../styles/views/Contact.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ContactStyle from "../styles/components/Contact.module.css";
 
-
-
-const ContactUsModal = ({ showModal, handleClose}) => {
-  const buyer = useSelector((state)=> state.buyer);
+const ContactUsModal = ({ showModal, handleClose }) => {
+  const buyer = useSelector((state) => state.buyer);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,7 +12,7 @@ const ContactUsModal = ({ showModal, handleClose}) => {
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    
+    console.log(buyer);
     if (buyer) {
       setFirstName(buyer.firstname || "");
       setLastName(buyer.lastname || "");
@@ -29,88 +26,90 @@ const ContactUsModal = ({ showModal, handleClose}) => {
     }
   }, [buyer]);
 
-  return (
-    <Modal show={showModal} onHide={handleClose} centered>
-        
-        <div className={ContactStyle.bgc}>
-        <Modal.Title className={`mt-3 ${ContactStyle.title}`}>CONTACT US!</Modal.Title>
-      <Modal.Body className={ContactStyle.textBody}>
-        <Form>
-          <Form.Group controlId="formMessage" className="mb-4">
-            <Form.Label className="h5">Message</Form.Label>
-            <Form.Control as="textarea" rows={6} placeholder="Leave your message here" required/>
-          </Form.Group>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleClose(); 
+  };
 
-          <Row className="mb-3">
-            <Col md={6}>
-              <Form.Group controlId="formFirstName">
-                <Form.Label className="h6">First Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter your first name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+  return (
+    <div className={`modal fade ${showModal ? "show" : ""}`} tabIndex="-1" style={{ display: showModal ? "block" : "none" }}>
+      <div className="modal-dialog modal-dialog-centered">
+        <div className={`modal-content ${ContactStyle.modalContainer}`}>
+          <div className={`modal-header ${ContactStyle.modalHeader}`}>
+            <h1 className={ContactStyle.title}>CONTACT US!</h1>
+            <button type="button" className="btn-close" onClick={handleClose}></button>
+          </div>
+          <div className={`modal-body ${ContactStyle.modalBody}`}>
+            <form className="d-flex flex-column gap-3 mt-3 w-100" onSubmit={handleSubmit}>
+              <div className="d-flex flex-column gap-3">
+                <div className="row">
+                  <div className="col-sm-12 col-md-6 mt-3">
+                    <input
+                      type="text"
+                      name="firstname"
+                      placeholder="First name"
+                      className="form-control"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                      autoComplete="on"
+                    />
+                  </div>
+                  <div className="d-flex flex-column col-sm-12 col-md-6 mt-3">
+                    <input
+                      type="text"
+                      name="lastname"
+                      placeholder="Last name"
+                      className="form-control"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                      autoComplete="on"
+                    />
+                  </div>
+                  <div className="d-flex flex-column col-sm-12 col-md-6 mt-3">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="E-mail"
+                      className="form-control"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      autoComplete="on"
+                    />
+                  </div>
+                  <div className="d-flex flex-column col-sm-12 col-md-6 mt-3">
+                    <input
+                      type="number"
+                      name="phone"
+                      placeholder="Phone number (optional)"
+                      className="form-control"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+
+                      autoComplete="on"
+                    />
+                  </div>
+                </div>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  className="form-control"
                   required
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6}>
-              <Form.Group controlId="formLastName">
-                <Form.Label className="h6">Last Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter your last name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          
-          <Row>
-            <Col md={6}>
-              <Form.Group controlId="formPhone">
-                <Form.Label className="h6">Phone</Form.Label>
-                <Form.Control
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6}>
-              <Form.Group controlId="formEmail">
-                <Form.Label className="h6">Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose} className={ContactStyle.btn}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose} className={ContactStyle.btn}> 
-          Send
-        </Button>
-      </Modal.Footer>
+                  rows="8"
+                ></textarea>
+              </div>
+              <button type="submit" className={`mt-4 ${ContactStyle.btn}`}>
+                <span>Juice it!</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </Modal>
+    </div>
   );
 };
 
-
-
 export default ContactUsModal;
-
-
-
-
 
