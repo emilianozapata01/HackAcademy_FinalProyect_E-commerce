@@ -11,12 +11,6 @@ function SlideImagesHome({ hovered }) {
       originalClass: `${hovered && "obscurecerSlide"} original-image-slide`,
     },
     {
-      id: 2,
-      original: "DSC_9620-MHS-medres.webp",
-      originalHeight: "500em",
-      originalClass: `${hovered && "obscurecerSlide"} original-image-slide`,
-    },
-    {
       id: 3,
       original: "Green-Header-1.webp",
       originalHeight: "500em",

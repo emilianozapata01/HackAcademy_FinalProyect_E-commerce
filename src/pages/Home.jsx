@@ -39,13 +39,12 @@ function Home({ hovered, setShowNavAndFooter }) {
           >
             About this Project
           </button>
+          <button
+            className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
+          >
+            <i className="bi bi-person-raised-hand"></i>
+          </button>
         </Link>
-        <button
-          className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
-        >
-          <i className="bi bi-person-raised-hand"></i>
-        </button>
-
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <div className={`${HomeStyle.SlideImageHome}`}>
             <SlideImagesHome hovered={hovered} />
