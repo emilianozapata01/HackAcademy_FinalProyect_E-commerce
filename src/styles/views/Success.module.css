@@ -1,0 +1,16 @@
+.SuccessButton {
+  border: none;
+  background-color: #3a913f;
+  border-radius: 10px;
+  color: white;
+  width: 150px;
+  height: 40px;
+}
+
+.SuccessTittle {
+  font-size: 4rem;
+}
+
+.SuccessText {
+  color: rgb(146, 146, 147);
+}

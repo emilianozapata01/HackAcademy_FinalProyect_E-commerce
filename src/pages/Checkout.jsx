@@ -9,9 +9,11 @@ import AddToCart from "../components/AddToCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router";
 
 function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
   React.useEffect(() => {
     setShowNavAndFooter(false);
   }, []);
@@ -31,6 +33,7 @@ function Checkout({ setShowNavAndFooter }) {
                   className="imgBtnLogo"
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
+                  onClick={() => navigate("/success")}
                 />
               </button>
               <button className="btn btn-success">GPay</button>
