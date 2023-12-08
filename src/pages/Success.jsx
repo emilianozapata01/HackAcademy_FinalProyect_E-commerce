@@ -7,6 +7,7 @@ function Success({ setShowNavAndFooter }) {
   useEffect(() => {
     setShowNavAndFooter(true);
   }, []);
+
   return (
     <>
       <video muted autoPlay loop>
