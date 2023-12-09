@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Checkout from "./pages/Checkout";
+import Success from "./pages/Success";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -49,6 +50,15 @@ function App() {
           }
         />
         <Route
+          path="/success"
+          element={
+            <Success
+              setShowNavAndFooter={setShowNavAndFooter}
+              hovered={hovered}
+            />
+          }
+        />
+        <Route
           path="/cart"
           element={
             <Cart setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
@@ -56,9 +66,7 @@ function App() {
         />
         <Route
           path="/checkout"
-          element={
-            <Checkout setShowNavAndFooter={setShowNavAndFooter}/>
-          }
+          element={<Checkout setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/register"

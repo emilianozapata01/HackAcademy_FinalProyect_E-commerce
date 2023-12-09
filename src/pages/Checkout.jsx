@@ -5,16 +5,35 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
-import AddToCart from "../components/AddToCart";
-import CancelIcon from "@mui/icons-material/Cancel";
-import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router";
+import { useState } from "react";
+import axios from "axios";
 
 function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
+  const buyer = useSelector((state) => state.buyer);
+  const navigate = useNavigate();
+  const [newOrder, setNewOrder] = useState(null);
+
   React.useEffect(() => {
     setShowNavAndFooter(false);
   }, []);
+  // useEffect(() => {
+  const handleNewOrder = async () => {
+    console.log(cart);
+    await axios({
+      method: "POST",
+      url: `${import.meta.env.VITE_URL_BASE_API}/order`,
+      data: { items: cart.items, buyer: buyer.id },
+      headers: {
+        Authorization: `Bearer ${buyer.token}`,
+      },
+    });
+    console.log(items);
+  };
+  // }, []);
+
   return (
     <>
       <div className="container">
@@ -31,6 +50,10 @@ function Checkout({ setShowNavAndFooter }) {
                   className="imgBtnLogo"
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
+                  onClick={() => {
+                    // navigate("/success");
+                    handleNewOrder();
+                  }}
                 />
               </button>
               <button className="btn btn-success">GPay</button>

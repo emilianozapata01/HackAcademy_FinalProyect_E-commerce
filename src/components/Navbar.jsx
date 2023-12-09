@@ -144,11 +144,13 @@ function NavBar({ setHovered }) {
           About this Project
         </button>
       </Link>
-      <button
-        className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
-      >
-        <i className="bi bi-person-raised-hand"></i>
-      </button>
+      <Link to="/about-this-proyect">
+        <button
+          className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
+        >
+          <i className="bi bi-person-raised-hand"></i>
+        </button>
+      </Link>
     </>
   );
 }
