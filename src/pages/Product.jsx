@@ -115,8 +115,8 @@ function Product({ hovered, setShowNavAndFooter }) {
           className={`promo ${hovered ? "bg-dark-hover-nav " : ""}`}
         >
           <div className="container">
-            <div className="row">
-              <div className="col-6">
+            <div className="d-flex flex-md-row flex-column">
+              <div className=" col-md-6 col-xs-12 col-sm-12">
                 <div className="col-12 fw-bold ps-5 mt-5">
                   <Link className="text-decoration-none text-dark" to={"/"}>
                     <span> Home </span>
@@ -128,7 +128,7 @@ function Product({ hovered, setShowNavAndFooter }) {
                     <span> All </span>
                   </Link>
                   <span>
-                    <i className="bi bi-arrow-right"></i> TURMERIC GINGER TONIC
+                    <i className="bi bi-arrow-right"></i> {product.name}
                   </span>
                 </div>
 
@@ -161,7 +161,7 @@ function Product({ hovered, setShowNavAndFooter }) {
                   </Carousel.Item>
                 </Carousel>
               </div>
-              <div className="col-6  mt-5">
+              <div className="col-md-6 col-xs-12 col-sm-12  mt-5">
                 <p className={`woolwich ${ProductStyle.fontTitleSize}`}>
                   {product.name}
                 </p>
@@ -172,13 +172,15 @@ function Product({ hovered, setShowNavAndFooter }) {
                   {product.description}
                 </p>
 
-                <div>
+                <div className="d-flex justify-content-start">
                   <button
-                    className={`mb-5 ${ProductStyle.buttonSize}`}
+                    className={`mb-5 ${ProductStyle.buttonSizeL}`}
                     onClick={decreaseValue}
                     disabled={value === 1}
                   >
-                    -
+                    <i
+                      className={` bi bi-dash text-white ${ProductStyle.dash}`}
+                    ></i>
                   </button>
 
                   <input
@@ -188,10 +190,12 @@ function Product({ hovered, setShowNavAndFooter }) {
                     readOnly
                   />
                   <button
-                    className={ProductStyle.buttonSize}
+                    className={ProductStyle.buttonSizeR}
                     onClick={increaseValue}
                   >
-                    +
+                    <i
+                      className={` bi bi-plus text-white ${ProductStyle.plus}`}
+                    ></i>
                   </button>
                 </div>
                 <AddToCart
@@ -204,72 +208,74 @@ function Product({ hovered, setShowNavAndFooter }) {
                   <strong>Ingredients: </strong> {product.ingredients}
                 </p>
               </div>
-              <div className="d-flex flex-row  justify-content-around mt-5 mb-5">
-                <img
-                  className={` ${ProductStyle.iconStyle}`}
-                  src="/organic.png"
-                  alt=""
-                />
-                <img
-                  className={` ${ProductStyle.iconStyle}`}
-                  src="/NON_GMO.png"
-                  alt=""
-                />
-                <img
-                  className={` ${ProductStyle.iconStyle}`}
-                  src="/glutenFree.jpg"
-                  alt=""
-                />
-                <img
-                  className={` ${ProductStyle.iconStyle}`}
-                  src="/friendly.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="row mt-5  d-flex ">
-                <h1 className="text-center woolwich">YOU MAY ALSO LIKE</h1>
-                <div className="d-flex flex-row   ">
-                  {randomProducts &&
-                    randomProducts.map((productRandom) => (
-                      <div
+            </div>
+            <div
+              className={`d-flex flex-md-row align-items-center flex-column justify-content-around mt-5 mb-5 ${ProductStyle.responsiveIcon}`}
+            >
+              <img
+                className={` ${ProductStyle.iconStyle}`}
+                src="/organic.png"
+                alt=""
+              />
+              <img
+                className={` ${ProductStyle.iconStyle}`}
+                src="/NON_GMO.png"
+                alt=""
+              />
+
+              <img
+                className={` ${ProductStyle.iconStyle}`}
+                src="/glutenFree.jpg"
+                alt=""
+              />
+              <img
+                className={` ${ProductStyle.iconStyle}`}
+                src="/friendly.jpg"
+                alt=""
+              />
+            </div>
+            <h1 className="text-center woolwich mt-5">YOU MAY ALSO LIKE</h1>
+
+            <div className="d-flex flex-md-row flex-column align-items-center ">
+              {randomProducts &&
+                randomProducts.map((productRandom) => (
+                  <div
+                    key={productRandom._id}
+                    className="d-flex  justify-content-evenly col-4 text-center d-grid"
+                  >
+                    <div className="align-self-baseline">
+                      <Link
+                        className={ProductStyle.a}
+                        to={`/product/${productRandom._id}`}
                         key={productRandom._id}
-                        className="d-flex justify-content-center col-4 text-center d-grid"
                       >
-                        <div className="align-self-baseline">
-                          <Link
-                            className={ProductStyle.a}
-                            to={`/product/${productRandom._id}`}
-                            key={productRandom._id}
-                          >
-                            <div
-                              className={ProductStyle.imageContainer}
-                              onMouseEnter={handleMouseEnter}
-                              onMouseLeave={handleMouseLeave}
-                            >
-                              <img
-                                className={`${ProductStyle.originalImage} ${
-                                  isClicked ? ProductStyle.shrink : ""
-                                }`}
-                                src={productRandom.image}
-                                alt="Original"
-                                onClick={handleClick}
-                              />
-                            </div>
-                            <h3>{productRandom.name}</h3>
-                            <p>${productRandom.price}</p>
-                          </Link>
-                          <div>
-                            <button
-                              className={`${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
-                            >
-                              ADD TO CART
-                            </button>
-                          </div>
+                        <div
+                          className={ProductStyle.imageContainer}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <img
+                            className={`${ProductStyle.originalImage} ${
+                              isClicked ? ProductStyle.shrink : ""
+                            }`}
+                            src={productRandom.image}
+                            alt="Original"
+                            onClick={handleClick}
+                          />
                         </div>
+                        <h3>{productRandom.name}</h3>
+                        <p>${productRandom.price}</p>
+                      </Link>
+                      <div>
+                        <AddToCart
+                          product={productRandom}
+                          qty={value}
+                          classBtn={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnSecondaryProduct} mx-auto fw-bold`}
+                        />
                       </div>
-                    ))}
-                </div>
-              </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
           <Footer />

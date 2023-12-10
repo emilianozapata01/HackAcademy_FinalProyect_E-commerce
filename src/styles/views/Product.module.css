@@ -18,7 +18,7 @@
   border-radius: 15px;
 }
 .customBtnSecondaryProduct {
-  width: 250px;
+  width: 220px;
   border-radius: 10px;
 }
 
@@ -33,18 +33,36 @@
   height: 60px;
   border-color: #f0f0f0;
   outline: none;
+  font-size: 3rem;
 }
-.buttonSize {
+.buttonSizeL {
   height: 61px;
   width: 60px;
   border: none;
   margin-bottom: 20px;
+  background-color: #3a913f;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.buttonSizeR {
+  height: 61px;
+  width: 60px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #3a913f;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .buttonSize:hover {
-  background-color: darkgrey;
+  background-color: #2b6e2e;
 }
-
+.dash {
+  font-size: 3rem;
+}
+.plus {
+  font-size: 3rem;
+}
 .imageContainer {
   width: 100%;
   height: 100%;
@@ -133,4 +151,5 @@ shrink {
 .iconStyle {
   width: 10rem;
   height: 10rem;
+  object-fit: cover;
 }
