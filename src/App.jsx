@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
+import Profile from "./pages/Profile";
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -87,6 +88,13 @@ function App() {
               setShowNavAndFooter={setShowNavAndFooter}
               hovered={hovered}
             />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Profile setShowNavAndFooter={setShowNavAndFooter}
+            hovered={hovered}/>
           }
         />
       </Routes>
