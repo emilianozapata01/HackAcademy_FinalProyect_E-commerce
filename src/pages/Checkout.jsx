@@ -58,8 +58,6 @@ function Checkout({ setShowNavAndFooter }) {
           <div className="d-flex flex-column ">
             <span>Express checkout</span>
             <div className="d-flex justify-content-center gap-4">
-              
-
               <button className="btn botonColor">
                 {" "}
                 <img
@@ -67,18 +65,27 @@ function Checkout({ setShowNavAndFooter }) {
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
                   onClick={() => {
-                    // navigate("/success");
+                    navigate("/success");
                     handleNewOrder();
                   }}
                 />
               </button>
               <button className="btn btnColorViolet">
-                <img className="imgBtnLogo" src="Shop_Pay-OQng0KpC7_brandlogos.net.svg" alt="" />
-         
+                <img
+                  className="imgBtnLogo"
+                  src="Shop_Pay-OQng0KpC7_brandlogos.net.svg"
+                  alt=""
+                />
               </button>
-              <button className="btn 
-              btnColorBlack">
-                <img className="imgBtnLogo" src="60e7f964711cf700048b6a6a.png" alt="" />
+              <button
+                className="btn 
+              btnColorBlack"
+              >
+                <img
+                  className="imgBtnLogo"
+                  src="60e7f964711cf700048b6a6a.png"
+                  alt=""
+                />
               </button>
             </div>
             <div className="d-flex gap-3">
@@ -248,7 +255,15 @@ function Checkout({ setShowNavAndFooter }) {
                 </div>
               </div>
             </div>
-            <button className="btn btn-danger my-4">Pay now</button>
+            <button
+              className="btn btn-danger my-4"
+              onClick={() => {
+                navigate("/success");
+                handleNewOrder();
+              }}
+            >
+              Pay now
+            </button>
           </div>
           <div className="contenedor-externo">
             <div className="contenedor-interno">
