@@ -8,6 +8,15 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import AddToCart from "../components/AddToCart";
+import CancelIcon from "@mui/icons-material/Cancel";
+import IconButton from "@mui/material/IconButton";
 
 function Profile({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
@@ -55,9 +64,54 @@ function Profile({ hovered, setShowNavAndFooter }) {
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget.
+                      <TableContainer >
+              <Table sx={{ minWidth: 700 }} aria-label="spanning table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Products</TableCell>
+                    <TableCell>Price</TableCell>
+                    <TableCell>Quantity</TableCell>
+                    <TableCell>Total</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {orders.item.map((item) => (
+                    <TableRow key={item._id}>
+                      <TableCell >
+                        <div className="d-flex gap-5 align-items-center">
+                          <img
+                            className="cartImg"
+                            src={item.image}
+                            alt=""
+                          />
+                          <p>{item.name}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell >
+                        <div className="d-flex align-items-center heightCart priceFix">
+                          <p>${item.price}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell >
+                        <div className="d-flex align-items-center heightCart">
+                          <p>{qty}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="d-flex align-items-center heightCart  gap-5 ">
+                          <div className="priceFix">
+                            <p className="d-inline ">
+                              ${total}
+                            </p>
+                          </div>
+                          
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
@@ -78,8 +132,12 @@ function Profile({ hovered, setShowNavAndFooter }) {
                     <small>{buyer.firstname}</small>
                     <p className="m-0">Lastname:</p>
                     <small>{buyer.lastname}</small>
+                    <p className="m-0">Phone</p>
+                    <small>{buyer.phone}</small>
                     <p className="m-0">Email</p>
                     <small>{buyer.email}</small>
+                    <p className="m-0">Address</p>
+                    <small>{buyer.direction}</small>
                   </div>
                 </Card.Body>
               </Card>
