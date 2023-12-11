@@ -140,9 +140,9 @@
   flex-direction: column;
   background-color: #3a913f;
   width: 26.25rem;
-  height: 16rem;
+  height: 25vh;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   right: 0;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .btnCheckout {
-  margin-top: 1.8rem;
+  margin-top: 0rem;
   margin-left: 1rem;
   width: 10rem;
 }
@@ -267,10 +267,10 @@
   font-weight: 600;
 }
 
-.btnColorBlack{
+.btnColorBlack {
   background-color: black !important;
 }
 
-.btnColorViolet{
-  background-color: rgb(218, 218, 218)!important;
+.btnColorViolet {
+  background-color: rgb(218, 218, 218) !important;
 }
