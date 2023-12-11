@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
@@ -20,6 +21,7 @@ function App() {
   const [showNavAndFooter, setShowNavAndFooter] = useState(true);
   return (
     <>
+      <ToastContainer />
       {showNavAndFooter && <NavBar setHovered={setHovered} />}
       <Routes>
         <Route

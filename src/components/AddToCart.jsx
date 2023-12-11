@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ColorizeRounded } from "@mui/icons-material";
 
 function AddToCart({ product, qty, classBtn, typeQty }) {
   const dispatch = useDispatch();
@@ -10,6 +13,16 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
     dispatch(
       addToCart({ item: product, qty: qty, total: qty * product.price })
     );
+
+    toast.success("Product added to cart!", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
   };
 
   const decreaseValue = () => {
@@ -47,7 +60,12 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
           <button className="btn btn-success" onClick={decreaseValue}>
             <i className="bi bi-dash text-white"></i>
           </button>
-          <input className="text-center inputCart " type="text" value={value} readOnly/>
+          <input
+            className="text-center inputCart "
+            type="text"
+            value={value}
+            readOnly
+          />
           <button className="btn btn-success" onClick={increaseValue}>
             <i className="bi bi-plus-lg text-white"></i>
           </button>
