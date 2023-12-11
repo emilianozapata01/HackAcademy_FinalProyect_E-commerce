@@ -40,7 +40,7 @@ function CategorySectionHome() {
                 >
                   <img
                     className={HomeStyle.categoryBoxSizeCAN}
-                    src={`${import.meta.env.VITE_URL_BASE_API}/images/${
+                    src={`${import.meta.env.VITE_URL_BASE_API}/img/${
                       category.image
                     }`}
                     alt={category.name}
