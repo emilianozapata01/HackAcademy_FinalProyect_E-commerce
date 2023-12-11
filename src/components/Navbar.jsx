@@ -50,6 +50,8 @@ function NavBar({ setHovered }) {
     getCategories();
   }, []);
 
+  const cartItemCount = useSelector((state) => state.cart.cartItemCount);
+
   return (
     <>
       <Navbar
@@ -137,11 +139,14 @@ function NavBar({ setHovered }) {
                         Logout
                       </Dropdown.Item>
                     )}
-                    
                   </Dropdown.Menu>
                 </Dropdown>
                 <Nav.Link className={`${NavbarStyle.correctColorNavbar}`}>
-                  <CartDrawer />
+                  <CartDrawer cartItemCount={cartItemCount} />
+
+                  {/* <span className={NavbarStyle.cartItemCount}>
+                    {cartItemCount}
+                  </span> */}
                 </Nav.Link>
               </div>
             </Nav>
