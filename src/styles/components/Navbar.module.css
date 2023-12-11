@@ -100,7 +100,6 @@
     top: 100%;
   }
 
-  /* Style the subnav links */
   .subnavContent a {
     text-decoration: none;
     padding: 5px 10px 5px 10px;
@@ -108,13 +107,11 @@
     color: black;
   }
 
-  /* Add a grey background color on hover */
   .subnavContent a:hover {
     background-color: #000000;
     color: rgb(255, 255, 255);
   }
 
-  /* When you move the mouse over the subnav container, open the subnav content */
   .subnavbtn:hover .subnavContent {
     opacity: 1;
     height: 4rem;
@@ -122,3 +119,23 @@
     top: 100%;
   }
 }
+
+
+.cartIconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartItemCount {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  transform: translateY(-50%);
+}
+

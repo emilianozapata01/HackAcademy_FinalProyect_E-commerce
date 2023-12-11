@@ -140,10 +140,11 @@
   flex-direction: column;
   background-color: #3a913f;
   width: 26.25rem;
-  height: 25vh;
+  height: 26vh;
   position: fixed;
   bottom: 0px;
   right: 0;
+  z-index: 10;
 }
 
 .subTotal {
