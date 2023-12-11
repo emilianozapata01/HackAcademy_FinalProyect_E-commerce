@@ -125,15 +125,11 @@ function NavBar({ setHovered }) {
                       </Dropdown.Item>
                     )}
                     {buyer && (
-                      <Dropdown.Item onClick={handleLogout}>
-                        Orders
+                      <Dropdown.Item onClick={() => navigate("/profile")}>
+                        Profile
                       </Dropdown.Item>
                     )}
-                    {buyer && (
-                      <Dropdown.Item onClick={handleLogout}>
-                        Edit profile
-                      </Dropdown.Item>
-                    )}
+                    
                     {buyer && (
                       <Dropdown.Item onClick={handleLogout}>
                         Logout

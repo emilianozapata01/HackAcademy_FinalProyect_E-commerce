@@ -1,10 +1,22 @@
 .SuccessButton {
   border: none;
-  background-color: #3a913f;
+  background-color: #21a627;
   border-radius: 10px;
   color: white;
   width: 150px;
   height: 40px;
+}
+.SuccessButton:active {
+  transform: scale(0.9);
+}
+.SuccessButton:hover {
+  border: none;
+  background-color: #0bd315;
+  border-radius: 10px;
+  color: white;
+  width: 150px;
+  height: 40px;
+  transition: transform 0.3s;
 }
 
 .SuccessTittle {
@@ -31,6 +43,34 @@ video {
 .promo {
   position: relative;
   z-index: 2;
+  height: 350px;
+  width: 450px;
+  padding-top: 5%;
+  background-color: rgba(240, 248, 255, 0.877);
+  border-radius: 50px;
+  bottom: 50px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.square {
+  animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+  z-index: 1;
+  height: 350px;
+  width: 470px;
+  padding-top: 1%;
+  background-color: #087308;
+  border-radius: 50px;
+  top: 10vh;
+  display: flex;
 }
 .capa {
   position: absolute;

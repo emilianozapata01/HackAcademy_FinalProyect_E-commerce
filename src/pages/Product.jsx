@@ -144,14 +144,14 @@ function Product({ hovered, setShowNavAndFooter }) {
                     </span>
                   }
                 >
-                  <Carousel.Item interval={1000}>
+                  <Carousel.Item interval={1500}>
                     <img
                       className="img-fluid"
                       src={product.image}
                       alt="TURMERIC GINGER TONIC"
                     />
                   </Carousel.Item>
-                  <Carousel.Item interval={1000}>
+                  <Carousel.Item interval={1500}>
                     <img
                       className="img-fluid"
                       src={product.image}

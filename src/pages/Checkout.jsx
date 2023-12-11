@@ -6,6 +6,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import TextField from "@mui/material/TextField";
+
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import axios from "axios";
@@ -17,17 +18,17 @@ function Checkout({ setShowNavAndFooter }) {
   const navigate = useNavigate();
   const [newOrder, setNewOrder] = useState(null);
 
-  const email = useInput("");
+  const email = useInput(buyer.email);
   const country = useInput("");
-  const firstname = useInput("");
-  const lastname = useInput("");
+  const firstname = useInput(buyer.firstname);
+  const lastname = useInput(buyer.lastname);
   const address = useInput("");
   const apartment = useInput("");
   const postalcode = useInput("");
   const city = useInput("");
   const region = useInput("");
-  const phone = useInput("");
-  const nameoncard = useInput("");
+  const phone = useInput(buyer.phone);
+  const nameoncard = useInput(123456789);
   const numbercard = useInput("");
   const expiration = useInput("");
   const cvv = useInput("");
@@ -65,7 +66,7 @@ function Checkout({ setShowNavAndFooter }) {
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
                   onClick={() => {
-                    // navigate("/success");
+                    navigate("/success");
                     handleNewOrder();
                   }}
                 />
@@ -255,7 +256,15 @@ function Checkout({ setShowNavAndFooter }) {
                 </div>
               </div>
             </div>
-            <button className="btn btn-danger my-4">Pay now</button>
+            <button
+              className="btn btn-danger my-4"
+              onClick={() => {
+                navigate("/success");
+                handleNewOrder();
+              }}
+            >
+              Pay now
+            </button>
           </div>
           <div className="contenedor-externo">
             <div className="contenedor-interno">
