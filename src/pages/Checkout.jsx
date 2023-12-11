@@ -58,8 +58,6 @@ function Checkout({ setShowNavAndFooter }) {
           <div className="d-flex flex-column ">
             <span>Express checkout</span>
             <div className="d-flex justify-content-center gap-4">
-              
-
               <button className="btn botonColor">
                 {" "}
                 <img
@@ -73,12 +71,21 @@ function Checkout({ setShowNavAndFooter }) {
                 />
               </button>
               <button className="btn btnColorViolet">
-                <img className="imgBtnLogo" src="Shop_Pay-OQng0KpC7_brandlogos.net.svg" alt="" />
-         
+                <img
+                  className="imgBtnLogo"
+                  src="Shop_Pay-OQng0KpC7_brandlogos.net.svg"
+                  alt=""
+                />
               </button>
-              <button className="btn 
-              btnColorBlack">
-                <img className="imgBtnLogo" src="60e7f964711cf700048b6a6a.png" alt="" />
+              <button
+                className="btn 
+              btnColorBlack"
+              >
+                <img
+                  className="imgBtnLogo"
+                  src="60e7f964711cf700048b6a6a.png"
+                  alt=""
+                />
               </button>
             </div>
             <div className="d-flex gap-3">
