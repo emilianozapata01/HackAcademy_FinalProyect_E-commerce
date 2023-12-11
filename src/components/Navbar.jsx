@@ -124,9 +124,20 @@ function NavBar({ setHovered }) {
                     )}
                     {buyer && (
                       <Dropdown.Item onClick={handleLogout}>
+                        Orders
+                      </Dropdown.Item>
+                    )}
+                    {buyer && (
+                      <Dropdown.Item onClick={handleLogout}>
+                        Edit profile
+                      </Dropdown.Item>
+                    )}
+                    {buyer && (
+                      <Dropdown.Item onClick={handleLogout}>
                         Logout
                       </Dropdown.Item>
                     )}
+                    
                   </Dropdown.Menu>
                 </Dropdown>
                 <Nav.Link className={`${NavbarStyle.correctColorNavbar}`}>

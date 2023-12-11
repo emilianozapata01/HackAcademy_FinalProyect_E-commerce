@@ -93,7 +93,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
               </Table>
             </TableContainer>
           ) : (
-            <div>
+            <div className="hei">
             <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
             <div className="d-flex justify-content-center w-100">
             <button className="woolwich btn btn-dark fs-3 btnCheckout m-0 w-25 mt-5"

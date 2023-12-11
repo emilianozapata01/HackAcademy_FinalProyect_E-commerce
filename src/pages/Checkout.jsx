@@ -9,12 +9,28 @@ import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import axios from "axios";
+import useInput from "../hooks/useInput";
 
 function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
   const buyer = useSelector((state) => state.buyer);
   const navigate = useNavigate();
   const [newOrder, setNewOrder] = useState(null);
+
+  const email = useInput("");
+  const country = useInput("");
+  const firstname = useInput("");
+  const lastname = useInput("");
+  const address = useInput("");
+  const apartment = useInput("");
+  const postalcode = useInput("");
+  const city = useInput("");
+  const region = useInput("");
+  const phone = useInput("");
+  const nameoncard = useInput("");
+  const numbercard = useInput("");
+  const expiration = useInput("");
+  const cvv = useInput("");
 
   React.useEffect(() => {
     setShowNavAndFooter(false);
@@ -41,8 +57,8 @@ function Checkout({ setShowNavAndFooter }) {
         <div className="d-flex gap-3">
           <div className="d-flex flex-column ">
             <span>Express checkout</span>
-            <div className="d-flex gap-3">
-              <button className="btn btn-primary">shopPay</button>
+            <div className="d-flex justify-content-center gap-4">
+              
 
               <button className="btn botonColor">
                 {" "}
@@ -56,7 +72,14 @@ function Checkout({ setShowNavAndFooter }) {
                   }}
                 />
               </button>
-              <button className="btn btn-success">GPay</button>
+              <button className="btn btnColorViolet">
+                <img className="imgBtnLogo" src="Shop_Pay-OQng0KpC7_brandlogos.net.svg" alt="" />
+         
+              </button>
+              <button className="btn 
+              btnColorBlack">
+                <img className="imgBtnLogo" src="60e7f964711cf700048b6a6a.png" alt="" />
+              </button>
             </div>
             <div className="d-flex gap-3">
               <div className="w-75">
@@ -78,6 +101,7 @@ function Checkout({ setShowNavAndFooter }) {
                     id="email"
                     label="Email"
                     variant="outlined"
+                    {...email}
                   />
                 </div>
                 <div>
@@ -89,6 +113,7 @@ function Checkout({ setShowNavAndFooter }) {
                         id="country"
                         label="Country/Region"
                         variant="outlined"
+                        {...country}
                       />
                     </div>
                     <div className="d-flex gap-3">
@@ -97,12 +122,14 @@ function Checkout({ setShowNavAndFooter }) {
                         id="firstname"
                         label="First name"
                         variant="outlined"
+                        {...firstname}
                       />
                       <TextField
                         className="w-50"
                         id="lastname"
                         label="Last name"
                         variant="outlined"
+                        {...lastname}
                       />
                     </div>
                     <div>
@@ -111,6 +138,7 @@ function Checkout({ setShowNavAndFooter }) {
                         id="address"
                         label="Address"
                         variant="outlined"
+                        {...address}
                       />
                     </div>
                     <div>
@@ -120,6 +148,7 @@ function Checkout({ setShowNavAndFooter }) {
                         label="Apartment, suite, etc. (optional)
                         "
                         variant="outlined"
+                        {...apartment}
                       />
                     </div>
                     <div className="d-flex gap-3">
@@ -128,18 +157,21 @@ function Checkout({ setShowNavAndFooter }) {
                         id="postalcode"
                         label="Postal code"
                         variant="outlined"
+                        {...postalcode}
                       />
                       <TextField
                         className="w-100"
                         id="city"
                         label="City"
                         variant="outlined"
+                        {...city}
                       />
                       <TextField
                         className="w-100"
                         id="region"
                         label="Region"
                         variant="outlined"
+                        {...region}
                       />
                     </div>
                     <div>
@@ -148,6 +180,7 @@ function Checkout({ setShowNavAndFooter }) {
                         id="phone"
                         label="Phone"
                         variant="outlined"
+                        {...phone}
                       />
                     </div>
                   </div>
@@ -162,6 +195,7 @@ function Checkout({ setShowNavAndFooter }) {
                     id="cc-name"
                     label="Name on card"
                     variant="outlined"
+                    {...nameoncard}
                     required
                   />
                   <small className="text-body-secondary">
@@ -177,6 +211,7 @@ function Checkout({ setShowNavAndFooter }) {
                     id="cc-number"
                     label="Number card"
                     variant="outlined"
+                    {...numbercard}
                     required
                   />
                   <div className="invalid-feedback">
@@ -190,6 +225,7 @@ function Checkout({ setShowNavAndFooter }) {
                       id="cc-expiration"
                       label="Expiration"
                       variant="outlined"
+                      {...expiration}
                       required
                     />
                     <div className="invalid-feedback">
@@ -202,6 +238,7 @@ function Checkout({ setShowNavAndFooter }) {
                       id="cc-cvv"
                       label="CVV"
                       variant="outlined"
+                      {...cvv}
                       required
                     />
                     <div className="invalid-feedback">
