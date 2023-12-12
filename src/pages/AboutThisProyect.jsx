@@ -182,7 +182,94 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         </div>
         <div className="text-center">
           <h1>Nuesto Equipo</h1>
-          <p>Próximamente...</p>
+          <div className="mt-3 d-flex flex-row justify-content-around">
+            <div>
+              <div className={`mb-3 ${AboutThisProyectStyle.border}`}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.border}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.border}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.borderLast}>
+                <div className={AboutThisProyectStyle.ProfileImage1}>
+                  <img
+                    className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                    src="mati.jpeg"
+                    alt="El mati"
+                  />
+                </div>
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
