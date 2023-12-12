@@ -50,11 +50,11 @@
 
 .border {
   border-right: 2px solid rgb(130, 129, 129);
-  padding-right: 90px;
-  padding-left: 90px;
+  padding-right: 45px;
+  padding-left: 45px;
 }
 
 .borderLast {
-  padding-right: 90px;
-  padding-left: 90px;
+  padding-right: 45px;
+  padding-left: 45px;
 }

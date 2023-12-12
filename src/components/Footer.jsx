@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import FooterStyle from "../styles/components/Footer.module.css";
@@ -57,7 +58,13 @@ const Footer = () => {
           </Nav>
         </Col>
         <Col md={2}>
-          <Image src="js.png" alt="logo-img" className="w-50 ms-2 mt-4" />
+          <Link to="/">
+            <Image
+              src="js.png"
+              alt="logo-img"
+              className={`w-50 ms-2 mt-4 ${FooterStyle.img}`}
+            />
+          </Link>
           <p>© 2023 JUICE SHOP</p>
         </Col>
       </Row>

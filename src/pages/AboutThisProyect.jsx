@@ -182,7 +182,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         </div>
         <div className="text-center">
           <h1>Nuesto Equipo</h1>
-          <div className="mt-3 d-flex flex-row justify-content-around">
+          <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
             <div>
               <div className={`mb-3 ${AboutThisProyectStyle.border}`}>
                 <img
