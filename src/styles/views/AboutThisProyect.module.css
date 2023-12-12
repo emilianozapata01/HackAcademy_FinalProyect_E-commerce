@@ -67,14 +67,35 @@
   }
 }
 
+@media (max-width: 768px) {
+  #person1 {
+    border-right: none;
+  }
+}
+@media (max-width: 768px) {
+  #person2 {
+    border-right: none;
+  }
+}
+@media (max-width: 768px) {
+  #person3 {
+    border-right: none;
+  }
+}
+@media (max-width: 768px) {
+  #person4 {
+    border-right: none;
+  }
+}
+
 .ImageStyle1 {
   max-width: 100%;
-  min-width: 25rem;
+  min-width: 21rem;
   height: auto;
 }
 
 .ImageStyle2 {
   max-width: 100%;
-  /* min-width: 55rem; */
+
   height: auto;
 }

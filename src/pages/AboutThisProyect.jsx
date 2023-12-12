@@ -192,9 +192,12 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         <div className="text-center">
           <h1>Nuesto Equipo</h1>
           <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
-            <div className="d-flex flex-nowrap gap-5">
+            <div className="d-flex flex-wrap gap-5 justify-content-center">
               <div>
-                <div className={`mb-3 ${AboutThisProyectStyle.border}`}>
+                <div
+                  id={AboutThisProyectStyle.person1}
+                  className={`mb-3 ${AboutThisProyectStyle.border}`}
+                >
                   <img
                     className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
                     src="mati.jpeg"
@@ -239,30 +242,35 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-nowrap gap-5">
-              <div>
-                <div className={AboutThisProyectStyle.border}>
-                  <img
-                    className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                    src="mati.jpeg"
-                    alt="El mati"
-                  />
-                  <div>
-                    <p className="mt-2 mb-0">Matias Barreto</p>
-                    <a
-                      className="m-3"
-                      href="https://www.linkedin.com/in/matias-barreto/"
-                    >
-                      <i className="bi bi-linkedin"></i>
-                    </a>
-                    <a href="#">
-                      <i className="bi bi-github"></i>
-                    </a>
-                  </div>
+            <div className="d-flex flex-wrap gap-5 justify-content-center">
+              <div
+                id={AboutThisProyectStyle.person3}
+                className={AboutThisProyectStyle.border}
+              >
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
                 </div>
               </div>
+
               <div>
-                <div className={AboutThisProyectStyle.borderLast}>
+                <div
+                  id={AboutThisProyectStyle.person4}
+                  className={AboutThisProyectStyle.borderLast}
+                >
                   <div className={AboutThisProyectStyle.ProfileImage1}>
                     <img
                       className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
