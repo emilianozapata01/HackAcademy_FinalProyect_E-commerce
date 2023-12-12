@@ -12,6 +12,7 @@
   text-align: center;
   letter-spacing: 1px;
   transition: 0.3s;
+  z-index: 5;
 }
 
 .ScrollToTop:active {

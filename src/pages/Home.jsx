@@ -68,9 +68,8 @@ function Home({ hovered, setShowNavAndFooter }) {
           </div>
           <div className="section pt-3">
             <CategorySectionHome />
+            <Footer />
           </div>
-
-          <Footer />
         </div>
       </>
     )
