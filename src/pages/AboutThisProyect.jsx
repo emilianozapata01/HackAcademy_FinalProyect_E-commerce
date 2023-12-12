@@ -4,7 +4,7 @@ import { LiaBootstrap } from "react-icons/lia";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiMongoose } from "react-icons/si";
 import { useEffect } from "react";
-
+import ButtonUp from "../components/ButtonUp";
 function AboutThisProyect({ hovered, setShowNavAndFooter }) {
   useEffect(() => {
     setShowNavAndFooter(true);
@@ -12,6 +12,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
   return (
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
+        <ButtonUp />
         <div className="d-flex flex-column align-items-center mt-5">
           <h1>About this project & the team behind</h1>
           <p className="text-secondary mt-3">

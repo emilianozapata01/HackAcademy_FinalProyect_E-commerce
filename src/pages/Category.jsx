@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import CategoryStyle from "../styles/views/Category.module.css";
-
+import ButtonUp from "../components/ButtonUp";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -33,6 +33,7 @@ function Category({ setShowNavAndFooter }) {
 
   return (
     <>
+      <ButtonUp />
       <div>
         {categories &&
           categories.map((category) => (
