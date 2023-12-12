@@ -42,7 +42,7 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
   };
 
   const increaseValue = () => {
-    setValue(value + 1);
+    if (value < product.stock) setValue(value + 1);
     const quanty = value - qty + 1;
     dispatch(
       addToCart({

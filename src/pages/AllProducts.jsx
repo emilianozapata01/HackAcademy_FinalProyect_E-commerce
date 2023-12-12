@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import AddToCart from "../components/AddToCart";
 import CategoryStyle from "../styles/views/Category.module.css";
-
+import ButtonUp from "../components/ButtonUp";
 function AllProducts() {
   const [categories, setCategories] = useState(null);
   const getCategories = async () => {
@@ -26,6 +26,7 @@ function AllProducts() {
 
   return (
     <>
+      <ButtonUp />
       <div>
         {categories &&
           categories.map((category) => (

@@ -4,7 +4,7 @@ import { LiaBootstrap } from "react-icons/lia";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiMongoose } from "react-icons/si";
 import { useEffect } from "react";
-
+import ButtonUp from "../components/ButtonUp";
 function AboutThisProyect({ hovered, setShowNavAndFooter }) {
   useEffect(() => {
     setShowNavAndFooter(true);
@@ -12,6 +12,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
   return (
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
       <div className="container">
+        <ButtonUp />
         <div className="d-flex flex-column align-items-center mt-5">
           <h1>About this project & the team behind</h1>
           <p className="text-secondary mt-3">
@@ -181,7 +182,94 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         </div>
         <div className="text-center">
           <h1>Nuesto Equipo</h1>
-          <p>Próximamente...</p>
+          <div className="mt-3 d-flex flex-row justify-content-around">
+            <div>
+              <div className={`mb-3 ${AboutThisProyectStyle.border}`}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.border}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.border}>
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={AboutThisProyectStyle.borderLast}>
+                <div className={AboutThisProyectStyle.ProfileImage1}>
+                  <img
+                    className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                    src="mati.jpeg"
+                    alt="El mati"
+                  />
+                </div>
+                <div>
+                  <p className="mt-2 mb-0">Matias Barreto</p>
+                  <a
+                    className="m-3"
+                    href="https://www.linkedin.com/in/matias-barreto/"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i className="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

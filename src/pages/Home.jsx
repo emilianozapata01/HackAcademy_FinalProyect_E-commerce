@@ -9,7 +9,7 @@ import CategorySectionHome from "../components/CategorySectionHome";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
-
+import ButtonUp from "../components/ButtonUp";
 function Home({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
@@ -33,6 +33,7 @@ function Home({ hovered, setShowNavAndFooter }) {
   return (
     product && (
       <>
+        <ButtonUp />
         <Link to="/about-this-proyect">
           <button
             className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}

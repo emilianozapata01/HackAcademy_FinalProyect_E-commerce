@@ -95,8 +95,10 @@ function App() {
         <Route
           path="/profile"
           element={
-            <Profile setShowNavAndFooter={setShowNavAndFooter}
-            hovered={hovered}/>
+            <Profile
+              setShowNavAndFooter={setShowNavAndFooter}
+              hovered={hovered}
+            />
           }
         />
       </Routes>

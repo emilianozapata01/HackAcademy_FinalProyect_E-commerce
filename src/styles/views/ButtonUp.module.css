@@ -1,0 +1,19 @@
+.ScrollToTop {
+  position: fixed;
+  padding: 1rem 1rem;
+  font-size: 20px;
+  bottom: 40px;
+  width: 95px;
+  height: 95px;
+  border-radius: 100%;
+  right: 40px;
+  background-color: #3a913f;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.ScrollToTop:active {
+  transform: scale(0.9);
+}

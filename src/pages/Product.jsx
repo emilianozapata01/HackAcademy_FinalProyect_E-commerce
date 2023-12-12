@@ -104,7 +104,7 @@ function Product({ hovered, setShowNavAndFooter }) {
   };
 
   const increaseValue = () => {
-    setValue(value + 1);
+    if (value < product.stock) setValue(value + 1);
   };
 
   return (
