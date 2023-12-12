@@ -193,10 +193,6 @@
   transform: scale(0.9);
 }
 
-.imgATP {
-  width: 55rem;
-}
-
 .heightDrawerInput {
   width: 12rem;
   padding-left: 3rem;
@@ -280,15 +276,15 @@
 
 .Toastify__toast-body {
   font-size: 1.2rem;
-  font-family: "woolwich-regular"
+  font-family: "woolwich-regular";
 }
 
 .Toastify__toast-container {
   margin-top: 4rem;
-  max-width: 300px; 
+  max-width: 300px;
 }
 
-.orderImg{
+.orderImg {
   width: 3rem;
 }
 

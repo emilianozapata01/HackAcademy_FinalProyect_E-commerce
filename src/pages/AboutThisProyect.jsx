@@ -109,7 +109,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
             <span>Mongoose</span>
           </div>
         </div>
-        <div className="d-flex mt-5">
+        <div className="d-flex mt-5 flex-column flex-md-row">
           <div className="d-flex flex-column mt-4 gap-3">
             <div>
               <p className="fw-bold ">MER</p>
@@ -142,119 +142,116 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
               </span>
             </div>
           </div>
-          <div>
-            <img className="imgATP" src="image.png" alt="" />
+          <div className="col-7">
+            <img
+              className={` d-flex mt-5 ${AboutThisProyectStyle.ImageStyle1}`}
+              src="image.png"
+              alt=""
+            />
           </div>
         </div>
-        <div className="d-flex mt-5 ">
-          <img className="imgATP" src="image2.png" alt="" />
-          <div>
-            <div className="d-flex flex-column mt-4 gap-3">
-              <div>
-                <p className="fw-bold ">Front-End</p>
-                <span className="text-secondary">
-                  {" "}
-                  Creimos conveniente crear dos proyectos de Front
-                  independientes. Uno para el e-commerce y otro para la
-                  Administración. Las principales tecnologías utilizadas fueron
-                  React.js, Redux y React-Router.
-                </span>
-              </div>
-              <div>
-                <p className="fw-bold">Back-End</p>
-                <span className="text-secondary">
-                  {" "}
-                  Nos basamos en un entorno de Node.js con Express.js. A través
-                  de JWT generamos dos tokens distintos para diferenciar el
-                  acceso de un cliente al de un administrador.
-                </span>
-              </div>
-              <div>
-                <p className="fw-bold">Base de Datos</p>
-                <span className="text-secondary">
-                  {" "}
-                  Optamos por usar mongoDB para nuestra Base de Datos, ya que
-                  tenemos más afinidad con el desarrollo en mongoose.
-                </span>
-              </div>
+        <div className="d-flex mt-5 flex-column flex-md-row">
+          <div className="d-flex flex-column mt-4 gap-3 col-md-8">
+            <img
+              className={` d-flex mt-5  ${AboutThisProyectStyle.ImageStyle2}`}
+              src="image2.png"
+              alt=""
+            />
+          </div>
+
+          <div className="d-flex flex-column mt-4 gap-3">
+            <div>
+              <p className="fw-bold ">Front-End</p>
+              <span className="text-secondary">
+                {" "}
+                Creimos conveniente crear dos proyectos de Front independientes.
+                Uno para el e-commerce y otro para la Administración. Las
+                principales tecnologías utilizadas fueron React.js, Redux y
+                React-Router.
+              </span>
+            </div>
+            <div>
+              <p className="fw-bold">Back-End</p>
+              <span className="text-secondary">
+                {" "}
+                Nos basamos en un entorno de Node.js con Express.js. A través de
+                JWT generamos dos tokens distintos para diferenciar el acceso de
+                un cliente al de un administrador.
+              </span>
+            </div>
+            <div>
+              <p className="fw-bold">Base de Datos</p>
+              <span className="text-secondary">
+                {" "}
+                Optamos por usar mongoDB para nuestra Base de Datos, ya que
+                tenemos más afinidad con el desarrollo en mongoose.
+              </span>
             </div>
           </div>
         </div>
         <div className="text-center">
           <h1>Nuesto Equipo</h1>
-          <div className="mt-3 d-flex flex-row justify-content-around">
-            <div>
-              <div className={`mb-3 ${AboutThisProyectStyle.border}`}>
-                <img
-                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                  src="mati.jpeg"
-                  alt="El mati"
-                />
-                <div>
-                  <p className="mt-2 mb-0">Matias Barreto</p>
-                  <a
-                    className="m-3"
-                    href="https://www.linkedin.com/in/matias-barreto/"
-                  >
-                    <i className="bi bi-linkedin"></i>
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className={AboutThisProyectStyle.border}>
-                <img
-                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                  src="mati.jpeg"
-                  alt="El mati"
-                />
-                <div>
-                  <p className="mt-2 mb-0">Matias Barreto</p>
-                  <a
-                    className="m-3"
-                    href="https://www.linkedin.com/in/matias-barreto/"
-                  >
-                    <i className="bi bi-linkedin"></i>
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className={AboutThisProyectStyle.border}>
-                <img
-                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                  src="mati.jpeg"
-                  alt="El mati"
-                />
-                <div>
-                  <p className="mt-2 mb-0">Matias Barreto</p>
-                  <a
-                    className="m-3"
-                    href="https://www.linkedin.com/in/matias-barreto/"
-                  >
-                    <i className="bi bi-linkedin"></i>
-                  </a>
-                  <a href="#">
-                    <i className="bi bi-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className={AboutThisProyectStyle.borderLast}>
-                <div className={AboutThisProyectStyle.ProfileImage1}>
+          <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
+            <div className="d-flex flex-wrap gap-5 justify-content-center">
+              <div>
+                <div
+                  id={AboutThisProyectStyle.person1}
+                  className={`mb-3 ${AboutThisProyectStyle.border}`}
+                >
                   <img
                     className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
                     src="mati.jpeg"
                     alt="El mati"
                   />
+                  <div>
+                    <p className="mt-2 mb-0">Matias Barreto</p>
+                    <a
+                      className="m-3"
+                      href="https://www.linkedin.com/in/matias-barreto/"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#">
+                      <i className="bi bi-github"></i>
+                    </a>
+                  </div>
                 </div>
+              </div>
+              <div>
+                <div
+                  id={AboutThisProyectStyle.person2}
+                  className={AboutThisProyectStyle.border}
+                >
+                  <img
+                    className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                    src="mati.jpeg"
+                    alt="El mati"
+                  />
+                  <div>
+                    <p className="mt-2 mb-0">Matias Barreto</p>
+                    <a
+                      className="m-3"
+                      href="https://www.linkedin.com/in/matias-barreto/"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#">
+                      <i className="bi bi-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="d-flex flex-wrap gap-5 justify-content-center">
+              <div
+                id={AboutThisProyectStyle.person3}
+                className={AboutThisProyectStyle.border}
+              >
+                <img
+                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                  src="mati.jpeg"
+                  alt="El mati"
+                />
                 <div>
                   <p className="mt-2 mb-0">Matias Barreto</p>
                   <a
@@ -266,6 +263,33 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                   <a href="#">
                     <i className="bi bi-github"></i>
                   </a>
+                </div>
+              </div>
+
+              <div>
+                <div
+                  id={AboutThisProyectStyle.person4}
+                  className={AboutThisProyectStyle.borderLast}
+                >
+                  <div className={AboutThisProyectStyle.ProfileImage1}>
+                    <img
+                      className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                      src="mati.jpeg"
+                      alt="El mati"
+                    />
+                  </div>
+                  <div>
+                    <p className="mt-2 mb-0">Matias Barreto</p>
+                    <a
+                      className="m-3"
+                      href="https://www.linkedin.com/in/matias-barreto/"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#">
+                      <i className="bi bi-github"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

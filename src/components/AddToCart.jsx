@@ -16,7 +16,7 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
 
     toast.success("Product added to cart!", {
       position: toast.POSITION.TOP_RIGHT,
-      autoClose: 2000,
+      autoClose: 1000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
