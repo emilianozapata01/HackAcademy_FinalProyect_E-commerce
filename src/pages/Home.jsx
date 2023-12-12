@@ -64,11 +64,12 @@ function Home({ hovered, setShowNavAndFooter }) {
             </div>
           </div>
           <div className="container">
-            <div>
-              <Glide products={product} qty={1} />
-            </div>
+            <Glide products={product} qty={1} />
+          </div>
+          <div className="section pt-3">
             <CategorySectionHome />
           </div>
+
           <Footer />
         </div>
       </>

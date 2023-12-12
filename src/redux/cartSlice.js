@@ -28,6 +28,10 @@ const cartSlice = createSlice({
 
       recalculateCart(state);
     },
+    cleanCart(state, action) {
+      return { items: [], subtotal: 0, cartItemCount: 0 };
+    },
+
   },
 });
 
@@ -42,5 +46,5 @@ const recalculateCart = (state) => {
 };
 
 const { actions, reducer } = cartSlice;
-export const { addToCart, removeOfCart } = actions;
+export const { addToCart, removeOfCart, cleanCart } = actions;
 export default reducer;

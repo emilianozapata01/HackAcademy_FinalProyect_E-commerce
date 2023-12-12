@@ -11,8 +11,11 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import axios from "axios";
 import useInput from "../hooks/useInput";
+import { useDispatch } from "react-redux";
+import { cleanCart } from "../redux/cartSlice";
 
 function Checkout({ setShowNavAndFooter }) {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const buyer = useSelector((state) => state.buyer);
   const navigate = useNavigate();
@@ -36,7 +39,7 @@ function Checkout({ setShowNavAndFooter }) {
   React.useEffect(() => {
     setShowNavAndFooter(false);
   }, []);
-  // useEffect(() => {
+  
   const handleNewOrder = async () => {
     console.log(cart);
     await axios({
@@ -47,9 +50,11 @@ function Checkout({ setShowNavAndFooter }) {
         Authorization: `Bearer ${buyer.token}`,
       },
     });
+    navigate("/success");
+    dispatch(cleanCart());
     console.log(items);
   };
-  // }, []);
+  
 
   return (
     <>
@@ -66,7 +71,7 @@ function Checkout({ setShowNavAndFooter }) {
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
                   onClick={() => {
-                    navigate("/success");
+                    
                     handleNewOrder();
                   }}
                 />
