@@ -26,6 +26,14 @@ function NavBar({ setHovered }) {
     navigate("/");
   };
 
+  const handleResetDB = async () => {
+    await axios({
+      method: "get",
+      url: `${import.meta.env.VITE_URL_BASE_API}/resetdb`,
+    });
+    navigate("/");
+  };
+
   const onMouseEnter = () => {
     setHovered(true);
   };
@@ -129,12 +137,14 @@ function NavBar({ setHovered }) {
                         Profile
                       </Dropdown.Item>
                     )}
-                    
                     {buyer && (
                       <Dropdown.Item onClick={handleLogout}>
                         Logout
                       </Dropdown.Item>
                     )}
+                    <Dropdown.Item onClick={handleResetDB}>
+                      Reset DB
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
                 <Nav.Link className={`${NavbarStyle.correctColorNavbar}`}>
