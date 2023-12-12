@@ -42,7 +42,9 @@
 .ProfileImage {
   position: relative;
   width: 200px;
+
   height: 200px;
+
   top: 20px;
   border-radius: 100%;
   object-fit: contain;
@@ -50,11 +52,29 @@
 
 .border {
   border-right: 2px solid rgb(130, 129, 129);
-  padding-right: 45px;
-  padding-left: 45px;
+  padding-right: 50px;
+  padding-left: 0px;
 }
 
 .borderLast {
-  padding-right: 45px;
-  padding-left: 45px;
+  padding-right: 50px;
+  padding-left: 0px;
+}
+
+@media (max-width: 1400px) {
+  #person2 {
+    border-right: none;
+  }
+}
+
+.ImageStyle1 {
+  max-width: 100%;
+  min-width: 25rem;
+  height: auto;
+}
+
+.ImageStyle2 {
+  max-width: 100%;
+  /* min-width: 55rem; */
+  height: auto;
 }
