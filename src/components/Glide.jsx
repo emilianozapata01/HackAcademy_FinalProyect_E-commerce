@@ -34,10 +34,12 @@ function Glide({ products }) {
             <SwiperSlide key={product._id}>
               <div >
                 <img onClick={() => navigate(`/product/${product._id}`)} className="custom-image" src={product.image} alt="" />
-                <p className="text-center h">{product.name}</p>
-                <p className="text-center h">${product.price}</p>
+                <div className="d-flex justify-content-center gap-2">
+                <p className="woolwich hSwiper h fs-4">{product.name}</p>
+                <p className="woolwich h fs-4">${product.price}</p>
+                </div>
                 <div className="h mb-5">
-                  <AddToCart product={product} qty={1} classBtn={"custom-btn-swiper custom-btn-swiper-product"} />
+                  <AddToCart product={product} qty={1} classBtn={"btn btn-success custom-btn-swiper-product woolwich fs-5 p-0"} />
                 </div>
               </div>
             </SwiperSlide>
