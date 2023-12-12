@@ -133,16 +133,19 @@
   color: white;
   -webkit-text-stroke: 1px rgb(90, 89, 89);
   border-bottom-left-radius: 22px;
+  border-top-left-radius: 22px;
   transition: transform 0.5s;
   right: 0%;
+  top: 15%;
   position: fixed;
   border: none;
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
   font-family: "woolwich-regular";
   letter-spacing: 1px;
   z-index: 5;
+  width: 35px;
+  height: 185px;
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
 }
 
 .aboutProject:hover {
