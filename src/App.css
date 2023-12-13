@@ -310,3 +310,6 @@
 .orderClass {
   width: 50rem;
 }
+.dropdown-toggle::after {
+  color: white;
+}

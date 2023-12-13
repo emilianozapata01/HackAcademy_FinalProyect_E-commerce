@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
 import ButtonUp from "../components/ButtonUp";
+import SwiperHome from "../components/SwiperHome";
 function Home({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
@@ -47,12 +48,13 @@ function Home({ hovered, setShowNavAndFooter }) {
           </button>
         </Link>
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
-          <div className={`${HomeStyle.SlideImageHome}`}>
-            <SlideImagesHome hovered={hovered} />
+          <div>
+            {/* <SlideImagesHome hovered={hovered} /> */}
+            <SwiperHome />
           </div>
-          <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
+          {/* <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
             <SlideImagesHomeResponsive hovered={hovered} />
-          </div>
+          </div> */}
           <div className="d-flex flex-wrap justify-content-center mt-4 gap-5">
             <div className="d-flex flex-nowrap gap-5">
               <img className="imgBan" src="downBanner1.png" alt="" />
