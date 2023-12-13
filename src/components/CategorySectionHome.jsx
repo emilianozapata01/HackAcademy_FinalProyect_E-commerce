@@ -26,12 +26,12 @@ function CategorySectionHome() {
       {categories && (
         <div className="d-flex flex-column mt-5 align-items-center">
           <h1
-            className={`text-center text-dark ${HomeStyle.ourProductTitle} mb-4 woolwich`}
+            className={` text-center text-dark ${HomeStyle.ourProductTitle} mb-4 woolwich`}
           >
             OUR PRODUCTS
           </h1>
           <div className={`${HomeStyle.categoryImgSection} d-flex flex-column`}>
-            <div className="d-flex flex-wrap justify-content-center">
+            <div className="d-flex flex-wrap  justify-content-center">
               {categories.map((category) => (
                 <Link
                   key={category._id}

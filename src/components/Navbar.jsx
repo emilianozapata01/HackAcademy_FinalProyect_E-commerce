@@ -71,15 +71,20 @@ function NavBar({ setHovered }) {
       >
         <Container style={{ height: "100%" }}>
           <Navbar.Brand onClick={() => navigate("/")}>
-            <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1>
+            {/* <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1> */}
+            <img
+              style={{ height: "3.5rem" }}
+              src="nav-logo.png"
+              alt="Nav Logo"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
-            className={`${NavbarStyle.collapseNavbar} justify-content-lg-between h-100`}
+            className={`${NavbarStyle.collapseNavbar} h-100`}
             id="basic-navbar-nav"
           >
             <Nav className={`${NavbarStyle.navInsideCollapse}`}>
-              <div className="d-flex flex-row fix-navbar h-100 align-items-center">
+              <div className="d-flex flex-row fix-navbar h-100 align-items-center gap-3">
                 <span
                   className={`${NavbarStyle.correctColorNavbar} ${NavbarStyle.subnavbtn} ${NavbarStyle.navItemHover}`}
                   onClick={() => navigate("/all-products")}
@@ -150,10 +155,6 @@ function NavBar({ setHovered }) {
                 </Dropdown>
                 <Nav.Link className={`${NavbarStyle.correctColorNavbar}`}>
                   <CartDrawer cartItemCount={cartItemCount} />
-
-                  {/* <span className={NavbarStyle.cartItemCount}>
-                    {cartItemCount}
-                  </span> */}
                 </Nav.Link>
               </div>
             </Nav>
