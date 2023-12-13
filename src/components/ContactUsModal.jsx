@@ -91,13 +91,22 @@ const ContactUsModal = ({ showModal, handleClose }) => {
                   </div>
                   <div className="d-flex flex-column col-sm-12 col-md-6 mt-3">
                     <input
-                      type="number"
+                      type="text" 
                       name="phone"
                       placeholder="Phone number (optional)"
                       className="form-control"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => {
+                        const formattedValue = e.target.value.replace(
+                          /[^0-9]/g,
+                          ""
+                        );
+                        setPhone(formattedValue);
+                      }}
                       autoComplete="on"
+                      inputMode="numeric" 
+                      pattern="[0-9]*" 
+                      onWheel={(e) => e.target.blur()} 
                     />
                   </div>
                 </div>
