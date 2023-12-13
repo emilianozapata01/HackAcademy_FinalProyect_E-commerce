@@ -18,7 +18,7 @@ function SlideImagesHome({ hovered }) {
     },
     {
       id: 5,
-      original: "Tonic-2.webp",
+      original: "Tonic-2.jpg",
       originalHeight: "500em",
       originalClass: `${hovered && "obscurecerSlide"} original-image-slide`,
     },
