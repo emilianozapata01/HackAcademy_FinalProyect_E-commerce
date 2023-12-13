@@ -40,9 +40,7 @@ function Home({ hovered, setShowNavAndFooter }) {
           >
             About this Project
           </button>
-          <button
-            className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectSmall}`}
-          >
+          <button className={` ${HomeStyle.aboutProjectSmall}`}>
             <i className="bi bi-person-raised-hand"></i>
           </button>
         </Link>
