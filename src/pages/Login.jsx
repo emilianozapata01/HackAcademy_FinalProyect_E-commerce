@@ -27,9 +27,13 @@ function Login({ setShowNavAndFooter }) {
       setWrongCredentials(true);
     } else {
       setWrongCredentials(false);
-      dispatch(login(response.data));
-      setShowNavAndFooter(true);
-      navigate("/");
+      if (response.data.role === "buyer") {
+        dispatch(login(response.data));
+        setShowNavAndFooter(true);
+        navigate("/");
+      } else {
+        setWrongCredentials(true);
+      }
     }
   };
 
