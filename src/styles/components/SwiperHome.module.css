@@ -25,16 +25,15 @@
 }
 
 .swiper-slide {
+  width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   /* Center slide text vertically */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  padding-right: 50%;
-  padding-left: 10%;
   text-align: start;
   font-size: 50px;
   /* color: #3a913f; */
@@ -50,7 +49,11 @@
 }
 
 .first-text {
+  width: 100%;
   color: #3a913f;
+  padding-left: 10rem;
+  margin-left: 10rem;
+  text-align: end;
 }
 .second-text {
   color: #3a913f;

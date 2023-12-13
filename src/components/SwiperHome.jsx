@@ -36,15 +36,15 @@ function SwiperHome() {
   const imgArr = [
     {
       id: 1,
-      original: "5.jpg",
-      text: "Indulge in Pure Freshness! Vibrant juices that awaken your senses. Discover a burst of natural flavors. Order now and savor the goodness!",
-      class: "firstText",
-    },
-    {
-      id: 2,
       original: "Green-Header-1.jpg",
       text: `100% Organic · Bay area made · Family owned`,
       class: "secondText",
+    },
+    {
+      id: 2,
+      original: "11.webp",
+      text: "Indulge in Pure Freshness! Vibrant juices that awaken your senses. Discover a burst of natural flavors. Order now and savor the goodness!",
+      class: "firstText",
     },
     {
       id: 3,
@@ -54,7 +54,19 @@ function SwiperHome() {
     },
     {
       id: 4,
-      original: "305849026_511483600978910_7244055434825137908_n.jpg",
+      original: "12.png",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum.",
+      class: "fourthText",
+    },
+    {
+      id: 5,
+      original: "14.jpg",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum.",
+      class: "fourthText",
+    },
+    {
+      id: 6,
+      original: "15.jpg",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum.",
       class: "fourthText",
     },
@@ -65,10 +77,10 @@ function SwiperHome() {
         flipEffect={false}
         spaceBetween={50}
         centeredSlides={false}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
