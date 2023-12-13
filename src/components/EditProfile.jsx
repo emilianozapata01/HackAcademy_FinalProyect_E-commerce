@@ -20,7 +20,14 @@ function EditProfile({ buyer, refresh, setRefresh, setEditProfile }) {
     setAddress(buyer.direction);
   }, [buyer]);
 
-  const handleClose = () => setEditProfile(false);
+  const handleClose = () =>{
+    setEditProfile(false);
+    setFirstname(buyer.firstname);
+    setLastname(buyer.lastname);
+    setPhone(buyer.phone);
+    setEmail(buyer.email);
+    setAddress(buyer.direction);
+  } ;
 
   const submitEdit = async (e) => {
     handleClose();

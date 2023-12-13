@@ -13,6 +13,7 @@ import axios from "axios";
 import useInput from "../hooks/useInput";
 import { useDispatch } from "react-redux";
 import { cleanCart } from "../redux/cartSlice";
+import NavBarCheckout from "../components/NavbarCheckout";
 
 function Checkout({ setShowNavAndFooter }) {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ function Checkout({ setShowNavAndFooter }) {
 
   return (
     <>
+    <NavBarCheckout/>
       <div className="container">
         <h1>Checkout</h1>
         <div className="d-flex gap-3">
