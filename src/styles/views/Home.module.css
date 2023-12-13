@@ -1,6 +1,6 @@
 .categoryBoxSize {
-  width: 20rem;
-  height: 20rem;
+  width: 23rem;
+  height: 23rem;
   overflow: hidden;
   padding: 10px 10px 10px 10px;
   position: relative;
@@ -121,7 +121,7 @@
 }
 
 .ourProductTitle {
-  font-family: fantasy;
+  font-size: 5rem;
 }
 
 .category-img-section {
@@ -187,4 +187,8 @@
 
 .textUppercase {
   text-transform: uppercase;
+}
+
+.categoryImgSection {
+  width: 50rem;
 }

@@ -11,7 +11,7 @@ function Glide({ products }) {
   const navigate = useNavigate();
   return (
     <>
-      <h1 className="text-center mt-5 woolwich">Bestseller</h1>
+      <h1 className="text-center mt-5 woolwich bestseller">Bestseller</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -32,14 +32,25 @@ function Glide({ products }) {
           .filter((product) => product.bestSeller === true)
           .map((product) => (
             <SwiperSlide key={product._id}>
-              <div >
-                <img onClick={() => navigate(`/product/${product._id}`)} className="custom-image" src={product.image} alt="" />
+              <div>
+                <img
+                  onClick={() => navigate(`/product/${product._id}`)}
+                  className="custom-image"
+                  src={product.image}
+                  alt=""
+                />
                 <div className="d-flex justify-content-center gap-2">
-                <p className="woolwich hSwiper h fs-4">{product.name}</p>
-                <p className="woolwich h fs-4">${product.price}</p>
+                  <p className="woolwich hSwiper h fs-4">{product.name}</p>
+                  <p className="woolwich h fs-4">${product.price}</p>
                 </div>
                 <div className="h mb-5">
-                  <AddToCart product={product} qty={1} classBtn={"btn btn-success custom-btn-swiper-product woolwich fs-5 p-0"} />
+                  <AddToCart
+                    product={product}
+                    qty={1}
+                    classBtn={
+                      "btn btn-success custom-btn-swiper-product woolwich fs-5 p-0"
+                    }
+                  />
                 </div>
               </div>
             </SwiperSlide>

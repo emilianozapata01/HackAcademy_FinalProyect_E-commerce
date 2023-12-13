@@ -165,16 +165,16 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         className="rounded"
                         style={{ backgroundColor: "white" }}
                       >
-                        <p className="m-0">Firstname:</p>
-                        <small>{buyer.firstname}</small>
-                        <p className="m-0">Lastname:</p>
-                        <small>{buyer.lastname}</small>
-                        <p className="m-0">Phone</p>
-                        <small>{buyer.phone}</small>
-                        <p className="m-0">Email</p>
-                        <small>{buyer.email}</small>
-                        <p className="m-0">Address</p>
-                        <small>{buyer.direction}</small>
+                        <p className="ms-3 mb-0 mt-3">Firstname:</p>
+                        <small className="ms-3 mt-0">{buyer.firstname}</small>
+                        <p className="ms-3 mb-0">Lastname:</p>
+                        <small className="ms-3 mt-0">{buyer.lastname}</small>
+                        <p className=" ms-3 m-0">Phone</p>
+                        <small className="ms-3 mt-0">{buyer.phone}</small>
+                        <p className=" ms-3 mb-0">Email</p>
+                        <small className="ms-3">{buyer.email}</small>
+                        <p className=" ms-3 mb-0">Address</p>
+                        <small className="ms-3 ">{buyer.direction}</small>
                         <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
                           <button
                             onClick={handleEdit}
