@@ -6,6 +6,11 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import TextField from "@mui/material/TextField";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -20,22 +25,20 @@ function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
   const buyer = useSelector((state) => state.buyer);
   const navigate = useNavigate();
-  const [newOrder, setNewOrder] = useState(null);
-
-  const email = useInput("buyer.email");
-  const country = useInput("");
-  const firstname = useInput("buyer.firstname");
-  const lastname = useInput("buyer.lastname");
-  const address = useInput("");
-  const apartment = useInput("");
-  const postalcode = useInput("");
-  const city = useInput("");
-  const region = useInput("");
-  const phone = useInput("buyer.phone");
-  const nameoncard = useInput(123456789);
-  const numbercard = useInput("");
-  const expiration = useInput("");
-  const cvv = useInput("");
+  const email = useInput(buyer.email);
+  const country = useInput("Uruguay");
+  const firstname = useInput(buyer.firstname);
+  const lastname = useInput(buyer.lastname);
+  const address = useInput("P. Sherman, calle Wallaby 42");
+  const apartment = useInput("101");
+  const postalcode = useInput("11200");
+  const city = useInput("Montevideo");
+  const region = useInput("Montevideo");
+  const phone = useInput("098989898");
+  const nameoncard = useInput(`${buyer.firstname} ${buyer.lastname}`);
+  const numbercard = useInput(123456789);
+  const expiration = useInput("10/35");
+  const cvv = useInput("777");
 
   React.useEffect(() => {
     setShowNavAndFooter(false);
@@ -58,9 +61,9 @@ function Checkout({ setShowNavAndFooter }) {
 
   return (
     <>
-    <NavBarCheckout/>
+      <NavBarCheckout />
       <div className="container">
-        <h1>Checkout</h1>
+        <h1 className="mt-3">Checkout</h1>
         <div className="d-flex gap-3">
           <div className="d-flex flex-column ">
             <span>Express checkout</span>
@@ -107,168 +110,199 @@ function Checkout({ setShowNavAndFooter }) {
             </div>
             <div>
               <form action="#">
-                <div>
-                  <p>Contact</p>
-                  <TextField
-                    className="w-100"
-                    id="email"
-                    label="Email"
-                    variant="outlined"
-                    {...email}
-                  />
-                </div>
-                <div>
-                  <p>Delivery</p>
-                  <div className="d-flex flex-column gap-3">
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>Contact</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails className="mt-2">
                     <div>
                       <TextField
                         className="w-100"
-                        id="country"
-                        label="Country/Region"
+                        id="email"
+                        label="Email"
                         variant="outlined"
-                        {...country}
+                        {...email}
                       />
                     </div>
-                    <div className="d-flex gap-3">
-                      <TextField
-                        className="w-50"
-                        id="firstname"
-                        label="First name"
-                        variant="outlined"
-                        {...firstname}
-                      />
-                      <TextField
-                        className="w-50"
-                        id="lastname"
-                        label="Last name"
-                        variant="outlined"
-                        {...lastname}
-                      />
-                    </div>
-                    <div>
-                      <TextField
-                        className="w-100"
-                        id="address"
-                        label="Address"
-                        variant="outlined"
-                        {...address}
-                      />
-                    </div>
-                    <div>
-                      <TextField
-                        className="w-100"
-                        id="apartment"
-                        label="Apartment, suite, etc. (optional)
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>Delivery</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails className="mt-2">
+                  <div>
+                    
+                    <div className="d-flex flex-column gap-3">
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="country"
+                          label="Country/Region"
+                          variant="outlined"
+                          {...country}
+                        />
+                      </div>
+                      <div className="d-flex gap-3">
+                        <TextField
+                          className="w-50"
+                          id="firstname"
+                          label="First name"
+                          variant="outlined"
+                          {...firstname}
+                        />
+                        <TextField
+                          className="w-50"
+                          id="lastname"
+                          label="Last name"
+                          variant="outlined"
+                          {...lastname}
+                        />
+                      </div>
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="address"
+                          label="Address"
+                          variant="outlined"
+                          {...address}
+                        />
+                      </div>
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="apartment"
+                          label="Apartment, suite, etc. (optional)
                         "
-                        variant="outlined"
-                        {...apartment}
-                      />
-                    </div>
-                    <div className="d-flex gap-3">
-                      <TextField
-                        className="w-100"
-                        id="postalcode"
-                        label="Postal code"
-                        variant="outlined"
-                        {...postalcode}
-                      />
-                      <TextField
-                        className="w-100"
-                        id="city"
-                        label="City"
-                        variant="outlined"
-                        {...city}
-                      />
-                      <TextField
-                        className="w-100"
-                        id="region"
-                        label="Region"
-                        variant="outlined"
-                        {...region}
-                      />
-                    </div>
-                    <div>
-                      <TextField
-                        className="w-100"
-                        id="phone"
-                        label="Phone"
-                        variant="outlined"
-                        {...phone}
-                      />
+                          variant="outlined"
+                          {...apartment}
+                        />
+                      </div>
+                      <div className="d-flex gap-3">
+                        <TextField
+                          className="w-100"
+                          id="postalcode"
+                          label="Postal code"
+                          variant="outlined"
+                          {...postalcode}
+                        />
+                        <TextField
+                          className="w-100"
+                          id="city"
+                          label="City"
+                          variant="outlined"
+                          {...city}
+                        />
+                        <TextField
+                          className="w-100"
+                          id="region"
+                          label="Region"
+                          variant="outlined"
+                          {...region}
+                        />
+                      </div>
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="phone"
+                          label="Phone"
+                          variant="outlined"
+                          {...phone}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </form>
-              <h4 className="mb-3">Payment</h4>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>Payment</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails className="mt-2">
 
-              <div className="d-flex flex-column gap-3">
-                <div>
-                  <TextField
-                    className="w-100"
-                    id="cc-name"
-                    label="Name on card"
-                    variant="outlined"
-                    {...nameoncard}
-                    required
-                  />
-                  <small className="text-body-secondary">
-                    Full name as displayed on card
-                  </small>
-                  <div className="invalid-feedback">
-                    Name on card is required
-                  </div>
-                </div>
-                <div>
-                  <TextField
-                    className="w-100"
-                    id="cc-number"
-                    label="Number card"
-                    variant="outlined"
-                    {...numbercard}
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-                <div className="d-flex  gap-3">
-                  <div className="w-100">
-                    <TextField
-                      className="w-100"
-                      id="cc-expiration"
-                      label="Expiration"
-                      variant="outlined"
-                      {...expiration}
-                      required
-                    />
-                    <div className="invalid-feedback">
-                      Expiration date required
+                    <div className="d-flex flex-column gap-3">
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="cc-name"
+                          label="Name on card"
+                          variant="outlined"
+                          {...nameoncard}
+                          required
+                        />
+                        <small className="text-body-secondary">
+                          Full name as displayed on card
+                        </small>
+                        <div className="invalid-feedback">
+                          Name on card is required
+                        </div>
+                      </div>
+                      <div>
+                        <TextField
+                          className="w-100"
+                          id="cc-number"
+                          label="Number card"
+                          variant="outlined"
+                          {...numbercard}
+                          required
+                        />
+                        <div className="invalid-feedback">
+                          Credit card number is required
+                        </div>
+                      </div>
+                      <div className="d-flex  gap-3">
+                        <div className="w-100">
+                          <TextField
+                            className="w-100"
+                            id="cc-expiration"
+                            label="Expiration"
+                            variant="outlined"
+                            {...expiration}
+                            required
+                          />
+                          <div className="invalid-feedback">
+                            Expiration date required
+                          </div>
+                        </div>
+                        <div className="w-100">
+                          <TextField
+                            className="w-100"
+                            id="cc-cvv"
+                            label="CVV"
+                            variant="outlined"
+                            {...cvv}
+                            required
+                          />
+                          <div className="invalid-feedback">
+                            Security code required
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="w-100">
-                    <TextField
-                      className="w-100"
-                      id="cc-cvv"
-                      label="CVV"
-                      variant="outlined"
-                      {...cvv}
-                      required
-                    />
-                    <div className="invalid-feedback">
-                      Security code required
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  </AccordionDetails>
+                </Accordion>
+              </form>
             </div>
             <button
-              className="btn btn-danger my-4"
+              className="btn btn-danger my-4 fs-5"
               onClick={() => {
                 navigate("/success");
                 handleNewOrder();
               }}
             >
-              Pay now
+              PAY NOW
             </button>
           </div>
           <div className="contenedor-externo">
@@ -285,8 +319,12 @@ function Checkout({ setShowNavAndFooter }) {
                               src={product.item.image}
                               alt={product.item.name}
                             />
-                            <i className="bi bi-heart-fill hearthIcon"></i>
-                            <p className="hearthText">{Number(product.qty)}</p>
+                            <i className="bi bi-heart-fill hearthIcon">
+                              <p className="hearthText">
+                                {Number(product.qty)}
+                              </p>
+                            </i>
+
                             <p>{product.item.name}</p>
                           </div>
                         </TableCell>
