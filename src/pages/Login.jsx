@@ -13,6 +13,8 @@ function Login({ setShowNavAndFooter }) {
   const [wrongCredentials, setWrongCredentials] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const[email, setEmail]= useState("");
+  const[password, setPassword]= useState("");
 
   const buyerLogIn = async (e) => {
     const response = await axios({
@@ -41,6 +43,11 @@ function Login({ setShowNavAndFooter }) {
     e.preventDefault();
     setWrongCredentials(false);
     buyerLogIn(e);
+  };
+
+  const handleAutocomplete = () => {
+    setEmail("julio.rios@gmail.com");
+    setPassword("1234");
   };
 
   useEffect(() => {
@@ -72,6 +79,8 @@ function Login({ setShowNavAndFooter }) {
                 placeholder="Email"
                 className="form-control"
                 required
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 autoComplete="on"
               />
               <input
@@ -80,6 +89,8 @@ function Login({ setShowNavAndFooter }) {
                 placeholder="Password"
                 className="form-control"
                 required
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 autoComplete="on"
               />
             </div>
@@ -88,6 +99,9 @@ function Login({ setShowNavAndFooter }) {
                 Wrong email or password
               </small>
             )}
+            <button type="button" onClick={handleAutocomplete} className={RegisterStyle.registerBtn}>
+              <span>Autocomplete</span>
+            </button>
             <button type="submit" className={RegisterStyle.registerBtn}>
               <span>Log in</span>
             </button>

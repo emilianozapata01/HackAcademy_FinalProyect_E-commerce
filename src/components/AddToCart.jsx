@@ -4,25 +4,31 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ColorizeRounded } from "@mui/icons-material";
-
+import { useSelector } from "react-redux";
 function AddToCart({ product, qty, classBtn, typeQty }) {
   const dispatch = useDispatch();
   const [value, setValue] = useState(qty);
 
   const handleCart = () => {
-    dispatch(
-      addToCart({ item: product, qty: qty, total: qty * product.price })
-    );
+    let messageElement = document.getElementById("stock");
 
-    toast.success("Product added to cart!", {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 1000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
+    if (product.stock <= 0) {
+      messageElement.textContent = "    NO STOCK  ";
+    } else {
+      dispatch(
+        addToCart({ item: product, qty: qty, total: qty * product.price })
+      );
+
+      toast.success("Product added to cart!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+    }
   };
 
   const decreaseValue = () => {
@@ -72,7 +78,9 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
         </div>
       ) : (
         <button onClick={handleCart} className={classBtn}>
-          ADD TO CART
+          <p id="stock" className="m-0 p-0">
+            ADD TO CART
+          </p>
         </button>
       )}
     </>

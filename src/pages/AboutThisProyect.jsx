@@ -190,7 +190,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
           </div>
         </div>
         <div className="text-center">
-          <h1>Nuesto Equipo</h1>
+          <h1>Nuestro Equipo</h1>
           <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
             <div className="d-flex flex-wrap gap-5 justify-content-center">
               <div>
@@ -200,8 +200,8 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                 >
                   <img
                     className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                    src="andyy.jpg"
-                    alt="Andy"
+                    src="mati.jpeg"
+                    alt="El mati"
                   />
                   <div>
                     <p className="mt-2 mb-0">Matias Barreto</p>
@@ -249,8 +249,8 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
               >
                 <img
                   className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                  src="mati.jpeg"
-                  alt="El mati"
+                  src="andyy.jpg"
+                  alt="Andy"
                 />
                 <div>
                   <p className="mt-2 mb-0">Andrea Pereira</p>

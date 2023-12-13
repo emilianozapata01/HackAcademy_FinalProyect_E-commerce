@@ -255,11 +255,16 @@
 }
 
 .hearthText {
-  position: absolute;
-  left: 23.5%;
-  top: 9%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -32px;
+  right: 1px;
+
   color: rgb(255, 255, 255);
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .btnColorBlack {
