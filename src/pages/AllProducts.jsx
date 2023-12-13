@@ -28,7 +28,7 @@ function AllProducts() {
   return (
     <>
       {" "}
-      {categories != null ? (
+      {categories != null && categories.length != 0 ? (
         <div>
           <ButtonUp />
 

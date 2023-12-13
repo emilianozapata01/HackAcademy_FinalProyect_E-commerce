@@ -31,16 +31,11 @@ function Category({ setShowNavAndFooter }) {
     getCategory();
   }, [params.id]);
 
-  // let displayImg = document.getElementById("stockImg");
-
-  // if (product.stock > 0) {
-  //   displayImg.style.display = "none";
-  // }
-
+  console.log("categories", categories);
   return (
     <>
       {" "}
-      {categories != null ? (
+      {categories != null && categories.length != 0 ? (
         <div>
           <ButtonUp />
           <div>
