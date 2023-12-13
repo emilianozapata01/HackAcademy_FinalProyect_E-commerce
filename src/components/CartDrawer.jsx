@@ -40,7 +40,7 @@ function CartDrawer({ cartItemCount }) {
 
     if (cart.cartItemCount === 0) {
       messageElement.textContent =
-        "YOU SHOULD ADD PRODUCTS TO YOUR CART TO CONTINUE ";
+        "    YOU SHOULD ADD PRODUCTS TO YOUR CART TO CONTINUE   ";
     } else {
       if (buyer === null) {
         navigate("/login");
@@ -107,7 +107,7 @@ function CartDrawer({ cartItemCount }) {
             </div>
           ) : (
             <div>
-              <p id="p1" className="text-center mt-5">
+              <p id="p1" className="text-center mt-5 ms-4 me-4">
                 YOUR BASKET IS EMPTY.
               </p>
             </div>
