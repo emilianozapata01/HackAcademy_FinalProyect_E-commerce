@@ -14,7 +14,7 @@
   width: 250px;
 }
 
-.btn:hover { 
+.custom-btn-swiper-product:hover { 
   border: 2px solid black !important;
   color: white !important;
   background-color: #489448 !important;
@@ -296,4 +296,12 @@
   .section {
     height: 100%;
   }
+}
+
+.bg-navbar {
+  background-color: white!important;
+  border-bottom: 1px solid #B5AAAA;
+  z-index: 3;
+  backdrop-filter: blur(10px) !important;
+  height: 5rem;
 }
