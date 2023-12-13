@@ -77,7 +77,7 @@ function AddToCart({ product, qty, classBtn, typeQty }) {
           </button>
         </div>
       ) : (
-        <button onClick={handleCart} className={classBtn}>
+        <button onClick={handleCart} className={`${classBtn} ms-0`}>
           <p id="stock" className="m-0 p-0">
             ADD TO CART
           </p>

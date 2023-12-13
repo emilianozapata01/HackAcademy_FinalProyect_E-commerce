@@ -88,6 +88,7 @@ function NavBar({ setHovered }) {
                 <span
                   className={`${NavbarStyle.correctColorNavbar} ${NavbarStyle.subnavbtn} ${NavbarStyle.navItemHover}`}
                   onClick={() => navigate("/all-products")}
+                  style={{ fontSize: "26px" }}
                 >
                   ALL PRODUCTS
                 </span>
@@ -97,7 +98,10 @@ function NavBar({ setHovered }) {
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                 >
-                  <span className={`${NavbarStyle.navItemHover}`}>
+                  <span
+                    className={`${NavbarStyle.navItemHover}`}
+                    style={{ fontSize: "26px" }}
+                  >
                     CATEGORIES
                   </span>
                   <div className={NavbarStyle.subnavContent}>

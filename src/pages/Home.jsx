@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect } from "react";
-import SlideImagesHome from "../components/SlideImagesHome";
-import SlideImagesHomeResponsive from "../components/SlideImageHomeResponsive";
 import Footer from "../components/Footer";
 import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
@@ -47,12 +45,8 @@ function Home({ hovered, setShowNavAndFooter }) {
         </Link>
         <div className={hovered ? "bg-dark-hover-nav" : ""}>
           <div>
-            {/* <SlideImagesHome hovered={hovered} /> */}
             <SwiperHome />
           </div>
-          {/* <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
-            <SlideImagesHomeResponsive hovered={hovered} />
-          </div> */}
           <div className="d-flex flex-wrap justify-content-center mt-5 pt-5 pb-5 mb-5 gap-5">
             <div className="d-flex flex-nowrap gap-5">
               <img className="imgBan" src="downBanner1.png" alt="" />

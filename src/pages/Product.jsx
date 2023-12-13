@@ -161,14 +161,17 @@ function Product({ hovered, setShowNavAndFooter }) {
                   </Carousel.Item>
                 </Carousel>
               </div>
-              <div className="col-md-6 col-xs-12 col-sm-12  mt-5">
+              <div className="col-md-6 col-xs-12 col-sm-12 mt-5">
                 <p className={`woolwich ${ProductStyle.fontTitleSize}`}>
                   {product.name}
                 </p>
-                <p className={`woolwich ${ProductStyle.fontPriceSize} mb-5`}>
+                <p className={`woolwich ${ProductStyle.fontPriceSize} mb-4`}>
                   ${product.price}
                 </p>
-                <p className={`mb-5 ${ProductStyle.fontProduct}`}>
+                <p
+                  className={`mb-5 ${ProductStyle.fontProduct}`}
+                  style={{ fontSize: "26px" }}
+                >
                   {product.description}
                 </p>
 
@@ -204,7 +207,10 @@ function Product({ hovered, setShowNavAndFooter }) {
                   classBtn={`woolwich mb-3 ${ProductStyle.customBtn} ${ProductStyle.customBtnPrimeProduct}`}
                 />
 
-                <p className={ProductStyle.fontProduct}>
+                <p
+                  className={ProductStyle.fontProduct}
+                  style={{ fontSize: "28px" }}
+                >
                   <strong>Ingredients: </strong> {product.ingredients}
                 </p>
               </div>
