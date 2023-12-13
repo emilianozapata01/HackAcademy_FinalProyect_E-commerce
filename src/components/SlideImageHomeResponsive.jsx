@@ -12,7 +12,7 @@ function SlideImagesHomeResponsive({ hovered }) {
     },
     {
       id: 2,
-      original: "Green-Header-Mobile.webp",
+      original: "Green-Header-1.jpg",
       originalHeight: "500em",
       originalClass: `${hovered && "obscurecerSlide"} original-image-slide`,
     },

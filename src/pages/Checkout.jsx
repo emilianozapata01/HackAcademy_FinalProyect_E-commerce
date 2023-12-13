@@ -319,8 +319,12 @@ function Checkout({ setShowNavAndFooter }) {
                               src={product.item.image}
                               alt={product.item.name}
                             />
-                            <i className="bi bi-heart-fill hearthIcon"></i>
-                            <p className="hearthText">{Number(product.qty)}</p>
+                            <i className="bi bi-heart-fill hearthIcon">
+                              <p className="hearthText">
+                                {Number(product.qty)}
+                              </p>
+                            </i>
+
                             <p>{product.item.name}</p>
                           </div>
                         </TableCell>
