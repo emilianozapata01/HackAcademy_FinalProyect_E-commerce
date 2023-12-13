@@ -305,3 +305,7 @@
   backdrop-filter: blur(10px) !important;
   height: 5rem;
 }
+
+.orderClass{
+  width: 50rem;
+}

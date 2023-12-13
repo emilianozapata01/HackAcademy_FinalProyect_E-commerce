@@ -56,78 +56,89 @@ function Profile({ hovered, setShowNavAndFooter }) {
           <div className="container">
             <h1 className="text-center ">Profile</h1>
             <div className="d-flex justify-content-center gap-5">
-              <div>
+              <div className="orderClass">
                 <h2>Orders</h2>
-
-                {buyer.orders.map((order) => (
-                  <div key={order._id}>
-                    <Accordion>
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                      >
-                        <Typography>
-                          Order id: {order._id} Date placed:{" "}
-                          {order.createdAt.substring(0, 10)} Total value: $
-                          {order.totalValue}
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <TableContainer>
-                          <Table
-                            sx={{ minWidth: 700 }}
-                            aria-label="spanning table"
+                {buyer.orders[0] ? (
+                  <div>
+                    {buyer.orders.map((order) => (
+                      <div key={order._id}>
+                        <Accordion>
+                          <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
                           >
-                            <TableHead>
-                              <TableRow>
-                                <TableCell>Products</TableCell>
-                                <TableCell>Price</TableCell>
-                                <TableCell>Quantity</TableCell>
-                                <TableCell>Total</TableCell>
-                              </TableRow>
-                            </TableHead>
-                            <TableBody>
-                              {order.items.map((item) => (
-                                <TableRow key={item.item._id}>
-                                  <TableCell>
-                                    <div className="d-flex gap-5 align-items-center">
-                                      <img
-                                        className="orderImg"
-                                        src={item.item.image}
-                                        alt=""
-                                      />
-                                      <p className="m-0">{item.item.name}</p>
-                                    </div>
-                                  </TableCell>
-                                  <TableCell>
-                                    <div className="d-flex align-items-center  priceFix">
-                                      <p className="m-0">${item.item.price}</p>
-                                    </div>
-                                  </TableCell>
-                                  <TableCell>
-                                    <div className="d-flex align-items-center ">
-                                      <p className="m-0">{item.qty}</p>
-                                    </div>
-                                  </TableCell>
-                                  <TableCell>
-                                    <div className="d-flex align-items-center   gap-5 ">
-                                      <div className="priceFix">
-                                        <p className="d-inline ">
-                                          ${item.total}
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </TableCell>
-                                </TableRow>
-                              ))}
-                            </TableBody>
-                          </Table>
-                        </TableContainer>
-                      </AccordionDetails>
-                    </Accordion>
+                            <Typography>
+                              Order id: {order._id} Date placed:{" "}
+                              {order.createdAt.substring(0, 10)} Total value: $
+                              {order.totalValue}
+                            </Typography>
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <TableContainer>
+                              <Table
+                                sx={{ minWidth: 700 }}
+                                aria-label="spanning table"
+                              >
+                                <TableHead>
+                                  <TableRow>
+                                    <TableCell>Products</TableCell>
+                                    <TableCell>Price</TableCell>
+                                    <TableCell>Quantity</TableCell>
+                                    <TableCell>Total</TableCell>
+                                  </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                  {order.items.map((item) => (
+                                    <TableRow key={item.item._id}>
+                                      <TableCell>
+                                        <div className="d-flex gap-5 align-items-center">
+                                          <img
+                                            className="orderImg"
+                                            src={item.item.image}
+                                            alt=""
+                                          />
+                                          <p className="m-0">
+                                            {item.item.name}
+                                          </p>
+                                        </div>
+                                      </TableCell>
+                                      <TableCell>
+                                        <div className="d-flex align-items-center  priceFix">
+                                          <p className="m-0">
+                                            ${item.item.price}
+                                          </p>
+                                        </div>
+                                      </TableCell>
+                                      <TableCell>
+                                        <div className="d-flex align-items-center ">
+                                          <p className="m-0">{item.qty}</p>
+                                        </div>
+                                      </TableCell>
+                                      <TableCell>
+                                        <div className="d-flex align-items-center   gap-5 ">
+                                          <div className="priceFix">
+                                            <p className="d-inline ">
+                                              ${item.total}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+                            </TableContainer>
+                          </AccordionDetails>
+                        </Accordion>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <div>
+                    <p>You haven't placed any orders yet.</p>
+                  </div>
+                )}
               </div>
               <div>
                 {editProfile ? (
