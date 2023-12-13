@@ -20,22 +20,20 @@ function Checkout({ setShowNavAndFooter }) {
   const cart = useSelector((state) => state.cart);
   const buyer = useSelector((state) => state.buyer);
   const navigate = useNavigate();
-  const [newOrder, setNewOrder] = useState(null);
-
-  const email = useInput("buyer.email");
-  const country = useInput("");
-  const firstname = useInput("buyer.firstname");
-  const lastname = useInput("buyer.lastname");
-  const address = useInput("");
-  const apartment = useInput("");
-  const postalcode = useInput("");
-  const city = useInput("");
-  const region = useInput("");
-  const phone = useInput("buyer.phone");
-  const nameoncard = useInput(123456789);
-  const numbercard = useInput("");
-  const expiration = useInput("");
-  const cvv = useInput("");
+  const email = useInput(buyer.email);
+  const country = useInput("Uruguay");
+  const firstname = useInput(buyer.firstname);
+  const lastname = useInput(buyer.lastname);
+  const address = useInput("P. Sherman, calle Wallaby 42");
+  const apartment = useInput("101");
+  const postalcode = useInput("11200");
+  const city = useInput("Montevideo");
+  const region = useInput("Montevideo");
+  const phone = useInput("098989898");
+  const nameoncard = useInput(`${buyer.firstname} ${buyer.lastname}`);
+  const numbercard = useInput(123456789);
+  const expiration = useInput("10/35");
+  const cvv = useInput("777");
 
   React.useEffect(() => {
     setShowNavAndFooter(false);
@@ -58,7 +56,7 @@ function Checkout({ setShowNavAndFooter }) {
 
   return (
     <>
-    <NavBarCheckout/>
+      <NavBarCheckout />
       <div className="container">
         <h1>Checkout</h1>
         <div className="d-flex gap-3">
