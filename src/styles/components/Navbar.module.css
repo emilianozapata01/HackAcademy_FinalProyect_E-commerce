@@ -67,11 +67,6 @@
   padding: 2px !important;
 }
 
-.nav-icons:hover {
-  color: #04b907 !important;
-  background-color: white;
-  border-radius: 50%;
-}
 @media (min-width: 992px) {
   .collapse-navbar {
     max-width: 100%;
@@ -79,7 +74,7 @@
 
   .nav-inside-collapse {
     width: 100%;
-    justify-content: space-between;
+    justify-content: end;
   }
 
   .subnavContent {
@@ -120,7 +115,6 @@
   }
 }
 
-
 .cartIconContainer {
   position: relative;
   display: flex;
@@ -138,4 +132,3 @@
   font-size: 12px;
   transform: translateY(-50%);
 }
-

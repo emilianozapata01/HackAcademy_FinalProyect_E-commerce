@@ -113,7 +113,6 @@
 
 .fix-navbar {
   width: fit-content !important;
-  gap: 1rem;
 }
 
 @media (min-width: 992px) {
