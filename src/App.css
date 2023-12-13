@@ -290,16 +290,6 @@
   width: 3rem;
 }
 
-.section {
-  height: 100vh;
-  background-color: #f5f4eb !important;
-}
-@media screen and (max-width: 768px) {
-  .section {
-    height: 100%;
-  }
-}
-
 .bg-navbar {
   background-color: white !important;
   border-bottom: 1px solid #b5aaaa;
@@ -308,6 +298,50 @@
   height: 5rem;
 }
 
+
+
+.btnProfile{
+  width: 14rem !important;
+}
+.btnColorEdit{
+  color: white !important;
+  background-color: #eb9605 !important;
+}
+
+.btnColorDelete{
+  color: white !important;
+  background-color: #b0254f !important;
+}
+.we{
+  height: 55.4vh;
+}
+
 .orderClass {
   width: 50rem;
+}
+
+
+
+@media screen and (max-width: 1350px) {
+  .orderClass {
+    width: 70%;
+  }
+}
+
+.displayProfile{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+  .orderClass {
+    width: 100%;
+  }
+  .displayProfile {
+    flex-direction: column;
+  }
+  .widthCard{
+    width: 100% !important;
+}
 }

@@ -36,7 +36,7 @@ function DeleteButton() {
 
   return (
     <>
-      <button className="btn btn-danger" onClick={handleShow}>
+      <button className="btn btnColorDelete btnProfile fs-5" onClick={handleShow}>
        Delete profile
       </button>
       <Modal show={show} onHide={handleClose}>

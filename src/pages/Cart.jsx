@@ -42,7 +42,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
   return (
     <>
       <div className={hovered ? "bg-dark-hover-nav " : ""}>
-        <div className="container ">
+        <div className="container we">
           <h1 className="woolwich text-center mt-5 mb-5">My basket</h1>
           {cart.items[0] ? (
             <div>
@@ -123,9 +123,9 @@ function Cart({ hovered, setShowNavAndFooter }) {
               <p id="p1" className="text-center mt-5 ">
                 YOUR BASKET IS EMPTY.
               </p>
-              <div className="d-flex justify-content-center w-100">
+              <div className="d-flex justify-content-center ">
                 <button
-                  className="woolwich btn btn-dark fs-3 btnCheckout m-0 w-25 mt-5"
+                  className="woolwich btn btn-dark fs-3 btnCheckout m-0  mt-5"
                   
                 >
                   continue shopping

@@ -54,9 +54,61 @@ function Profile({ hovered, setShowNavAndFooter }) {
       {Buyer && buyer ? (
         <div className={hovered ? "bg-dark-hover-nav " : ""}>
           <div className="container">
-            <h1 className="text-center ">Profile</h1>
-            <div className="d-flex justify-content-center gap-5">
-              <div className="orderClass">
+            <h1 className="text-center woolwich mt-5">Profile</h1>
+            <div className="displayProfile gap-5 mt-4">
+           
+              <div>
+                {editProfile ? (
+                  <EditProfile
+                    buyer={buyer}
+                    refresh={refresh}
+                    setRefresh={setRefresh}
+                    editProfile={editProfile}
+                    setEditProfile={setEditProfile}
+                  />
+                ) : (
+                  <Card
+                    style={{
+                      width: "18rem",
+                      backgroundColor: "rgb(58, 145, 63)",
+                    }}
+                    className="widthCard"
+                  >
+                    <Card.Body>
+                      <h3 className="text-white text-center ">
+                        {buyer.firstname} {buyer.lastname}
+                      </h3>
+                      <p className="text-white text-center ">{buyer.email}</p>
+                      <div
+                        className="rounded p-2"
+                        style={{ backgroundColor: "white" }}
+                      >
+                        <p className="m-0">Firstname:</p>
+                        <small>{buyer.firstname}</small>
+                        <p className="m-0">Lastname:</p>
+                        <small>{buyer.lastname}</small>
+                        <p className="m-0">Phone</p>
+                        <small>{buyer.phone}</small>
+                        <p className="m-0">Email</p>
+                        <small>{buyer.email}</small>
+                        <p className="m-0">Address</p>
+                        <small>{buyer.direction}</small>
+                        <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
+                          <div className="d-flex flex-column gap-2 ">
+                          <button
+                            onClick={handleEdit}
+                            className="btn btnColorEdit btnProfile fs-5"
+                          >
+                            Edit
+                          </button>
+                          <DeleteButton />
+                          </div>
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                )}
+              </div>   <div className="orderClass">
                 <h2>Orders</h2>
                 {buyer.orders[0] ? (
                   <div>
@@ -138,55 +190,6 @@ function Profile({ hovered, setShowNavAndFooter }) {
                   <div>
                     <p>You haven't placed any orders yet.</p>
                   </div>
-                )}
-              </div>
-              <div>
-                {editProfile ? (
-                  <EditProfile
-                    buyer={buyer}
-                    refresh={refresh}
-                    setRefresh={setRefresh}
-                    editProfile={editProfile}
-                    setEditProfile={setEditProfile}
-                  />
-                ) : (
-                  <Card
-                    style={{
-                      width: "18rem",
-                      backgroundColor: "rgb(58, 145, 63)",
-                    }}
-                  >
-                    <Card.Body>
-                      <h3 className="text-white text-center ">
-                        {buyer.firstname} {buyer.lastname}
-                      </h3>
-                      <p className="text-white text-center ">{buyer.email}</p>
-                      <div
-                        className="rounded"
-                        style={{ backgroundColor: "white" }}
-                      >
-                        <p className="m-0">Firstname:</p>
-                        <small>{buyer.firstname}</small>
-                        <p className="m-0">Lastname:</p>
-                        <small>{buyer.lastname}</small>
-                        <p className="m-0">Phone</p>
-                        <small>{buyer.phone}</small>
-                        <p className="m-0">Email</p>
-                        <small>{buyer.email}</small>
-                        <p className="m-0">Address</p>
-                        <small>{buyer.direction}</small>
-                        <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
-                          <button
-                            onClick={handleEdit}
-                            className="btn btn-success "
-                          >
-                            Edit
-                          </button>
-                          <DeleteButton />
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
                 )}
               </div>
             </div>
