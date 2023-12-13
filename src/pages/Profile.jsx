@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "react-bootstrap/Card";
-import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -17,14 +16,17 @@ import TableRow from "@mui/material/TableRow";
 import Footer from "../components/Footer";
 import EditProfile from "../components/EditProfile";
 import DeleteButton from "../components/DeleteButton";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ hovered, setShowNavAndFooter }) {
+  const navigate = useNavigate();
   const Buyer = useSelector((state) => state.buyer);
   const [editProfile, setEditProfile] = useState(false);
   const [refresh, setRefresh] = useState(true);
   const [buyer, setBuyer] = useState("");
 
   useEffect(() => {
+    !Buyer && navigate("/");
     setShowNavAndFooter(true);
     const getBuyer = async () => {
       try {
@@ -49,7 +51,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
 
   return (
     <>
-      {buyer.orders ? (
+      {Buyer && buyer ? (
         <div className={hovered ? "bg-dark-hover-nav " : ""}>
           <div className="container">
             <h1 className="text-center ">Profile</h1>
@@ -72,60 +74,56 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography>
-                          <TableContainer>
-                            <Table
-                              sx={{ minWidth: 700 }}
-                              aria-label="spanning table"
-                            >
-                              <TableHead>
-                                <TableRow>
-                                  <TableCell>Products</TableCell>
-                                  <TableCell>Price</TableCell>
-                                  <TableCell>Quantity</TableCell>
-                                  <TableCell>Total</TableCell>
-                                </TableRow>
-                              </TableHead>
-                              <TableBody>
-                                {order.items.map((item) => (
-                                  <TableRow key={item._id}>
-                                    <TableCell>
-                                      <div className="d-flex gap-5 align-items-center">
-                                        <img
-                                          className="orderImg"
-                                          src={item.item.image}
-                                          alt=""
-                                        />
-                                        <p className="m-0">{item.item.name}</p>
-                                      </div>
-                                    </TableCell>
-                                    <TableCell>
-                                      <div className="d-flex align-items-center  priceFix">
-                                        <p className="m-0">
-                                          ${item.item.price}
+                        <TableContainer>
+                          <Table
+                            sx={{ minWidth: 700 }}
+                            aria-label="spanning table"
+                          >
+                            <TableHead>
+                              <TableRow>
+                                <TableCell>Products</TableCell>
+                                <TableCell>Price</TableCell>
+                                <TableCell>Quantity</TableCell>
+                                <TableCell>Total</TableCell>
+                              </TableRow>
+                            </TableHead>
+                            <TableBody>
+                              {order.items.map((item) => (
+                                <TableRow key={item.item._id}>
+                                  <TableCell>
+                                    <div className="d-flex gap-5 align-items-center">
+                                      <img
+                                        className="orderImg"
+                                        src={item.item.image}
+                                        alt=""
+                                      />
+                                      <p className="m-0">{item.item.name}</p>
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    <div className="d-flex align-items-center  priceFix">
+                                      <p className="m-0">${item.item.price}</p>
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    <div className="d-flex align-items-center ">
+                                      <p className="m-0">{item.qty}</p>
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    <div className="d-flex align-items-center   gap-5 ">
+                                      <div className="priceFix">
+                                        <p className="d-inline ">
+                                          ${item.total}
                                         </p>
                                       </div>
-                                    </TableCell>
-                                    <TableCell>
-                                      <div className="d-flex align-items-center ">
-                                        <p className="m-0">{item.qty}</p>
-                                      </div>
-                                    </TableCell>
-                                    <TableCell>
-                                      <div className="d-flex align-items-center   gap-5 ">
-                                        <div className="priceFix">
-                                          <p className="d-inline ">
-                                            ${item.total}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </TableCell>
-                                  </TableRow>
-                                ))}
-                              </TableBody>
-                            </Table>
-                          </TableContainer>
-                        </Typography>
+                                    </div>
+                                  </TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </TableContainer>
                       </AccordionDetails>
                     </Accordion>
                   </div>
@@ -133,7 +131,13 @@ function Profile({ hovered, setShowNavAndFooter }) {
               </div>
               <div>
                 {editProfile ? (
-                  <EditProfile buyer={buyer} refresh={refresh} setRefresh={setRefresh} editProfile={editProfile} setEditProfile={setEditProfile} />
+                  <EditProfile
+                    buyer={buyer}
+                    refresh={refresh}
+                    setRefresh={setRefresh}
+                    editProfile={editProfile}
+                    setEditProfile={setEditProfile}
+                  />
                 ) : (
                   <Card
                     style={{
@@ -167,7 +171,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
                           >
                             Edit
                           </button>
-                          <DeleteButton/>
+                          <DeleteButton />
                         </div>
                       </div>
                     </Card.Body>

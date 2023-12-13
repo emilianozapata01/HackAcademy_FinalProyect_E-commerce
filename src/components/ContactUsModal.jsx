@@ -12,7 +12,6 @@ const ContactUsModal = ({ showModal, handleClose }) => {
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    console.log(buyer);
     if (buyer) {
       setFirstName(buyer.firstname || "");
       setLastName(buyer.lastname || "");
@@ -28,19 +27,30 @@ const ContactUsModal = ({ showModal, handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleClose(); 
+    handleClose();
   };
 
   return (
-    <div className={`modal fade ${showModal ? "show" : ""}`} tabIndex="-1" style={{ display: showModal ? "block" : "none" }}>
+    <div
+      className={`modal fade ${showModal ? "show" : ""}`}
+      tabIndex="-1"
+      style={{ display: showModal ? "block" : "none" }}
+    >
       <div className="modal-dialog modal-dialog-centered">
         <div className={`modal-content ${ContactStyle.modalContainer}`}>
           <div className={`modal-header ${ContactStyle.modalHeader}`}>
             <h1 className={ContactStyle.title}>CONTACT US!</h1>
-            <button type="button" className="btn-close" onClick={handleClose}></button>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={handleClose}
+            ></button>
           </div>
           <div className={`modal-body ${ContactStyle.modalBody}`}>
-            <form className="d-flex flex-column gap-3 mt-3 w-100" onSubmit={handleSubmit}>
+            <form
+              className="d-flex flex-column gap-3 mt-3 w-100"
+              onSubmit={handleSubmit}
+            >
               <div className="d-flex flex-column gap-3">
                 <div className="row">
                   <div className="col-sm-12 col-md-6 mt-3">
@@ -87,7 +97,6 @@ const ContactUsModal = ({ showModal, handleClose }) => {
                       className="form-control"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-
                       autoComplete="on"
                     />
                   </div>
@@ -112,4 +121,3 @@ const ContactUsModal = ({ showModal, handleClose }) => {
 };
 
 export default ContactUsModal;
-

@@ -27,11 +27,12 @@ function NavBar({ setHovered }) {
   };
 
   const handleResetDB = async () => {
-    await axios({
+    dispatch(logout());
+    navigate("/");
+    axios({
       method: "get",
       url: `${import.meta.env.VITE_URL_BASE_API}/resetdb`,
     });
-    navigate("/");
   };
 
   const onMouseEnter = () => {

@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "react-bootstrap/Card";
-import * as React from "react";
 
-
-function EditProfile({ buyer, refresh, setRefresh, editProfile, setEditProfile}) {
+function EditProfile({ buyer, refresh, setRefresh, setEditProfile }) {
   const Buyer = useSelector((state) => state.buyer);
 
   const [firstname, setFirstname] = useState(buyer.firstname || "");
