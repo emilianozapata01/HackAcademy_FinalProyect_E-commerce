@@ -18,6 +18,7 @@ function CartDrawer({ cartItemCount }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  const buyer = useSelector((state) => state.buyer);
   const [subTotal, setSubTotal] = useState(0);
   const [state, setState] = React.useState({
     right: false,
@@ -35,7 +36,18 @@ function CartDrawer({ cartItemCount }) {
   };
 
   const handleCheckout = () => {
-    navigate("/checkout");
+    let messageElement = document.getElementById("p1");
+
+    if (cart.cartItemCount === 0) {
+      messageElement.textContent =
+        "YOU SHOULD ADD PRODUCTS TO YOUR CART TO CONTINUE ";
+    } else {
+      if (buyer === null) {
+        navigate("/login");
+      } else {
+        navigate("/checkout");
+      }
+    }
   };
 
   const list = (anchor) => (
@@ -95,7 +107,9 @@ function CartDrawer({ cartItemCount }) {
             </div>
           ) : (
             <div>
-              <p className="text-center mt-5">YOUR BASKET IS EMPTY.</p>
+              <p id="p1" className="text-center mt-5">
+                YOUR BASKET IS EMPTY.
+              </p>
             </div>
           )}
 
@@ -108,7 +122,10 @@ function CartDrawer({ cartItemCount }) {
               </div>
               <p className="text-white fs-6 ps-3 se-3">
                 TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO
-                APPLY ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.{" "}
+                APPLY ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.
+              </p>
+              <p className="text-white fs-4 ps-3 se-3 mb-0 pb-0">
+                REMEMBER BE LOGGED IN TO CONTINUE
               </p>
               <div className="divCheckout">
                 <button

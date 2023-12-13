@@ -21,16 +21,16 @@ function Checkout({ setShowNavAndFooter }) {
   const navigate = useNavigate();
   const [newOrder, setNewOrder] = useState(null);
 
-  const email = useInput(buyer.email);
+  const email = useInput("buyer.email");
   const country = useInput("");
-  const firstname = useInput(buyer.firstname);
-  const lastname = useInput(buyer.lastname);
+  const firstname = useInput("buyer.firstname");
+  const lastname = useInput("buyer.lastname");
   const address = useInput("");
   const apartment = useInput("");
   const postalcode = useInput("");
   const city = useInput("");
   const region = useInput("");
-  const phone = useInput(buyer.phone);
+  const phone = useInput("buyer.phone");
   const nameoncard = useInput(123456789);
   const numbercard = useInput("");
   const expiration = useInput("");
@@ -39,7 +39,7 @@ function Checkout({ setShowNavAndFooter }) {
   React.useEffect(() => {
     setShowNavAndFooter(false);
   }, []);
-  
+
   const handleNewOrder = async () => {
     console.log(cart);
     await axios({
@@ -54,7 +54,6 @@ function Checkout({ setShowNavAndFooter }) {
     dispatch(cleanCart());
     console.log(items);
   };
-  
 
   return (
     <>
@@ -71,7 +70,6 @@ function Checkout({ setShowNavAndFooter }) {
                   src="580b57fcd9996e24bc43c530.png"
                   alt=""
                   onClick={() => {
-                    
                     handleNewOrder();
                   }}
                 />
