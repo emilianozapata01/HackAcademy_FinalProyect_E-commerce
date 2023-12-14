@@ -145,6 +145,11 @@ function NavBar({ setHovered }) {
                         Cart
                       </Dropdown.Item>
                     )}
+                    {!buyer && (
+                      <Dropdown.Item>
+                        <Link to="/admin">Admin Login</Link>
+                      </Dropdown.Item>
+                    )}
                     {buyer && (
                       <Dropdown.Item onClick={() => navigate("/profile")}>
                         Profile
