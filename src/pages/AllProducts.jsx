@@ -54,7 +54,9 @@ function AllProducts() {
                             <div className={`${CategoryStyle.categoryBoxSize}`}>
                               <img
                                 className={CategoryStyle.categoryBoxSizeCAN}
-                                src={product.image}
+                                src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                                  product.image
+                                }`}
                                 alt=""
                               />{" "}
                             </div>
