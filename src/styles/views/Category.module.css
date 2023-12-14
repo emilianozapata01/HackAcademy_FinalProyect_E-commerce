@@ -49,7 +49,7 @@
   width: 800px;
 }
 
-.categoryBoxSizeJUICE:hover {
+/* .categoryBoxSizeJUICE:hover {
   transform: scale(1.1);
 }
 .categoryBoxSizeELIXIR:hover {
@@ -60,7 +60,7 @@
 }
 .categoryBoxSizePROTEIN:hover {
   transform: scale(1.1);
-}
+} */
 
 .titleCategory {
   font-size: 5rem;
@@ -71,6 +71,10 @@
 }
 
 .customLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: #333;
 }
@@ -90,8 +94,9 @@
 }
 
 .customBtnPrimeProduct {
-  width: 220px;
-  height: 80px;
+  font-size: 26px;
+  width: 190px;
+  height: 65px;
   border-radius: 15px;
 }
 
@@ -110,7 +115,7 @@
 }
 
 .zoomDivProduct:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .noStock1 {
@@ -120,6 +125,29 @@
 }
 .noStock2 {
   top: 20%;
+  left: 0;
   max-width: 100%;
   max-height: 100%;
+}
+
+/* asdasdsa */
+
+@media only screen and (min-width: 992px) {
+  .categoryBoxSize {
+    width: 25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .categoryBoxSize {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .categoryBoxSize {
+    width: 15rem;
+    height: 15rem;
+  }
 }
