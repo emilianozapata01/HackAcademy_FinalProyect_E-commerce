@@ -136,6 +136,11 @@ function NavBar({ setHovered }) {
                         Login
                       </Dropdown.Item>
                     )}
+                    <Dropdown.Item>
+                      <Link to="https://juiceshopadmin-ha.vercel.app/">
+                        Admin Login
+                      </Link>
+                    </Dropdown.Item>
                     {!buyer && (
                       <Dropdown.Item onClick={() => navigate("/register")}>
                         Register
@@ -144,11 +149,6 @@ function NavBar({ setHovered }) {
                     {!buyer && (
                       <Dropdown.Item onClick={() => navigate("/cart")}>
                         Cart
-                      </Dropdown.Item>
-                    )}
-                    {!buyer && (
-                      <Dropdown.Item>
-                        <Link to="/admin">Admin Login</Link>
                       </Dropdown.Item>
                     )}
                     {buyer && (
