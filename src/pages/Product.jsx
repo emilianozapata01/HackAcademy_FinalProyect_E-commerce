@@ -315,7 +315,6 @@ function Product({ hovered, setShowNavAndFooter }) {
           <span className="loader"></span>
         </div>
       )}
-      ;
     </>
   );
 }

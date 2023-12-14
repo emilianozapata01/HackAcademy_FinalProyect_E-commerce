@@ -50,12 +50,12 @@ function Profile({ hovered, setShowNavAndFooter }) {
   };
 
   return (
-    <>
+    <div style={{backgroundColor: "#F5F4EB"}}>
       {Buyer && buyer ? (
         <div className={hovered ? "bg-dark-hover-nav " : ""}>
-          <div className="container">
-            <h1 className="text-center woolwich mt-5">Profile</h1>
-            <div className="displayProfile gap-5 mt-4">
+          <div className="container " style={{paddingTop: "4rem"}}>
+            <h1 className="text-center woolwich " style={{paddingBottom: "2rem"}}>Profile</h1>
+            <div className="displayProfile gap-5 mt-4" >
            
               <div>
                 {editProfile ? (
@@ -199,7 +199,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
         <div></div>
       )}
       <Footer />
-    </>
+    </div>
   );
 }
 
