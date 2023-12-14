@@ -168,7 +168,9 @@ function Product({ hovered, setShowNavAndFooter }) {
                         <Carousel.Item interval={1500}>
                           <img
                             className="img-fluid"
-                            src={product.image}
+                            src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                              product.image
+                            }`}
                             alt="TURMERIC GINGER TONIC"
                           />
                           <Carousel.Caption></Carousel.Caption>
@@ -282,7 +284,9 @@ function Product({ hovered, setShowNavAndFooter }) {
                                   className={`${ProductStyle.originalImage} ${
                                     isClicked ? ProductStyle.shrink : ""
                                   }`}
-                                  src={productRandom.image}
+                                  src={`${
+                                    import.meta.env.VITE_URL_SUPABASE_IMG
+                                  }${productRandom.image}`}
                                   alt="Original"
                                   onClick={handleClick}
                                 />
