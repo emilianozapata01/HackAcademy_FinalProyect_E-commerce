@@ -141,8 +141,8 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .categoryBoxSize {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
   }
 }
 
