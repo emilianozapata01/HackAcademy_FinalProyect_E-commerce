@@ -40,7 +40,7 @@ function AllProducts() {
                     {category.name}
                   </p>
                   <div className="d-flex flex-column mt-5">
-                    <ul className="d-flex flex-wrap justify-content-center">
+                    <ul className="d-flex flex-wrap justify-content-center p-0">
                       {category.products.map((product) => (
                         <li
                           key={product._id}
