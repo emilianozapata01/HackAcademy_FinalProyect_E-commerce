@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
   text-align: start;
-  font-size: 2.3rem;
+  font-size: 2rem;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   transition: all 0.2s ease-out;
@@ -36,13 +36,13 @@
 
 @media (min-width: 992px) {
   .swiper-slide {
-    font-size: 1rem;
+    font-size: 3rem;
   }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 576px) {
   .swiper-slide {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
