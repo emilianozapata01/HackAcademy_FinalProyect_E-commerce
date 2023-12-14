@@ -54,7 +54,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
     <>
       {" "}
       {buyer != null && buyer.length != 0 ? (
-        <div className="mb-5">
+        <div>
           <ButtonUp />
 
           <div> </div>
@@ -62,7 +62,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
           <div style={{ backgroundColor: "#EFEFEF" }}>
             {Buyer && buyer ? (
               <div className={hovered ? "bg-dark-hover-nav " : ""}>
-                <div className="container " style={{ paddingTop: "4rem" }}>
+                <div className="container mb-5" style={{ paddingTop: "4rem" }}>
                   <h1
                     className="text-center woolwich "
                     style={{ paddingBottom: "2rem" }}
@@ -217,7 +217,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
                 </div>
               </div>
             ) : (
-              <div></div>
+              <div className="mb-5"></div>
             )}
             <Footer />
           </div>
