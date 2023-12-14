@@ -52,7 +52,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
   return (
     <>
       {" "}
-      {categories != null && categories.length != 0 ? (
+      {buyer != null && buyer.length != 0 ? (
         <div>
           <ButtonUp />
 
