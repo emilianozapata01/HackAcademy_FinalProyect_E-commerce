@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/buyerSlice";
 import HomeStyle from "../styles/views/Home.module.css";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
