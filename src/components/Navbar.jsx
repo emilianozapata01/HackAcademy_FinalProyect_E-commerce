@@ -137,7 +137,7 @@ function NavBar({ setHovered }) {
                       </Dropdown.Item>
                     )}
                     <Dropdown.Item href="https://juiceshopadmin-ha.vercel.app/">
-                      <Link>Admin Login</Link>
+                      Admin Login
                     </Dropdown.Item>
                     {!buyer && (
                       <Dropdown.Item onClick={() => navigate("/register")}>
