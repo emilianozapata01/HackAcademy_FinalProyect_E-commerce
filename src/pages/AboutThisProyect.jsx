@@ -224,6 +224,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                 >
                   <img
                     className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                    style={{ objectFit: "cover" }}
                     src="emi1.jpg"
                     alt="El Emi"
                   />
