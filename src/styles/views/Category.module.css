@@ -87,6 +87,7 @@
   margin-left: 10px;
   transition: transform 0.2s ease-out;
   font-size: 1.8rem;
+  text-wrap: nowrap;
   letter-spacing: 1px;
 }
 .customBtn:active {
