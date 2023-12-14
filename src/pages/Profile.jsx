@@ -58,7 +58,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
 
           <div> </div>
 
-          <div style={{ backgroundColor: "#F5F4EB" }}>
+          <div style={{ backgroundColor: "#EFEFEF" }}>
             {Buyer && buyer ? (
               <div className={hovered ? "bg-dark-hover-nav " : ""}>
                 <div className="container " style={{ paddingTop: "4rem" }}>
