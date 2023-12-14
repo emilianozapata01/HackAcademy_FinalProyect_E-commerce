@@ -50,13 +50,17 @@ function Profile({ hovered, setShowNavAndFooter }) {
   };
 
   return (
-    <div style={{backgroundColor: "#F5F4EB"}}>
+    <div style={{ backgroundColor: "#F5F4EB" }}>
       {Buyer && buyer ? (
         <div className={hovered ? "bg-dark-hover-nav " : ""}>
-          <div className="container " style={{paddingTop: "4rem"}}>
-            <h1 className="text-center woolwich " style={{paddingBottom: "2rem"}}>Profile</h1>
-            <div className="displayProfile gap-5 mt-4" >
-           
+          <div className="container " style={{ paddingTop: "4rem" }}>
+            <h1
+              className="text-center woolwich "
+              style={{ paddingBottom: "2rem" }}
+            >
+              Profile
+            </h1>
+            <div className="displayProfile gap-5 mt-4">
               <div>
                 {editProfile ? (
                   <EditProfile
@@ -95,20 +99,21 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         <small>{buyer.direction}</small>
                         <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
                           <div className="d-flex flex-column gap-2 ">
-                          <button
-                            onClick={handleEdit}
-                            className="btn btnColorEdit btnProfile fs-5"
-                          >
-                            Edit
-                          </button>
-                          <DeleteButton />
+                            <button
+                              onClick={handleEdit}
+                              className="btn btnColorEdit btnProfile fs-5"
+                            >
+                              Edit
+                            </button>
+                            <DeleteButton />
                           </div>
                         </div>
                       </div>
                     </Card.Body>
                   </Card>
                 )}
-              </div>   <div className="orderClass">
+              </div>{" "}
+              <div className="orderClass">
                 <h2>Orders</h2>
                 {buyer.orders[0] ? (
                   <div>
@@ -147,7 +152,10 @@ function Profile({ hovered, setShowNavAndFooter }) {
                                         <div className="d-flex gap-5 align-items-center">
                                           <img
                                             className="orderImg"
-                                            src={item.item.image}
+                                            src={`${
+                                              import.meta.env
+                                                .VITE_URL_SUPABASE_IMG
+                                            }${item.item.image}`}
                                             alt=""
                                           />
                                           <p className="m-0">

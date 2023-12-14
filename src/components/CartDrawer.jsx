@@ -74,7 +74,13 @@ function CartDrawer({ cartItemCount }) {
                 {cart.items.map((product) => (
                   <ListItem key={product.item._id}>
                     <div className="d-flex align-items-start ">
-                      <img className="w-25" src={product.item.image} alt="" />
+                      <img
+                        className="w-25"
+                        src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                          product.item.image
+                        }`}
+                        alt=""
+                      />
                       <div className="d-flex flex-column ms-3">
                         <p className="fw-bold m-0">{product.item.name}</p>
                         <small className="fs-6">

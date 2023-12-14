@@ -63,7 +63,9 @@ function Cart({ hovered, setShowNavAndFooter }) {
                           <div className="d-flex gap-5 align-items-center">
                             <img
                               className="cartImg"
-                              src={product.item.image}
+                              src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                                product.item.image
+                              }`}
                               alt=""
                             />
                             <p>{product.item.name}</p>
@@ -111,7 +113,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
               </TableContainer>
               <div className="d-flex justify-content-end mt-4">
                 <button
-                 onClick={handleCheckout}
+                  onClick={handleCheckout}
                   className="woolwich btn btn-dark ps-4 pe-4 fs-3 btnCheckout"
                 >
                   checkout
@@ -124,10 +126,7 @@ function Cart({ hovered, setShowNavAndFooter }) {
                 YOUR BASKET IS EMPTY.
               </p>
               <div className="d-flex justify-content-center ">
-                <button
-                  className="woolwich btn btn-dark fs-3 btnCheckout m-0  mt-5"
-                  
-                >
+                <button className="woolwich btn btn-dark fs-3 btnCheckout m-0  mt-5">
                   continue shopping
                 </button>
               </div>
