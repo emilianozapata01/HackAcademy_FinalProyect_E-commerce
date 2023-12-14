@@ -144,11 +144,6 @@ function NavBar({ setHovered }) {
                         Register
                       </Dropdown.Item>
                     )}
-                    {!buyer && (
-                      <Dropdown.Item onClick={() => navigate("/cart")}>
-                        Cart
-                      </Dropdown.Item>
-                    )}
                     {buyer && (
                       <Dropdown.Item onClick={() => navigate("/profile")}>
                         Profile
