@@ -139,87 +139,86 @@ function Checkout({ setShowNavAndFooter }) {
                     <Typography>Delivery</Typography>
                   </AccordionSummary>
                   <AccordionDetails className="mt-2">
-                  <div>
-                    
-                    <div className="d-flex flex-column gap-3">
-                      <div>
-                        <TextField
-                          className="w-100"
-                          id="country"
-                          label="Country/Region"
-                          variant="outlined"
-                          {...country}
-                        />
-                      </div>
-                      <div className="d-flex gap-3">
-                        <TextField
-                          className="w-50"
-                          id="firstname"
-                          label="First name"
-                          variant="outlined"
-                          {...firstname}
-                        />
-                        <TextField
-                          className="w-50"
-                          id="lastname"
-                          label="Last name"
-                          variant="outlined"
-                          {...lastname}
-                        />
-                      </div>
-                      <div>
-                        <TextField
-                          className="w-100"
-                          id="address"
-                          label="Address"
-                          variant="outlined"
-                          {...address}
-                        />
-                      </div>
-                      <div>
-                        <TextField
-                          className="w-100"
-                          id="apartment"
-                          label="Apartment, suite, etc. (optional)
+                    <div>
+                      <div className="d-flex flex-column gap-3">
+                        <div>
+                          <TextField
+                            className="w-100"
+                            id="country"
+                            label="Country/Region"
+                            variant="outlined"
+                            {...country}
+                          />
+                        </div>
+                        <div className="d-flex gap-3">
+                          <TextField
+                            className="w-50"
+                            id="firstname"
+                            label="First name"
+                            variant="outlined"
+                            {...firstname}
+                          />
+                          <TextField
+                            className="w-50"
+                            id="lastname"
+                            label="Last name"
+                            variant="outlined"
+                            {...lastname}
+                          />
+                        </div>
+                        <div>
+                          <TextField
+                            className="w-100"
+                            id="address"
+                            label="Address"
+                            variant="outlined"
+                            {...address}
+                          />
+                        </div>
+                        <div>
+                          <TextField
+                            className="w-100"
+                            id="apartment"
+                            label="Apartment, suite, etc. (optional)
                         "
-                          variant="outlined"
-                          {...apartment}
-                        />
-                      </div>
-                      <div className="d-flex gap-3">
-                        <TextField
-                          className="w-100"
-                          id="postalcode"
-                          label="Postal code"
-                          variant="outlined"
-                          {...postalcode}
-                        />
-                        <TextField
-                          className="w-100"
-                          id="city"
-                          label="City"
-                          variant="outlined"
-                          {...city}
-                        />
-                        <TextField
-                          className="w-100"
-                          id="region"
-                          label="Region"
-                          variant="outlined"
-                          {...region}
-                        />
-                      </div>
-                      <div>
-                        <TextField
-                          className="w-100"
-                          id="phone"
-                          label="Phone"
-                          variant="outlined"
-                          {...phone}
-                        />
+                            variant="outlined"
+                            {...apartment}
+                          />
+                        </div>
+                        <div className="d-flex gap-3">
+                          <TextField
+                            className="w-100"
+                            id="postalcode"
+                            label="Postal code"
+                            variant="outlined"
+                            {...postalcode}
+                          />
+                          <TextField
+                            className="w-100"
+                            id="city"
+                            label="City"
+                            variant="outlined"
+                            {...city}
+                          />
+                          <TextField
+                            className="w-100"
+                            id="region"
+                            label="Region"
+                            variant="outlined"
+                            {...region}
+                          />
+                        </div>
+                        <div>
+                          <TextField
+                            className="w-100"
+                            id="phone"
+                            label="Phone"
+                            variant="outlined"
+                            {...phone}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </AccordionDetails>
                 </Accordion>
                 <Accordion>
@@ -231,7 +230,6 @@ function Checkout({ setShowNavAndFooter }) {
                     <Typography>Payment</Typography>
                   </AccordionSummary>
                   <AccordionDetails className="mt-2">
-
                     <div className="d-flex flex-column gap-3">
                       <div>
                         <TextField
@@ -316,7 +314,9 @@ function Checkout({ setShowNavAndFooter }) {
                           <div className="d-flex gap-5 align-items-center position-relative">
                             <img
                               className="cartImg"
-                              src={product.item.image}
+                              src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                                product.item.image
+                              }`}
                               alt={product.item.name}
                             />
                             <i className="bi bi-heart-fill hearthIcon">
