@@ -11,7 +11,7 @@ function Glide({ products }) {
   const navigate = useNavigate();
   return (
     <>
-      <h1 className="text-center mt-5 woolwich bestseller">Bestseller</h1>
+      <h1 className="text-center mt-2 woolwich bestseller">Bestseller</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

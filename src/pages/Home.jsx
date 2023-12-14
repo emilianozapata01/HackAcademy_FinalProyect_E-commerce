@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect } from "react";
-import SlideImagesHome from "../components/SlideImagesHome";
-import SlideImagesHomeResponsive from "../components/SlideImageHomeResponsive";
 import Footer from "../components/Footer";
 import HomeStyle from "../styles/views/Home.module.css";
 import Glide from "../components/Glide";
@@ -10,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productsSlice";
 import { Link } from "react-router-dom";
 import ButtonUp from "../components/ButtonUp";
+import SwiperHome from "../components/SwiperHome";
 function Home({ hovered, setShowNavAndFooter }) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
@@ -31,45 +30,57 @@ function Home({ hovered, setShowNavAndFooter }) {
   }, []);
 
   return (
-    product && (
-      <>
-        <ButtonUp />
-        <Link to="/about-this-proyect">
-          <button
-            className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
-          >
-            About this Project
-          </button>
-          <button className={` ${HomeStyle.aboutProjectSmall}`}>
-            <i className="bi bi-person-raised-hand"></i>
-          </button>
-        </Link>
-        <div className={hovered ? "bg-dark-hover-nav" : ""}>
-          <div className={`${HomeStyle.SlideImageHome}`}>
-            <SlideImagesHome hovered={hovered} />
-          </div>
-          <div className={`${HomeStyle.SlideImageHomeResponsive}`}>
-            <SlideImagesHomeResponsive hovered={hovered} />
-          </div>
-          <div className="d-flex flex-wrap justify-content-center mt-5 pt-5 pb-5 mb-5 gap-5">
-            <div className="d-flex flex-nowrap gap-5">
-              <img className="imgBan" src="downBanner1.png" alt="" />
-              <img className="imgBan" src="downBanner2.png" alt="" />
-            </div>
-            <div className="d-flex flex-nowrap gap-5">
-              <img className="imgBan" src="downBanner4.avif" alt="" />
-              <img className="imgBan" src="downBanner3.png" alt="" />
-            </div>
-          </div>
-          <div className="container">
-            <Glide products={product} qty={1} />
-          </div>
+    <>
+      {" "}
+      {product != null && product.length != 0 ? (
+        <div>
+          <ButtonUp />
+          <div>
+            {product && (
+              <Link to="/about-this-proyect">
+                <button
+                  className={`${HomeStyle.aboutProject} ${HomeStyle.aboutProjectBig}`}
+                >
+                  About this Project
+                </button>
+                <button className={` ${HomeStyle.aboutProjectSmall}`}>
+                  <i className="bi bi-person-raised-hand"></i>
+                </button>
+              </Link>
+            )}
+            <div className={hovered ? "bg-dark-hover-nav" : ""}>
+              <div>
+                <SwiperHome />
+              </div>
+              <div className="d-flex flex-wrap justify-content-center pt-5 pb-5 gap-5">
+                <div className="d-flex flex-nowrap gap-5">
+                  <img className="imgBan" src="downBanner1.png" alt="" />
+                  <img className="imgBan" src="downBanner2.png" alt="" />
+                </div>
+                <div className="d-flex flex-nowrap gap-5">
+                  <img className="imgBan" src="downBanner4.avif" alt="" />
+                  <img className="imgBan" src="downBanner3.png" alt="" />
+                </div>
+              </div>
+              <div className="container">
+                <Glide products={product} qty={1} />
+              </div>
 
-          <CategorySectionHome />
-          <Footer />
+              <CategorySectionHome />
+            </div>
+            <Footer />
+          </div>
         </div>
-      </>
-    )
+      ) : (
+        <div
+          className="w-100 d-flex justify-content-center align-items-center"
+          style={{ height: "50vh" }}
+        >
+          <span className="loader"></span>
+        </div>
+      )}
+      ;
+    </>
   );
 }
 
