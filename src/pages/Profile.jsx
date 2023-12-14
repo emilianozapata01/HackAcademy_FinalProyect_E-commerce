@@ -17,6 +17,7 @@ import Footer from "../components/Footer";
 import EditProfile from "../components/EditProfile";
 import DeleteButton from "../components/DeleteButton";
 import { useNavigate } from "react-router-dom";
+import ButtonUp from "../components/ButtonUp";
 
 function Profile({ hovered, setShowNavAndFooter }) {
   const navigate = useNavigate();
@@ -205,7 +206,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         </div>
                       ) : (
                         <div>
-                          <p>You haven't placed any orders yet.</p>
+                          <p>You haven&apos;t placed any orders yet.</p>
                         </div>
                       )}
                     </div>
