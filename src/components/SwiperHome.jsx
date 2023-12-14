@@ -71,10 +71,10 @@ function SwiperHome() {
         flipEffect={false}
         spaceBetween={50}
         centeredSlides={false}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
