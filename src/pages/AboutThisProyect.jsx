@@ -286,7 +286,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                     >
                       <i className="bi bi-linkedin"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://github.com/MatiasBarreto1595">
                       <i className="bi bi-github"></i>
                     </a>
                   </div>
