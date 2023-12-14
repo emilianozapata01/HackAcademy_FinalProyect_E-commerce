@@ -14,10 +14,11 @@ function NavBarCheckout() {
   return (
     <Navbar
       sticky="top"
-      className={`py-0 px-5 bg-navbar top-0`}
+      className={`py-0  bg-navbar top-0`}
       style={{ fontFamily: "woolwich-regular", height: "4rem" }}
+      expand="lg"
     >
-      <Container  className="d-flex">
+      <Container  className="fluid d-flex">
         <Navbar.Brand href="http://localhost:5173/">
           <h1
             style={{
