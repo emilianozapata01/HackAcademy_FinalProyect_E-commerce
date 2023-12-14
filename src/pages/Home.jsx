@@ -79,7 +79,6 @@ function Home({ hovered, setShowNavAndFooter }) {
           <span className="loader"></span>
         </div>
       )}
-      ;
     </>
   );
 }

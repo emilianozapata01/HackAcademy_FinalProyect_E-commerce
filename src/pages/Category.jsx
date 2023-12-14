@@ -116,7 +116,6 @@ function Category({ setShowNavAndFooter }) {
           <span className="loader"></span>
         </div>
       )}
-      ;
     </>
   );
 }
