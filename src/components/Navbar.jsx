@@ -104,6 +104,7 @@ function NavBar({ setHovered }) {
                   <span
                     className={`${NavbarStyle.navItemHover}`}
                     style={{ fontSize: "26px" }}
+                    onClick={() => navigate("/all-products")}
                   >
                     CATEGORIES
                   </span>
