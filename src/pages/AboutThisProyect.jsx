@@ -274,19 +274,19 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                   <div className={AboutThisProyectStyle.ProfileImage1}>
                     <img
                       className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                      src="mati.jpeg"
-                      alt="El mati"
+                      src="franco.png"
+                      alt="franco"
                     />
                   </div>
                   <div>
-                    <p className="mt-2 mb-0">Matias Barreto</p>
+                    <p className="mt-2 mb-0">Franco Sassi</p>
                     <a
                       className="m-3"
-                      href="https://www.linkedin.com/in/matias-barreto/"
+                      href="https://www.linkedin.com/in/franco-sassi/"
                     >
                       <i className="bi bi-linkedin"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://github.com/FrancoSassi03">
                       <i className="bi bi-github"></i>
                     </a>
                   </div>
