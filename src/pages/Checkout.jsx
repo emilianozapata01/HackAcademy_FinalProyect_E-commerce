@@ -64,11 +64,11 @@ function Checkout({ setShowNavAndFooter }) {
       <NavBarCheckout />
       <div className="container">
         <h1 className="mt-3">Checkout</h1>
-        <div className="d-flex gap-3">
+        <div className=" displayCheckout gap-3">
           <div className="d-flex flex-column ">
             <span>Express checkout</span>
-            <div className="d-flex justify-content-center gap-4">
-              <button className="btn botonColor">
+            <div className="displayBtnCheckout gap-2">
+              <button className="btn w-100 botonColor">
                 {" "}
                 <img
                   className="imgBtnLogo"
@@ -79,7 +79,7 @@ function Checkout({ setShowNavAndFooter }) {
                   }}
                 />
               </button>
-              <button className="btn btnColorViolet">
+              <button className="btn w-100 btnColorViolet">
                 <img
                   className="imgBtnLogo"
                   src="Shop_Pay-OQng0KpC7_brandlogos.net.svg"
@@ -88,7 +88,7 @@ function Checkout({ setShowNavAndFooter }) {
               </button>
               <button
                 className="btn 
-              btnColorBlack"
+              btnColorBlack w-100 p-1"
               >
                 <img
                   className="imgBtnLogo"
@@ -348,7 +348,7 @@ function Checkout({ setShowNavAndFooter }) {
                     <TableRow>
                       <TableCell rowSpan={3} />
                       <TableCell colSpan={1}>Subtotal</TableCell>
-                      <TableCell align="right">${cart.subtotal}</TableCell>
+                      <TableCell className="ps-4">${cart.subtotal}</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
