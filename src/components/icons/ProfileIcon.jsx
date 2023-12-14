@@ -1,4 +1,4 @@
-import NavbarStyle from "../../styles/components/NavBar.module.css";
+import NavbarStyle from "../../styles/components/Navbar.module.css";
 import PersonIcon from "@mui/icons-material/Person";
 
 function ProfileIcon() {

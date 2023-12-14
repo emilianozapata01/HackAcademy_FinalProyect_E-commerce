@@ -8,7 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CancelIcon from "@mui/icons-material/Cancel";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
-import NavbarStyle from "../styles/components/NavBar.module.css";
+import NavbarStyle from "../styles/components/Navbar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOfCart } from "../redux/cartSlice";
 import AddToCart from "../components/AddToCart";
