@@ -274,7 +274,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                   <div className={AboutThisProyectStyle.ProfileImage1}>
                     <img
                       className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                      src="franco.png"
+                      src="franco1.png"
                       alt="franco"
                     />
                   </div>
