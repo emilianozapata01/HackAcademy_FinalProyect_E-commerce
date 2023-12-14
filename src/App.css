@@ -198,12 +198,7 @@
   width: 2.5rem;
 }
 
-.contenedor-externo {
-  width: 1389px;
-  height: 720px;
-  top: 120px;
-  position: sticky;
-}
+
 .contenedor-interno {
   overflow: auto;
   height: 720px;
@@ -269,6 +264,7 @@
 
 .btnColorBlack {
   background-color: black !important;
+  height: 2.5rem;
 }
 
 .btnColorViolet {
@@ -367,5 +363,29 @@
   }
   100% {
     box-shadow: 0 -70px inset;
+  }
+}
+
+.contenedor-externo {
+  top: 120px;
+  position: sticky;
+}
+
+.displayCheckout{
+  display: flex;
+}
+
+.displayBtnCheckout{
+  display: flex;
+}
+
+@media screen and (max-width: 1210px) {
+  .displayCheckout{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .displayBtnCheckout{
+    flex-direction: column;
   }
 }
