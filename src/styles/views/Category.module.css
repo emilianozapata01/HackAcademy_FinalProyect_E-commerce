@@ -86,12 +86,15 @@
   transition: all 0.3s ease;
   margin-left: 10px;
   transition: transform 0.2s ease-out;
-  font-size: 1.8rem;
-  text-wrap: nowrap;
+  font-size: 1.7rem;
   letter-spacing: 1px;
 }
 .customBtn:active {
   transform: scale(0.9);
+}
+
+.customBtn p {
+  text-wrap: nowrap;
 }
 
 .customBtnPrimeProduct {
