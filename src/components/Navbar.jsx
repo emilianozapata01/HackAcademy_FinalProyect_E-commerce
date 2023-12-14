@@ -46,7 +46,7 @@ function NavBar({ setHovered }) {
   const getCategories = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_BASE_API}/category`
+        `${import.meta.env.VITE_URL_BASE_API}category`
       );
       setCategories(response.data);
     } catch (error) {
@@ -63,6 +63,7 @@ function NavBar({ setHovered }) {
   return (
     <>
       <Navbar
+        collapseOnSelect
         expand="lg"
         data-bs-theme="dark"
         sticky="top"
