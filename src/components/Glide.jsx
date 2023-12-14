@@ -36,7 +36,9 @@ function Glide({ products }) {
                 <img
                   onClick={() => navigate(`/product/${product._id}`)}
                   className="custom-image"
-                  src={product.image}
+                  src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                    product.image
+                  }`}
                   alt=""
                 />
                 <div className="d-flex justify-content-center gap-2">

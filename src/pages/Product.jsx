@@ -159,7 +159,9 @@ function Product({ hovered, setShowNavAndFooter }) {
                         <Carousel.Item interval={1500}>
                           <img
                             className="img-fluid"
-                            src={product.image}
+                            src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                              product.image
+                            }`}
                             alt="TURMERIC GINGER TONIC"
                           />
                         </Carousel.Item>

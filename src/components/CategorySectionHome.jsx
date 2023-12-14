@@ -25,7 +25,7 @@ function CategorySectionHome() {
     <>
       {categories && (
         <div
-          className="d-flex flex-column mt-5 align-items-center pb-5"
+          className="d-flex flex-column mt-5 p-5 align-items-center pb-5"
           style={{ backgroundColor: "rgb(239 239 239)" }}
         >
           <h1
@@ -43,7 +43,7 @@ function CategorySectionHome() {
                 >
                   <img
                     className={HomeStyle.categoryBoxSizeCAN}
-                    src={`${import.meta.env.VITE_URL_BASE_API}/img/${
+                    src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
                       category.image
                     }`}
                     alt={category.name}

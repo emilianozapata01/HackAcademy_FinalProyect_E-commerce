@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavbarStyle from "../styles/components/NavBar.module.css";
+import NavbarStyle from "../styles/components/Navbar.module.css";
 import ProfileIcon from "./icons/ProfileIcon";
 import { useNavigate } from "react-router";
 import CartDrawer from "./CartDrawer";
@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/buyerSlice";
 import HomeStyle from "../styles/views/Home.module.css";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
