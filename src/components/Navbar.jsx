@@ -70,7 +70,10 @@ function NavBar({ setHovered }) {
         className={`p-0 ${NavbarStyle.bgNavbar}`}
       >
         <Container style={{ height: "100%" }}>
-          <Navbar.Brand onClick={() => navigate("/")}>
+          <Navbar.Brand
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }}
+          >
             {/* <h1 className={NavbarStyle.navbarBrand}>Juice Shop</h1> */}
             <img
               style={{ height: "3.5rem" }}

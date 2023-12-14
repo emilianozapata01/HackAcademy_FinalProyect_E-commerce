@@ -52,7 +52,7 @@ function Home({ hovered, setShowNavAndFooter }) {
               <div>
                 <SwiperHome />
               </div>
-              <div className="d-flex flex-wrap justify-content-center mt-5 pt-5 pb-5 mb-5 gap-5">
+              <div className="d-flex flex-wrap justify-content-center pt-5 pb-5 gap-5">
                 <div className="d-flex flex-nowrap gap-5">
                   <img className="imgBan" src="downBanner1.png" alt="" />
                   <img className="imgBan" src="downBanner2.png" alt="" />
