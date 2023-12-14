@@ -4,7 +4,7 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import FooterStyle from "../styles/components/Footer.module.css";
 import ContactUsModal from "./ContactUsModal";
-import outOfScopeToast from "../hooks/outOfScopeToast"
+import outOfScopeToast from "../hooks/outOfScopeToast";
 
 const Footer = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <Container
       fluid
-      className={`text-footer mt-5 ${FooterStyle.navItem}`}
+      className={`text-footer ${FooterStyle.navItem}`}
       id="Footer_text-footer__FtDZ2"
     >
       <Row className="text-bg-light p-3">
