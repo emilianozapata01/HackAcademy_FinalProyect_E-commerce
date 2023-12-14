@@ -4,6 +4,7 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import FooterStyle from "../styles/components/Footer.module.css";
 import ContactUsModal from "./ContactUsModal";
+import outOfScopeToast from "../hooks/outOfScopeToast"
 
 const Footer = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -31,10 +32,10 @@ const Footer = () => {
             <Nav.Link href="/all-products">
               <span className={`${FooterStyle.navItem}`}>ALL PRODUCTS</span>
             </Nav.Link>
-            <Nav.Link href="/sustainability">
+            <Nav.Link onClick={outOfScopeToast}>
               <span className={`${FooterStyle.navItem}`}>SUSTAINABILITY</span>
             </Nav.Link>
-            <Nav.Link href="/frequently-asked-questions">
+            <Nav.Link onClick={outOfScopeToast}>
               <span className={`${FooterStyle.navItem}`}>FAQ</span>
             </Nav.Link>
           </Nav>
