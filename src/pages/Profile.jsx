@@ -54,7 +54,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
     <>
       {" "}
       {buyer != null && buyer.length != 0 ? (
-        <div>
+        <div className="mb-5">
           <ButtonUp />
 
           <div> </div>
@@ -163,7 +163,10 @@ function Profile({ hovered, setShowNavAndFooter }) {
                                               <div className="d-flex gap-5 align-items-center">
                                                 <img
                                                   className="orderImg"
-                                                  src={item.item.image}
+                                                  src={`${
+                                                    import.meta.env
+                                                      .VITE_URL_SUPABASE_IMG
+                                                  }${item.item.image}`}
                                                   alt=""
                                                 />
                                                 <p className="m-0">
