@@ -120,11 +120,11 @@ function CartDrawer({ cartItemCount }) {
                 <p className="text-white">Subtotal</p>
                 <p className="text-white">${cart.subtotal}</p>
               </div>
-              <p className="text-white fs-6 ps-3 se-3">
+              <p className="text-white fs-6 ps-3 se-3 mb-1">
                 TAX INCLUDED AND SHIPPING CALCULATED AT CHECKOUT. YOU CAN ALSO
                 APPLY ANY DISCOUNT CODES YOU HAVE AT CHECKOUT.
               </p>
-              <p className="text-white fs-4 ps-3 se-3 mb-0 pb-0">
+              <p className="text-white ps-3 se-3 mb-0 pb-0 fs-6">
                 REMEMBER BE LOGGED IN TO CONTINUE
               </p>
               <div className="divCheckout">
