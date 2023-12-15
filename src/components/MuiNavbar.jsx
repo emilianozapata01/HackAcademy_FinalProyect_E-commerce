@@ -64,7 +64,7 @@ function MuiNavbar() {
 
   const handleGoProfile = () => {
     navigate("/profile");
-    handleCloseUserMenu;
+    handleCloseUserMenu();
   };
 
   const handleOpenNavMenu = (event) => {
