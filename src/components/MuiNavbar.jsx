@@ -155,7 +155,7 @@ function MuiNavbar() {
               sx={{ my: 2, color: "white", display: "block" }}
               onClick={() => navigate("/all-products")}
             >
-              Productssss
+              Products
             </Button>
             <DropdownButton
               className={MuiNavbarStyle.dropdown}
