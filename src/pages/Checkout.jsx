@@ -54,9 +54,8 @@ function Checkout({ setShowNavAndFooter }) {
         Authorization: `Bearer ${buyer.token}`,
       },
     });
-    navigate("/success");
     dispatch(cleanCart());
-    console.log(items);
+    navigate("/success");
   };
 
   return (
@@ -296,7 +295,6 @@ function Checkout({ setShowNavAndFooter }) {
             <button
               className="btn btn-danger my-4 fs-5"
               onClick={() => {
-                navigate("/success");
                 handleNewOrder();
               }}
             >
