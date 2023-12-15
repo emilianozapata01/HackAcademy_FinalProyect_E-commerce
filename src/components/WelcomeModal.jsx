@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import ContactStyle from "../styles/components/Contact.module.css";
+import { Link } from "react-router-dom";
 
 const WelcomeModal = () => {
   const [showModal, setShowModal] = React.useState(true);
@@ -13,11 +14,6 @@ const WelcomeModal = () => {
 
   const handleLearnMoreClick = () => {
     handleClose();
-
-    const learnMoreLink = document.getElementById("learnMoreLink");
-    if (learnMoreLink) {
-      learnMoreLink.click();
-    }
   };
 
   return (
@@ -29,50 +25,50 @@ const WelcomeModal = () => {
     >
       <Modal.Header closeButton>
         <Modal.Title className={`${ContactStyle.title} ms-3`}>
-          WELCOME!
+          BIENVENIDOS A JUICESHOP!
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="ms-3">
           <p>
-            This e-commerce is the brainchild of four students from the Coding
-            Bootcamp at Hack Academy.
+            Este e-commerce es el proyecto final de cuatro estudiantes del
+            Coding Bootcamp de <a href="https://ha.dev/">Hack Academy</a>
           </p>
 
           <a id="learnMoreLink" href="#" style={{ display: "none" }}></a>
           <button
             type="button"
-            className={`mb-4 ${ContactStyle.btn}`}
+            className={`mb-4 ${ContactStyle.btnModal}`}
             onClick={handleLearnMoreClick}
           >
-            <span>Wanna know more?</span>{" "}
+            <Link to="/about-this-proyect">
+              <span>MÁS SOBRE ESTE PROYECTO</span>
+            </Link>
           </button>
           <div>
             <p className="mt-4">
-              Before diving in, give the database a quick reset for a smoother
-              ride.
+              Antes de recorrerlo, recomendamos un reinicio rápido de la base de
+              datos para una mejor experiencia:
             </p>
-            <button type="button" className={`mb-4 ${ContactStyle.btn}`}>
-              <span>RESET DATABASE</span>{" "}
+            <button type="button" className={`mb-4 ${ContactStyle.btnModal}`}>
+              <span>REINICIAR BASE DE DATOS</span>{" "}
             </button>
           </div>
           <p className="mt-4">
-            Test out different features by logging in as a buyer or an admin. Go
-            wild with both from the login menu.{" "}
+            Probá diferentes funciones al iniciar sesión como comprador o
+            administrador desde el menú de inicio de sesión.{" "}
           </p>
         </div>
       </Modal.Body>
       <Modal.Footer centered="true" className="d-flex justify-content-between">
         <img className="modalLogo " src="/nav-logo.png" alt="Juice Shop" />
 
-        <p>Happy testing!</p>
-
         <button
           type="button"
           className={`mt-4 ${ContactStyle.btnGo}`}
           onClick={handleGoClick}
         >
-          <span>GO!</span>{" "}
+          <span>HAPPY TESTING!</span>{" "}
         </button>
       </Modal.Footer>
     </Modal>

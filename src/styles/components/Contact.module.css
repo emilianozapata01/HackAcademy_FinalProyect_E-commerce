@@ -63,6 +63,22 @@
   background-image: linear-gradient(#3a913f, #9b6700);
 }
 
+.btnModal {
+  border: 2px solid #317a35;
+  background-color: #3a913f;
+  border-radius: 0.9em;
+  padding: 0.4em 1em 0.4em 1em;
+  transition: all ease-in-out 0.5s;
+  font-size: 1.2rem;
+  font-family: "woolwich-regular";
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.btnModal:hover {
+  background-image: linear-gradient(#3a913f, #9b6700);
+}
+
 .btnGo {
   border: 1px solid #ea560c;
   background-color: #f28e24;
@@ -80,7 +96,7 @@
   transform: scale(1.1);
 }
 
-.customModal {
-  max-width: 50vw;
-  max-height: 100vw;
-}
+/* .customModal {
+  max-width: 70vw;
+} */
+
