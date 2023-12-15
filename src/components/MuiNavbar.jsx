@@ -152,12 +152,11 @@ function MuiNavbar() {
           </div>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              onClick={(() => navigate("/all-products"), handleCloseNavMenu)}
+              onClick={() => navigate("/all-products")}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               Productssss
             </Button>
-
             <DropdownButton
               className={MuiNavbarStyle.dropdown}
               align="end"
