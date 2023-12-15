@@ -216,9 +216,7 @@ function MuiNavbar() {
                 </MenuItem>
               )}
               {buyer && (
-                <MenuItem
-                  onClick={(() => navigate("/profile"), handleCloseUserMenu)}
-                >
+                <MenuItem onClick={() => navigate("/profile")}>
                   <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
               )}

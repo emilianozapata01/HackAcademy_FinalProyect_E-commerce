@@ -30,8 +30,6 @@ function Category({ setShowNavAndFooter }) {
     setShowNavAndFooter(true);
     getCategory();
   }, [params.id]);
-
-  console.log("categories", categories);
   return (
     <>
       {" "}
@@ -48,7 +46,6 @@ function Category({ setShowNavAndFooter }) {
                   <div className="d-flex flex-column mt-5">
                     <ul className="d-flex flex-wrap justify-content-center">
                       {category.products.map((product) => {
-                        console.log(product.stock);
                         return (
                           <li
                             key={product._id}
