@@ -70,7 +70,9 @@ function Profile({ hovered, setShowNavAndFooter }) {
                     Profile
                   </h1>
                   <div className="displayProfile gap-5 mt-4">
+                    
                     <div>
+                      <h2 className="ms-3">User</h2>
                       {editProfile ? (
                         <EditProfile
                           buyer={buyer}
@@ -83,36 +85,30 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         <Card
                           style={{
                             width: "18rem",
-                            backgroundColor: "rgb(58, 145, 63)",
+                            borderRadius: "1rem"
                           }}
                           className="widthCard"
                         >
                           <Card.Body>
-                            <h3 className="text-white text-center ">
-                              {buyer.firstname} {buyer.lastname}
-                            </h3>
-                            <p className="text-white text-center ">
-                              {buyer.email}
-                            </p>
                             <div
                               className="rounded p-2"
                               style={{ backgroundColor: "white" }}
                             >
-                              <p className="m-0">Firstname:</p>
-                              <small>{buyer.firstname}</small>
-                              <p className="m-0">Lastname:</p>
-                              <small>{buyer.lastname}</small>
-                              <p className="m-0">Phone</p>
-                              <small>{buyer.phone}</small>
-                              <p className="m-0">Email</p>
-                              <small>{buyer.email}</small>
-                              <p className="m-0">Address</p>
-                              <small>{buyer.direction}</small>
-                              <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
+                              <small className="m-0">Firstname:</small>
+                              <p>{buyer.firstname}</p>
+                              <small className="m-0">Lastname:</small>
+                              <p>{buyer.lastname}</p>
+                              <small className="m-0">Phone</small>
+                              <p>{buyer.phone}</p>
+                              <small className="m-0">Email</small>
+                              <p>{buyer.email}</p>
+                              <small className="m-0">Address</small>
+                              <p>{buyer.direction}</p>
+                              <div className=" gap-2 pb-2 pt-2">
                                 <div className="d-flex flex-column gap-2 ">
                                   <button
                                     onClick={handleEdit}
-                                    className="btn btnColorEdit btnProfile fs-5"
+                                    className="btn btnColorEdit btnProfile fs-5 w-100"
                                   >
                                     Edit
                                   </button>

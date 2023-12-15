@@ -5,11 +5,11 @@
 }
 
 .navItem {
-  color: black;
+  color: white;
 }
 
 .facebook {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .facebook:hover {
@@ -17,11 +17,13 @@
 }
 
 .navItem:hover {
-  color: #04b907;
+  color: #318c39;
 }
-
+.navRow {
+  background-color: #000000;
+}
 .instagram {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .instagram:hover {
@@ -39,7 +41,7 @@
 }
 
 .message {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .message:hover {

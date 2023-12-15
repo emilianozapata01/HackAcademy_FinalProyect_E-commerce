@@ -18,7 +18,7 @@ const Footer = () => {
       className={`text-footer ${FooterStyle.navItem}`}
       id="Footer_text-footer__FtDZ2"
     >
-      <Row className="text-bg-light p-3">
+      <Row className={` p-3 ${FooterStyle.navRow}`}>
         <Col md={4}>
           <Image
             src="https://juiceshop.com/cdn/shop/files/FooterCartLogo3_600x_920720f9-3e86-4aa4-9469-6d5d4c3402db_400x.png?v=1674091452"
@@ -42,7 +42,7 @@ const Footer = () => {
         </Col>
 
         <Col md={3} className="pt-4">
-          <Nav className="flex-column">
+          <Nav className="flex-md-column flex-row">
             <Nav.Link href="https://www.facebook.com/juiceshopsf/">
               <span className={`bi bi-facebook ${FooterStyle.facebook}`}></span>
             </Nav.Link>
@@ -61,9 +61,9 @@ const Footer = () => {
         <Col md={2}>
           <Link to="/">
             <Image
-              src="js.png"
+              src="nav-logo.png"
               alt="logo-img"
-              className={`w-50 ms-2 mt-4 ${FooterStyle.img}`}
+              className={`w-50 ms-2 mt-4 mb-3 ${FooterStyle.img}`}
             />
           </Link>
           <p>© 2023 JUICE SHOP</p>
