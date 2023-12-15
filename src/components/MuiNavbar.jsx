@@ -152,8 +152,8 @@ function MuiNavbar() {
           </div>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              onClick={() => navigate("/all-products")}
               sx={{ my: 2, color: "white", display: "block" }}
+              onClick={() => navigate("/all-products")}
             >
               Productssss
             </Button>
