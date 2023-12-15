@@ -22,8 +22,9 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
             apenas 3 semanas. Utilizamos tecnologías clave como React.js para el
             Front-End, Node.js y Express.js para el Back-End, junto con MongoDB
             como base de datos. Nos inspiramos en el sitio oficial de Juice Shop
-            y en Little's para dar forma a nuestra plataforma, aplicando nuestra
-            creatividad y conocimientos para adaptarla a nuestras necesidades.
+            y en Little&apos;s para dar forma a nuestra plataforma, aplicando
+            nuestra creatividad y conocimientos para adaptarla a nuestras
+            necesidades.
             {/* 
             During our Coding Bootcamp at Hack Academy between September and December 2023, we created Juice Shop as our final project. In a team of 4 members, we set out to develop an e-commerce platform in just 3 weeks. We utilized key technologies such as React.js for the Front-End, Node.js and Express.js for the Back-End, along with MongoDB as the database. Drawing inspiration from the official Juice Shop website, we shaped our platform, applying our creativity and knowledge to tailor it to our specific needs. */}
           </p>

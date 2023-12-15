@@ -8,36 +8,28 @@ import AboutThisProyect from "./pages/AboutThisProyect";
 import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
-import NavBar from "./components/Navbar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
 import Profile from "./pages/Profile";
+import MuiNavbar from "./components/MuiNavbar";
 
 function App() {
-  const [hovered, setHovered] = useState(false);
   const [showNavAndFooter, setShowNavAndFooter] = useState(true);
   return (
     <>
       <ToastContainer />
-      {showNavAndFooter && <NavBar setHovered={setHovered} />}
+      {showNavAndFooter && <MuiNavbar />}
       <Routes>
         <Route
           path="/"
-          element={
-            <Home setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
-          }
+          element={<Home setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/product/:id"
-          element={
-            <Product
-              setShowNavAndFooter={setShowNavAndFooter}
-              hovered={hovered}
-            />
-          }
+          element={<Product setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/category/:id"
@@ -46,26 +38,16 @@ function App() {
         <Route
           path="/about-this-proyect"
           element={
-            <AboutThisProyect
-              setShowNavAndFooter={setShowNavAndFooter}
-              hovered={hovered}
-            />
+            <AboutThisProyect setShowNavAndFooter={setShowNavAndFooter} />
           }
         />
         <Route
           path="/success"
-          element={
-            <Success
-              setShowNavAndFooter={setShowNavAndFooter}
-              hovered={hovered}
-            />
-          }
+          element={<Success setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/cart"
-          element={
-            <Cart setShowNavAndFooter={setShowNavAndFooter} hovered={hovered} />
-          }
+          element={<Cart setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/checkout"
@@ -85,21 +67,11 @@ function App() {
         />
         <Route
           path="*"
-          element={
-            <NotFound
-              setShowNavAndFooter={setShowNavAndFooter}
-              hovered={hovered}
-            />
-          }
+          element={<NotFound setShowNavAndFooter={setShowNavAndFooter} />}
         />
         <Route
           path="/profile"
-          element={
-            <Profile
-              setShowNavAndFooter={setShowNavAndFooter}
-              hovered={hovered}
-            />
-          }
+          element={<Profile setShowNavAndFooter={setShowNavAndFooter} />}
         />
       </Routes>
     </>

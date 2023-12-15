@@ -56,7 +56,6 @@ function Checkout({ setShowNavAndFooter }) {
     });
     navigate("/success");
     dispatch(cleanCart());
-    console.log(items);
   };
 
   return (
