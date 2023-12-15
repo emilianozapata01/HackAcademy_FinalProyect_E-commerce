@@ -1,0 +1,111 @@
+.dropdown button {
+  display: block;
+  --bs-btn-padding-x: 0 !important;
+  --bs-btn-padding-y: 0 !important;
+  --bs-btn-color: "";
+  --bs-btn-bg: "";
+  --bs-btn-border-color: "";
+  --bs-btn-hover-color: "";
+  padding: 6px 8px;
+  margin-top: 16px;
+}
+
+.dropdown button:first-child:active {
+  color: inherit;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dropdown button:hover {
+  color: inherit;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dropdown button:active {
+  color: inherit !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.dropdown button:focus-visible {
+  color: inherit !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.dropdown button {
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.02857em !important;
+  text-transform: uppercase;
+  min-width: 64px;
+}
+
+.dropdown .dropdown-menu {
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  outline: 0 !important;
+  display: block !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+
+  /* desp */
+
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 267ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 178ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  top: 18px !important;
+  left: 680px !important;
+  transform-origin: 123px 0px !important;
+}
+
+.dropdown .dropdown-item:active {
+  background-color: transparent !important;
+}
+
+.menu-burguer ul {
+  /* overflow-y: inherit; */
+  /* height: 15rem !important;
+  width: 14rem; */
+  /* max-height: 50rem !important;
+  max-width: 30rem !important; */
+}
+
+.dropdown-burguer button {
+  --bs-btn-padding-x: 0 !important;
+  --bs-btn-padding-y: 0 !important;
+  --bs-btn-color: "";
+  --bs-btn-bg: "";
+  --bs-btn-border-color: "";
+  --bs-btn-hover-color: "";
+}
+
+.dropdown-burguer button::after {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.dropdown-burguer button:first-child:active {
+  color: inherit;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dropdown-burguer button:hover {
+  color: inherit;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.grow-burguer ul {
+  transition: all 0.2s ease-out;
+  height: 14rem !important;
+  width: 14rem;
+}

@@ -51,11 +51,12 @@
   border: 2px solid #317a35;
   background-color: #3a913f;
   border-radius: 0.9em;
-  padding: 0.4em 1.2em 0.4em 1em;
+  padding: 0.4em 1em 0.4em 1em;
   transition: all ease-in-out 0.5s;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-family: "woolwich-regular";
   color: #fff;
+  letter-spacing: 2px;
 }
 
 .btn:hover {
