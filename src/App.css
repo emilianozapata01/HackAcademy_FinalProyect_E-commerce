@@ -90,6 +90,7 @@
 }
 .swiper-button-next {
   color: rgb(58, 145, 63) !important;
+  
 }
 .swiper-button-prev {
   color: rgb(58, 145, 63) !important;
@@ -143,6 +144,10 @@
   bottom: 0px;
   right: 0;
   z-index: 10;
+}
+
+.displayDrawer{
+  width: 40vh!important;
 }
 
 .subTotal {
