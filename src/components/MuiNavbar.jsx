@@ -155,7 +155,7 @@ function MuiNavbar() {
               onClick={(() => navigate("/all-products"), handleCloseNavMenu)}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              Products
+              Productssss
             </Button>
 
             <DropdownButton
