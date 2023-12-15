@@ -198,7 +198,6 @@
   width: 2.5rem;
 }
 
-
 .contenedor-interno {
   overflow: auto;
   height: 720px;
@@ -306,7 +305,6 @@
   background-color: #b0254f !important;
 }
 
-
 .orderClass {
   width: 50rem;
 }
@@ -369,21 +367,27 @@
   position: sticky;
 }
 
-.displayCheckout{
+.displayCheckout {
   display: flex;
 }
 
-.displayBtnCheckout{
+.displayBtnCheckout {
   display: flex;
 }
 
 @media screen and (max-width: 1210px) {
-  .displayCheckout{
+  .displayCheckout {
     display: flex;
     flex-direction: column;
   }
 
-  .displayBtnCheckout{
+  .displayBtnCheckout {
     flex-direction: column;
   }
+}
+
+.modalLogo {
+  width: 10vh;
+  height: 10vh;
+  padding-left: 14px;
 }

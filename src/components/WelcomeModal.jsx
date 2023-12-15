@@ -28,39 +28,45 @@ const WelcomeModal = () => {
       dialogClassName={ContactStyle.customModal}
     >
       <Modal.Header closeButton>
-        <Modal.Title className={ContactStyle.title}>WELCOME!</Modal.Title>
+        <Modal.Title className={`${ContactStyle.title} ms-3`}>
+          WELCOME!
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>
-          This e-commerce is the brainchild of four students from the Coding
-          Bootcamp at Hack Academy.
-        </p>
-
-        <a id="learnMoreLink" href="#" style={{ display: "none" }}></a>
-        <button
-          type="button"
-          className={`mb-4 ${ContactStyle.btn}`}
-          onClick={handleLearnMoreClick}
-        >
-          <span>Wanna know more?</span>{" "}
-        </button>
-        <div>
-          <p className="mt-4">
-            Before diving in, give the database a quick reset for a smoother
-            ride.
+        <div className="ms-3">
+          <p>
+            This e-commerce is the brainchild of four students from the Coding
+            Bootcamp at Hack Academy.
           </p>
-          <button type="button" className={`mb-4 ${ContactStyle.btn}`}>
-            <span>RESET DATABASE</span>{" "}
+
+          <a id="learnMoreLink" href="#" style={{ display: "none" }}></a>
+          <button
+            type="button"
+            className={`mb-4 ${ContactStyle.btn}`}
+            onClick={handleLearnMoreClick}
+          >
+            <span>Wanna know more?</span>{" "}
           </button>
+          <div>
+            <p className="mt-4">
+              Before diving in, give the database a quick reset for a smoother
+              ride.
+            </p>
+            <button type="button" className={`mb-4 ${ContactStyle.btn}`}>
+              <span>RESET DATABASE</span>{" "}
+            </button>
+          </div>
+          <p className="mt-4">
+            Test out different features by logging in as a buyer or an admin. Go
+            wild with both from the login menu.{" "}
+          </p>
         </div>
-        <p className="mt-4">
-          Test out different features by logging in as a buyer or an admin. Go
-          wild with both from the login menu.{" "}
-        </p>
-        <span>icono de login</span>
       </Modal.Body>
-      <Modal.Footer centered="true">
-        <span>Happy testing!</span>
+      <Modal.Footer centered="true" className="d-flex justify-content-between">
+        <img className="modalLogo " src="/nav-logo.png" alt="Juice Shop" />
+
+        <p>Happy testing!</p>
+
         <button
           type="button"
           className={`mt-4 ${ContactStyle.btnGo}`}

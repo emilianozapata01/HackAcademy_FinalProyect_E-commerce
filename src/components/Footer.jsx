@@ -42,7 +42,7 @@ const Footer = () => {
         </Col>
 
         <Col md={3} className="pt-4">
-          <Nav className="flex-column">
+          <Nav className="flex-md-column flex-row">
             <Nav.Link href="https://www.facebook.com/juiceshopsf/">
               <span className={`bi bi-facebook ${FooterStyle.facebook}`}></span>
             </Nav.Link>
