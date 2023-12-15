@@ -13,8 +13,8 @@ function Login({ setShowNavAndFooter }) {
   const [wrongCredentials, setWrongCredentials] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const[email, setEmail]= useState("");
-  const[password, setPassword]= useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const buyerLogIn = async (e) => {
     const response = await axios({
@@ -60,7 +60,13 @@ function Login({ setShowNavAndFooter }) {
       <Link to="/" className={RegisterStyle.backArrow}>
         <HiArrowLeft stroke="#fff" strokeWidth="1px" fill="none" size="30px" />
       </Link>
-      <video autoPlay loop muted className={NotFoundStyle.notFoundVideo}>
+      <video
+        autoPlay
+        playsInline
+        loop
+        muted
+        className={NotFoundStyle.notFoundVideo}
+      >
         <source src={NotFoundVideo} type="video/mp4" />
       </video>
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
@@ -80,7 +86,7 @@ function Login({ setShowNavAndFooter }) {
                 className="form-control"
                 required
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 autoComplete="on"
               />
               <input
@@ -90,7 +96,7 @@ function Login({ setShowNavAndFooter }) {
                 className="form-control"
                 required
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 autoComplete="on"
               />
             </div>
@@ -99,7 +105,11 @@ function Login({ setShowNavAndFooter }) {
                 Wrong email or password
               </small>
             )}
-            <button type="button" onClick={handleAutocomplete} className={RegisterStyle.registerBtn}>
+            <button
+              type="button"
+              onClick={handleAutocomplete}
+              className={RegisterStyle.registerBtn}
+            >
               <span>Autocomplete</span>
             </button>
             <button type="submit" className={RegisterStyle.registerBtn}>
