@@ -54,7 +54,7 @@ function Checkout({ setShowNavAndFooter }) {
         Authorization: `Bearer ${buyer.token}`,
       },
     });
-    dispatch(cleanCart());
+    // dispatch(cleanCart());
     navigate("/success");
   };
 

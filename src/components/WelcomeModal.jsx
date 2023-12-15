@@ -63,7 +63,7 @@ const WelcomeModal = () => {
         </p>
         <span>icono de login</span>
       </Modal.Body>
-      <Modal.Footer centered>
+      <Modal.Footer centered="true">
         <span>Happy testing!</span>
         <button
           type="button"
