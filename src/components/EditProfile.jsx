@@ -94,14 +94,14 @@ function EditProfile({ buyer, refresh, setRefresh, setEditProfile }) {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
-              <div className="d-flex justify-content-center gap-2 pb-2 pt-2">
-                <button type="submit" className="btn btn-success fs-5">
+              <div className="d-flex justify-content-center flex-column  gap-2 pb-2 pt-2">
+                <button type="submit" className="btn btnColorEdit fs-5">
                   Save changes
                 </button>
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="btn btn-danger fs-5"
+                  className="btn btnColorDelete fs-5"
                 >
                   Discard changes
                 </button>

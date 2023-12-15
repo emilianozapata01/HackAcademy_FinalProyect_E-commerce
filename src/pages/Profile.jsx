@@ -70,7 +70,9 @@ function Profile({ hovered, setShowNavAndFooter }) {
                     Profile
                   </h1>
                   <div className="displayProfile gap-5 mt-4">
+                    
                     <div>
+                      <h2 className="ms-3">User</h2>
                       {editProfile ? (
                         <EditProfile
                           buyer={buyer}
@@ -83,6 +85,7 @@ function Profile({ hovered, setShowNavAndFooter }) {
                         <Card
                           style={{
                             width: "18rem",
+                            borderRadius: "1rem"
                           }}
                           className="widthCard"
                         >
