@@ -152,7 +152,7 @@ function MuiNavbar() {
           </div>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={(() => navigate("/all-products"), handleCloseNavMenu)}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               Products
