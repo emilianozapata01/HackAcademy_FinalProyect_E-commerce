@@ -47,6 +47,7 @@ function MuiNavbar() {
   }, []);
 
   const handleResetDB = async () => {
+    handleCloseUserMenu();
     dispatch(logout());
     navigate("/");
     axios({
@@ -57,7 +58,13 @@ function MuiNavbar() {
 
   const handleLogout = () => {
     dispatch(logout());
+    handleCloseUserMenu();
     navigate("/");
+  };
+
+  const handleGoProfile = () => {
+    navigate("/profile");
+    handleCloseUserMenu;
   };
 
   const handleOpenNavMenu = (event) => {
@@ -216,27 +223,23 @@ function MuiNavbar() {
                 </MenuItem>
               )}
               {buyer && (
-                <MenuItem onClick={() => navigate("/profile")}>
+                <MenuItem onClick={handleGoProfile}>
                   <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
               )}
               {buyer && (
-                <MenuItem
-                  onClick={
-                    (() => navigate("/"), handleLogout, handleCloseUserMenu)
-                  }
-                >
+                <MenuItem onClick={handleLogout}>
                   <Typography textAlign="center">Logout</Typography>
                 </MenuItem>
               )}
-              <MenuItem href="https://juiceshopadmin-ha.vercel.app/">
+              <MenuItem>
                 <Typography textAlign="center">
                   <a href="https://juiceshopadmin-ha.vercel.app/">
                     Admin Login
                   </a>
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={(handleResetDB, handleCloseUserMenu)}>
+              <MenuItem onClick={handleResetDB}>
                 <Typography textAlign="center">Reset DB</Typography>
               </MenuItem>
             </Menu>
