@@ -56,7 +56,6 @@ function Checkout({ setShowNavAndFooter }) {
     });
     navigate("/success");
     dispatch(cleanCart());
-    console.log(items);
   };
 
   return (
@@ -296,7 +295,6 @@ function Checkout({ setShowNavAndFooter }) {
             <button
               className="btn btn-danger my-4 fs-5"
               onClick={() => {
-                navigate("/success");
                 handleNewOrder();
               }}
             >
