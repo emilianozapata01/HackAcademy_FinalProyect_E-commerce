@@ -53,49 +53,44 @@ function EditProfile({ buyer, refresh, setRefresh, setEditProfile }) {
       <Card
         style={{
           width: "18rem",
-          backgroundColor: "rgb(58, 145, 63)",
         }}
-        className="widthCard"
+        className="widthCard "
       >
-        <Card.Body>
-          <h3 className="text-white text-center ">
-            {buyer.firstname} {buyer.lastname}
-          </h3>
-          <p className="text-white text-center ">{buyer.email}</p>
-          <div className="rounded p-2" style={{ backgroundColor: "white" }}>
-            <form id="edit-form" onSubmit={(e) => submitEdit(e)}>
-              <p className="m-0">Firstname:</p>
+        <Card.Body> 
+          <div className="rounded p-2 "  style={{ backgroundColor: "white" }}>
+            <form id="edit-form " onSubmit={(e) => submitEdit(e)}>
+              <small className="m-0">Firstname:</small>
               <input
                 type="text"
-                className="form-control fs-5"
+                className="form-control fs-5 mb-2"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
               />
-              <p className="m-0">Lastname:</p>
+              <small className="m-0">Lastname:</small>
               <input
                 type="text"
-                className="form-control fs-5"
+                className="form-control fs-5 mb-2"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
               />
-              <p className="m-0">Phone</p>
+              <small className="m-0">Phone</small>
               <input
                 type="text"
-                className="form-control fs-5 "
+                className="form-control fs-5 mb-2"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
-              <p className="m-0">Email</p>
+              <small className="m-0">Email</small>
               <input
                 type="text"
-                className="form-control fs-5"
+                className="form-control fs-5 mb-2"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <p className="m-0">Address</p>
+              <small className="m-0">Address</small>
               <input
                 type="text"
-                className="form-control fs-5"
+                className="form-control fs-5 mb-2"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
