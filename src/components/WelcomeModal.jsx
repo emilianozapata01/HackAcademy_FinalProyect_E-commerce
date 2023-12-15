@@ -36,11 +36,7 @@ const WelcomeModal = () => {
           Bootcamp at Hack Academy.
         </p>
 
-        <a
-          id="learnMoreLink"
-          href="#"
-          style={{ display: "none" }}
-        ></a>
+        <a id="learnMoreLink" href="#" style={{ display: "none" }}></a>
         <button
           type="button"
           className={`mb-4 ${ContactStyle.btn}`}
