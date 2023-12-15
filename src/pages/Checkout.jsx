@@ -54,8 +54,8 @@ function Checkout({ setShowNavAndFooter }) {
         Authorization: `Bearer ${buyer.token}`,
       },
     });
-    navigate("/success");
     dispatch(cleanCart());
+    navigate("/success");
   };
 
   return (
