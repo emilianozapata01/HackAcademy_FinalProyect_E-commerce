@@ -11,7 +11,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
   }, []);
   return (
     <div className={hovered ? "bg-dark-hover-nav " : ""}>
-      <div className="container">
+      <div className="container mb-5">
         <ButtonUp />
         <div className="d-flex flex-column align-items-center mt-5">
           <h1>About this project & the team behind</h1>
@@ -190,7 +190,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
             </div>
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-center mt-5">
           <h1>Nuestro Equipo</h1>
           <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
             <div className="d-flex flex-wrap gap-5 justify-content-center">
