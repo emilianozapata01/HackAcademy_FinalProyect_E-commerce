@@ -29,8 +29,8 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
             During our Coding Bootcamp at Hack Academy between September and December 2023, we created Juice Shop as our final project. In a team of 4 members, we set out to develop an e-commerce platform in just 3 weeks. We utilized key technologies such as React.js for the Front-End, Node.js and Express.js for the Back-End, along with MongoDB as the database. Drawing inspiration from the official Juice Shop website, we shaped our platform, applying our creativity and knowledge to tailor it to our specific needs. */}
           </p>
         </div>
-        <div className="d-flex justify-content-center mt-5">
-          <div className="me-5">
+        <div className="d-flex flex-column flex-md-row justify-content-center mt-5 gap-5">
+          <div className="">
             <hr />
             <p className="fw-bold">Metodología</p>
             <span className="text-secondary">
@@ -40,7 +40,7 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
               finalizado con una DEMO para mostrar los avances logrados
             </span>
           </div>
-          <div className="ms-5">
+          <div className="">
             <hr />
             <p className="fw-bold">Organización</p>
             <span className="text-secondary">
