@@ -192,8 +192,8 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
         </div>
         <div className="text-center mt-5">
           <h1>Nuestro Equipo</h1>
-          <div className="mt-3 d-flex flex-wrap justify-content-center mt-4 gap-5">
-            <div className="d-flex flex-wrap gap-5 justify-content-center">
+          <div className="mt-3 d-flex flex-column flex-md-row flex-wrap justify-content-center mt-4 gap-5">
+            <div className="d-flex flex-column flex-md-row flex-wrap gap-5 justify-content-center">
               <div>
                 <div
                   id={AboutThisProyectStyle.person1}
@@ -244,30 +244,31 @@ function AboutThisProyect({ hovered, setShowNavAndFooter }) {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-wrap gap-5 justify-content-center">
-              <div
-                id={AboutThisProyectStyle.person3}
-                className={AboutThisProyectStyle.border}
-              >
-                <img
-                  className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
-                  src="andyy.jpg"
-                  alt="Andy"
-                />
-                <div>
-                  <p className="mt-2 mb-0">Andrea Pereira</p>
-                  <a
-                    className="m-3"
-                    href="https://www.linkedin.com/in/andrea-pereira-yardino/"
-                  >
-                    <i className="bi bi-linkedin"></i>
-                  </a>
-                  <a href="https://github.com/Pandemijo">
-                    <i className="bi bi-github"></i>
-                  </a>
+            <div className="d-flex flex-column flex-md-row flex-wrap gap-5 justify-content-center">
+              <div>
+                <div
+                  id={AboutThisProyectStyle.person3}
+                  className={AboutThisProyectStyle.border}
+                >
+                  <img
+                    className={`mb-3 ${AboutThisProyectStyle.ProfileImage}`}
+                    src="andyy.jpg"
+                    alt="Andy"
+                  />
+                  <div>
+                    <p className="mt-2 mb-0">Andrea Pereira</p>
+                    <a
+                      className="m-3"
+                      href="https://www.linkedin.com/in/andrea-pereira-yardino/"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Pandemijo">
+                      <i className="bi bi-github"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-
               <div>
                 <div
                   id={AboutThisProyectStyle.person4}
