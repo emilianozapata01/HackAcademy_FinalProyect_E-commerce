@@ -97,39 +97,40 @@
 }
 @media screen and (max-width: 992px) {
   .second-text {
-    text-align: center;
-
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-bottom: 15%;
+    padding-left: 2%;
+    padding-right: 56%;
     display: flex;
 
-    font-size: 3vh;
+    font-size: 4.5vh;
     text-transform: uppercase;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: Impact;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
       -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .second-text {
-    font-size: 2.5vh;
+    display: none;
   }
 }
 .third-text {
   color: hsl(14.62deg 97.54% 47.84%);
-  padding-right: 50%;
+
+  padding-right: 60%;
   padding-left: 8%;
   font-size: 5vh;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: Impact;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 700px) {
   .third-text {
+    padding-bottom: 25%;
     font-size: 4vh;
-    padding-right: 40%;
+    padding-right: 45%;
     padding-left: 8%;
   }
 }
@@ -141,16 +142,29 @@
 }
 
 .fourth-text {
-  text-align: center;
-  color: #337a48;
-  padding-right: 35%;
-  padding-left: 35%;
+  padding-top: 10%;
+  padding-bottom: 30%;
+  padding-left: 5%;
+  padding-right: 40%;
+  color: #998a2a;
+
   font-size: 5vh;
   text-transform: uppercase;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .fourth-text {
+    font-size: 3.5vh;
+    padding-top: 10%;
+    padding-bottom: 85%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
 .fifth-text {
   color: #b67849;
   text-align: center;
@@ -165,6 +179,6 @@
 }
 @media screen and (max-width: 1200px) {
   .fifth-text {
-    font-size: 3.5vh;
+    display: none;
   }
 }
