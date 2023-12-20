@@ -61,7 +61,7 @@
   padding-right: 25%;
   font-size: 5vh;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "woolwich-regular";
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
@@ -72,13 +72,13 @@
 }
 .second-text {
   color: #ed998c;
-
+  font-family: "woolwich-regular";
   padding-bottom: 11%;
   padding-left: 5%;
   padding-right: 60%;
   font-size: 5vh;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
@@ -90,7 +90,7 @@
     padding-right: 51%;
     font-size: 4.5vh;
     text-transform: uppercase;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "woolwich-regular";
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
       -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   }
@@ -101,7 +101,7 @@
     padding-left: 2%;
     padding-right: 56%;
     display: flex;
-
+    font-family: "woolwich-regular";
     font-size: 4.5vh;
     text-transform: uppercase;
     font-family: Impact;
@@ -116,12 +116,12 @@
 }
 .third-text {
   color: hsl(14.62deg 97.54% 47.84%);
-
+  font-family: "woolwich-regular";
   padding-right: 60%;
   padding-left: 8%;
   font-size: 5vh;
   text-transform: uppercase;
-  font-family: Impact;
+
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
@@ -147,10 +147,10 @@
   padding-left: 5%;
   padding-right: 40%;
   color: #998a2a;
-
+  font-family: "woolwich-regular";
   font-size: 5vh;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
@@ -159,7 +159,7 @@
   .fourth-text {
     font-size: 3.5vh;
     padding-top: 10%;
-    padding-bottom: 85%;
+    padding-bottom: 65%;
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -173,7 +173,7 @@
   padding-right: 35%;
   text-transform: uppercase;
   font-size: 5vh;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "woolwich-regular";
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
