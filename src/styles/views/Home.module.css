@@ -112,11 +112,6 @@
   border: none;
   letter-spacing: 1px;
 }
-@media (max-width: 500) {
-  .buttonCategoriesSparkling {
-    font-size: large;
-  }
-}
 
 .buttonCategoriesNutMilks {
   border-radius: 8px;
@@ -226,7 +221,7 @@
 @media (min-width: 0px) and (max-width: 768px) {
   .buttonCategoriesSparkling {
     width: fit-content;
-    font-size: 19px;
+    font-size: 16px;
     text-wrap: nowrap;
   }
   .categoryBoxSize {
