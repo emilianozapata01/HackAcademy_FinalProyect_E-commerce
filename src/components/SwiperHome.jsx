@@ -10,15 +10,21 @@ function SwiperHome() {
   const imgArr = [
     {
       id: 1,
-      original: "Green-Header-1.jpg",
-      text: `100% Organic · Bay area made · Family owned`,
+      original: "2.jpg",
+      // text: `100% Organic · Bay area made · Family owned`,
       class: "firstText",
     },
     {
       id: 2,
-      original: "11.webp",
+      original: "pictureFour.jpg ",
       text: "Indulge in Pure Freshness! Vibrant juices that awaken your senses. Discover a burst of natural flavors.",
       class: "secondText",
+    },
+    {
+      id: 4,
+      original: "1.jpg ",
+      text: "Discover Our Global Oasis! From coast to coast, find our refreshing haven.",
+      class: "fourthText",
     },
     {
       id: 3,
@@ -27,14 +33,8 @@ function SwiperHome() {
       class: "thirdText",
     },
     {
-      id: 4,
-      original: "12.png",
-      text: "Discover Our Global Oasis! From coast to coast, find our refreshing haven.",
-      class: "fourthText",
-    },
-    {
       id: 5,
-      original: "15.jpg",
+      original: "pictureOne.jpg",
       text: "Streetwise Freshness! Our iconic street stands offer a taste of pure delight.",
       class: "fifthText",
     },
@@ -46,7 +46,7 @@ function SwiperHome() {
         spaceBetween={50}
         centeredSlides={false}
         autoplay={{
-          delay: 4000,
+          delay: 40000,
           disableOnInteraction: false,
         }}
         pagination={{

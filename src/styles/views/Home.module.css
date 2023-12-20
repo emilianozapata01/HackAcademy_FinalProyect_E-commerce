@@ -130,7 +130,11 @@
 .ourProductTitle {
   font-size: 4rem;
 }
-
+@media (max-width: 500px) {
+  .ourProductTitle {
+    font-size: 3rem;
+  }
+}
 .category-img-section {
   width: 100%;
 }

@@ -90,7 +90,6 @@
 }
 .swiper-button-next {
   color: rgb(58, 145, 63) !important;
-  
 }
 .swiper-button-prev {
   color: rgb(58, 145, 63) !important;
@@ -146,8 +145,8 @@
   z-index: 10;
 }
 
-.displayDrawer{
-  width: 40vh!important;
+.displayDrawer {
+  width: 40vh !important;
 }
 
 .subTotal {
@@ -342,6 +341,11 @@
 }
 .bestseller {
   font-size: 4rem;
+}
+@media (max-width: 500px) {
+  .bestseller {
+    font-size: 3rem;
+  }
 }
 
 .loader {

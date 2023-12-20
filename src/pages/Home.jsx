@@ -71,8 +71,8 @@ function Home({ hovered, setShowNavAndFooter }) {
 
               <CategorySectionHome />
             </div>
-            <Footer />
           </div>
+          <Footer />
         </div>
       ) : (
         <div

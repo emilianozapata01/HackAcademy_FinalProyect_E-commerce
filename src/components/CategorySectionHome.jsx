@@ -25,8 +25,8 @@ function CategorySectionHome() {
     <>
       {categories && (
         <div
-          className="d-flex flex-column mt-5 p-5 align-items-center pb-5"
-          style={{ backgroundColor: "rgb(239 239 239)" }}
+          className="d-flex flex-column mt-5 p-5 align-items-center pb-5 "
+          style={{ backgroundColor: "rgb(244, 238, 208)" }}
         >
           <h1
             className={` text-center text-dark ${HomeStyle.ourProductTitle} mb-4 woolwich`}
