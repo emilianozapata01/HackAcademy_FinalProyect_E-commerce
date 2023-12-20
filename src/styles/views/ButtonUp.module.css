@@ -24,3 +24,11 @@
   top: -85%;
   left: -85%;
 }
+
+@media (max-width: 500px) {
+  .ButtonUp {
+    position: relative;
+    top: 0%;
+    left: 0%;
+  }
+}
