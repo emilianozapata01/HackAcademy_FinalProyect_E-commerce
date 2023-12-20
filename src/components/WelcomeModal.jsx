@@ -38,7 +38,7 @@ const WelcomeModal = () => {
           <a id="learnMoreLink" href="#" style={{ display: "none" }}></a>
           <button
             type="button"
-            className={`mb-4 ${ContactStyle.btnModal}`}
+            className={` ${ContactStyle.btnModal}`}
             onClick={handleLearnMoreClick}
           >
             <Link to="/about-this-proyect">
@@ -46,15 +46,15 @@ const WelcomeModal = () => {
             </Link>
           </button>
           <div>
-            <p className="mt-4">
+            <p className={ContactStyle.modalP}>
               Antes de recorrerlo, recomendamos un reinicio rápido de la base de
               datos para una mejor experiencia:
             </p>
-            <button type="button" className={`mb-4 ${ContactStyle.btnModal}`}>
+            <button type="button" className={` ${ContactStyle.btnModal}`}>
               <span>REINICIAR BASE DE DATOS</span>{" "}
             </button>
           </div>
-          <p className="mt-4">
+          <p className={ContactStyle.modalP}>
             Probá diferentes funciones al iniciar sesión como comprador o
             administrador desde el menú de inicio de sesión.{" "}
           </p>

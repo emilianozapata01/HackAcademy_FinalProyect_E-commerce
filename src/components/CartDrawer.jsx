@@ -51,10 +51,7 @@ function CartDrawer({ cartItemCount }) {
   };
 
   const list = (anchor) => (
-    <Box
-      sx={{ width: '100vh', maxWidth: 420 }}
-      role="presentation"
-    >
+    <Box sx={{ width: "100vh", maxWidth: 420 }} role="presentation">
       <div className={`${NavbarStyle.cartContainer} `}>
         <div cl>
           <div className="p-4 d-flex">
@@ -76,7 +73,9 @@ function CartDrawer({ cartItemCount }) {
                     <div className="d-flex align-items-start ">
                       <img
                         className="w-25"
-                        src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${product.item.image}`}
+                        src={`${import.meta.env.VITE_URL_SUPABASE_IMG}${
+                          product.item.image
+                        }`}
                         alt=""
                       />
                       <div className="d-flex flex-column ms-3">
@@ -148,7 +147,7 @@ function CartDrawer({ cartItemCount }) {
 
   return (
     <>
-      <div >
+      <div>
         {["right"].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button onClick={toggleDrawer(anchor, true)}>

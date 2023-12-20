@@ -98,7 +98,8 @@ function MuiNavbar() {
               <MenuIcon />
             </IconButton>
             <Menu
-              className={growBurguer && MuiNavbarStyle.growBurguer}
+              // className={growBurguer && MuiNavbarStyle.growBurguer}
+              className={`${growBurguer ? MuiNavbarStyle.growBurguer : ""}`}
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{

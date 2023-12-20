@@ -72,8 +72,8 @@
   border-radius: 8px;
   background-color: black;
   color: antiquewhite;
-  font-family: fantasy;
-  font-size: x-large;
+
+  font-size: 3vh;
   height: 40px;
   width: 150px;
   transition: transform 0.3s;

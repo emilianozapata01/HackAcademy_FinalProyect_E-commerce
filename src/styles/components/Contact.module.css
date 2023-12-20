@@ -73,6 +73,7 @@
   font-family: "woolwich-regular";
   color: #fff;
   letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
 .btnModal:hover {
@@ -96,7 +97,33 @@
   transform: scale(1.1);
 }
 
-/* .customModal {
-  max-width: 70vw;
-} */
+.modalP {
+  margin-top: 1rem;
+}
 
+@media (max-width: 500px) {
+  .title {
+    font-size: 4vh;
+    padding: 0.1em 0.4em 0.1em 0.4em;
+    margin: 0;
+    word-spacing: -3px;
+    line-height: 1;
+  }
+  .customModal {
+    margin-top: 60px;
+    width: 75vw;
+    height: 90vh;
+    margin-left: 6%;
+
+    font-size: 2vh;
+  }
+  .modalP {
+    margin-top: 10.5px;
+  }
+
+  .btnModal {
+    font-size: 2.5vh;
+    padding: 0.1em 0.4em 0.1em 0.4em;
+    margin-bottom: 0;
+  }
+}

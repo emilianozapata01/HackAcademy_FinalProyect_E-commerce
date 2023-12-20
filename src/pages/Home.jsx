@@ -68,8 +68,9 @@ function Home({ hovered, setShowNavAndFooter }) {
               <div className="container">
                 <Glide products={product} qty={1} />
               </div>
-
-              <CategorySectionHome />
+              <div className="imageCurve">
+                <CategorySectionHome />
+              </div>
             </div>
           </div>
           <Footer />

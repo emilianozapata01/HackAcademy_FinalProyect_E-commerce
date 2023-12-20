@@ -25,7 +25,7 @@ function CategorySectionHome() {
     <>
       {categories && (
         <div
-          className="d-flex flex-column mt-5 p-5 align-items-center pb-5 "
+          className="d-flex flex-column align-items-center pb-5 pt-4  "
           style={{ backgroundColor: "rgb(244, 238, 208)" }}
         >
           <h1
@@ -59,7 +59,9 @@ function CategorySectionHome() {
 
             <div className="text-center mt-5">
               <Link to="/all-products">
-                <button className={HomeStyle.shopAllButton}>SHOP ALL</button>
+                <button className={`woolwich ${HomeStyle.shopAllButton}`}>
+                  SHOP ALL
+                </button>
               </Link>
             </div>
           </div>
