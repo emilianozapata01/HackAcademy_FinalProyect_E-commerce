@@ -111,7 +111,11 @@
 }
 @media screen and (max-width: 700px) {
   .second-text {
-    display: none;
+    font-size: 3vh;
+    padding-top: 10%;
+    padding-bottom: 75%;
+    padding-left: 15%;
+    padding-right: 20%;
   }
 }
 .third-text {

@@ -17,7 +17,7 @@ function SwiperHome() {
     {
       id: 2,
       original: "pictureFour.jpg ",
-      text: "Indulge in Pure Freshness! Vibrant juices that awaken your senses. Discover a burst of natural flavors.",
+      text: "Indulge in Pure Freshness! Vibrant juices that awaken your senses. ",
       class: "secondText",
     },
     {
