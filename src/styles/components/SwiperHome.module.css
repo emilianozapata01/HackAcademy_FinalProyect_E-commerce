@@ -111,10 +111,10 @@
 }
 @media screen and (max-width: 700px) {
   .second-text {
-    font-size: 3vh;
+    font-size: 3.5vh;
     padding-top: 10%;
     padding-bottom: 75%;
-    padding-left: 15%;
+    padding-left: 10%;
     padding-right: 35%;
     font-family: "woolwich-regular";
   }
