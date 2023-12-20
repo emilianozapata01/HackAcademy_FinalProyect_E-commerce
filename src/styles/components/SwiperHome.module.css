@@ -109,7 +109,8 @@
       -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   }
 }
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 600px) {
   .second-text {
     font-size: 3.5vh;
     padding-top: 13%;
