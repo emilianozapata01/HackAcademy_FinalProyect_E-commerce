@@ -46,7 +46,7 @@ function SwiperHome() {
         spaceBetween={50}
         centeredSlides={false}
         autoplay={{
-          delay: 40000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
