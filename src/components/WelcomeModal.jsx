@@ -29,7 +29,7 @@ const WelcomeModal = () => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="ms-3">
+        <div className="mx-2">
           <p>
             Este e-commerce es el proyecto final de cuatro estudiantes del
             Coding Bootcamp de <a href="https://ha.dev/">Hack Academy</a>
@@ -60,12 +60,15 @@ const WelcomeModal = () => {
           </p>
         </div>
       </Modal.Body>
-      <Modal.Footer centered="true" className="d-flex justify-content-between">
+      <Modal.Footer
+        centered="true"
+        className={` ${ContactStyle.footerResponsive}`}
+      >
         <img className="modalLogo " src="/nav-logo.png" alt="Juice Shop" />
 
         <button
           type="button"
-          className={`mt-4 ${ContactStyle.btnGo}`}
+          className={`mt-4 ms-4 ${ContactStyle.btnGo}`}
           onClick={handleGoClick}
         >
           <span>HAPPY TESTING!</span>{" "}

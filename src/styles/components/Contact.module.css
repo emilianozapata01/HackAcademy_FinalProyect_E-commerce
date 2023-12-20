@@ -100,6 +100,10 @@
 .modalP {
   margin-top: 1rem;
 }
+.footerResponsive {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media (max-width: 500px) {
   .title {
@@ -114,6 +118,7 @@
     width: 75vw;
     height: 90vh;
     margin-left: 9%;
+
     text-align: center;
     font-size: 2vh;
   }
@@ -126,7 +131,10 @@
     padding: 0.1em 0.4em 0.1em 0.4em;
     margin-bottom: 0;
   }
-  .btnGo {
-    margin-left: 20%;
+
+  .footerResponsive {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
